@@ -12,17 +12,17 @@ function approved($approved, $list_approve, $type, $type_user, $skills, $user_sk
 {
     if ($approved <= $list_approve) {
         $result = filterFunction($type, $type_user, $skills, $user_skills, $proj_level, $skill_level);
-        if ($result) {
-            return $approved+=1;
-        }
+        return $result;
     }
+    else
+        return 0;
 }
 
 function filterFunction($type, $type_user, $skills, $user_skills, $proj_level, $skill_level)
 {
 
     /* Start Filter */
-
+    $points = 0;
 
     $user_type = count(array_diff($type, $type_user));
     /* ---------------------- */
@@ -55,7 +55,6 @@ function startFilter($skills, $proj_level, $skill_level)
     for ($y = 0; $y <= count($skills) - 1; $y++) {
         if ($proj_level <= ($skill_level[$y])) {
             $total_skills++;
-        } else {
         }
     }
 
@@ -65,10 +64,10 @@ function startFilter($skills, $proj_level, $skill_level)
         /* Here is the developers wen all approved for this project. */
         if ($total_skills == count($skills)) {
             /* If has a perfect professional: */
-            return $list_approve = 5;
+            $points = 1000;
+            return $points;
         }
-    } else {
-    }
+    } 
 }
 
 ?>

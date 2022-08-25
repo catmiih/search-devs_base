@@ -21,22 +21,22 @@ $dateEnd;
 $payment;
 
 /* Pick informations from developers  */
-$devID = "10";
+$devID = 10;
 $type_user = ['Web'];
 $user_skills = ['HTML5','JAVA','CSS3'];
 $skill_level = ['5','4','5'];
 
 /* Filter config */
 $list_approve = 20;
-global $approved;
+$approved = 0;
 
 require_once ('filter_func.php');
 
-for ($i = 0; $i < 3; $i++) {
+for ($i = 0; $i < $devID; $i++) {
     $response = approved($approved, $list_approve, $type, $type_user, $skills, $user_skills, $proj_level, $skill_level);
+    if($response >= 1) {
+        $approved++;
+    }
 }
-
-
-echo '<script>alert("aprovados: ',$approved,'")</script>';
 
 ?>
