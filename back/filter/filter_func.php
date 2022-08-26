@@ -5,7 +5,7 @@
     Developed by SearchDevs™ for SearchDevs™ Plataform.
 
     All rights reserved ©️. All materials are protected by copyright and other rights.
-    Version : 1.0.0.3 - Aug, 2022.
+    Version : 1.0.0.4 - Aug, 2022.
 */
 
 function approved($approved, $list_approve, $type, $type_user, $skills, $user_skills, $proj_level, $skill_level)
@@ -22,7 +22,7 @@ function filterFunction($type, $type_user, $skills, $user_skills, $proj_level, $
 {
 
     /* Start Filter */
-    $points = 0;
+
 
     $user_type = count(array_diff($type, $type_user));
     /* ---------------------- */
@@ -37,10 +37,10 @@ function filterFunction($type, $type_user, $skills, $user_skills, $proj_level, $
             $result = startFilter($skills, $proj_level, $skill_level);
             return $result;
         } else
-            return false;
+            return 0;
     } else {
         /* Professional is not good for project. */
-        return false;
+        return 0;
     }
 }
 
@@ -62,11 +62,15 @@ function startFilter($skills, $proj_level, $skill_level)
 
     if ($total_skills >= (count($skills) - ((count($skills) / 100) * 20))) {
         /* Here is the developers wen all approved for this project. */
-        if ($total_skills == count($skills)) {
+        if ($total_skills >= count($skills)) {
             /* If has a perfect professional: */
             $points = 1000;
-            return $points;
         }
+        else {
+            $points = 500;
+        }
+
+        return $points;
     } 
 }
 
