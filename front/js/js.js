@@ -1,7 +1,7 @@
-function Mudarestado(el) {
-    var display = document.getElementById(FormLog).style.display;
+function Mudarestado(id) {
+    var display = document.getElementById(id).style.display;
     if(display == "none")
-        document.getElementById(FormLog).style.display = 'block';
+        document.getElementById(id).style.display = 'block';
     else
-        document.getElementById(el).style.display = 'none';
+        document.getElementById(id).style.display = 'none';
 }
