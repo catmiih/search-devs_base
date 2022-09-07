@@ -10,14 +10,6 @@
     <link rel="stylesheet" type="text/css" href="../assets/extend/css/bootstrap.css" />
     <script src="../assets/extend/js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="css/home.css" />
-    <style>
-        video {
-            width: 80%;
-            height: auto;
-        }
-
-    </style>
-
 </head>
 
 <body>
