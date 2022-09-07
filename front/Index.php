@@ -19,11 +19,11 @@
     </video>
   </div>
   <nav class="navbar">
-    <a class="navbar-brand" href="Index.php" style="margin-right: 0px; padding-left: 25px;">
+    <a class="navbar-brand" href="Index.php" style="margin-right: 0px; padding-left: 35px;">
         <img src="Imagens/logo.png" width="30" height="45">
         <div id="Text">SEARCH DEVS™</div>
     </a>
-    <ul class="nav justify-content-end">
+    <ul class="nav justify-content-end" style="margin-right: 0px; padding-right: 35px;">
     <li class="nav-item">
     <a class="nav-link active" href="TipoCad.php">Registrar</a>
     </li>
@@ -37,21 +37,24 @@
       <button id="Btn"><a href="TipoCad.php">Começar agora</a></button>
   </div>
   <div class="sub1">
-      <div class="card mb-3 bg-dark bg-gradiente text-white" style="max-width: 540px;">
+    <br><br>
+      <div class="card mb-3 text-white" style="max-width: 600px;" id="Card">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="Imagens/logo.png" class="img-fluid rounded-start" alt="Logo Search Devs">
+            <img src="Imagens/logo.png" class="img-fluid rounded-start" style="padding-left: 20px;"alt="Logo Search Devs">
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">Oque é?</h5>
-              <p class="card-text">O Search Devs é uma plataforma com o foco em auxiliar desenvolvedores autônomos a encontrarem novos projetos, com uma ferramenta inovadora que une
+              <p class="card-text justify-content-end">O Search Devs é uma plataforma com o foco em auxiliar desenvolvedores autônomos a encontrarem novos projetos, com uma ferramenta inovadora que une
               o desenvolvedor ao projeto que mais tenha a sua cara!
               Tudo isso de forma automatizada.</p>
           </div>
         </div>
       </div>
     </div>
+    <br><br>
+    
 
   </div>
 </body>

@@ -1,3 +1,6 @@
+body{
+    background-color: black;
+}
 .jumbvideo {
     position: static;
     overflow: hidden;
@@ -11,9 +14,6 @@
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-}
-ul{
-    margin-right: 50px;
 }
 .nav-link{
     color: white;
@@ -92,7 +92,10 @@ div{
     position: relative;
 }
 .sub1{
-    background-color: black;
     top: 70vh;
-    width: 100vw;
+}
+#Card{
+    background-color: rgba(15, 15, 15, 0.658);
+    top: 20px;
+    left: 29vw;
 }
