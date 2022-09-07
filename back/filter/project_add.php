@@ -5,8 +5,10 @@
     Developed by SearchDevs™ for SearchDevs™ Plataform.
 
     All rights reserved ©️. All materials are protected by copyright and other rights.
-    Version : 1.0.0.4 - Aug, 2022.
+    Version : 1.0.1.4 - Aug, 2022.
 */
+
+include_once ('../connect.php');
 
 /* Pick information of the company/project. */
 $projId = 10;
