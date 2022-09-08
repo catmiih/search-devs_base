@@ -1,33 +1,73 @@
 body{
-    background-color: black;
+    background-color: #000;
 }
+
+/* CLASSES JQUERY */
+.tag {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+    transition: .6s;
+  }
+  
+.tag-visible {
+    opacity: 1;
+    transform: translate3d(0,0, 0);
+}
+
 .jumbvideo {
     position: static;
     overflow: hidden;
-    background-color: black;
+    background-color: #000;
     width:100%;
     height:100%;
 }
 .jumbvideo video {
     position: absolute;
     top: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     object-fit: cover;
 }
-.nav-link{
-    color: white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 0.5rem 1.5rem;
-    transition: transform 1s;
-    transform: translateX(0);
+
+.jumbvideo .container {
+    z-index: 2;
+    position: relative;
 }
-.nav-link:hover{
-    color: white;
-    transform: translateX(5px) scale(1.2);
+
+.jumbvideo #campo1 h1{
+    margin: 2% 0;
 }
+
+.jumbvideo #campo1{
+    margin: 10% 0;
+}
+
+#campo1 p{
+    opacity: 1;
+    color: #fff;
+}
+
+#campo1 h1{
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+#campo2 {
+    align-items: center;
+    justify-content: center;
+
+    width: 20rem;
+}
+
+.text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+
+
 #Text{
     display: inline-block;
     color: white;
@@ -36,19 +76,20 @@ body{
     font-weight: bold;
     align-items: center;
 }
+
 .main{
     position: relative;
     display: inline-grid;
     text-align: center;
-    left: 39vw;
-    top: 28vh;
     font-family: inherit;
+    margin: 20% 0;
+    
 }
+
 h1,p{
     color: white; 
 }
 h1{
-    font-size: 50px;
     font-weight: bold;
 }
 p{
@@ -61,22 +102,107 @@ a{
 a:hover{
     color: white;
 }
-#Btn{
+
+.btn {
+    color: #fff;
     font-weight: bold;
     border: none;
-    height: 50px;
+    height: 100%;
     border-radius: 10px;
-    background: rgb(9,37,101);
-    background: radial-gradient(circle, rgba(9,37,101,1) 0%, rgba(110,5,245,1) 100%);
+    background: #092565;
+    background: radial-gradient(circle, #092565 0%, #6e05f5 100%);
     animation-duration: 2s;
     background-size: 400% 400%;
     animation: Gradient 5s ease infinite;
-    transition: transform 1s;
+    transition: transform .5s;
     transform: translateX(0);
+
+    padding: 5% 20%;
+    font-size: 1.2rem;
 }
-#Btn:hover{
-    transform: translateX(1px) scale(1.2);
+
+.btn:hover{
+    transform: translateX(1px) scale(1.05);
+    color: #fff;
 }
+
+/* O QUE É */
+#whatIs{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10% 0;
+}
+
+#Card{
+    background-color: rgba(0,0,0,0);
+}
+
+/*COMO UTILIZAR */
+
+#use {
+    margin: 10%;
+}
+
+#use div{
+    margin: 3% 0;
+}
+
+.card {
+    background-color:rgb(12, 12, 12);
+    color: #FFF;
+    align-items: center;
+}
+
+#why {
+    margin: 20% 0;
+}
+
+#why table{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 2% 0;
+}
+
+#why td {
+    padding: 2%;
+}
+
+.b{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 20rem;
+    height: 5rem;
+
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#start {
+    margin: 20% 0 0;
+}
+
+#start .b {
+    height: 3rem;
+}
+
+footer{
+    position: relative;
+    background-color: rgb(12, 12, 12);
+    color: #FFF;
+    width: 100%;
+    height: 100px;    
+    text-align: center;
+    line-height: 100px;
+}
+
 @keyframes Gradient {
     0% {
         background-position: 0% 50%
@@ -87,30 +213,4 @@ a:hover{
     100% {
         background-position: 0% 50%
     }
-}
-div{
-    position: relative;
-}
-.sub1{
-    top: 70vh;
-}
-#Card{
-    background-color: rgba(15, 15, 15, 0.658);
-    top: 20px;
-    left: 29vw;
-}
-.b{
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 230px;
-}
-footer{
-    margin-top: 700px;
-    position: absolute;
-    background-color: rgb(12, 12, 12);
-    color: #FFF;
-    width: 100%;
-    height: 100px;    
-    text-align: center;
-    line-height: 100px;
 }
