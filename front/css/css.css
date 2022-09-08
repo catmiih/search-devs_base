@@ -99,3 +99,18 @@ div{
     top: 20px;
     left: 29vw;
 }
+.b{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 230px;
+}
+footer{
+    margin-top: 700px;
+    position: absolute;
+    background-color: rgb(12, 12, 12);
+    color: #FFF;
+    width: 100%;
+    height: 100px;    
+    text-align: center;
+    line-height: 100px;
+}
