@@ -5,7 +5,7 @@
     Developed by SearchDevs™ for SearchDevs™ Plataform.
 
     All rights reserved ©️. All materials are protected by copyright and other rights.
-    Version : 1.0.1.4 - Aug, 2022.
+    Version : 1.0.1.5 - Aug, 2022.
 */
 
 include_once '../connect.php';
@@ -109,13 +109,13 @@ class User {
     
 
 
-    function register() {
+    function register($login,$senha) {
+        global $pdo;
+
         try {
             $this-> conn = new Connect();
-            $sql = $this->conn->prepare("insert into produto values (NULL,?,?)");
-            @$sql-> bindParam(1,$this->getNome(), PDO::PARAM_STR);
-            @$sql-> bindParam(2,$this->getEstoque(), PDO::PARAM_STR);
-
+            $sql = $pdo -> prepare("SELECT $id FROM developers WHERE login = $login");
+            $sql-< 
             if($sql->execute() == 1) {
                 return "Registro salvo com sucesso!";
             }
