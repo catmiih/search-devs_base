@@ -5,42 +5,52 @@
     Developed by SearchDevs™ for SearchDevs™ Plataform.
 
     All rights reserved ©️. All materials are protected by copyright and other rights.
-    Version : 1.0.1.4 - Aug, 2022.
+    Version : 1.0.1.7 - Aug, 2022.
 */
 
 include_once ('../connect.php');
 
-/* Pick information of the company/project. */
-$projId = 10;
-$projName = "IBM-WEB";
-$type = ['Web']; /* ⬅ Occupation area */
-$skills = ['HTML5','CSS3','JAVA'];
-$proj_level=1;
+function getProject($projId) {
+    global $pdo;
 
-/* Specific Config */
-$dateStart;
-$dateEnd;
-$payment;
+    /* Pick information of the company/project. */
+    $projID = $projId;
+    $projName = $pdo->prepare("SELECT Proj_name FROM project WHERE Proj_ID = $projID");
+    $type = $pdo->prepare("SELECT Proj_type FROM project WHERE Proj_ID = $projID"); /* ⬅ Occupation area */
+    $skills = ['?'] /*Pick all skills and transform in array.*/ ;
+    $proj_level= $pdo->prepare("SELECT Proj_level FROM project WHERE Proj_ID = $projID");
 
-/* Pick informations from developers  */
-$devID = 5;
-$type_user = ['Web'];
-$user_skills = ['HTML5','JAVA','CSS3'];
-$skill_level = ['5','4','5'];
 
-/* Filter config */
-$list_approve = 20;
-$approved = 0;
+    /* Specific Config */
+    $dateStart = $pdo->prepare("SELECT Proj_start FROM project WHERE Proj_ID = $projID");
+    $dateEnd = $pdo->prepare("SELECT Proj_end FROM project WHERE Proj_ID = $projID");
+    $payment = $pdo->prepare("SELECT Proj_pay FROM project WHERE Proj_ID = $projID");
 
-require_once ('filter_func.php');
+    /* Execute Company SQL */
+    $projName->execute();
+    $type->execute();
+    $proj_level->execute();
+    $dateStart->execute();
+    $dateEnd->execute();
+    $payment->execute();
 
-for ($i = 1; $i <= $devID; $i++) {
-    $response = approved($i, $list_approve, $type, $type_user, $skills, $user_skills, $proj_level, $skill_level);
-    echo '<script>alert("',$response,'no ID: ',$i,'")</script>';
-    if($response > 0) {
-        $approved++;
-    }
+    /* Pick informations from developers  */
+
+    /* Filter config */
+    $list_approve = 20;
+    $approved = 0;
+
+for ($i = 0; $i <= $list_approve; $i++) {
+
+    $type_user = $pdo->prepare("SELECT Dev_type FROM project WHERE Proj_ID = $projID");
+    $user_skills = ['HTML5','JAVA','CSS3'];
+    $skill_level = ['5','4','5'];
+
+    require_once ('filter_func.php');
+
+        $response = approved($i, $list_approve, $type, $type_user, $skills, $user_skills, $proj_level, $skill_level);
+        if($response > 0) {
+            $approved++;
+        }
 }
-echo "Aprovados: ",$approved;
-
 ?>

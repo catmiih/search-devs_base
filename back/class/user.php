@@ -1,218 +1,55 @@
-<?php 
+<?php
 
 /* 
     This archive try read all professionals wen can be a possible selected for the project.
     Developed by SearchDevs™ for SearchDevs™ Plataform.
 
     All rights reserved ©️. All materials are protected by copyright and other rights.
-    Version : 1.0.1.5 - Aug, 2022.
+    Version : 1.0.1.7 - Aug, 2022.
 */
 
 include_once '../connect.php';
 
-/* Get Elements */
+/* All User Methods */
 class User {
-    private $id;
-    private $name;
-    private $lastN;
-    private $email;
-    private $pass;
-    private $num;
-    private $cep;
-    private $cpf;
-    private $born;
-    private $sex;
-    private $conn;
 
-
-/* Getter and Setter */
-
-    /* Get DEV ID */
-    public function getId() {
-        return $this->Dev_ID;
-    }
-    public function setId($id) {
-        $this->Dev_ID = $id;
-    }
-
-    /* Get DEV Name */
-    public function getName() {
-        return $this->Dev_name;
-    }
-    public function setName($name) {
-        $this->Dev_name = $name;
-    }
-
-    /* Get DEV Last Name */
-    public function getLastN() {
-        return $this->Dev_lastN;
-    }
-    public function setLastN($lastN) {
-        $this->Dev_name = $lastN;
-    }
-
-    /* Get DEV Email */
-    public function getEmail() {
-        return $this->Dev_email;
-    }
-    public function setEmail($email) {
-        $this->Dev_email = $email;
-    }
-
-    /* Get DEV Pass */
-    public function getPass() {
-        return $this->Dev_pass;
-    }
-    public function setPass($pass) {
-        $this->Dev_pass = $pass;
-    }
-
-    /* Get DEV Tel-Number */
-    public function getNum() {
-        return $this->Dev_Num;
-    }
-    public function setNum($num) {
-        $this->Dev_Num = $num;
-    }
-
-    /* Get DEV CEP */
-    public function getCEP() {
-        return $this->Dev_cep;
-    }
-    public function setCEP($cep) {
-        $this->Dev_cep = $cep;
-    }
-
-    /* Get DEV CPF */
-    public function getCPF() {
-        return $this->Dev_cpf;
-    }
-    public function setCPF($cpf) {
-        $this->Dev_cpf = $cpf;
-    }
-
-    /* Get DEV Born Date */
-    public function getBorn() {
-        return $this->Dev_born;
-    }
-    public function setBorn($born) {
-        $this->Dev_born = $born;
-    }
-
-    /* Get DEV Sex */
-    public function getSex() {
-        return $this->Dev_sex;
-    }
-    public function setSex($sex) {
-        $this->Dev_sex = $sex;
-    }
-    
-
-
-    function register($login,$senha) {
+    function register($name, $lastN, $email, $pass, $num, $cep, $cpf, $born, $sex)
+    {
         global $pdo;
+        $passMD5 = MD5($pass);
 
-        try {
-            $this-> conn = new Connect();
-            $sql = $pdo -> prepare("SELECT $id FROM developers WHERE login = $login");
-            $sql-< 
-            if($sql->execute() == 1) {
-                return "Registro salvo com sucesso!";
-            }
-            $this->conn = null;
-        }
-        catch(PDOException $exc) {
-            echo"Erro ao salvar registro.".$exc->getMessage();
-        }
-    }
+        $this->conn = new Connect();
 
-    function alterar() {
-        try {
+        $sql = $pdo->prepare("SELECT Dev_id FROM developers WHERE Dev_cpf = $cpf");
+        $sql->execute();
 
-            $this->conn= new Conectar();
-            $sql = $this->conn->prepare("select * from produto where id = ?");
-            @$sql -> bindParam(1, $this->getId(), PDO::PARAM_STR);
+        if ($sql->rowCount() > 0) {
+            /* Dev exist */
+            return false;
+        } else {
+            $sql = $pdo->prepare("INSERT INTO `developers`( `Dev_name`, `Dev_lastN`, `Dev_email`, `Dev_pass`, `Dev_Num`, `Dev_cep`, `Dev_cpf`, `Dev_born`, `Dev_sex`) VALUES ($name,$lastN',$email,$passMD5,$num,$cep,$cpf,$born,$sex)");
             $sql->execute();
-
-            return $sql->fetchAll();
-            $this->conn=null;
-
-        }catch(PDOException $exc) {
-            echo "Erro ao alterar".$exc->getMessage();
+            return true;
         }
     }
 
-    function alterar2() {
-        try {
-
-            $this->conn= new Conectar();
-            $sql = $this->conn->prepare("UPDATE produto SET nome = ?, estoque = ? WHERE id = ?");
-            
-            @$sql -> bindParam(1, $this->getNome(), PDO::PARAM_STR);
-            @$sql -> bindParam(2, $this->getEstoque(), PDO::PARAM_STR);
-            @$sql -> bindParam(3, $this->getId(), PDO::PARAM_STR);
-
-            if($sql->execute() == 1) {
-                return "Registro alterado com sucesso!";
-            }
-
-            $this->conn=null;
-
-        }catch(PDOException $exc) {
-            echo "Erro ao salvar o registro.".$exc->getMessage();
+    public function login($email,$pass){
+        global $pdo;
+        $passMD5=MD5($pass);
+        /* Verify Register */
+        $sql = $pdo->prepare("SELECT Dev_id FROM developers WHERE Dev_email = '$email' AND Dev_pass = '$passMD5'");
+        $sql->execute();
+        if($sql->rowCount() > 0){
+            /* Register == True */
+            $data = $sql -> fetch();
+            session_start();
+            $_SESSION['ID'] = $data['login'];
+            return true;
+        }else{
+            /* Not Register */
+            return false;
         }
     }
-
-    function consultar() {
-        try {
-
-            $this->conn= new Conectar();
-            $sql = $this->conn->prepare("select * from produto where nome like ?");
-            @$sql -> bindParam(1, $this->getNome(), PDO::PARAM_STR);
-            $sql->execute();
-
-            return $sql->fetchAll();
-            $this->conn=null;
-
-        }catch(PDOException $exc) {
-            echo "Erro ao consultar".$exc->getMessage();
-        }
-    }
-
-    function excluir() {
-        try {
-
-            $this->conn= new Conectar();
-            $sql = $this->conn->prepare("delete from produto where id = ?");
-            @$sql -> bindParam(1, $this->getId(), PDO::PARAM_STR);
-            
-            if($sql->execute() == 1) {
-                return "Excluido com sucesso!";
-            }
-            else {
-                return "Erro na exclusão.";
-            }
-
-            $this->conn=null;
-
-        }catch(PDOException $exc) {
-            echo "Erro ao excluir".$exc->getMessage();
-        }
-    }
-
-    function listar() {
-
-        try {
-            $this->conn = new Conectar();
-            $sql = $this->conn->query("select * from produto order by id");
-            $sql->execute();
-
-            return $sql->fetchAll();
-            $this->conn=null;
-        }catch (PDOException $exc) {
-            echo "Erro ao executar consulta.".$exc->getMessage();
-        }
-    }
-
 }
+
 ?>
