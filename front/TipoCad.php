@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/8381/8381909.png"/>
+    <link rel="icon" type="image/png" href="../search-devs_base/front/img/logo-search-devs.svg"/>
 </head>
 <body>
     <h1>Cadastre-se</h1>

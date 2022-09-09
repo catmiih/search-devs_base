@@ -31,12 +31,12 @@
       <div class="card mb-3 text-white" style="max-width: 600px;" id="Card">
         <div class="row g-0" style="text-align: start;">
           <div class="col-md-4">
-            <img src="img/logo.png" class="img-fluid rounded-start" style="padding-left: 20px;" alt="Logo Search Devs">
+            <img src="img/oquee.svg" class="img-fluid rounded-start" style="padding-left: 20px;" ">
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">Oque é?</h5>
-              <p class="card-text">O Search Devs é uma plataforma com o foco em auxiliar desenvolvedores autônomos a encontrarem novos projetos, com uma ferramenta inovadora que une o desenvolvedor ao projeto que mais tenha a sua cara! Tudo isso de forma automatizada.</p>
+              <p class="card-text">O Search Devs é uma plataforma que facilita os desenvolvedores autônomos de encontrar novos projetos, que une o desenvolvedor ao projeto que mais tenha a sua cara! Tudo isso de forma automatizada.</p>
             </div>
           </div>
         </div>
@@ -44,35 +44,35 @@
     </div>
 
     <div id="use" class="tag">
-      <h1>Como utilizar?</h1>
+      <h1>Como entrar para o time?</h1>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col tag">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">1- Crie sua conta (DEPOIS FAZER OS ICONS Q VAI FICAR AQ)</h5>
+              <h5 class="card-title">Crie sua conta</h5>
             </div>
           </div>
         </div>
         <div class="col tag">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">2- Adicione suas informações</h5>
+              <h5 class="card-title">Adicione suas informações</h5>
             </div>
           </div>
         </div>
         <div class="col tag">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">3- Aguarde nossa ferramenta encontrar o projeto ideal para você!</h5>
+              <h5 class="card-title">Pronto!</h5>
             </div>
           </div>
         </div>
       </div>
-      <p class="tag">Após o processo, só iniciar sua trajetória como um profissional oficial de nossa plataforma!</p>
+      <p class="tag">Inicie sua trajetória como um profissional oficial do Search Devs. Fácil e rápido!</p>
     </div>
 
     <div id="why" class="tag">
-      <h1>Por que utilizar?</h1>
+      <h1>O Search Devs te espera</h1>
       <table>
         <tr>
           <td><a class="b btn">Menores taxas</a></td>
@@ -86,9 +86,9 @@
     </div>
 
     <div class="tag" id="start">
-      <h1>Comece a utilizar agora!</h1>
-      <p>Agora que você já nos conhece, é a hora ideal para iniciar o seu proximo projeto com o
-        <br>Search Devs! Seja você um profissional autônomo ou uma empresa em busca dos mesmos,<br> nossa plataforma irá auxiliar ambos a se encontrarem de forma rápida e intuitiva.
+      <h1>Junte-se a nós agora!</h1>
+      <p>Agora que você já nos conhece, é a hora de se juntar ao Search Devs! Não é mesmo?
+        <br>Seja você um profissional ou usuário em busca de nossos devs,<br> Vamos auxiliá-los de forma rápida e intuitiva.
       </p>
       <center>
         <a class="b btn" href="TipoCad.php">Começar agora</a>

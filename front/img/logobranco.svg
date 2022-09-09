@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="210mm" height="297mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 21000 29700"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:black;stroke-width:7.62}
+    .fil3 {fill:#FEFEFE}
+    .fil0 {fill:black}
+    .fil2 {fill:#F9F9F9}
+    .fil1 {fill:white}
+   ]]>
+  </style>
+ </defs>
+ <g id="Camada_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0 str0" d="M10368 28219c148,248 385,248 528,-5l7856 -13839c142,-253 21,-459 -269,-454l-15908 116c-290,0 -406,211 -258,459l8051 13723z"/>
+  <circle class="fil0 str0" cx="10590" cy="10154" r="9618"/>
+  <circle class="fil1 str0" cx="10859" cy="10228" r="3973"/>
+  <circle class="fil0 str0" cx="10785" cy="10228" r="1905"/>
+  <circle class="fil2 str0" cx="11998" cy="9167" r="844"/>
+  <path class="fil1 str0" d="M10326 27292c70,116 191,277 332,267 121,-10 207,-136 267,-252 1530,-2698 3066,-5391 4596,-8090 -1072,-1525 -2144,-3046 -3222,-4571 -2275,755 -4772,-347 -5749,-2512 -1022,-2271 -20,-4919 2029,-6021 2522,-1359 5749,106 6640,2547 579,1581 131,3444 -1092,4848 856,1214 1706,2432 2562,3645 56,-101 116,-201 171,-307 3096,-2945 3786,-7637 1682,-11292 -2246,-3891 -7018,-5467 -11030,-4052 -3348,1183 -5744,4299 -6062,7823 -362,4032 2165,6806 2583,7249 3484,5961 6046,10325 6293,10718z"/>
+  <path class="fil3 str0" d="M14811 9837c-201,-2052 -1995,-3630 -4042,-3582 -2179,47 -3962,1920 -3883,4105 79,2284 2153,4062 4411,3814 2121,-232 3725,-2184 3514,-4337zm-3256 2132c-818,364 -1767,79 -2290,-591 -480,-617 -575,-1514 -126,-2205 485,-755 1493,-1061 2379,-702 -395,301 -464,860 -190,1213 296,375 913,428 1293,48 232,918 -232,1868 -1066,2237z"/>
+ </g>
+</svg>

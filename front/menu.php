@@ -4,7 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Devs - Inovação em contratação de profissionais de tecnologia</title>
 
-  <link rel="shortcut icon" type="image/png" href="img/logo-search-devs.svg" />
+
+  <link rel="shortcut icon" type="image/png" href="img/logobarradepesquisa.svg" />
   <link rel="stylesheet" type="text/css" href="../assets/extend/css/bootstrap.css" />
 
   <link rel="stylesheet" type="text/css" href="css/css.css" />
@@ -29,10 +30,10 @@
   <div class="collapse navbar-collapse menu" id="navbarTogglerDemo01">
     <ul class="nav jnavbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="TipoCad.php">Registrar</a>
+        <a class="nav-link" href="TipoCad.php">Inscrever-se</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
+        <a class="nav-link" href="#">Entrar</a>
       </li>
   </div>
 </nav>
