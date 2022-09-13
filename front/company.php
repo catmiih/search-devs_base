@@ -14,7 +14,7 @@
     <div class="Form">
         <h1>Cadastre-se</h1>
         <h3>Encontre o seu serviço ideal:</h3>
-            <form action="CadastroLogin.html">
+            <form action="register-login.php">
                 <input type="text" request placeholder="Nome da Empresa*" name="">
                 <br><br>
                 <input type="text" request placeholder="Nome responsável*" name="">

@@ -1,0 +1,31 @@
+.form input[type="text"] {
+  padding: 2%;
+  margin: 1.5%;
+  border-radius: 15px;
+}
+
+.text {
+  max-width: 50vw;
+}
+
+.submit {
+  padding: 3% 15%;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+.radio p, .radio {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.form-check {
+    margin: 0 3%;
+}
+
+
+.radio .col {
+  margin: 3%;
+}

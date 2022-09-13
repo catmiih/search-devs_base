@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<title>Search Devs - Inovação em contratação de profissionais de tecnologia</title>
 <?php require_once "menu.php" ?>
 
 <body>
@@ -18,20 +19,20 @@
           <p>Inovação em contratação de profissionais de tecnologia.</p>
         </div>
         <div id="campo2">
-          <a class="btn" href="TipoCad.php">Começar agora</a>
+          <a class="btn" href="register.php" style="padding: 5% 20%;">Começar agora</a>
         </div>
       </center>
     </div>
   </div>
 
 
-  <div class="main" style="align-items: center;">
+  <div class="main">
 
     <div id="whatIs" class="tag">
       <div class="card mb-3 text-white" style="max-width: 600px;" id="Card">
         <div class="row g-0" style="text-align: start;">
           <div class="col-md-4">
-            <img src="img/oquee.svg" class="img-fluid rounded-start" style="padding-left: 20px;" ">
+            <img src="img/oquee.svg" class="img-fluid rounded-start" style="padding-left: 20px;">
           </div>
           <div class="col-md-8">
             <div class="card-body">
@@ -91,7 +92,7 @@
         <br>Seja você um profissional ou usuário em busca de nossos devs,<br> Vamos auxiliá-los de forma rápida e intuitiva.
       </p>
       <center>
-        <a class="b btn" href="TipoCad.php">Começar agora</a>
+        <a class="b btn" href="register.php">Começar agora</a>
       </center>
     </div>
   </div>

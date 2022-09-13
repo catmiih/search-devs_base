@@ -2,7 +2,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search Devs - Inovação em contratação de profissionais de tecnologia</title>
 
 
   <link rel="shortcut icon" type="image/png" href="img/logobarradepesquisa.svg" />
@@ -30,10 +29,10 @@
   <div class="collapse navbar-collapse menu" id="navbarTogglerDemo01">
     <ul class="nav jnavbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="TipoCad.php">Inscrever-se</a>
+        <a class="nav-link" href="register.php">Inscrever-se</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Entrar</a>
+        <a class="nav-link" href="login.php">Entrar</a>
       </li>
   </div>
 </nav>
