@@ -32,7 +32,7 @@
       <div class="card mb-3 text-white" style="max-width: 600px;" id="Card">
         <div class="row g-0" style="text-align: start;">
           <div class="col-md-4">
-            <img src="img/oquee.svg" class="img-fluid rounded-start" style="padding-left: 20px;">
+            <img src="img/logooquee.svg" class="img-fluid rounded-start" style="padding-left: 20px;">
           </div>
           <div class="col-md-8">
             <div class="card-body">
