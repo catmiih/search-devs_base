@@ -1,8 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 body{
-    background-color: #06000e;
+    background-color: #07000f;
+}
+h1, h2, h3, h4, h5{
+    font-family: 'Noto Sans', sans-serif;
+    color: #fff;
+    font-weight: bold;
 }
 
+p{
+    font-family: 'Noto Sans Mono', sans-serif;
+    font-size: 20px;
+    color: #fff;
+}
 /* CLASSES JQUERY */
 .tag {
     opacity: 0;
@@ -81,19 +90,9 @@ body{
     position: relative;
     /*display: inline-grid;*/
     text-align: center;
-    margin: 20% 0;
-    
+    margin: 10% 0;
 }
 
-h1,p{
-    color: white; 
-}
-h1{
-    font-weight: bold;
-}
-p{
-    font-weight: 50;
-}
 a{
     color: white;
     text-decoration: none;
@@ -126,19 +125,25 @@ a:hover{
 
 /* O QUE É */
 #whatIs{
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 509.594px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 10% 0;
+    margin: 0px 0px 0px 0px !important;
+    text-align: center;
+
 }
 
-#Card{
+#col-WI{
     background-color: rgba(0,0,0,0);
+    width: 400px;
+    align-items: center;
 }
-
+#WI{
+    vertical-align: ;
+}
 /*COMO UTILIZAR */
 
 #use {

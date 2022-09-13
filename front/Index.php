@@ -29,21 +29,16 @@
   <div class="main">
 
     <div id="whatIs" class="tag">
-      <div class="card mb-3 text-white" style="max-width: 600px;" id="Card">
-        <div class="row g-0" style="text-align: start;">
-          <div class="col-md-4">
-            <img src="img/logooquee.svg" class="img-fluid rounded-start" style="padding-left: 20px;">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Oque é?</h5>
-              <p class="card-text">O Search Devs é uma plataforma que facilita os desenvolvedores autônomos de encontrar novos projetos, que une o desenvolvedor ao projeto que mais tenha a sua cara! Tudo isso de forma automatizada.</p>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col" id="col-WI">
+          <img src="img/logooquee.svg" width='200' id="WI"/>
+        </div>
+        <div class="col" id="col-WI">
+          <h1>O que é?</h1>
+          <p>O Search Devs é uma plataforma que facilita os desenvolvedores autônomos a encontrar novos projetos, ao unir o desenvolvedor ao projeto que mais tenha a sua cara! Tudo isso de forma automatizada.</p>
         </div>
       </div>
     </div>
-
     <div id="use" class="tag">
       <h1>Como entrar para o time?</h1>
       <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -73,7 +68,7 @@
     </div>
 
     <div id="why" class="tag">
-      <h1>O Search Devs te espera</h1>
+      <h1>Vantagens de ser do nosso time</h1>
       <table>
         <tr>
           <td><a class="b btn">Menores taxas</a></td>
@@ -95,7 +90,6 @@
         <a class="b btn" href="register.php">Começar agora</a>
       </center>
     </div>
-  </div>
   </div>
 
   <?php require_once "footer.php" ?>
