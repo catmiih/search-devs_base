@@ -31,9 +31,9 @@
     <div id="whatIs" class="tag">
       <div class="row">
         <div class="col" id="col-WI">
-          <img src="img/logooquee.svg" width='200' id="WI"/>
+          <img src="img/logooquee.svg" id="WI"/>
         </div>
-        <div class="col" id="col-WI">
+        <div class="col" id="col-WI2">
           <h1>O que é?</h1>
           <p>O Search Devs é uma plataforma que facilita os desenvolvedores autônomos a encontrar novos projetos, ao unir o desenvolvedor ao projeto que mais tenha a sua cara! Tudo isso de forma automatizada.</p>
         </div>
@@ -64,11 +64,11 @@
           </div>
         </div>
       </div>
-      <p class="tag">Inicie sua trajetória como um profissional oficial do Search Devs. Fácil e rápido!</p>
+      <p class="tag">Agora é só iniciar sua trajetória como um desenvolvedor com o Search Devs&trade;</p>
     </div>
 
     <div id="why" class="tag">
-      <h1>Vantagens de ser do nosso time</h1>
+      <h1>Trabalhando conosco você encontra</h1>
       <table>
         <tr>
           <td><a class="b btn">Menores taxas</a></td>

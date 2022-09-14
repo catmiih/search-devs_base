@@ -38,7 +38,7 @@
 
                             <div class="row">
                                 <input type="text" request placeholder="CEP" class="col form-control" name="" required>
-                                <input type="text" request placeholder="CPF" class="col form-control" name="cpf" maxlength="14" minlength="14" onkeypress="cpf(this)" required>
+                                <input type="text" request placeholder="CPF" class="col form-control" name="cpf" id="cpf" maxlength="14" minlength="14" onkeypress="ReadCpf(this)" required>
                                 <br><br>
                                 <div class="row radio">
                                     <p class="col">Sexo:</p>

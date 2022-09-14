@@ -1,17 +1,24 @@
+
 (() => {
     'use strict'
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     const forms = document.querySelectorAll('.needs-validation')
+    const cpf = document.getElementById('cpf');
 
     // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
         form.addEventListener('submit', event => {
-            
+
             if (!form.checkValidity()) {
                 event.preventDefault()
                 event.stopPropagation()
             }
+
+            if(validateCPF(cpf.value)) {
+                form.classList.add(':invalid')
+            }
+
             form.classList.add('was-validated')
         }, false)
     })
@@ -29,52 +36,58 @@ function onlynumber(evt) {
     }
 }
 
+
 function validateCPF(cpf_n) {
+    var sum;
+    var rest;
+    var num = 11;
 
-    for (i = 0; i <= 9; i++) {
-        number = cpf_n.substr(i, i);
+    sum = 0;
 
-        if (number == ".") {
+    for (i = 1; i <= 11; i++) {
 
-        } else {
-            sum += (parseInt(number) * i)
+        var numb = cpf_n.substring(i - 1, i)
+
+        if (numb.includes('.')) { num++ }
+        else {
+            sum = sum + (parseInt(cpf_n.substring(i - 1, i)) * (num - i));
         }
+    }
 
-        total = 11 - (sum % 11)
+    rest = (sum * 10) % 11;
 
-        if (total > 10) {
-            total = 0
-        }
+    if (rest >= 10)
+        rest = 0
 
-        if (total == cpf_n.substr(12, 12)) {
-            /* Segundo verificador */
+    if (rest != parseInt(cpf_n.substring(12, 13)))
+        return false;
 
-            for (i = 0; i <= 12; i++) {
-                number2 = cpf_n.substr(i, i);
-        
-                if (number2 == ".") {
-        
-                } else {
-                    sum2 += (parseInt(number2) * i)
-                }
-        
-                total2 = 11 - (sum2 % 11)
-        
-                if (total2 > 10) {
-                    total2 = 0
-                }
-        
-                if (total2 == cpf_n.substr(13, 13)) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
+    sum = 0;
+    num = 12;
+
+    for (i = 1; i <= 13; i++) {
+
+        var numb = cpf_n.substring(i - 1, i)
+
+        if (!numb.includes('.') && !numb.includes('-')) {
+            sum = sum + (parseInt(cpf_n.substring(i - 1, i)) * (num - i));
         }
         else {
-            return false;
+            num++
         }
+    }
+
+    rest = (sum * 10) % 11;
+    console.log(rest)
+
+    if (rest >= 10)
+        rest = 0
+
+    if (rest != parseInt(cpf_n.substring(13, 14))) {
+        return false
+    }
+    else {
+        return true
     }
 }
 
@@ -90,6 +103,20 @@ function cellphone(cellphone) {
         cellphone.value = cellphone.value + '-';
 }
 
+function ReadCpf(cpf) {
+    onlynumber();
+
+    if (cpf.value.length == 3)
+        cpf.value = cpf.value + '.';
+
+    if (cpf.value.length == 7)
+        cpf.value = cpf.value + '.';
+
+    if (cpf.value.length == 11)
+        cpf.value = cpf.value + '-';
+
+}
+
 function date(date) {
     onlynumber();
     if (date.value.length == 2)
@@ -98,16 +125,4 @@ function date(date) {
         date.value = date.value + '/';
 }
 
-
-function cpf(cpf) {
-    onlynumber();
-
-    if (cpf.value.length == 3)
-        cpf.value = cpf.value + '.'; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
-    if (cpf.value.length == 7)
-        cpf.value = cpf.value + '.';
-    if (cpf.value.length == 11)
-        cpf.value = cpf.value + '-';
-
-    validateCPF(cpf)
-}
+/**/
