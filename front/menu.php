@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" type="text/css" href="css/css.css" />
   <link rel="stylesheet" type="text/css" href="css/nav.css" />
-
+  <link rel="stylesheet" href="../assets/extend/fontawesome/css/all.min.css" />
 
   <script src="../assets/extend/js/bootstrap.js"></script>
   <script src="../assets/extend/js/jquery.js"></script>
@@ -29,10 +29,14 @@
   <div class="collapse navbar-collapse menu" id="navbarTogglerDemo01">
     <ul class="nav jnavbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="register.php">Inscrever-se</a>
+        <a class="nav-link" href="register.php">
+        <i class="fa-sharp fa-solid fa-square-plus"></i> &nbsp; Inscrever-se
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login.php">Entrar</a>
+        <a class="nav-link" href="login.php">
+          <i class="fa-sharp fa-solid fa-user"></i> &nbsp; Entrar
+        </a>
       </li>
   </div>
 </nav>

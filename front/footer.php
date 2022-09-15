@@ -1,3 +1,3 @@
 <footer>
-    SEARCH DEVS™2022
+    SEARCH DEVS™ &copy; 2022
 </footer>

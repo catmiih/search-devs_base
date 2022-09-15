@@ -4,7 +4,8 @@
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     const forms = document.querySelectorAll('.needs-validation')
-    const cpf = document.getElementById('cpf');
+    const cpf = document.querySelector('#cpf');
+    const cep = document.querySelector('#cep');
 
     // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
@@ -13,16 +14,16 @@
             if (!form.checkValidity()) {
                 event.preventDefault()
                 event.stopPropagation()
-            }
 
-            if(validateCPF(cpf.value)) {
-                form.classList.add(':invalid')
+                console.log(validateCEP(cep.value))
             }
 
             form.classList.add('was-validated')
         }, false)
     })
 })();
+
+/* Only Numbers in required Input*/
 
 function onlynumber(evt) {
     var theEvent = evt || window.event;
@@ -36,6 +37,7 @@ function onlynumber(evt) {
     }
 }
 
+/* Validations */
 
 function validateCPF(cpf_n) {
     var sum;
@@ -78,7 +80,6 @@ function validateCPF(cpf_n) {
     }
 
     rest = (sum * 10) % 11;
-    console.log(rest)
 
     if (rest >= 10)
         rest = 0
@@ -91,6 +92,25 @@ function validateCPF(cpf_n) {
     }
 }
 
+function validateCEP(cep) {
+    $.ajax({
+        url:"https://cdn.apicep.com/file/apicep/"+cep+".json",
+        type: "GET",
+        success: function(response) {
+            console.log(response);
+
+            if(response.code != "not_found") {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+    })
+}
+
+
+/* Convert Inputs */
 function cellphone(cellphone) {
     onlynumber();
 
@@ -125,4 +145,8 @@ function date(date) {
         date.value = date.value + '/';
 }
 
-/**/
+function CEP(cep) {
+    onlynumber();
+    if (cep.value.length == 5)
+        cep.value = cep.value + '-'; 
+}

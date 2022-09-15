@@ -1,6 +1,6 @@
 function Mudarestado(id) {
     var display = document.getElementById(id).style.display;
-    if(display == "none")
+    if (display == "none")
         document.getElementById(id).style.display = 'block';
     else
         document.getElementById(id).style.display = 'none';
