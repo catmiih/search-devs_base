@@ -13,21 +13,9 @@
 
     </div>
     <h1>Continue o Cadastro</h1>
-    <div class="FormTel">
         <form class="Tel">
-            <label for="Tel">Tipo de Telefone:</label>
-            <br><br>
-            <select id="TipoTel" name="" request>
-            <option value="Celular">Celular</option>
-            <option value="Comercial">Comercial</option>
-            <option value="Residencial">Residencial</option>
-            <option value="Principal">Principal</option>
-            </select>
-            <br><br>
-           <input request type="tel" placeholder="Telefone" name="">
-           <br><br>
-            <button type="button" onClick="Mudarestado('F')">Avançar</button>
-    </div>    
+            
+      
     <div class="FormLogin" id="F">
         <h1>Informações de login</h1>
             <br>

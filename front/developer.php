@@ -32,13 +32,13 @@
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="Data de Nascimento" class="col form-control" name="" maxlength="10" minlength="10" onkeypress="date(this)" required>
+                                <input type="text" placeholder="Data de Nascimento" class="col form-control" name="" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
                                 <input type="text" placeholder="Telefone" class="col form-control" name="" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>
                             </div>
 
                             <div class="row">
                                 <input type="text" placeholder="CEP" class="col form-control" name="" id="cep"maxlength="9" minlength="9" onkeypress="CEP(this)" required>
-                                <input type="text" placeholder="CPF" class="col form-control" name="cpf" id="cpf" maxlength="14" minlength="15" onkeypress="ReadCpf(this)" required>
+                                <input type="text" placeholder="CPF" class="col form-control" name="cpf" id="cpf" maxlength="14" minlength="14" onkeypress="ReadCpf(this)" required>
                                 <br><br>
                                 <div class="row radio">
                                     <p class="col">Sexo:</p>

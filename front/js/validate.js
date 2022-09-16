@@ -1,11 +1,13 @@
+const cpf = document.querySelector('#cpf');
+const cep = document.querySelector('#cep');
+const data = document.querySelector('#data');
 
 (() => {
     'use strict'
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     const forms = document.querySelectorAll('.needs-validation')
-    const cpf = document.querySelector('#cpf');
-    const cep = document.querySelector('#cep');
+
 
     // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
@@ -15,7 +17,7 @@
                 event.preventDefault()
                 event.stopPropagation()
 
-                console.log(validateCEP(cep.value))
+                console.log(validateDate(data.value))
             }
 
             form.classList.add('was-validated')
@@ -94,12 +96,12 @@ function validateCPF(cpf_n) {
 
 function validateCEP(cep) {
     $.ajax({
-        url:"https://cdn.apicep.com/file/apicep/"+cep+".json",
+        url: "https://cdn.apicep.com/file/apicep/" + cep + ".json",
         type: "GET",
-        success: function(response) {
+        success: function (response) {
             console.log(response);
 
-            if(response.code != "not_found") {
+            if (response.code != "not_found") {
                 return true
             }
             else {
@@ -109,8 +111,24 @@ function validateCEP(cep) {
     })
 }
 
+function validateDate(date) {
+    var dateTime= new Date()
+    var year = dateTime.getFullYear()
 
-/* Convert Inputs */
+    if (parseInt(date.substring(0, 2)) <= 31) {
+        if(parseInt(date.substring(3, 5)) <= 12){
+            if(parseInt(date.substring(6)) <= year-16) {
+                return true
+            }else
+                return false
+        }else
+            return false
+    }else 
+        return false
+}
+
+
+/* ============ Convert Inputs ============ */
 function cellphone(cellphone) {
     onlynumber();
 
@@ -148,5 +166,5 @@ function date(date) {
 function CEP(cep) {
     onlynumber();
     if (cep.value.length == 5)
-        cep.value = cep.value + '-'; 
+        cep.value = cep.value + '-';
 }
