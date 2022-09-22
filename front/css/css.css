@@ -1,225 +1,306 @@
-body{
-    background-color: #07000f;
+body {
+  background-color: #07000f;
 }
-h1, h2, h3, h4, h5{
-    font-family: 'Noto Sans', sans-serif;
-    color: #fff;
-    font-weight: bold;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Noto Sans", sans-serif;
+  color: #fff;
+  font-weight: bold;
 }
 
-p{
-    font-family: 'Noto Sans Mono', sans-serif;
-    font-size: 20px;
-    color: #fff;
+p {
+  font-family: "Noto Sans Mono", sans-serif;
+  font-size: 20px;
+  color: #fff;
 }
 /* CLASSES JQUERY */
 .tag {
-    opacity: 0;
-    transform: translate3d(0, -10px, 0);
-    transition: .6s;
-  }
-  
+  opacity: 0;
+  transform: translate3d(0, -10px, 0);
+  transition: 0.6s;
+}
+
 .tag-visible {
-    opacity: 1;
-    transform: translate3d(0,0, 0);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .jumbvideo {
-    position: static;
-    overflow: hidden;
-    background-color: #000;
-    width:100%;
-    height:100%;
+  position: static;
+  overflow: hidden;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
 }
 .jumbvideo video {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .jumbvideo .container {
-    z-index: 2;
-    position: relative;
+  z-index: 2;
+  position: relative;
 }
 
-.jumbvideo #campo1 h1{
-    margin: 2% 0;
+.jumbvideo #campo1 h1 {
+  margin: 2% 0;
 }
 
-.jumbvideo #campo1{
-    margin: 10% 0;
+.jumbvideo #campo1 {
+  margin: 10% 0;
 }
 
-#campo1 p{
-    opacity: 1;
-    color: #fff;
+#campo1 p {
+  opacity: 1;
+  color: #fff;
 }
 
-#campo1 h1{
-    font-size: 4rem;
-    text-transform: uppercase;
+#campo1 h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
 }
 
 #campo2 {
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 
-    width: 20rem;
+  width: 20rem;
 }
 
 .text {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-
-#Text{
-    display: inline-block;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    align-items: center;
+#Text {
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  align-items: center;
 }
 
-.main{
-    position: relative;
-    /*display: inline-grid;*/
-    text-align: center;
-    margin: 10% 0;
+.main {
+  position: relative;
+  /*display: inline-grid;*/
+  text-align: center;
+  margin: 10% 0;
 }
 
-a{
-    color: white;
-    text-decoration: none;
+a {
+  color: white;
+  text-decoration: none;
 }
-a:hover{
-    color: white;
+a:hover {
+  color: white;
 }
 
 .btn {
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    height: 100%;
-    border-radius: 10px;
-    background: #092565;
-    background: radial-gradient(circle, #092565 0%, #6e05f5 100%);
-    animation-duration: 2s;
-    background-size: 400% 400%;
-    animation: Gradient 5s ease infinite;
-    transition: transform .5s;
-    transform: translateX(0);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  height: 100%;
+  border-radius: 10px;
+  background: #092565;
+  background: radial-gradient(circle, #092565 0%, #6e05f5 100%);
+  animation-duration: 2s;
+  background-size: 400% 400%;
+  animation: Gradient 5s ease infinite;
+  transition: transform 0.5s;
+  transform: translateX(0);
 
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
-.btn:hover{
-    transform: translateX(1px) scale(1.05);
-    color: #fff;
+.btn:hover {
+  transform: translateX(1px) scale(1.05);
+  color: #fff;
 }
 
 /* O QUE É */
-#whatIs{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 20% 0;
-    text-align: center;
-
+#whatIs {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20% 0;
+  text-align: center;
 }
 
-#col-WI2{
-    width: 30vw;
-    background-color: rgba(0,0,0,0);
-    align-items: center;
-    text-align: left;
-    margin: 0;
+#col-WI2 {
+  width: 30vw;
+  background-color: rgba(0, 0, 0, 0);
+  align-items: center;
+  text-align: left;
+  margin: 0;
 }
-
 
 #col-WI {
-    width: 30vw;
-    margin: 0;
+  width: 30vw;
+  margin: 0;
 }
 
 #WI {
-    width: 55%;
+  width: 55%;
 }
 
 /*COMO UTILIZAR */
 #use {
-    margin: 10%;
+  margin: 10%;
 }
 
-#use div{
-    margin: 3% 0;
+#use div {
+  margin: 3% 0;
 }
 
 .card {
-    background-color:rgb(12, 12, 12);
-    color: #FFF;
-    align-items: center;
+  background-color: rgb(12, 12, 12);
+  color: #fff;
+  align-items: center;
 }
 
 #why {
-    margin: 20% 0;
+  margin: 20% 0;
 }
 
-#why table{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin: 2% 0;
+#why .col {
+  margin: 1% 0;
 }
 
-#why td {
-    padding: 2%;
+#why .row {
+  width: 55%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.b{
-    color: white;
-    width: 20rem;
-    height: 5rem;
-    vertical-align: middle;
-    display: table-cell;
-    padding: 5%;
+#why .col {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+}
+
+.b {
+  color: white;
+  width: 20rem;
+  height: 5rem;
+  vertical-align: middle;
+  display: table-cell;
+  padding: 5%;
 }
 
 #start {
-    margin: 20% 0 0;
+  margin: 20% 0 0;
+  width: 40%;
+
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#start .b {
-    height: 3rem;
-}
+#start .btn {
+    padding: 3% 20%;
+  }
 
-footer{
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.712);
-    color: #FFF;
-    width: 100%;
-    height: 100px;    
-    text-align: center;
-    line-height: 100px;
+
+footer {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.712);
+  color: #fff;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
 }
 
 @keyframes Gradient {
-    0% {
-        background-position: 0% 50%
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 800px) {
+
+    .main {
+        margin: 20% 0;
     }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0% 50%
-    }
+
+  #whatIs,
+  #use,
+  #why,
+  #start {
+    margin: 50% 0;
+    padding: 0 10%;
+  }
+
+  #whatIs {
+    height: 100%;
+    display: inline;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+    margin: 50% 0;
+
+    padding: 0 !important;
+  }
+
+  #whatIs .row {
+    padding: 20% 5%;
+    margin: 0 0;
+  }
+
+  #whatIs h1,
+  #whatIs p {
+    text-align: center;
+  }
+
+  #whatIs #col-WI {
+    display: none;
+  }
+
+  .b {
+    color: white;
+    padding: 5%;
+    width: 50rem;
+  }
+
+  #why .col {
+    width: 100%;
+    margin: 5% 0;
+
+    flex:none;
+  }
+
+  #why .row {
+    width: 100%;
+    display: flex;
+  }
+
+  #start {
+    width: 100%;
+  }
+
+  #start .btn {
+    padding: 5% 20%;
+  }
+
+  h1 {
+    margin: 10% 0;
+  }
 }

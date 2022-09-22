@@ -11,6 +11,18 @@
         padding: 3% 12%;
         margin: 1%;
     }
+
+    @media (max-width: 800px) {
+
+        #campo1 {
+            padding: 10%;
+        }
+
+        #campo1 h1 {
+            font-size: 2.5rem;
+            padding: 10% 0;
+        }
+    }
 </style>
 
 <body>

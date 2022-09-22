@@ -31,7 +31,7 @@
     <div id="whatIs" class="tag">
       <div class="row">
         <div class="col" id="col-WI">
-          <img src="img/logooquee.svg" id="WI"/>
+          <img src="img/logooquee.svg" id="WI" />
         </div>
         <div class="col" id="col-WI2">
           <h1>O que é?</h1>
@@ -69,25 +69,34 @@
 
     <div id="why" class="tag">
       <h1>Trabalhando conosco você encontra</h1>
-      <table>
-        <tr>
-          <td><a class="b btn">Menores taxas</a></td>
-          <td><a class="b btn">Maior segurança</a></td>
-        </tr>
-        <tr>
-          <td><a class="b btn">Plataforma Otimizada</a></td>
-          <td><a class="b btn">Filtro de contratação</a></td>
-        </tr>
-      </table>
+      <div class="container text-center justify-content-md-center">
+        <div class="row">
+          <div class="col col-lg-6">
+            <a class="b btn">Menores taxas</a>
+          </div>
+          <div class="col col-lg-6">
+            <a class="b btn">Maior segurança</a>
+          </div>
+          <div class="col col-lg-6">
+            <a class="b btn">Plataforma Otimizada</a>
+          </div>
+          <div class="col col-lg-6">
+            <a class="b btn">Filtro de contratação</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="tag" id="start">
       <h1>Junte-se a nós agora!</h1>
-      <p>Agora que você já nos conhece, é a hora de se juntar ao Search Devs! Não é mesmo?
-        <br>Seja você um profissional ou usuário em busca de nossos devs,<br> Vamos auxiliá-los de forma rápida e intuitiva.
+      <p>
+        Agora que você já nos conhece, é a hora de se juntar ao Search Devs! Não é mesmo?
+        <br>
+        <br>
+        Seja você um profissional ou usuário em busca de nossos devs, vamos auxiliá-los de forma rápida e intuitiva.
       </p>
       <center>
-        <a class="b btn" href="register.php">Começar agora</a>
+        <a class="btn" href="register.php">Começar agora</a>
       </center>
     </div>
   </div>

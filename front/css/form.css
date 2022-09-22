@@ -29,3 +29,51 @@ p {
 .radio .col {
   margin: 3%;
 }
+
+@media (max-width: 800px) {
+
+  .text {
+    max-width: 80vw;
+  }
+
+  #campo1 {
+    width: 100%;
+    margin: 10% 0;
+    padding: 0;
+  }
+
+  #campo1 h1 {
+    font-size: 2.5rem;
+  }
+
+  .form {
+    display: inline;
+  }
+
+  .form input[type="text"], .form input[type="email"], .form input[type="password"], .form-eye {
+    padding: 4%;
+    margin: 1.5%;
+    border-radius: 15px;
+  }
+
+  .radio {
+    margin: 5% 0;
+    width: 50%;
+
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .radio p {
+    width: 100%;
+    font-size: 1.7rem;
+  }
+
+  .col {
+    width: 100%;
+    margin: 5% 0;
+
+    flex:none;
+  }
+
+}
