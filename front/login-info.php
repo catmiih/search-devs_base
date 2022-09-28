@@ -48,18 +48,14 @@
         <div class="container text" style="width: 100%; height: 100vh;">
             <center>
                 <div id="campo1">
-                    <h1>Cadastre-se</h1>
-                    <p>Informações de login.</p>
+                    <h1>Login</h1>
+                    <p>Bem vindo novamente, faça seu login.</p>
 
                     <div class="form">
                         <form action="register-login.php" class="needs-validation" novalidate method="POST">
 
                             <div class="input-group">
-                                <input type="text" placeholder="Nome de usuário" class="col form-control" name="" id="" maxlength="25" minlength="5" required>
-                            </div>
-
-                            <div class="input-group">
-                                <input type="email" placeholder="Email" class="col form-control" name="" id="" minlength="10" required>
+                                <input type="text" placeholder="Usuário ou Email" class="col form-control" name="" id="" maxlength="25" minlength="5" required>
                             </div>
 
                             <div class="input-group mb-3">
@@ -68,13 +64,7 @@
                                 </a>
                             </div>
 
-                            <div class="input-group mb-3">
-                                <input type="password" placeholder="Confirmar senha" class="form-control" name="" id="confirmPass" minlength="8" required>
-                                <a class="fa-solid fa-eye form-eye" id="Cpass" data-toggle-class="fa-eye, fa-eye-slash" data-target="#password_field" href="#" style="color: #001;">
-                                </a>
-                            </div>
-
-                            <button type="submit" class="btn submit">Finalizar cadastro</button>
+                            <button type="submit" class="btn submit">Logar</button>
                         </form>
                     </div>
                 </div>

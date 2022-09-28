@@ -34,7 +34,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login.php">
+        <a class="nav-link" href="login-info.php">
           <i class="fa-sharp fa-solid fa-user"></i> &nbsp; Entrar
         </a>
       </li>
