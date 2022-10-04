@@ -73,10 +73,10 @@ p {
     width: 100%;
     margin: 5% 0;
 
-    flex:none;
+    flex: none;
   }
 
 }
-div.checkbox{
-  display: flex;
+form#check{
+  text-align: start;
 }
