@@ -24,7 +24,7 @@
                     <h1>Finalizar Cadastro</h1>
                     <h2>Bem vindo, desenvolvedor.</h2>
                     <p>Por favor, selecione sua(s) área(s) de atuação:</p>
-                    <form>
+                    <form action="Level.php">
                         <div id="check" class="row row-cols-4">
                         <div class="col-4">
                                 <input class="form-check-input" type="checkbox" name="Skills" id="Artificial Intelligence">

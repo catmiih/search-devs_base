@@ -80,3 +80,7 @@ p {
 #check{
   text-align: start;
 }
+#form{
+  display: inline-flex;
+}
+
