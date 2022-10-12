@@ -25,7 +25,7 @@
                     <p>Bem vindo, desenvolvedor. Preencha os campos.</p>
 
                     <div class="form">
-                        <form action="register-login.php" class="needs-validation" novalidate method="POST">
+                        <form action="skills.php" class="needs-validation" novalidate method="POST">
 
                             <div class="row">
                                 <input type="text" placeholder="Nome Completo" class="col form-control" name="" minlength="5" required>

@@ -52,7 +52,7 @@
                     <p>Informações de login.</p>
 
                     <div class="form">
-                        <form action="register-login.php" class="needs-validation" novalidate method="POST">
+                        <form action="" class="needs-validation" novalidate method="POST">
 
                             <div class="input-group">
                                 <input type="text" placeholder="Nome de usuário" class="col form-control" name="" id="" maxlength="25" minlength="5" required>

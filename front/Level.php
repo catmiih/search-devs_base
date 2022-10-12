@@ -25,7 +25,7 @@
                         <h2>Bem vindo, desenvolvedor.</h2>
                         <p>Por favor, selecione sua(s) habilidades:</p>
                     </div>
-                    <form>
+                    <form action="register-login">
                         <div id="form">
                             <input class="col form-control" type="text" name="SkillsLevel" placeholder="Ex: HTML5" style="margin-right: 15px;">
                             <p style="margin: 5px;">Nível:</p> 
