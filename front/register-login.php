@@ -10,30 +10,43 @@
         color: #fff;
     }
 
-    input,
-    .input-group {
-        margin: 0% 0 !important;
+    .form {
+        width: 40vw !important;
     }
 
-    input {
-        margin: 2% 0 !important;
+    .form-check {
+        text-align: left;
     }
 
     .form button {
         margin: 3% 0;
     }
 
-    .form-eye {
-        margin: auto !important;
-        background-color: #fff;
-        padding: 4.1%;
+    .btn-eye {
+        scale: 0.8;
     }
+
 
     @media (max-width: 800px) {
         .form-eye {
             margin: auto !important;
             background-color: #fff;
             padding: 5.5%;
+        }
+
+        .text {
+            max-width: 90vw;
+        }
+
+        .form-check {
+            padding: 0 15%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-check input {
+            margin: 6%;
+            scale: 1.3;
         }
     }
 </style>
@@ -45,7 +58,7 @@
             <source src="img/back_image.mp4" type="video/mp4" />
         </video>
 
-        <div class="container text" style="width: 100%; height: 100vh;">
+        <div class="container text" style="width: 100vw; height: 100vh;">
             <center>
                 <div id="campo1">
                     <h1>Cadastre-se</h1>
@@ -62,17 +75,40 @@
                                 <input type="email" placeholder="Email" class="col form-control" name="" id="" minlength="10" required>
                             </div>
 
-                            <div class="input-group mb-3">
-                                <input type="password" placeholder="Senha" class="form-control" name="" id="pass" minlength="8" required>
-                                <a class="fa-solid fa-eye form-eye" id="Epass" data-toggle-class="fa-eye, fa-eye-slash" data-target="#password_field" href="#" style="color: #001;">
-                                </a>
+                            <div class="col-xs-6">
+                                <div class="input-group">
+                                    <input type="password" placeholder="Senha" class="form-control" name="" id="pass" minlength="8" required>
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-eye btn-default" id="Epass">
+                                            <i class="fa-solid fa-eye" id="icon"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6">
+                                <div class="input-group">
+                                    <input type="password" placeholder="Confirmar senha" class="form-control" name="" id="confirmPass" minlength="8" required>
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-eye btn-default" id="Cpass">
+                                            <i class="fa-solid fa-eye iconC" id="icon"></i>
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
 
                             <div class="input-group mb-3">
-                                <input type="password" placeholder="Confirmar senha" class="form-control" name="" id="confirmPass" minlength="8" required>
-                                <a class="fa-solid fa-eye form-eye" id="Cpass" data-toggle-class="fa-eye, fa-eye-slash" data-target="#password_field" href="#" style="color: #001;">
-                                </a>
+                                
                             </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="termos">
+                                <label class="form-check-label" for="termos" style="margin: 0 1% 0 0;">
+                                    Eu concordo com os
+                                </label>
+                                <a href="" style="font-weight: 700;">Termos de contrato SEARCH DEVS &#8482;</a>
+                            </div>
+                            <br>
 
                             <button type="submit" class="btn submit">Finalizar cadastro</button>
                         </form>
@@ -87,6 +123,7 @@
     <!-- Import JS Functions -->
     <script src="js/validate.js"></script>
 
+
     <script>
         let pass = document.querySelector('#Epass');
 
@@ -95,8 +132,10 @@
 
             if (input.getAttribute('type') == 'password') {
                 input.setAttribute('type', 'text')
+                $('#icon').removeClass("fa-eye").addClass("fa-eye-slash");
             } else {
                 input.setAttribute('type', 'password')
+                $('#icon').removeClass("fa-eye-slash").addClass("fa-eye");
             }
         });
 
@@ -107,8 +146,10 @@
 
             if (input.getAttribute('type') == 'password') {
                 input.setAttribute('type', 'text')
+                $('.iconC').removeClass("fa-eye").addClass("fa-eye-slash");
             } else {
                 input.setAttribute('type', 'password')
+                $('.iconC').removeClass("fa-eye-slash").addClass("fa-eye");
             }
         });
     </script>

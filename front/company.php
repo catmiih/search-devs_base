@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<title>Search Devs - Registre-se como Desenvolvedor</title>
+<title>Search Devs - Registre-se como Empreendedor</title>
 <?php require_once "menu.php" ?>
 <link rel="stylesheet" href="css/form.css">
 
@@ -25,26 +25,26 @@
                     <p>Bem vindo, empreendedor. Preencha os campos.</p>
 
                     <div class="form">
-                        <form action="register-login.php" class="needs-validation" novalidate method="POST">
+                        <form action="skills.php" class="needs-validation" novalidate method="POST">
 
-                            <div class="row">
+                        <div class="row">
                                 <input type="text" placeholder="Nome da empresa" class="col form-control" name="" minlength="5" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="Nome Responsável" class="col form-control" name="" id="nome responsavel"  minlength="10" required>
+                                <input type="text" placeholder="Nome responsável" class="col form-control" name="" minlength="5" required>
                             </div>
 
                             <div class="row">
-                                 <input type="text" placeholder="Data de Nascimento" class="col form-control" name="" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
+                                <input type="text" placeholder="Data de Nascimento" class="col form-control" name="" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
                                 <input type="text" placeholder="Telefone" class="col form-control" name="" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="CNPJ" class="col form-control" name="" id="cep"maxlength="14" minlength="14" onkeypress="CNPJ(this)" required>
+                                <input type="text" placeholder="CNPJ" class="col form-control" name="" id="cep"maxlength="9" minlength="9" onkeypress="CEP(this)" required>
                                 <input type="text" placeholder="CPF" class="col form-control" name="cpf" id="cpf" maxlength="14" minlength="14" onkeypress="ReadCpf(this)" required>
-                                <br><br>
                             </div>
+
                             <br>
                             
                             <button type="submit" class="btn submit">Continuar</button>

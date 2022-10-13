@@ -1,7 +1,14 @@
-.form input[type="text"], .form input[type="email"], .form input[type="password"], .form-eye {
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
   padding: 3%;
   margin: 1.5%;
   border-radius: 15px;
+}
+
+.form {
+  display: block;
+  width: 100% !important;
 }
 
 .text {
@@ -16,24 +23,44 @@ p {
   font-size: 1.1rem;
 }
 
-.radio p, .radio {
+.btn-eye {
+  color: #000;
+  font-weight: bold;
+  scale: 0.75;
+  margin-top: -1% !important;
+  border-radius: 1rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: #fff !important;
+
+  width: 3rem !important;
+}
+
+.btn-eye:hover {
+  transform: translateX(0px) scale(1);
+}
+
+#icon {
+  color: #000;
+}
+
+.radio p,
+.radio {
   font-weight: 700;
   font-size: 1.25rem;
 }
 
 .form-check {
-    margin: 0 3%;
+  margin: 0 3%;
 }
-
 
 .radio .col {
   margin: 3%;
 }
 
 @media (max-width: 800px) {
-
   .text {
-    max-width: 80vw;
+    max-width: 70vw;
   }
 
   #campo1 {
@@ -43,14 +70,16 @@ p {
   }
 
   #campo1 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .form {
     display: inline;
   }
 
-  .form input[type="text"], .form input[type="email"], .form input[type="password"], .form-eye {
+  .form input[type="text"],
+  .form input[type="email"],
+  .form input[type="password"] {
     padding: 4%;
     margin: 1.5%;
     border-radius: 15px;
@@ -69,18 +98,28 @@ p {
     font-size: 1.7rem;
   }
 
+  .btn-eye {
+    font-weight: bold;
+    scale: 0.8;
+    margin-top: 1% !important;
+    border-radius: 1rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #fff !important;
+
+    width: 3rem !important;
+  }
+
   .col {
     width: 100%;
     margin: 5% 0;
 
     flex: none;
   }
-
 }
-#check{
+#check {
   text-align: start;
 }
-#form{
+#form {
   display: inline-flex;
 }
-

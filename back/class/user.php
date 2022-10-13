@@ -43,7 +43,7 @@ class User {
             /* Register == True */
             $data = $sql -> fetch();
             session_start();
-            $_SESSION['ID'] = $data['login'];
+            $_SESSION['ID'] = $data[MD5($email)];
             return true;
         }else{
             /* Not Register */

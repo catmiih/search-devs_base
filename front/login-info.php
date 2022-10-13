@@ -10,6 +10,15 @@
         color: #fff;
     }
 
+    .form {
+        width: 30vw !important;
+    }
+
+    #campo1 h1 {
+        font-size: 3rem;
+    }
+
+    
     input,
     .input-group {
         margin: 0% 0 !important;
@@ -21,19 +30,23 @@
 
     .form button {
         margin: 3% 0;
+        width: 100%;
     }
 
-    .form-eye {
-        margin: auto !important;
-        background-color: #fff;
-        padding: 4.1%;
+
+    .forget {
+        display: block;
+        text-align: left;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-weight: 700;
     }
 
     @media (max-width: 800px) {
-        .form-eye {
-            margin: auto !important;
-            background-color: #fff;
-            padding: 5.5%;
+
+        .form {
+            width: 100vw;
+            ;
         }
     }
 </style>
@@ -48,23 +61,36 @@
         <div class="container text" style="width: 100%; height: 100vh;">
             <center>
                 <div id="campo1">
-                    <h1>Login</h1>
+                    <h1>Acessar conta</h1>
                     <p>Bem vindo novamente, faça seu login.</p>
 
                     <div class="form">
-                        <form action="register-login.php" class="needs-validation" novalidate method="POST">
+                        <form action="register-login.php" method="POST">
 
                             <div class="input-group">
                                 <input type="text" placeholder="Usuário ou Email" class="col form-control" name="" id="" maxlength="25" minlength="5" required>
                             </div>
 
-                            <div class="input-group mb-3">
-                                <input type="password" placeholder="Senha" class="form-control" name="" id="pass" minlength="8" required>
-                                <a class="fa-solid fa-eye form-eye" id="Epass" data-toggle-class="fa-eye, fa-eye-slash" data-target="#password_field" href="#" style="color: #001;">
-                                </a>
+                            <div class="pass-eye">
+
                             </div>
 
-                            <button type="submit" class="btn submit">Logar</button>
+                            <div class="col-xs-6">
+                                <div class="input-group">
+                                    <input type="password" placeholder="Senha" class="form-control" name="" id="pass" minlength="8" required>
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-eye btn-default" id="Epass">
+                                            <i class="fa-solid fa-eye" id="icon"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <a href="" class="forget">Esqueci minha senha</a>
+                            <br>
+
+                            <button type="submit" class="btn submit">ENTRAR</button>
+                            <p>Ainda não tem conta? <a href="" style="font-weight: 700">Cadastre-se</a></p>
                         </form>
                     </div>
                 </div>
@@ -85,8 +111,10 @@
 
             if (input.getAttribute('type') == 'password') {
                 input.setAttribute('type', 'text')
+                $('#icon').removeClass("fa-eye").addClass("fa-eye-slash");
             } else {
                 input.setAttribute('type', 'password')
+                $('#icon').removeClass("fa-eye-slash").addClass("fa-eye");
             }
         });
 
@@ -97,8 +125,10 @@
 
             if (input.getAttribute('type') == 'password') {
                 input.setAttribute('type', 'text')
+                $('#icon').removeClass("fa-eye").addClass("fa-eye-slash");
             } else {
                 input.setAttribute('type', 'password')
+                $('#icon').removeClass("fa-eye-slash").addClass("fa-eye");
             }
         });
     </script>
