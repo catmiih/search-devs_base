@@ -30,7 +30,9 @@
                     <h2>Bem vindo, desenvolvedor.</h2>
                     <p>Por favor, selecione sua(s) habilidades:</p>
                 </div>
-                <form action="register-login">
+
+                <form action="">
+
                     <div id="form">
                         <input class="col form-control skill" type="text" name="" placeholder="Ex: HTML5" style="margin-right: 2%;">
                         <input class="col form-control skill" list="datalistOptions" id="exampleDataList" placeholder="Área de Atuação">
@@ -40,19 +42,50 @@
                         </datalist>
 
                         <p style="margin: 5px;">Nível:</p>
-                        <button class="btn-select btn-level level-1">1</button>
+
+                        <!-- <button class="btn-select btn-level level-1">1</button>
                         <button class="btn-select btn-level level-2">2</button>
                         <button class="btn-select btn-level level-3">3</button>
                         <button class="btn-select btn-level level-4">4</button>
-                        <button class="btn-select btn-level level-5">5</button>
+                        <button class="btn-select btn-level level-5">5</button> -->
 
-                        <button type="button" class="btn-select btn-level btn">+</button>
+                        <div class="evaluation">
+                            <label>
+                                <input type="radio" id="cm_star" name="fb" value="1" />
+                                <button class="btn-select btn-level level-1" type="button">1</button>
+                            </label>
+                            <label>
+                                <input type="radio" id="cm_star" name="fb" value="2" />
+                                <button class="btn-select btn-level level-2" type="button">2</button>
+                            </label>
+                            <label>
+                                <input type="radio" id="cm_star" name="fb" value="3" />
+                                <button class="btn-select btn-level level-3" type="button">3</button>
+                            </label>
+                            <label>
+                                <input type="radio" id="cm_star" name="fb" value="4" />
+                                <button class="btn-select btn-level level-4" type="button">4</button>
+                            </label>
+                            <label>
+                                <input type="radio" id="cm_star" name="fb" value="5" />
+                                <button class="btn-select btn-level level-5" type="button">5</button>
+                            </label>
+                            <button type="button" class="btn-select btn-level btn">+</button>
+                        </div>
                     </div>
+
                     <br><br>
+
                     <div class="row">
-                        <input value="1" type="hidden"><span class="btn-level level-1">JAVA SCRIPT NOME MT</span></input>
+                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
+                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
+                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
+                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
+                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
+                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
 
                     </div>
+
                     <br>
                     <button type="submit" class="btn" style="padding: 2% 10%;">Começar agora</button>
                 </form>
@@ -65,6 +98,10 @@
 
     <!-- Import JS Functions -->
     <script src="js/validate.js"></script>
+
+    <script>
+
+    </script>
 
 </body>
 

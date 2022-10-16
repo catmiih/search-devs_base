@@ -4,52 +4,7 @@
 <title>Search Devs - Registre-se como Desenvolvedor</title>
 <?php require_once "menu.php" ?>
 <link rel="stylesheet" href="css/form.css">
-
-<style>
-    * {
-        color: #fff;
-    }
-
-    .form {
-        width: 30vw !important;
-    }
-
-    #campo1 h1 {
-        font-size: 3rem;
-    }
-
-    
-    input,
-    .input-group {
-        margin: 0% 0 !important;
-    }
-
-    input {
-        margin: 2% 0 !important;
-    }
-
-    .form button {
-        margin: 3% 0;
-        width: 100%;
-    }
-
-
-    .forget {
-        display: block;
-        text-align: left;
-        justify-content: flex-start;
-        align-items: flex-start;
-        font-weight: 700;
-    }
-
-    @media (max-width: 800px) {
-
-        .form {
-            width: 100vw;
-            ;
-        }
-    }
-</style>
+<link rel="stylesheet" href="css/login-info.css"
 
 <body>
 
@@ -90,7 +45,7 @@
                             <br>
 
                             <button type="submit" class="btn submit">ENTRAR</button>
-                            <p>Ainda não tem conta? <a href="" style="font-weight: 700">Cadastre-se</a></p>
+                            <p>Ainda não tem conta? <a href="register.php" style="font-weight: 700">Cadastre-se</a></p>
                         </form>
                     </div>
                 </div>

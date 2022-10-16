@@ -1,0 +1,44 @@
+* {
+    color: #fff;
+}
+
+.form {
+    width: 40vw !important;
+}
+
+.form-check {
+    text-align: left;
+}
+
+.form button {
+    margin: 3% 0;
+}
+
+.btn-eye {
+    scale: 0.75;
+    margin-left: -20% !important;
+}
+
+
+@media (max-width: 800px) {
+    .form-eye {
+        margin: auto !important;
+        background-color: #fff;
+        padding: 5.5%;
+    }
+
+    .text {
+        max-width: 90vw;
+    }
+
+    .form-check {
+        padding: 0 15%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .form-check input {
+        margin: 6%;
+        scale: 1.3;
+    }
+}

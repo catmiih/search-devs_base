@@ -4,52 +4,7 @@
 <title>Search Devs - Registre-se como Desenvolvedor</title>
 <?php require_once "menu.php" ?>
 <link rel="stylesheet" href="css/form.css">
-
-<style>
-    * {
-        color: #fff;
-    }
-
-    .form {
-        width: 40vw !important;
-    }
-
-    .form-check {
-        text-align: left;
-    }
-
-    .form button {
-        margin: 3% 0;
-    }
-
-    .btn-eye {
-        scale: 0.8;
-    }
-
-
-    @media (max-width: 800px) {
-        .form-eye {
-            margin: auto !important;
-            background-color: #fff;
-            padding: 5.5%;
-        }
-
-        .text {
-            max-width: 90vw;
-        }
-
-        .form-check {
-            padding: 0 15%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .form-check input {
-            margin: 6%;
-            scale: 1.3;
-        }
-    }
-</style>
+<link rel="stylesheet" href="css/register-login.css">
 
 <body>
 
