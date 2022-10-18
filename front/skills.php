@@ -33,7 +33,6 @@
                 </div>
 
                 <form action="">
-
                     <div id="form">
                         <input class="col form-control skill" type="text" name="name_skill" placeholder="Ex: HTML5" style="margin-right: 2%;" require>
                         <input class="col form-control skill" list="datalistOptions" name="area_skill" id="exampleDataList" placeholder="Área de Atuação" require>
@@ -42,8 +41,7 @@
                             <option value="IMPLEMENTAR AS AREAS COM O BACKEND <3">
                         </datalist>
 
-                        <p style="margin: 5px;">Nível:</p>
-
+                        <p style="margin: 1%;">Nível:</p>
 
                         <div class="evaluation">
                             <label>
@@ -72,22 +70,16 @@
                         </div>
                     </div>
 
-                    <br><br>
+                    
 
                     <form method="POST" action="">
-                        <div class="row" id="skill_list">
+                        <center>
+                            <div class="row" id="skill_list">
 
-                            <span class="btn-level level-1 skill-tag">
-                                <input type="hidden" name="level" value="1" disabled>
-                                <input type="hidden" name="skill" value="html5">
-                                <input type="hidden" name="area" value="1">
-                                html5
-                            </span>
-
-                        </div>
-
-                        <br>
-                        <button type="submit" class="btn" style="padding: 2% 10%;">Começar agora</button>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn" style="padding: 2% 10%;">Começar agora</button>
+                        </center>
                     </form>
                 </form>
 
