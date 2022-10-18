@@ -17,6 +17,7 @@
     }
 </style>
 
+
 <body>
     <div class="jumbvideo jumbvideo-fluid tag">
         <video autoplay="" muted="" loop="" id="banner">
@@ -34,8 +35,8 @@
                 <form action="">
 
                     <div id="form">
-                        <input class="col form-control skill" type="text" name="" placeholder="Ex: HTML5" style="margin-right: 2%;">
-                        <input class="col form-control skill" list="datalistOptions" id="exampleDataList" placeholder="Área de Atuação">
+                        <input class="col form-control skill" type="text" name="name_skill" placeholder="Ex: HTML5" style="margin-right: 2%;" require>
+                        <input class="col form-control skill" list="datalistOptions" name="area_skill" id="exampleDataList" placeholder="Área de Atuação" require>
                         <datalist id="datalistOptions">
                             <option value="Artificial Intelligence">
                             <option value="IMPLEMENTAR AS AREAS COM O BACKEND <3">
@@ -43,47 +44,53 @@
 
                         <p style="margin: 5px;">Nível:</p>
 
-                       
+
                         <div class="evaluation">
                             <label>
-                                <input type="radio" id="cm_star" name="fb" value="1" />
-                                <button class="btn-select btn-level level-1" type="button">1</button>
+                                <input type="radio" name="lvl" id="1" value="1" checked />
+                                <button class="btn-select btn-level level-1 selected" id="level-1" onclick="check(1)" type="button">1</button>
                             </label>
                             <label>
-                                <input type="radio" id="cm_star" name="fb" value="2" />
-                                <button class="btn-select btn-level level-2" type="button">2</button>
+                                <input type="radio" name="lvl" id="2" value="2" />
+                                <button class="btn-select btn-level level-2" id="level-2" onclick="check(2)" type="button">2</button>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="lvl" id="3" value="3" />
+                                <button class="btn-select btn-level level-3" id="level-3" onclick="check(3)" type="button">3</button>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="lvl" id="4" value="4" />
+                                <button class="btn-select btn-level level-4" id="level-4" onclick="check(4)" type="button">4</button>
                             </label>
                             <label>
-                                <input type="radio" id="cm_star" name="fb" value="3" />
-                                <button class="btn-select btn-level level-3" type="button">3</button>
+                                <input type="radio" name="lvl" id="5" value="5" />
+                                <button class="btn-select btn-level level-5" id="level-5" onclick="check(5)" type="button">5</button>
                             </label>
-                            <label>
-                                <input type="radio" id="cm_star" name="fb" value="4" />
-                                <button class="btn-select btn-level level-4" type="button">4</button>
-                            </label>
-                            <label>
-                                <input type="radio" id="cm_star" name="fb" value="5" />
-                                <button class="btn-select btn-level level-5" type="button">5</button>
-                            </label>
-                            <button type="button" class="btn-select btn-level btn">+</button>
+                            <button type="button" onclick="newSkill()" class="btn-select btn-level btn" style="opacity: 1!important;">+</button>
                         </div>
                     </div>
 
                     <br><br>
 
-                    <div class="row">
-                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
-                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
-                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
-                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
-                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
-                        <input value="1" type="hidden"><span class="btn-level level-1 skill-tag">JAVA SCRIPT NOME MT</span></input>
+                    <form method="POST" action="">
+                        <div class="row" id="skill_list">
 
-                    </div>
+                            <span class="btn-level level-1 skill-tag">
+                                <input type="hidden" name="level" value="1" disabled>
+                                <input type="hidden" name="skill" value="html5">
+                                <input type="hidden" name="area" value="1">
+                                html5
+                            </span>
 
-                    <br>
-                    <button type="submit" class="btn" style="padding: 2% 10%;">Começar agora</button>
+                        </div>
+
+                        <br>
+                        <button type="submit" class="btn" style="padding: 2% 10%;">Começar agora</button>
+                    </form>
                 </form>
+
             </center>
         </div>
 
@@ -92,11 +99,7 @@
     <?php require_once "footer.php" ?>
 
     <!-- Import JS Functions -->
-    <script src="js/validate.js"></script>
-
-    <script>
-
-    </script>
+    <script src="js/skill.js"></script>
 
 </body>
 

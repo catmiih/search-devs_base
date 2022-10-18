@@ -1,3 +1,7 @@
+.text {
+  max-width: 100vw;
+}
+
 .form {
   width: 80vw!important;
 }
@@ -7,9 +11,14 @@
   height: 45px !important;
   border-radius: 50% !important;
   padding: 0!important;
-  opacity: .5;
+  opacity: .3;
 
   transition: .5s;
+}
+
+.selected {
+  opacity: 1;
+  scale: 1.1;
 }
 
 .btn-select:hover {
