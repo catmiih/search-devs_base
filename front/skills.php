@@ -66,7 +66,7 @@
                                 <input type="radio" name="lvl" id="5" value="5" />
                                 <button class="btn-select btn-level level-5" id="level-5" onclick="check(5)" type="button">5</button>
                             </label>
-                            <button type="button" onclick="newSkill()" class="btn-select btn-level btn" style="opacity: 1!important;">+</button>
+                            <button type="button" onclick="newSkill()" class="btn-select btn-level btn" style="opacity: 1!important;"><i class="fa-sharp fa-solid fa-check"></i></button>
                         </div>
                     </div>
 

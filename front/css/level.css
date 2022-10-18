@@ -106,7 +106,7 @@
   height: 35px;
   border-radius: 20px;
   background: #092565;
-  background: radial-gradient(circle, #c09c0a 0%, #0d2497 100%);
+  background: radial-gradient(circle, #c09c0a 0%, #0d2497 100%)!important;
   animation-duration: 2s;
   background-size: 400% 400%;
   animation: Gradient 3s ease infinite;
@@ -118,6 +118,20 @@
 .skill {
   width: 15rem;
   border-radius: 20px!important;
+}
+
+.fa-xmark {
+  position: absolute;
+  margin-left: -2%;
+  margin-top: .5%;
+  opacity: .5;
+  transition: .5s;
+}
+
+.fa-xmark:hover {
+  scale: 1.1;
+  cursor: pointer;
+  opacity: 1;
 }
 
 @media (max-width: 800px) {
