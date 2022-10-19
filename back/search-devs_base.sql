@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 -- Banco de dados: `search-devs_base`
 --
 
+CREATE DATABASE `search-devs_base`;
+USE `search-devs_base`;
 -- --------------------------------------------------------
 
 --
