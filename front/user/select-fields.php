@@ -2,8 +2,8 @@
 <html lang="pt-br">
 
 <title>Search Devs - Registre-se como Desenvolvedor</title>
-<?php require_once "menu.php" ?>
-<link rel="stylesheet" href="css/form.css">
+<?php require_once "../menu.php" ?>
+<link rel="stylesheet" href="../css/form.css">
 
 <style>
     * {
@@ -26,74 +26,74 @@
                     <p>Por favor, selecione sua(s) área(s) de atuação:</p>
                     <form action="skills.php">
                         <div id="check" class="row row-cols-4">
-                        <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Artificial Intelligence">
+                            <div class="col-4">
+                                <input class="form-check-input" type="checkbox" name="Skills" id="Artificial Intelligence" value="1">
                                 <label class="form-check-label" for="Artificial Intelligence">
                                     Artificial Intelligence
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Blockchain">
+                                <input class="form-check-input" type="checkbox" name="Skills" id="Blockchain" value="5">
                                 <label class="form-check-label" for="Blockchain">
                                     Blockchain
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Cibersegurança">
-                                <label class="form-check-label" for="Cibersegurança">
-                                    Cibersegurança
+                                <input class="form-check-input" type="checkbox" name="Skills" id="cybersecurity" value="9">
+                                <label class="form-check-label" for="cybersecurity">
+                                    Cybersecurity
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Database Analytics">
+                                <input class="form-check-input" type="checkbox" name="Skills" id="Database Analytics" value="2">
                                 <label class="form-check-label" for="Database Analytics">
                                     Database Analytics
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Data Science">
+                                <input class="form-check-input" type="checkbox" name="Skills" id="Data Science" value="6">
                                 <label class="form-check-label" for="Data Science">
                                     Data Science
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Design">
+                                <input class="form-check-input" type="checkbox" name="Skills" id="Design" value="10">
                                 <label class="form-check-label" for="Design">
-                                    Design 
+                                    Design
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Desktop Development">
+                                <input class="form-check-input" type="checkbox" name="Skills" id="Desktop Development" value="3">
                                 <label class="form-check-label" for="Desktop Development">
                                     Desktop Development
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="DevOps">
+                                <input class="form-check-input" type="checkbox" name="Skills" id="DevOps" value="7">
                                 <label class="form-check-label" for="DevOps">
                                     DevOps
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id=" Mobile Development">
+                                <input class="form-check-input" type="checkbox" name="Skills" id=" Mobile Development" value="11">
                                 <label class="form-check-label" for=" Mobile Development">
                                     Mobile Development
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Web - Back End">
+                                <input class="form-check-input" type="checkbox" name="Skills" id="Web - Back End" value="4">
                                 <label class="form-check-label" for="Web - Back End">
                                     Web - Back End
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Web - Front End">
+                                <input class="form-check-input" type="checkbox" name="Skills" id="Web - Front End" value="8">
                                 <label class="form-check-label" for="Web - Front End">
                                     Web - Front End
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Outros">
+                                <input class="form-check-input" type="checkbox" name="Skills" id="Outros" value="12">
                                 <label class="form-check-label" for="Outros">
                                     Outros
                                 </label>

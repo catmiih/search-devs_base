@@ -2,9 +2,9 @@
 <html lang="pt-br">
 
 <title>Search Devs - Registre-se como Desenvolvedor</title>
-<?php require_once "menu.php" ?>
-<link rel="stylesheet" href="css/form.css">
-<link rel="stylesheet" href="css/level.css">
+<?php require_once "../menu.php" ?>
+<link rel="stylesheet" href="../css/form.css">
+<link rel="stylesheet" href="../css/level.css">
 
 <style>
     * {

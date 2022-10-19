@@ -25,7 +25,8 @@
                     <p>Bem vindo, empreendedor. Preencha os campos.</p>
 
                     <div class="form">
-                        <form action="register-login.php" class="needs-validation" novalidate method="POST">
+                        <form action="complete-login.php" class="needs-validation" method="POST">
+                        <input type="hidden" value="1" name="type_user">
 
                         <div class="row">
                                 <input type="text" placeholder="Nome da empresa" class="col form-control" name="" minlength="5" required>

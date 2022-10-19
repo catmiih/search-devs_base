@@ -2,8 +2,8 @@
 
 <title>Perfil</title>
 
-<?php require_once "menu.php" ?>
-<link rel="stylesheet" type="text/css" href="css/perfil.css" />
+<?php require_once "../menu.php" ?>
+<link rel="stylesheet" type="text/css" href="../css/perfil.css" />
 
 <body>
 

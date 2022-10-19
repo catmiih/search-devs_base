@@ -20,19 +20,19 @@
                     <p>Informações de login.</p>
 
                     <div class="form">
-                        <form action="" class="needs-validation" novalidate method="POST">
+                        <form action="#" class="needs-validation" method="POST">
 
                             <div class="input-group">
-                                <input type="text" placeholder="Nome de usuário" class="col form-control" name="" id="" maxlength="25" minlength="5" required>
+                                <input type="text" placeholder="Nome de usuário" class="col form-control" name="username" id="" maxlength="25" minlength="5" required>
                             </div>
 
                             <div class="input-group">
-                                <input type="email" placeholder="Email" class="col form-control" name="" id="" minlength="10" required>
+                                <input type="email" placeholder="Email" class="col form-control" name="email" id="" minlength="10" required>
                             </div>
 
                             <div class="col-xs-6">
                                 <div class="input-group">
-                                    <input type="password" placeholder="Senha" class="form-control" name="" id="pass" minlength="8" required>
+                                    <input type="password" placeholder="Senha" class="form-control" name="password" id="pass" minlength="8" required>
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-eye btn-default" id="Epass">
                                             <i class="fa-solid fa-eye" id="icon"></i>
@@ -53,7 +53,7 @@
                             </div>
 
                             <div class="input-group mb-3">
-                                
+
                             </div>
 
                             <div class="form-check">

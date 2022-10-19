@@ -25,38 +25,40 @@
                     <p>Bem vindo, desenvolvedor. Preencha os campos.</p>
 
                     <div class="form">
-                        <form action="select-fields.php" class="needs-validation" novalidate method="POST">
+                        <form action="complete-login.php" class="needs-validation" method="POST">
+
+                            <input type="hidden" value="0" name="type_user">
 
                             <div class="row">
-                                <input type="text" placeholder="Nome Completo" class="col form-control" name="" minlength="5" required>
+                                <input type="text" placeholder="Nome Completo" class="col form-control" name="name" minlength="5" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="Data de Nascimento" class="col form-control" name="" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
-                                <input type="text" placeholder="Telefone" class="col form-control" name="" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>
+                                <input type="text" placeholder="Data de Nascimento" class="col form-control" name="born" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
+                                <input type="text" placeholder="Telefone" class="col form-control" name="cell" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="CEP" class="col form-control" name="" id="cep"maxlength="9" minlength="9" onkeypress="CEP(this)" required>
+                                <input type="text" placeholder="CEP" class="col form-control" name="cep" id="cep"maxlength="9" minlength="9" onkeypress="CEP(this)" required>
                                 <input type="text" placeholder="CPF" class="col form-control" name="cpf" id="cpf" maxlength="14" minlength="14" onkeypress="ReadCpf(this)" required>
                                 <br><br>
                                 <div class="row radio">
                                     <p class="col">Sexo:</p>
 
                                     <div class="form-check col">
-                                        <input class="form-check-input" type="radio" name="Sex-Select" id="Female">
+                                        <input class="form-check-input" type="radio" name="Sex-Select" id="Female" value="F">
                                         <label class="form-check-label" for="Female">
                                             Feminino
                                         </label>
                                     </div>
                                     <div class="form-check col">
-                                        <input class="form-check-input" type="radio" name="Sex-Select" id="Male" checked>
+                                        <input class="form-check-input" type="radio" name="Sex-Select" id="Male" value="M" checked>
                                         <label class="form-check-label" for="Male">
                                             Masculino
                                         </label>
                                     </div>
                                     <div class="form-check col">
-                                        <input class="form-check-input" type="radio" name="Sex-Select" id="Other">
+                                        <input class="form-check-input" type="radio" name="Sex-Select" id="Other" value="O">
                                         <label class="form-check-label" for="Other">
                                             Outro
                                         </label>
