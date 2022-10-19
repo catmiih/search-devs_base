@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Set-2022 às 15:08
+-- Tempo de geração: 19-Out-2022 às 16:57
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -32,6 +32,24 @@ CREATE TABLE `area` (
   `Area_name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `area`
+--
+
+INSERT INTO `area` (`Area_ID`, `Area_name`) VALUES
+(1, 'Artificial Intelligente'),
+(2, 'Database Analytics'),
+(3, 'Desktop Development'),
+(4, 'Web - Back End'),
+(5, 'Blockchain'),
+(6, 'Data Science'),
+(7, 'DevOps'),
+(8, 'Web - Front End'),
+(9, 'Cybersecurity'),
+(10, 'Design'),
+(11, 'Mobile Development'),
+(12, 'Outros');
+
 -- --------------------------------------------------------
 
 --
@@ -44,7 +62,10 @@ CREATE TABLE `company` (
   `Comp_email` varchar(150) DEFAULT NULL,
   `Comp_pass` varchar(150) DEFAULT NULL,
   `Comp_cnpj` varchar(18) DEFAULT NULL,
-  `Comp_num` varchar(50) DEFAULT NULL
+  `Comp_num` varchar(50) DEFAULT NULL,
+  `Comp_user` varchar(400) NOT NULL,
+  `Comp_responsible` varchar(300) NOT NULL,
+  `Comp_cpf` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -56,7 +77,7 @@ CREATE TABLE `company` (
 CREATE TABLE `developers` (
   `Dev_ID` int(11) NOT NULL,
   `Dev_name` varchar(400) DEFAULT NULL,
-  `Dev_lastN` varchar(400) DEFAULT NULL,
+  `Dev_username` varchar(400) DEFAULT NULL,
   `Dev_email` varchar(150) DEFAULT NULL,
   `Dev_pass` varchar(150) DEFAULT NULL,
   `Dev_Num` varchar(50) DEFAULT NULL,
@@ -200,7 +221,7 @@ ALTER TABLE `skill_proj`
 -- AUTO_INCREMENT de tabela `area`
 --
 ALTER TABLE `area`
-  MODIFY `Area_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Area_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `company`
