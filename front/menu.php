@@ -13,6 +13,7 @@
 
   <script src="../assets/extend/js/bootstrap.js"></script>
   <script src="../assets/extend/js/jquery.js"></script>
+  <script src="../assets/extend/js/jquery.validate.min.js"></script>
   <script src="js/sd.js"></script>
 </head>
 

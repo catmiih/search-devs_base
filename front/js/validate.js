@@ -2,31 +2,10 @@ const cpf = document.querySelector('#cpf');
 const cep = document.querySelector('#cep');
 const data = document.querySelector('#data');
 
-(() => {
-    'use strict'
+/* Form Validation */
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
-
-
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-
-                console.log(validateDate(data.value))
-            }
-
-            form.classList.add('was-validated')
-        }, false)
-    })
-})();
 
 /* Only Numbers in required Input*/
-
 function onlynumber(evt) {
     var theEvent = evt || window.event;
     var key = theEvent.keyCode || theEvent.which;
@@ -39,8 +18,20 @@ function onlynumber(evt) {
     }
 }
 
-/* Validations */
+/* Only Letter */
+function onlyLetter(evt) {
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode(key);
+    //var regex = /^[0-9.,]+$/;
+    var regex = /^[a-zA-Z]+$/;
+    if (!regex.test(key)) {
+        theEvent.returnValue = false;
+        if (theEvent.preventDefault) theEvent.preventDefault();
+    }
+}
 
+/* Validations */
 function validateCPF(cpf_n) {
     var sum;
     var rest;
@@ -112,18 +103,18 @@ function validateCEP(cep) {
 }
 
 function validateDate(date) {
-    var dateTime= new Date()
+    var dateTime = new Date()
     var year = dateTime.getFullYear()
 
     if (parseInt(date.substring(0, 2)) <= 31) {
-        if(parseInt(date.substring(3, 5)) <= 12){
-            if(parseInt(date.substring(6)) <= year-16) {
+        if (parseInt(date.substring(3, 5)) <= 12) {
+            if (parseInt(date.substring(6)) <= year - 16) {
                 return true
-            }else
+            } else
                 return false
-        }else
+        } else
             return false
-    }else 
+    } else
         return false
 }
 
