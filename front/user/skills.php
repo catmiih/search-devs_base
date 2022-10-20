@@ -2,7 +2,9 @@
 <html lang="pt-br">
 
 <title>Search Devs - Registre-se como Desenvolvedor</title>
-<?php require_once "../menu.php" ?>
+
+<?php include_once 'menu-user.php'; ?>
+
 <link rel="stylesheet" href="../css/form.css">
 <link rel="stylesheet" href="../css/level.css">
 
@@ -21,7 +23,7 @@
 <body>
     <div class="jumbvideo jumbvideo-fluid tag">
         <video autoplay="" muted="" loop="" id="banner">
-            <source src="img/back_image.mp4" type="video/mp4" />
+            <source src="../img/back_image.mp4" type="video/mp4" />
         </video>
 
         <div class="container text" style="width: 100%; height: 100vh;">
@@ -88,10 +90,10 @@
 
     </div>
 
-    <?php require_once "footer.php" ?>
+    <?php require_once "footer-user.php" ?>
 
     <!-- Import JS Functions -->
-    <script src="js/skill.js"></script>
+    <script src="../js/skill.js"></script>
 
 </body>
 

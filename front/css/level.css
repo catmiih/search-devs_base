@@ -135,7 +135,41 @@
 }
 
 @media (max-width: 800px) {
+  #campo1 {
+    margin: 15% 0 !important;
+  }
+  #campo1 h1 {
+    font-size: 2.3rem !important;
 
+  }
+
+  #campo1 h2 {
+    font-size: 1.5rem !important;
+
+  }
+  
+  #form {
+    display: inline;
+  }
+
+  #form p {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 3% !important;
+  }
+
+  #form evaluation{
+    margin-bottom: 10% !important;
+  }
+
+
+  .skill {
+    margin: 1%;
+    margin-bottom: 5%;
+    width: 90%;
+    height: 60% !important;
+    padding: 3%;
+  }
     
 }
 
