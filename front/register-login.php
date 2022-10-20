@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="css/form.css">
 <link rel="stylesheet" href="css/register-login.css">
 
-<body>
 
+<body>
     <div class="jumbvideo jumbvideo-fluid tag">
         <video autoplay="" muted="" loop="" id="banner">
             <source src="img/back_image.mp4" type="video/mp4" />
@@ -20,7 +20,7 @@
                     <p>Informações de login.</p>
 
                     <div class="form">
-                        <form action="#" class="needs-validation" method="POST">
+                        <form action="functions/register-login.php" name="complete" class="needs-validation" method="POST">
 
                             <div class="input-group">
                                 <input type="text" placeholder="Nome de usuário" class="col form-control" name="username" id="" maxlength="25" minlength="5" required>
@@ -108,6 +108,7 @@
             }
         });
     </script>
+
 </body>
 
 </html>

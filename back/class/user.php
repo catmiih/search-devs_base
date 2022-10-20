@@ -10,15 +10,18 @@
 
 
 /* All User Methods */
+
 class User
 {
 
-    function Connect($dbname, $host, $usuario, $senha)
+    private $pdo;
+    public $msg = "";
+
+    public function conectar($dbname, $host, $usuario, $senha)
     {
         global $pdo;
         try {
             $pdo = new PDO('mysql:host=' . $host . ';dbname=' . $dbname, $usuario, $senha);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $erro) {
             global $msg;
             $msg = $erro->getMessage();
@@ -30,21 +33,17 @@ class User
         global $pdo;
         $passMD5 = MD5($pass);
 
-        $sql = $pdo->prepare("SELECT Dev_id FROM developers WHERE Dev_cpf = $cpf");
-        $sql->execute();
+        $sql = $pdo->prepare("SELECT Dev_ID FROM developers WHERE Dev_email like $email");
+        //$sql->execute();
 
-        try {
-            if ($sql->rowCount() > 0) {
-                /* Dev exist */
-                return false;
-            } else {
-                $sql = $pdo->prepare("INSERT INTO `developers`( `Dev_name`, `Dev_username`, `Dev_email`, `Dev_pass`, `Dev_Num`, `Dev_cep`, `Dev_cpf`, `Dev_born`, `Dev_sex`) VALUES ($name,$username,$email,$passMD5,$num,$cep,$cpf,$born,$sex)");
-                $sql->execute();
-                echo "<script>alert('funcionou')</script>";
-                return true;
-            }
-        } catch (Exception $e) {
-            echo "<script>alert('Ocorreu um erro. Cod.: $e')</script>";
+        if ($sql->rowCount() > 0) {
+            /* Dev exist */
+            return false;
+        } else {
+            $sql = $pdo->prepare("INSERT INTO `developers`(`Dev_name`, `Dev_username`, `Dev_email`, `Dev_pass`, `Dev_Num`, `Dev_cep`, `Dev_cpf`, `Dev_born`, `Dev_sex`) VALUES ('$name','$username','$email','$passMD5','$num','$cep','$cpf','$born','$sex');");
+            $sql->execute();
+
+            return true;
         }
     }
 

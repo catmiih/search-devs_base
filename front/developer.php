@@ -25,7 +25,7 @@
                     <p>Bem vindo, desenvolvedor. Preencha os campos.</p>
 
                     <div class="form">
-                        <form action="complete-login.php" class="needs-validation" method="POST">
+                        <form class="needs-validation" method="POST">
 
                             <input type="hidden" value="0" name="type_user">
 
