@@ -12,7 +12,7 @@
     border-radius: 100%;
     width: 75px;
     height: 75px;
-
+    display: block;
 }
 .container{
     display: flex;
@@ -46,7 +46,7 @@
     transform: translateX(1px) scale(1.05);
     color: #fff;
   }
-
+  
   @keyframes Gradient {
     0% {
       background-position: 0% 50%;
