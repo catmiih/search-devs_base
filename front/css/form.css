@@ -54,8 +54,9 @@ p {
   margin: 0 3%;
 }
 
-.radio .col {
+.radio {
   margin: 3%;
+  flex-wrap: nowrap!important;
 }
 
 @media (max-width: 800px) {
@@ -75,6 +76,7 @@ p {
 
   .form {
     display: inline;
+    margin: 5% 0;
   }
 
   .form input[type="text"],
@@ -86,16 +88,27 @@ p {
   }
 
   .radio {
-    margin: 5% 0;
+    margin:1% 0;
     width: 50%;
-
+    
     position: relative;
     margin-left: auto;
     margin-right: auto;
+
+    scale: .8;
+
+    margin: 0;
+    text-align: center;
+    justify-content: left;
+
   }
-  .radio p {
-    width: 100%;
-    font-size: 1.7rem;
+
+  .row .radio {
+    flex: auto!important;
+  }
+
+  .radio p, .radio label {
+    font-size: 1.1rem;
   }
 
   .btn-eye {

@@ -25,7 +25,7 @@
                     <p>Bem vindo, desenvolvedor. Preencha os campos.</p>
 
                     <div class="form">
-                        <form class="needs-validation" method="POST">
+                        <form action="complete-login.php" class="needs-validation" method="POST">
 
                             <input type="hidden" value="0" name="type_user">
 
@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="CEP" class="col form-control" name="cep" id="cep"maxlength="9" minlength="9" onkeypress="CEP(this)" required>
+                                <input type="text" placeholder="CEP" class="col form-control" name="cep" id="cep" maxlength="9" minlength="9" onkeypress="CEP(this)" required>
                                 <input type="text" placeholder="CPF" class="col form-control" name="cpf" id="cpf" maxlength="14" minlength="14" onkeypress="ReadCpf(this)" required>
                                 <br><br>
                                 <div class="row radio">
@@ -66,11 +66,12 @@
                                 </div>
                             </div>
                             <br>
-                            
-                            <button type="submit" class="btn submit">Continuar</button>
-                        </form>
+
+                            <button type="button" class="btn submit" onclick="next()">Continuar</button>
+                        
                     </div>
                 </div>
+                <?php require_once 'register-login.php' ?>
             </center>
         </div>
     </div>
@@ -79,6 +80,7 @@
 
     <!-- Import JS Functions -->
     <script src="js/validate.js"></script>
+    <script src="js/form.js"></script>
 
 </body>
 

@@ -1,16 +1,23 @@
 <?php
 
-require_once 'register-user.php';
+global $typeUser;
+$typeUser = $_POST['type_user'];
 
-echo "<script>alert('$typeUser')</script>";
 
-function verifyUser($typeUser, $name, $username, $email, $password, $cell, $cep, $cpf, $born, $sex)
-{
-    if ($typeUser == 0) {
+if ($typeUser == 0) {
+    $name = $_POST['name'];
+    $born = $_POST['born'];
+    $cell = $_POST['cell'];
+    $cep = $_POST['cep'];
+    $cpf = $_POST['cpf'];
+    $sex = $_POST['Sex-Select'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-        registerUser($name, $username, $email, $password, $cell, $cep, $cpf, $born, $sex);
-    }
+    registerUser($name, $username, $email, $password, $cell, $cep, $cpf, $born, $sex);
 }
+
 
 function registerUser($name, $username, $email, $password, $cell, $cep, $cpf, $born, $sex)
 {
@@ -24,9 +31,10 @@ function registerUser($name, $username, $email, $password, $cell, $cep, $cpf, $b
 
         if ($user->msg == "") {
             if ($user->register($name, $username, $email, $password, $cell, $cep, $cpf, $born, $sex)) {
-                echo "<script language='javascript' type='text/javascript'>alert('O usuario foi cadastrado com sucesso!')</script>";
+                header("location: login.php");
             } else {
-                header('Location: /front/complete-login');
+                echo "<script>window.alert('Usuário já cadastrado.')
+                window.location.href='developer.php';</script>";
             }
         } else {
             echo "Erro: " . $user->msg;

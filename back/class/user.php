@@ -33,8 +33,8 @@ class User
         global $pdo;
         $passMD5 = MD5($pass);
 
-        $sql = $pdo->prepare("SELECT Dev_ID FROM developers WHERE Dev_email like $email");
-        //$sql->execute();
+        $sql = $pdo->prepare("SELECT Dev_ID FROM developers WHERE Dev_email like '$email' or Dev_username like '$username'");
+        $sql->execute();
 
         if ($sql->rowCount() > 0) {
             /* Dev exist */
