@@ -4,10 +4,14 @@
 <title>Perfil</title>
 <link rel="shortcut icon" type="image/png" href="../img/logobarradepesquisa.svg" />
 <link rel="stylesheet" type="text/css" href="../../assets/extend/css/bootstrap.css" />
-
 <link rel="stylesheet" type="text/css" href="../css/perfil.css"/>
 
 <body>  
+    <div class="jumbvideo jumbvideo-fluid " style="position: relative;">
+        <video autoplay="" muted="" loop="" id="banner">
+            <source src="../img/back_image.mp4" type="video/mp4" />
+        </video>
+    </div>
     <div class="position-relative">
         <div class="d-flex">
             <div id="sidebar" class="position-absolute top-0 start-0">
@@ -34,17 +38,24 @@
                     </div>
                 </center>
             </div>
-            <div name="FundoPerfil" id="fundop"> 
-                <div id="FotoPerfil">
-                    <img src="../img/perfil.jpg" class="position-absolute bottom-0 start-1"/>
+            
+            <div id="feedperfil">
+                <div name="FundoPerfil" id="fundop"> 
+                        <div id="FotoPerfil">
+                            <img src="../img/perfil.jpg"/>
+                        <div id="containerperfil">
+                            <div id="align">
+                                <h4>Fulano de Tal </h4>
+                                <button>*</button> 
+                            </div>
+                            <p>Título do Perfil/cargo</p>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="jumbvideo jumbvideo-fluid " style="position: initial;">
-        <video autoplay="" muted="" loop="" id="banner">
-            <source src="../img/back_image.mp4" type="video/mp4" />
-        </video>
-    </div>
+    
 </body>
 </html>
