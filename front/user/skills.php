@@ -38,6 +38,7 @@
                     <div id="form">
                         <input class="col form-control skill" type="text" name="name_skill" placeholder="Ex: HTML5" style="margin-right: 2%;" require>
                         <input class="col form-control skill" list="datalistOptions" name="area_skill" id="exampleDataList" placeholder="Área de Atuação" require>
+
                         <datalist id="datalistOptions">
                             <option value="Artificial Intelligence">
                             <option value="IMPLEMENTAR AS AREAS COM O BACKEND <3">

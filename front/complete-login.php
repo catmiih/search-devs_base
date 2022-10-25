@@ -18,6 +18,20 @@ if ($typeUser == 0) {
     registerUser($name, $username, $email, $password, $cell, $cep, $cpf, $born, $sex);
 }
 
+else {
+    $name = $_POST['name'];
+    $responsible = $_POST['responsible'];
+    $date = $_POST['date'];
+    $cell = $_POST['cell'];
+    $cnpj = $_POST['cnpj'];
+    $cpf = $_POST['cpf'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    registerCompany($name, $responsible, $date, $cell, $cnpj, $cpf, $username, $email, $password);
+}
+
 
 function registerUser($name, $username, $email, $password, $cell, $cep, $cpf, $born, $sex)
 {
@@ -31,6 +45,30 @@ function registerUser($name, $username, $email, $password, $cell, $cep, $cpf, $b
 
         if ($user->msg == "") {
             if ($user->register($name, $username, $email, $password, $cell, $cep, $cpf, $born, $sex)) {
+                header("location: login.php");
+            } else {
+                echo "<script>window.alert('Usuário já cadastrado.')
+                window.location.href='developer.php';</script>";
+            }
+        } else {
+            echo "Erro: " . $user->msg;
+        }
+    } else {
+    }
+}
+
+function registerCompany($name, $responsible, $date, $cell, $cnpj, $cpf, $username, $email, $password)
+{
+    require_once '../back/class/company.php';
+    $comp = new Company();
+
+    if (!empty($name) && !empty($responsible) && !empty($date) && !empty($cell) && !empty($cnpj) && !empty($cpf) && !empty($username) && !empty($email) && !empty($password)) {
+
+        $comp->conectar('search-devs_base', 'localhost', 'root', '');
+        //echo "$msg";
+
+        if ($comp->msg == "") {
+            if ($comp->register($name, $email, $password, $cnpj, $cell, $username, $responsible, $cpf, $date)) {
                 header("location: login.php");
             } else {
                 echo "<script>window.alert('Usuário já cadastrado.')
