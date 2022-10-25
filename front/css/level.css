@@ -123,7 +123,7 @@
 .fa-xmark {
   position: absolute;
   margin-left: -2%;
-  margin-top: .5%;
+  margin-top: .35%;
   opacity: .5;
   transition: .5s;
 }
@@ -132,6 +132,19 @@
   scale: 1.1;
   cursor: pointer;
   opacity: 1;
+}
+
+*:focus {
+  border: 0px solid #fff!important;
+  box-shadow: transparent 1px 1px 10px!important;
+}
+
+.error {
+  box-shadow: #FF0000 0px 0px 10px;
+}
+
+.error:focus {
+  box-shadow: #FF0000 1px 1px 10px!important;
 }
 
 @media (max-width: 800px) {
@@ -146,6 +159,10 @@
   #campo1 h2 {
     font-size: 1.5rem !important;
 
+  }
+
+  #skill_list {
+    margin: 5%;
   }
   
   #form {
@@ -169,6 +186,16 @@
     width: 90%;
     height: 60% !important;
     padding: 3%;
+  }
+
+  .skill-tag {
+    padding: 1% 10%;
+    margin: 1%!important;
+  }
+
+  .fa-xmark {
+    margin-left: -5%;
+    margin-top: 1%;
   }
     
 }

@@ -29,29 +29,30 @@
                         <input type="hidden" value="1" name="type_user">
 
                         <div class="row">
-                                <input type="text" placeholder="Nome da empresa" class="col form-control" name="" minlength="5" required>
+                                <input type="text" placeholder="Nome da empresa" class="col form-control" name="name" minlength="5" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="Nome responsável" class="col form-control" name="" minlength="5" required>
+                                <input type="text" placeholder="Nome responsável" class="col form-control" name="responsible" minlength="5" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="Data de Nascimento" class="col form-control" name="" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
-                                <input type="text" placeholder="Telefone" class="col form-control" name="" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>
+                                <input type="text" placeholder="Data de Nascimento Responsável" class="col form-control" name="date" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
+                                <input type="text" placeholder="Telefone" class="col form-control" name="cell" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="CNPJ" class="col form-control" name="" id="cep"maxlength="9" minlength="9" onkeypress="CEP(this)" required>
+                                <input type="text" placeholder="CNPJ" class="col form-control" name="cnpj" id="cep"maxlength="9" minlength="9" onkeypress="CEP(this)" required>
                                 <input type="text" placeholder="CPF" class="col form-control" name="cpf" id="cpf" maxlength="14" minlength="14" onkeypress="ReadCpf(this)" required>
                             </div>
 
                             <br>
                             
-                            <button type="submit" class="btn submit">Continuar</button>
-                        </form>
+                            <button type="button" class="btn submit" onclick="next()">Continuar</button>
+
                     </div>
                 </div>
+                <?php require_once 'register-login.php' ?>
             </center>
         </div>
     </div>

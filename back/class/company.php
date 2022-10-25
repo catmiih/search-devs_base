@@ -8,9 +8,9 @@
 */
 
 
-/* All User Methods */
+/* All Company Methods */
 
-class User
+class Company
 {
 
     private $pdo;
@@ -27,19 +27,19 @@ class User
         }
     }
 
-    function register($name, $username, $email, $pass, $num, $cep, $cpf, $born, $sex)
+    function register($name, $email, $pass, $cnpj, $num, $user, $responsible, $cpf, $date)
     {
         global $pdo;
         $passMD5 = MD5($pass);
 
-        $sql = $pdo->prepare("SELECT Dev_ID FROM developers WHERE Dev_email like '$email' or Dev_username like '$username'");
+        $sql = $pdo->prepare("SELECT Comp_ID FROM company WHERE Comp_email like '$email' or Comp_user like '$user'");
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
             /* Dev exist */
             return false;
         } else {
-            $sql = $pdo->prepare("INSERT INTO `developers`(`Dev_name`, `Dev_username`, `Dev_email`, `Dev_pass`, `Dev_Num`, `Dev_cep`, `Dev_cpf`, `Dev_born`, `Dev_sex`) VALUES ('$name','$username','$email','$passMD5','$num','$cep','$cpf','$born','$sex');");
+            $sql = $pdo->prepare("INSERT INTO `company`(`Comp_name`, `Comp_email`, `Comp_pass`, `Comp_cnpj`, `Comp_num`, `Comp_user`, `Comp_responsible`, `Comp_cpf`, `Comp_date`) VALUES ('$name', '$email', '$passMD5', '$cnpj', '$num', '$user', '$responsible', '$cpf','$date')");
             $sql->execute();
 
             return true;
@@ -51,7 +51,7 @@ class User
         global $pdo;
         $passMD5 = MD5($pass);
         /* Verify Register */
-        $sql = $pdo->prepare("SELECT Dev_ID FROM developers WHERE Dev_email like '$email' || Dev_username like '$username' AND Dev_pass like '$passMD5'");
+        $sql = $pdo->prepare("SELECT Comp_ID FROM company WHERE Comp_email like '$email' || Comp_name like '$username' AND Comp_pass like '$passMD5'");
         $sql->execute();
         if ($sql->rowCount() > 0) {
             /* Register == True */
