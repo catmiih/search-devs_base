@@ -1,0 +1,15 @@
+@media (max-width: 800px)  {
+
+    .col-4 {
+   
+        flex: 0 0 auto;
+        width: 90%;
+        margin: 5px;
+    }
+
+    #check {
+        text-align: start;
+        margin-left: 10%;
+    }
+    
+}
