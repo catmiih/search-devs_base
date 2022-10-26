@@ -4,10 +4,9 @@
 <title>Search Devs - Registre-se como Desenvolvedor</title>
 <?php require_once "menu.php" ?>
 <link rel="stylesheet" href="css/form.css">
-<link rel="stylesheet" href="css/login-info.css"
+<link rel="stylesheet" href="css/login-info.css">
 
 <body>
-
     <div class="jumbvideo jumbvideo-fluid tag">
         <video autoplay="" muted="" loop="" id="banner">
             <source src="img/back_image.mp4" type="video/mp4" />
@@ -24,10 +23,6 @@
 
                             <div class="input-group">
                                 <input type="text" placeholder="Usuário ou Email" class="col form-control" name="" id="" maxlength="25" minlength="5" required>
-                            </div>
-
-                            <div class="pass-eye">
-
                             </div>
 
                             <div class="col-xs-6">

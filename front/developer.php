@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="CEP" class="col form-control" name="cep" id="cep" maxlength="9" minlength="9" onkeypress="CEP(this)" required>
+                                <input type="text" placeholder="CEP" class="col form-control" name="cep" id="cep" maxlength="18" minlength="18" onkeypress="" required>
                                 <input type="text" placeholder="CPF" class="col form-control" name="cpf" id="cpf" maxlength="14" minlength="14" onkeypress="ReadCpf(this)" required>
                                 <br><br>
                                 <div class="row radio">

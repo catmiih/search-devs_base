@@ -85,6 +85,8 @@ function validateCPF(cpf_n) {
     }
 }
 
+/* FAZER O VALIDADE CNPJ (18 DÍGITOS) */
+
 function validateCEP(cep) {
     $.ajax({
         url: "https://cdn.apicep.com/file/apicep/" + cep + ".json",

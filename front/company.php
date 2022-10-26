@@ -29,15 +29,15 @@
                         <input type="hidden" value="1" name="type_user">
 
                         <div class="row">
-                                <input type="text" placeholder="Nome da empresa" class="col form-control" name="name" minlength="5" required>
+                                <input type="text" placeholder="Nome da empresa" onkeypress="onlyLetter()" class="col form-control" name="name" minlength="5" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="Nome responsável" class="col form-control" name="responsible" minlength="5" required>
+                                <input type="text" placeholder="Nome responsável" onkeypress="onlyLetter()" class="col form-control" name="responsible" minlength="5" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="Data de Nascimento Responsável" class="col form-control" name="date" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
+                                <input type="text" placeholder="Data de Nascimento Responsável" class="col form-control" name="date" id="data" onkeypress="date()" maxlength="10" minlength="10" onkeypress="date(this)" required>
                                 <input type="text" placeholder="Telefone" class="col form-control" name="cell" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>
                             </div>
 
@@ -61,6 +61,7 @@
 
     <!-- Import JS Functions -->
     <script src="js/validate.js"></script>
+    <script src="js/form.js"></script>
 
 </body>
 

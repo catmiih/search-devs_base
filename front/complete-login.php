@@ -72,7 +72,7 @@ function registerCompany($name, $responsible, $date, $cell, $cnpj, $cpf, $userna
                 header("location: login.php");
             } else {
                 echo "<script>window.alert('Usuário já cadastrado.')
-                window.location.href='developer.php';</script>";
+                window.location.href='company.php';</script>";
             }
         } else {
             echo "Erro: " . $user->msg;
