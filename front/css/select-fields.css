@@ -1,7 +1,22 @@
+@media (min-width: 801px)  {
+
+    .text {
+        max-width: 55vw!important;
+    }
+    
+    #check {
+        margin: 8%;
+    }
+    
+    #check .col-4 {
+        margin: 1% 0;
+    }
+}
+   
+
 @media (max-width: 800px)  {
 
     .col-4 {
-   
         flex: 0 0 auto;
         width: 90%;
         margin: 5px;

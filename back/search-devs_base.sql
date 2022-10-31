@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Out-2022 às 15:15
+-- Tempo de geração: 31-Out-2022 às 00:57
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -87,20 +87,6 @@ CREATE TABLE `developers` (
   `Dev_born` varchar(10) DEFAULT NULL,
   `Dev_sex` char(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `developers`
---
-
-INSERT INTO `developers` (`Dev_ID`, `Dev_name`, `Dev_username`, `Dev_email`, `Dev_pass`, `Dev_Num`, `Dev_cep`, `Dev_cpf`, `Dev_born`, `Dev_sex`) VALUES
-(3, 'Emily Leme Silva', 'catmiih', 'emilyleme.dev@gmail.com', '1b66be5a38a4bd4e999e756e26000fc1', '(11) 96289-1250', '21321-32', '123.456.789-09', '07/03/2005', 'F'),
-(4, 'Emily Leme Silva', 'catmiih', 'emilyleme.dev@gmail.com', 'd6f85939c88a4465fe91c1b761a476b6', '(11) 96289-1250', '21321-32', '123.456.789-09', '07/03/2005', 'F'),
-(5, 'Emily Leme Silva', 'catmiih', 'emilyleme.dev@gmail.com', 'd6f85939c88a4465fe91c1b761a476b6', '(11) 96289-1250', '21321-32', '123.456.789-09', '07/03/2005', 'F'),
-(6, 'Emily Leme Silva', 'catmiih', 'emilyleme.dev@gmail.com', '4f32ee79809cd84ce0dc7ff769383cad', '(11) 11111-1111', '11111-11', '213.213.213-21', '11/11/1111', 'M'),
-(7, 'Emily Leme Silva', 'catmiih', 'emilyleme.dev@gmail.com', '4f32ee79809cd84ce0dc7ff769383cad', '(11) 11111-1111', '11111-11', '213.213.213-21', '11/11/1111', 'M'),
-(8, 'Emily Leme Silva', 'catmiih', 'emilyleme.dev@gmail.com', '5680945a070accc9986f667f356507b3', '(11) 11111-1111', '21321-32', '213.213.213-21', '07/03/2005', 'F'),
-(9, 'aaaaaaaaaaaa', '213213213', 'aaaaaaa@aaaaa.com', '15e12df26265c9ac16ce0977261c485f', '(11) 11111-1111', '11111-11', '213.213.213-21', '11/11/1111', 'F'),
-(10, 'Emily Leme Silva', 'honeyTest', 'milyexe@gmail.com', 'cf80abc43cbcb9ceedb129e73e16e3b1', '(11) 11111-1111', '11111-11', '213.213.213-21', '11/11/1111', 'F');
 
 -- --------------------------------------------------------
 
