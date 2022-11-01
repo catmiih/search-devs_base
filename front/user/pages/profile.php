@@ -23,38 +23,66 @@
     <br>
 
     <div class="skills">
-        <div class="row">
-            <div class="evaluation">
-                <h2 style="font-weight:700">Habilidades:</h2>
+        <div class="row evaluation justify-content-between">
+
+            <h2 style="font-weight:700" class="col">Habilidades:</h2>
+
+            <div class="level-options col">
                 <p style="margin: 1%;">Nível:</p>
                 <label>
-                    <input type="radio" name="lvl" id="1" value="1" checked />
-                    <button class="btn-select btn-level level-1 selected" id="level-1" onclick="check(1)" type="button">1</button>
+                    <button class="btn-select btn-level level-1 selected" id="level-1" type="button">1</button>
                 </label>
                 <label>
-                    <input type="radio" name="lvl" id="2" value="2" />
-                    <button class="btn-select btn-level level-2" id="level-2" onclick="check(2)" type="button">2</button>
+                    <button class="btn-select btn-level level-2 selected" id="level-2" type="button">2</button>
                 </label>
 
                 <label>
                     <input type="radio" name="lvl" id="3" value="3" />
-                    <button class="btn-select btn-level level-3" id="level-3" onclick="check(3)" type="button">3</button>
+                    <button class="btn-select btn-level level-3 selected" id="level-3" type="button">3</button>
                 </label>
 
                 <label>
                     <input type="radio" name="lvl" id="4" value="4" />
-                    <button class="btn-select btn-level level-4" id="level-4" onclick="check(4)" type="button">4</button>
+                    <button class="btn-select btn-level level-4 selected" id="level-4" type="button">4</button>
                 </label>
                 <label>
                     <input type="radio" name="lvl" id="5" value="5" />
-                    <button class="btn-select btn-level level-5" id="level-5" onclick="check(5)" type="button">5</button>
+                    <button class="btn-select btn-level level-5 selected" id="level-5" type="button">5</button>
                 </label>
             </div>
-            <div class="show-skills"></div>
+            <br>
+            <div class="show-skills">
+
+            </div>
         </div>
     </div>
 
     <hr>
 
-    <div></div>
+    <div class="row feed">
+        <div class="col">
+            <h2>Informações:</h2>
+            <div class="col cellphone">
+                <p>Telefone:</p>
+                <input type="text" placeholder="Numero de telefone:" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled> 
+            </div> 
+            <div class="col cellphone">
+                <p>Email:</p>
+                <input type="text" placeholder="Email:" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled> 
+            </div> 
+            <div class="col cellphone">
+                <p>Nome:</p>
+                <input type="text" placeholder="Nome:" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled> 
+            </div>   
+                    
+        </div>
+        <div class="col description">
+            <h2>Descrição do perfil:</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since
+                the 1500s, when an unknown printer took a galley of type and scrambled
+                it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+                unchanged. It was popularised in the 1960s with the release of Letraset
+                sheets containing Lorem Ipsum passages, and more recently with desktop</p>
+        </div>
+    </div>
 </div>

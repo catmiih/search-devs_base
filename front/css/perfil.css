@@ -85,19 +85,14 @@ hr{
   display: flex;
 }
 
-.skills {
+.row.evaluation, .feed .col {
     background-color: rgba(0, 0, 0, 0.4);
     margin: .2% 6%;
     border-radius: 25px;
     width: 89%;
-    padding: 1.5%;
-    
+    padding: 1.5%;    
 }
 
-.evaluation {
-  display: flex;
-
-}
 
 .btn-level {
   color: #fff;
@@ -109,5 +104,42 @@ hr{
   background-size: 400% 400%;
   font-weight: 600;
   font-size: 1rem;
-  margin: 1px;
+}
+
+.selected {
+  opacity: 1;
+  scale: 1!important;
+  margin: 0.1rem!important;
+
+}
+
+.level-options {
+  display: flex;
+  align-items: center;
+  
+  justify-content: right;
+
+}
+
+.feed {
+  max-width: 80vw;
+  max-height: 100vh;
+}
+
+.description {
+  margin-left: 0% !important;
+}
+
+.cellphone {
+  display: flex !important;
+}
+
+.form-control {
+  margin-left: 3% !important;
+  border: none;
+  width: 50% !important;
+}
+
+.col {
+  align-items: center;
 }
