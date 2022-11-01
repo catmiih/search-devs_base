@@ -1,16 +1,26 @@
-#feedperfil {
-  position: initial;
+hr{
+  margin: 2.5% 10% !important;
+  height: .3% !important;
+  border-radius: 25px;
+  background-color: white;
+  opacity: 0.19;
+}
+.perfil {
   width: 80vw;
-  height: 100%;
-  display: flex;
+  height: auto;
   margin-left: 20vw;
 }
 
+#feedperfil {
+  position: inherit;
+  display: flex;
+}
+
 #profile_banner .banner {
-  position: absolute;
+  position: relative;
 
   width: 80vw;
-  height: 200px;
+  height: 25vh;
 
   object-fit: cover;
   background-size: 1120px 200px;
@@ -19,21 +29,17 @@
   background-position: center;
 }
 #profile {
-  position: relative;
-  left: 5vw;
-  top: 20vh;
+  position: inherit;
+  margin-left: 5vw;
+  margin-top: -5vh;
   display: inline-flex;
-  text-align: center;
+  text-align: left;
 }
 #containerperfil {
   align-items: baseline;
-  margin-top: 16%;
-  margin-left: 5%;
+  margin-top: 7vh;
+  margin-left: 2vw;
   height: auto;
-}
-#containerperfil h4,
-#containerperfil p {
-  width: 170px;
 }
 
 #align .btn {
@@ -59,7 +65,6 @@
 
 #align .btn:hover {
   opacity: 1;
-  transform: translateX(1px) scale(1.02);
   color: #fff;
 }
 
@@ -72,9 +77,37 @@
   border-radius: 100%;
   width: 10rem;
   height: 10rem;
+  position: fixed;
 
   object-fit: cover;
 }
 #align {
   display: flex;
+}
+
+.skills {
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: .2% 6%;
+    border-radius: 25px;
+    width: 89%;
+    padding: 1.5%;
+    
+}
+
+.evaluation {
+  display: flex;
+
+}
+
+.btn-level {
+  color: #fff;
+  border: none;
+  width: auto;
+  padding: 1% 5%;
+  height: 3% !important;
+  border-radius: 20px;
+  background-size: 400% 400%;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 1px;
 }

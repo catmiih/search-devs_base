@@ -72,18 +72,15 @@ body {
     background-size: 400% 400%;
     animation: Gradient 5s ease infinite;
     margin: 2.5% 0;
+    opacity: .4;
+
+    transition: .5s;
   }
-  .btn:hover {
-    transform: translateX(1px) scale(1.05);
+  .nav .btn:hover {
+    opacity: 1;
     color: #fff;
   }
 
-
-
-  .btn:hover {
-    transform: translateX(1px) scale(1.05);
-    color: #fff;
-  }
   
   @keyframes Gradient {
     0% {
@@ -100,6 +97,7 @@ body {
   .footer {
     margin: 0 10%;
     text-align: left;
+    width: 80%;
   }
   .footer p {
     font-size: .55rem;   
@@ -125,11 +123,11 @@ body {
     background-size: 400% 400%;
     animation: Gradient 5s ease infinite;
     opacity: .5;
+
     transition: .5s;
   }
   
-  .btn:hover {
-    transform: translateX(1px) scale(1.01);
+  .footer .btn:hover {
     opacity: 1;
     color: #fff;
   }

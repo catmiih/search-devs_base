@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<title>Perfil</title>
+<title>SEARCH DEVS&trade; - Dashboard </title>
 <link rel="shortcut icon" type="image/png" href="../img/logobarradepesquisa.svg" />
 
 <link rel="stylesheet" href="../../assets/extend/fontawesome/css/all.min.css" />
@@ -21,7 +21,6 @@
     <div class="position-relative">
         <div class="d-flex">
             <?php require_once 'left-menu.php' ?>
-
             <?php require_once 'pages/profile.php' ?>
         </div>
     </div>
