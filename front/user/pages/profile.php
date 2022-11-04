@@ -60,21 +60,22 @@
     <hr>
 
     <div class="row feed">
-        <div class="col">
+        <div class="col info">
             <h2>Informações:</h2>
-            <div class="col cellphone">
-                <p>Telefone:</p>
-                <input type="text" placeholder="Numero de telefone:" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled> 
-            </div> 
-            <div class="col cellphone">
-                <p>Email:</p>
-                <input type="text" placeholder="Email:" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled> 
-            </div> 
-            <div class="col cellphone">
-                <p>Nome:</p>
-                <input type="text" placeholder="Nome:" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled> 
-            </div>   
-                    
+            <div class="row input">
+               <p class="col label"> Telefone:</p>
+                    <input type="text" placeholder="Numero de telefone:" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                
+            </div>
+            <div class="row input">
+                <p class="col label">Email:</p>
+                <input type="text" placeholder="Email:" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+            </div>
+            <div class="row input">
+                <p class="col label">Nome:</p>
+                <input type="text" placeholder="Nome:" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+            </div>
+
         </div>
         <div class="col description">
             <h2>Descrição do perfil:</h2>

@@ -13,15 +13,13 @@
 <script src="../js/sd.js"></script>
 
 <body>
-    <div class="jumbvideo jumbvideo-fluid " style="position: relative;">
-        <video autoplay="" muted="" loop="" id="banner">
-            <source src="../img/back_image.mp4" type="video/mp4" />
-        </video>
-    </div>
     <div class="position-relative">
         <div class="d-flex">
             <?php require_once 'left-menu.php' ?>
-            <?php require_once 'pages/profile.php' ?>
+
+            <div class="page">
+                <?php require_once 'pages/profile.php' ?>
+            </div>
         </div>
     </div>
 
