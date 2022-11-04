@@ -19,15 +19,15 @@
                     <p>Bem vindo novamente, faça seu login.</p>
 
                     <div class="form">
-                        <form action="register-login.php" method="POST">
+                        <form action="functions/connect.php" method="POST">
 
                             <div class="input-group">
-                                <input type="text" placeholder="Usuário ou Email" class="col form-control" name="" id="" maxlength="25" minlength="5" required>
+                                <input type="text" placeholder="Usuário ou Email" class="col form-control" name="usermail" id="" maxlength="25" minlength="5" required>
                             </div>
 
                             <div class="col-xs-6">
                                 <div class="input-group">
-                                    <input type="password" placeholder="Senha" class="form-control" name="" id="pass" minlength="8" required>
+                                    <input type="password" placeholder="Senha" class="form-control" name="pass" id="" minlength="8" required>
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-eye btn-default" id="Epass">
                                             <i class="fa-solid fa-eye" id="icon"></i>

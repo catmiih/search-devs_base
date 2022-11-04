@@ -24,7 +24,7 @@ function onlyLetter(evt) {
     var key = theEvent.keyCode || theEvent.which;
     key = String.fromCharCode(key);
     //var regex = /^[0-9.,]+$/;
-    var regex = /^[a-zA-Z]+$/;
+    var regex = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/;
     if (!regex.test(key)) {
         theEvent.returnValue = false;
         if (theEvent.preventDefault) theEvent.preventDefault();

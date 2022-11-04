@@ -35,7 +35,7 @@ else {
 
 function registerUser($name, $username, $email, $password, $cell, $cep, $cpf, $born, $sex)
 {
-    require_once '../back/class/user.php';
+    require_once '../../back/class/user.php';
     $user = new User();
 
     if (!empty($name) && !empty($born) && !empty($cell) && !empty($cep) && !empty($cpf) && !empty($sex) && !empty($username) && !empty($email) && !empty($password)) {
@@ -45,10 +45,10 @@ function registerUser($name, $username, $email, $password, $cell, $cep, $cpf, $b
 
         if ($user->msg == "") {
             if ($user->register($name, $username, $email, $password, $cell, $cep, $cpf, $born, $sex)) {
-                header("location: login.php");
+                header("location: ../login.php");
             } else {
                 echo "<script>window.alert('Usuário já cadastrado.')
-                window.location.href='developer.php';</script>";
+                window.location.href='../developer.php';</script>";
             }
         } else {
             echo "Erro: " . $user->msg;
@@ -59,7 +59,7 @@ function registerUser($name, $username, $email, $password, $cell, $cep, $cpf, $b
 
 function registerCompany($name, $responsible, $date, $cell, $cnpj, $cpf, $username, $email, $password)
 {
-    require_once '../back/class/company.php';
+    require_once '../../back/class/company.php';
     $comp = new Company();
 
     if (!empty($name) && !empty($responsible) && !empty($date) && !empty($cell) && !empty($cnpj) && !empty($cpf) && !empty($username) && !empty($email) && !empty($password)) {
@@ -69,10 +69,10 @@ function registerCompany($name, $responsible, $date, $cell, $cnpj, $cpf, $userna
 
         if ($comp->msg == "") {
             if ($comp->register($name, $email, $password, $cnpj, $cell, $username, $responsible, $cpf, $date)) {
-                header("location: login.php");
+                header("location: ../login.php");
             } else {
                 echo "<script>window.alert('Usuário já cadastrado.')
-                window.location.href='company.php';</script>";
+                window.location.href='../company.php';</script>";
             }
         } else {
             echo "Erro: " . $user->msg;

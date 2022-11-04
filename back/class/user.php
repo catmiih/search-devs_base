@@ -58,9 +58,12 @@ class User
             $data = $sql->fetch();
             session_start();
             $_SESSION['ID'] = $data[MD5($email)];
+            echo("PAREI AQUI");
+            //header('../front/user/dashboard.php');
             return true;
         } else {
             /* Not Register */
+            echo("ERRO");
             return false;
         }
     }
