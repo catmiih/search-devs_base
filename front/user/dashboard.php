@@ -13,7 +13,7 @@
 <script src="../js/sd.js"></script>
 
 <body>
-    <div class="position-relative">
+    <div class="position-relative" style="overflow-x: hidden;">
         <div class="d-flex">
             <?php require_once 'left-menu.php' ?>
 
