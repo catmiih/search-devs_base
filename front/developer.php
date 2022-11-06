@@ -9,6 +9,14 @@
     * {
         color: #fff;
     }
+
+    .error {
+        box-shadow: #FF0000 0px 0px 10px !important;
+    }
+
+    .error:focus {
+        box-shadow: #FF0000 1px 1px 10px !important;
+    }
 </style>
 
 <body>
@@ -30,16 +38,16 @@
                             <input type="hidden" value="0" name="type_user">
 
                             <div class="row">
-                                <input type="text" placeholder="Nome Completo" class="col form-control" onkeypress="onlyLetter()" name="name" minlength="5" required>
+                                <input type="text" placeholder="Nome Completo" class="col form-control" onkeypress="onlyLetter()" name="name" id="name" minlength="5" required>
                             </div>
 
                             <div class="row">
                                 <input type="text" placeholder="Data de Nascimento" class="col form-control" name="born" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
-                                <input type="text" placeholder="Telefone" class="col form-control" name="cell" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>
+                                <input type="text" placeholder="Telefone" class="col form-control" name="cell" id="cell" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="CEP" class="col form-control" name="cep" id="cep" maxlength="18" minlength="18" onkeypress="" required>
+                                <input type="text" placeholder="CEP" class="col form-control" name="cep" id="cep" maxlength="9" minlength="9" onkeypress="CEP(this)" required>
                                 <input type="text" placeholder="CPF" class="col form-control" name="cpf" id="cpf" maxlength="14" minlength="14" onkeypress="ReadCpf(this)" required>
                                 <br><br>
                                 <div class="row radio">
@@ -67,8 +75,8 @@
                             </div>
                             <br>
 
-                            <button type="button" class="btn submit" onclick="next()">Continuar</button>
-                        
+                            <button type="button" class="btn submit" onclick="nextDev()">Continuar</button>
+
                     </div>
                 </div>
                 <?php require_once 'register-login.php' ?>

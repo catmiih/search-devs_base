@@ -1,7 +1,3 @@
-const cpf = document.querySelector('#cpf');
-const cep = document.querySelector('#cep');
-const data = document.querySelector('#data');
-
 /* Form Validation */
 
 
@@ -85,32 +81,80 @@ function validateCPF(cpf_n) {
     }
 }
 
-/* FAZER O VALIDADE CNPJ (18 DÍGITOS) */
+function validateCNPJ(cnpj) {
+    cnpj = cnpj.replace(/[^\d]+/g,'');
+ 
+    if(cnpj == '') return false;
+     
+    if (cnpj.length != 14)
+        return false;
+ 
+    // Elimina CNPJs invalidos conhecidos
+    if (cnpj == "00000000000000" || 
+        cnpj == "11111111111111" || 
+        cnpj == "22222222222222" || 
+        cnpj == "33333333333333" || 
+        cnpj == "44444444444444" || 
+        cnpj == "55555555555555" || 
+        cnpj == "66666666666666" || 
+        cnpj == "77777777777777" || 
+        cnpj == "88888888888888" || 
+        cnpj == "99999999999999")
+        return false;
+         
+    // Valida DVs
+    tamanho = cnpj.length - 2
+    numeros = cnpj.substring(0,tamanho);
+    digitos = cnpj.substring(tamanho);
+    soma = 0;
+    pos = tamanho - 7;
+    for (i = tamanho; i >= 1; i--) {
+      soma += numeros.charAt(tamanho - i) * pos--;
+      if (pos < 2)
+            pos = 9;
+    }
+    resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+    if (resultado != digitos.charAt(0))
+        return false;
+         
+    tamanho = tamanho + 1;
+    numeros = cnpj.substring(0,tamanho);
+    soma = 0;
+    pos = tamanho - 7;
+    for (i = tamanho; i >= 1; i--) {
+      soma += numeros.charAt(tamanho - i) * pos--;
+      if (pos < 2)
+            pos = 9;
+    }
+    resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+    if (resultado != digitos.charAt(1))
+          return false;
+           
+    return true;
+}
+
 
 function validateCEP(cep) {
-    $.ajax({
+
+    var json = $.ajax({
         url: "https://cdn.apicep.com/file/apicep/" + cep + ".json",
+        async: false,
         type: "GET",
         success: function (response) {
-            console.log(response);
-
-            if (response.code != "not_found") {
-                return true
-            }
-            else {
-                return false
-            }
+            return(response);
         }
     })
+
+    return json.status
 }
 
 function validateDate(date) {
     var dateTime = new Date()
     var year = dateTime.getFullYear()
 
-    if (parseInt(date.substring(0, 2)) <= 31) {
-        if (parseInt(date.substring(3, 5)) <= 12) {
-            if (parseInt(date.substring(6)) <= year - 16) {
+    if (parseInt(date.toString().substring(1, 2)) <= 31) {
+        if (parseInt(date.toString().substring(3, 5)) <= 12) {
+            if (parseInt(date.toString().substring(6)) <= year - 16) {
                 return true
             } else
                 return false
@@ -160,4 +204,19 @@ function CEP(cep) {
     onlynumber();
     if (cep.value.length == 5)
         cep.value = cep.value + '-';
+}
+
+function cnpj(cnpj) {
+    onlynumber();
+    if (cnpj.value.length == 2)
+        cnpj.value = cnpj.value + '.';
+
+    if (cnpj.value.length == 6)
+        cnpj.value = cnpj.value + '.';
+
+    if (cnpj.value.length == 10)
+        cnpj.value = cnpj.value + '/';
+
+    if (cnpj.value.length == 15)
+        cnpj.value = cnpj.value + '-';
 }

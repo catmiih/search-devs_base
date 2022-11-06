@@ -46,24 +46,25 @@ class User
         }
     }
 
-    function login($email, $username, $pass)
+    function login($username, $pass)
     {
         global $pdo;
         $passMD5 = MD5($pass);
         /* Verify Register */
-        $sql = $pdo->prepare("SELECT Dev_ID FROM developers WHERE Dev_email like '$email' || Dev_username like '$username' AND Dev_pass like '$passMD5'");
+        $sql = $pdo->prepare("SELECT Dev_ID FROM developers WHERE Dev_username = '$username' AND Dev_pass like '$passMD5'");
         $sql->execute();
         if ($sql->rowCount() > 0) {
             /* Register == True */
             $data = $sql->fetch();
             session_start();
-            $_SESSION['ID'] = $data[MD5($email)];
-            echo("PAREI AQUI");
-            //header('../front/user/dashboard.php');
+            $_SESSION['ID'] = $data[MD5($username)];
+            header('../front/user/dashboard.php');
             return true;
         } else {
             /* Not Register */
-            echo("ERRO");
+            echo ('aaaaaaaaaaaaa'.$pass.'  '.$username);
+            echo '<script>alert("ERRO: Usuário não existe'.$username.'")</script>';
+            /*header('Location: ../login.php');*/
             return false;
         }
     }

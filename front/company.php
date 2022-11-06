@@ -9,6 +9,14 @@
     * {
         color: #fff;
     }
+
+    .error {
+        box-shadow: #FF0000 0px 0px 10px !important;
+    }
+
+    .error:focus {
+        box-shadow: #FF0000 1px 1px 10px !important;
+    }
 </style>
 
 <body>
@@ -37,18 +45,18 @@
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="Data de Nascimento Responsável" class="col form-control" name="date" id="data" onkeypress="date()" maxlength="10" minlength="10" onkeypress="date(this)" required>
+                                <input type="text" placeholder="Nascimento responsável" class="col form-control" name="data" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
                                 <input type="text" placeholder="Telefone" class="col form-control" name="cell" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="CNPJ" class="col form-control" name="cnpj" id="cep"maxlength="9" minlength="9" onkeypress="CEP(this)" required>
+                                <input type="text" placeholder="CNPJ" class="col form-control" name="CNPJ" id="CNPJ" maxlength="18" minlength="18" onkeypress="cnpj(this)" required>
                                 <input type="text" placeholder="CPF" class="col form-control" name="cpf" id="cpf" maxlength="14" minlength="14" onkeypress="ReadCpf(this)" required>
                             </div>
 
                             <br>
                             
-                            <button type="button" class="btn submit" onclick="next()">Continuar</button>
+                            <button type="button" class="btn submit" onclick="nextComp()">Continuar</button>
 
                     </div>
                 </div>
@@ -62,7 +70,6 @@
     <!-- Import JS Functions -->
     <script src="js/validate.js"></script>
     <script src="js/form.js"></script>
-
 </body>
 
 </html>

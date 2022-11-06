@@ -27,7 +27,7 @@
 
                             <div class="col-xs-6">
                                 <div class="input-group">
-                                    <input type="password" placeholder="Senha" class="form-control" name="pass" id="" minlength="8" required>
+                                    <input type="password" placeholer="Senha" class="form-control" name="password" id="pass" required>
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-eye btn-default" id="Epass">
                                             <i class="fa-solid fa-eye" id="icon"></i>
@@ -58,20 +58,6 @@
 
         pass.addEventListener('click', function() {
             let input = document.querySelector('#pass')
-
-            if (input.getAttribute('type') == 'password') {
-                input.setAttribute('type', 'text')
-                $('#icon').removeClass("fa-eye").addClass("fa-eye-slash");
-            } else {
-                input.setAttribute('type', 'password')
-                $('#icon').removeClass("fa-eye-slash").addClass("fa-eye");
-            }
-        });
-
-        let confirm = document.querySelector('#Cpass');
-
-        confirm.addEventListener('click', function() {
-            let input = document.querySelector('#confirmPass')
 
             if (input.getAttribute('type') == 'password') {
                 input.setAttribute('type', 'text')
