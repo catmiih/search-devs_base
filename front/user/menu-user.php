@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION["id_user"]) || !isset($_SESSION["username"]))
+{
+// Usuário não logado! Redireciona para a página de login
+header("Location: ../login.php");
+exit;
+}
+
+?>
 
 <head>
   <meta charset="UTF-8">
@@ -18,7 +30,7 @@
 </head>
 
 <nav class="navbar navbar-dark bg-dark-menu fixed-top navbar-expand-md transition">
-  <a class="navbar-brand" href="../index.php">
+  <a class="navbar-brand" href="#">
     <img src="../img/logo-search-devs.svg" id="logo">
     <div id="Text">SEARCH DEVS™</div>
   </a>
@@ -30,14 +42,24 @@
   <div class="collapse navbar-collapse menu" id="navbarTogglerDemo01">
     <ul class="nav jnavbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="../register.php">
-        <i class="fa-sharp fa-solid fa-square-plus"></i> &nbsp; Inscrever-se
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../login.php">
-          <i class="fa-sharp fa-solid fa-user"></i> &nbsp; Entrar
+        <a class="nav-link" onclick="logout()">
+          <i class="fa-sharp fa-solid fa-user"></i> &nbsp; Sair
         </a>
       </li>
   </div>
 </nav>
+
+<script>
+  function logout() {
+    <?php
+    /* function logout()
+    {
+      unset($_SESSION['id_user']);
+      unset($_SESSION['username']);
+      session_destroy();
+      header('Location: ../login.php');
+    } */
+
+    ?>
+  }
+</script>

@@ -56,15 +56,28 @@ class User
         if ($sql->rowCount() > 0) {
             /* Register == True */
             $data = $sql->fetch();
-            session_start();
-            $_SESSION['ID'] = $data[MD5($username)];
-            header('../front/user/dashboard.php');
+            
+            $id_u = $_SESSION["id_user"]=$data[0];
+            $name = $_SESSION["username"]=$username;
+
+            if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
+                session_start();
+            }
+
+            $id = $pdo->prepare("SELECT Dev_ID FROM skills_dev where Dev_ID = '$data[0]'");
+            $id->execute();
+
+            if ($id->rowCount() <= 0) {
+                $id_u = $id->fetch();
+                header('Location: ../user/select-fields.php?id=' . $id_u);
+            } else
+                header('Location: ../user/dashboard.php?u=' . $username);
+
+
             return true;
         } else {
             /* Not Register */
-            echo ('aaaaaaaaaaaaa'.$pass.'  '.$username);
-            echo '<script>alert("ERRO: Usuário não existe'.$username.'")</script>';
-            /*header('Location: ../login.php');*/
+            header('Location: ../login.php');
             return false;
         }
     }

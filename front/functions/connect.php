@@ -27,10 +27,8 @@ if (!empty($usermail) && !empty($pass)) {
             $result2 = $pdo->query($usern);
             $username = $result2->fetch();
 
-            if($user->login($username[0], $pass)){
-                /* Login User Funcionando!
-                editar apenas os cookies pq ta quebrando*/
-            } 
+            $user->login($username[0], $pass);
+                
         } else {
 
             $sql2 = $pdo->prepare("SELECT Comp_ID FROM company WHERE Comp_email like '$usermail' || Comp_user like '$usermail'");
