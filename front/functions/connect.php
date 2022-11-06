@@ -19,20 +19,18 @@ if (!empty($usermail) && !empty($pass)) {
         if ($sql->rowCount() > 0) {
             /* Is a Dev */
 
-            $id = "SELECT * FROM `developers` WHERE `Dev_username` like '$usermail' || `Dev_email` like '$usermail'";
+            $idR = "SELECT * FROM `developers` WHERE `Dev_username` like '$usermail' || `Dev_email` like '$usermail'";
+            $result = $pdo->query($idR);
+            $id = $result->fetch();
 
-            $result = $pdo->query($id);
+            $usern = "SELECT Dev_username FROM developers WHERE Dev_ID = '$id[0]'";
+            $result2 = $pdo->query($usern);
+            $username = $result2->fetch();
 
-            $ids = $result->fetchAll();
-
-            echo $ids[0];
-
-            /* $usern = $pdo->prepare("SELECT Dev_username FROM developers WHERE Dev_ID = '$id'");
-            $username = $usern->execute(); */
-
-            /* if($user->login($username, $pass)){
-                echo "<script>alert('LOGADO')</script>";
-            } */
+            if($user->login($username[0], $pass)){
+                /* Login User Funcionando!
+                editar apenas os cookies pq ta quebrando*/
+            } 
         } else {
 
             $sql2 = $pdo->prepare("SELECT Comp_ID FROM company WHERE Comp_email like '$usermail' || Comp_user like '$usermail'");
