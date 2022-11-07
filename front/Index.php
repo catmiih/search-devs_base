@@ -35,7 +35,7 @@
         </div>
         <div class="col" id="col-WI2">
           <h1>O que é?</h1>
-          <p>O Search Devs é uma plataforma que facilita os desenvolvedores autônomos a encontrar novos projetos, ao unir o desenvolvedor ao projeto que mais tenha a sua cara! Tudo isso de forma automatizada.</p>
+          <p>O Search Devs é uma plataforma que facilita os desenvolvedores autônomos a encontrar novos projetos, unindo o desenvolvedor ao projeto que mais tenha a sua cara! Você está pronto para um Match? Rápido, fácil e automatizado.</p>
         </div>
       </div>
     </div>
@@ -64,11 +64,11 @@
           </div>
         </div>
       </div>
-      <p class="tag">Agora é só iniciar sua trajetória como um desenvolvedor com o Search Devs&trade;</p>
+      <p class="tag">Agora é só iniciar sua trajetória como um desenvolvedor do Search Devs&trade;</p>
     </div>
 
     <div id="why" class="tag">
-      <h1>Trabalhando conosco você encontra</h1>
+      <h1>Junte-se a nós agora mesmo!</h1>
       <div class="container text-center justify-content-md-center">
         <div class="row">
           <div class="col col-lg-6">
@@ -88,12 +88,12 @@
     </div>
 
     <div class="tag" id="start">
-      <h1>Junte-se a nós agora!</h1>
+      <h1>O futuro é agora!</h1>
       <p>
-        Agora que você já nos conhece, é a hora de se juntar ao Search Devs! Não é mesmo?
+        Agora que já você nos conhece, está na hora de se juntar ao Search Devs! Não é mesmo?
         <br>
-        <br>
-        Seja você um profissional ou usuário em busca de nossos devs, vamos auxiliá-los de forma rápida e intuitiva.
+        <p>
+        Seja um profissional ou usuário em busca de nossos devs, vamos auxiliá-los de forma rápida e intuitiva.
       </p>
       <center>
         <a class="btn" href="register.php">Começar agora</a>

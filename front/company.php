@@ -30,7 +30,7 @@
             <center>
                 <div id="campo1">
                     <h1>Cadastre-se</h1>
-                    <p>Bem vindo, empreendedor. Preencha os campos.</p>
+                    <p>Seja bem vindo empreendedor. Preencha os campos abaixo:</p>
 
                     <div class="form">
                         <form action="complete-login.php" class="needs-validation" method="POST">
@@ -41,11 +41,11 @@
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="Nome responsável" onkeypress="onlyLetter()" class="col form-control" name="responsible" minlength="5" required>
+                                <input type="text" placeholder="Nome do responsável" onkeypress="onlyLetter()" class="col form-control" name="responsible" minlength="5" required>
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="Nascimento responsável" class="col form-control" name="data" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
+                                <input type="text" placeholder="Nascimento do responsável" class="col form-control" name="data" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
                                 <input type="text" placeholder="Telefone" class="col form-control" name="cell" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>
                             </div>
 

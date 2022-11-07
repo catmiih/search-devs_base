@@ -30,7 +30,7 @@
             <center>
                 <div id="campo1">
                     <h1>Cadastre-se</h1>
-                    <p>Bem vindo, desenvolvedor. Preencha os campos.</p>
+                    <p>Seja bem vindo desenvolvedor. Preencha os campos abaixo:</p>
 
                     <div class="form">
                         <form action="functions/complete-login.php" class="needs-validation" novalidate method="POST">

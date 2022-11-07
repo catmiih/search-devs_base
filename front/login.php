@@ -15,8 +15,8 @@
         <div class="container text" style="width: 100%; height: 100vh;">
             <center>
                 <div id="campo1">
-                    <h1>Acessar conta</h1>
-                    <p>Bem vindo novamente, faça seu login.</p>
+                    <h1>Entrar</h1>
+                    <p>Bem vindo, faça seu login.</p>
 
                     <div class="form">
                         <form action="functions/connect.php" method="POST">
@@ -36,11 +36,11 @@
                                 </div>
                             </div>
 
-                            <a href="" class="forget">Esqueci minha senha</a>
+                            <a href="" class="forget">Esqueceu a senha?</a>
                             <br>
 
                             <button type="submit" class="btn submit">ENTRAR</button>
-                            <p>Ainda não tem conta? <a href="register.php" style="font-weight: 700">Cadastre-se</a></p>
+                            <p>Novo no Search Devs? <a href="register.php" style="font-weight: 700">Cadastre-se</a></p>
                         </form>
                     </div>
                 </div>

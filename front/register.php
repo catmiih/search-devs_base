@@ -35,7 +35,7 @@
             <center>
                 <div id="campo1">
                     <h1>Cadastre-se</h1>
-                    <p>Vamos começar por algo fácil, qual tipo de conta você deseja?</p>
+                    <p>Escolha qual tipo de conta você deseja:</p>
 
                     <div class="row">
                         <a class="col btn tag" href="developer.php">Freelancer</a>
