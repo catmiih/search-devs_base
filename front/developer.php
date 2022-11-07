@@ -20,7 +20,7 @@
 </style>
 
 <body>
-
+.
     <div class="jumbvideo jumbvideo-fluid tag">
         <video autoplay="" muted="" loop="" id="banner">
             <source src="img/back_image.mp4" type="video/mp4" />
