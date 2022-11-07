@@ -1,13 +1,13 @@
 <?php
 
-session_start();
+/* session_start();
 
 if(!isset($_SESSION["id_user"]) || !isset($_SESSION["username"]))
 {
 // Usuário não logado! Redireciona para a página de login
 header("Location: ../login.php");
 exit;
-}
+} */
 
 ?>
 
@@ -31,7 +31,8 @@ exit;
             <?php require_once 'left-menu.php' ?>
 
             <div class="page">
-                <?php require_once 'pages/profile.php' ?>
+                <!-- <?php require_once 'pages/profile.php' ?> -->
+                <?php require_once 'pages/search.php' ?>
             </div>
         </div>
     </div>
