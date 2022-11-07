@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../css/perfil.css" />
 <link rel="stylesheet" type="text/css" href="../css/level.css" />
 
+
 <div class="perfil">
     <div id="feedperfil">
         <div id="profile_banner">

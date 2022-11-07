@@ -1,4 +1,8 @@
 
+#see {
+  opacity: .8!important;
+}
+
 .perfil {
   max-width: 80vw !important;
   width: 80vw;
@@ -46,7 +50,17 @@
   height: auto;
 }
 
-#align .btn {
+hr {
+  margin: 4% 12.5%;
+  width: 50vw;
+  height: 0.3%;
+  border-radius: 25px;
+  background-color: #fff;
+  opacity: .3;
+
+}
+
+#align > .btn {
   color: #fff;
   font-weight: bold;
   border: none;

@@ -25,14 +25,27 @@ exit;
 <script src="../../assets/extend/js/jquery.js"></script>
 <script src="../js/sd.js"></script>
 
+<style>
+    .selected {
+        opacity: .8!important;
+    }
+</style>
+
 <body>
     <div class="position-relative" style="overflow-x: hidden;">
         <div class="d-flex">
             <?php require_once 'left-menu.php' ?>
 
             <div class="page">
-                <!-- <?php require_once 'pages/profile.php' ?> -->
-                <?php require_once 'pages/search.php' ?>
+                <?php
+                if (isset($_POST['1'])) {
+                    require_once "pages/profile.php";
+                }
+                if (isset($_POST['2'])) {
+                    require_once "pages/search.php";
+                }
+
+                ?>
             </div>
         </div>
     </div>

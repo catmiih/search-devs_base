@@ -43,7 +43,7 @@
                             <div class="row">
                                 <input type="text" placeholder="Nome do responsável" onkeypress="onlyLetter()" class="col form-control" name="responsible" minlength="5" required>
                             </div>
-.
+
                             <div class="row">
                                 <input type="text" placeholder="Nascimento do responsável" class="col form-control" name="data" id="data" maxlength="10" minlength="10" onkeypress="date(this)" required>
                                 <input type="text" placeholder="Telefone" class="col form-control" name="cell" maxlength="15" minlength="15" onkeypress="cellphone(this)" required>

@@ -2,17 +2,17 @@
 
 
 <div class="discover-pro">
-    <div class="row search">
-        <h2 class="col-5">Descobrir profissionais</h2>
-        <div class="container-fluid col barra">
+    <div class="row search align-self-center justify-content-between">
+        <h2 class="col-4">Descobrir profissionais</h2>
+        <div class="col-7 barra">
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
                 <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
-    </div>
 
-    <hr>
+        <hr>
+    </div>
 
     <div class="row">
 

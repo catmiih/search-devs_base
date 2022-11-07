@@ -30,7 +30,7 @@
         <video autoplay="" muted="" loop="" id="banner">
             <source src="img/back_image.mp4" type="video/mp4" />
         </video>
-.
+
         <div class="container text" style="width: 100%; height: 100vh;">
             <center>
                 <div id="campo1">

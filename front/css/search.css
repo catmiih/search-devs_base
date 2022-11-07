@@ -1,141 +1,151 @@
+#search {
+  opacity: .8!important;
+}
+ 
 .discover-pro {
-    width: 80vw;
-    height: 100%;
+  max-width: 80vw !important;
+  width: 80vw;
+  height: 100%;
 
-    padding: 5%;
+  padding: 5%;
 }
 
 .search {
-    align-items: center;
+  align-items: center;
+  margin: 0 10%;
+}
+
+.search h2 {
+  font-weight: 700;
+  font-size: 1.85rem;
+  margin-right: 1%;
+}
+
+hr {
+  margin: 5% 0!important;
 }
 
 .page {
-    min-height: 100vh;
-}
-
-.barra {
-    padding: 1%;
+  min-height: 100vh;
 }
 
 .form-control {
-    padding: 2% 5%;
-    border-radius: 15px;
-    width: 35vw;
+  padding: 2% 5%;
+  border-radius: 15px;
+  width: 35vw;
 }
 
 i {
-    color: inherit;
+  color: inherit;
 }
 
 .btn-search {
-    margin-left: -10%;
+  margin-left: -10%;
 
-    opacity: .5;
-    transition: .5s;
+  opacity: 0.5;
+  transition: 0.5s;
 }
 
 .btn-search:hover {
-    opacity: 1;
-    scale: 1.1;
+  opacity: 1;
+  scale: 1.1;
 }
 
 .user-card {
-    background-color: rgba(0, 0, 0, .3);
-    width: 13rem;
-    height: 20rem;
-    margin:  2%;
-    border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 13rem;
+  height: 20rem;
+  margin: 2%;
+  border-radius: 15px;
 }
 
-  
-  #feedperfil {
-    width: 3rem!important;
-    height: 20rem;
-    margin: 2%;
-    position: inherit;
-    display: flex;
-  }
-  
-  #profile_banner {
-    margin: 10% 0;
-    padding: 0;
-    width: 100%;
-  }
-  
-  #profile_banner .banner {
-    position: relative;
-    width: 100%;
-    height: 5rem;
-  
-    opacity: .8;
-    filter:grayscale(.5);
+#feedperfil {
+  width: 3rem !important;
+  height: 20rem;
+  margin: 2%;
+  position: inherit;
+  display: flex;
+}
 
-    object-fit: cover;
-    background-size: 1120px 200px;
-    background-repeat: no-repeat;
-  
-    background-position: center;
+#profile_banner {
+  margin: 10% 0;
+  padding: 0;
+  width: 100%;
+}
 
-    border-radius: 15px;
-  }
+#profile_banner .banner {
+  position: relative;
+  width: 100%;
+  height: 5rem;
 
-  #profile {
-    position: inherit;
-    margin-left: 0vw;
-    margin-top: -5vh;
-    display: inline-flex;
-    text-align: left;
-    flex-wrap: wrap;
-  }
+  opacity: 0.8;
+  filter: grayscale(0.5);
 
-  #containerperfil {
-    align-items: absolute;
-    margin: .8rem;
-    height: auto;
-    
-    font-size: .8rem;
-  }
+  object-fit: cover;
+  background-size: 1120px 200px;
+  background-repeat: no-repeat;
 
-  #containerperfil h4{
-    margin: 0;
-  }
-  
-  .profile_pic {
-    width: 6rem;
-    height: 6rem;
-    margin: 0 22%;
-  }
-  
-  .profile_pic img {
-    border-radius: 100%;
-    width: 6rem;
-    height: 6rem;
-    position: absolute;
-  
-    object-fit: cover;
-  }
+  background-position: center;
 
-  .btn-group > .btn {
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    width: 13vw;
-    padding: 5%;
-  
-    border-radius: 10px;
-    background: #092565;
-    background: radial-gradient(circle, #0142bb 0%, #6f01ff 100%);
-    animation-duration: 2s;
-    background-size: 400% 400%;
-    animation: Gradient 5s ease infinite;
-    margin-bottom: 5%;
-    opacity: 0.4;
-  
-    transition: 0.5s;
-  }
+  border-radius: 15px;
+}
 
-  .btn-group > .btn:hover {
-    opacity: 1;
-    color: #fff;
-  }
-  
+#profile {
+  position: inherit;
+  margin-left: 0vw;
+  margin-top: -5vh;
+  display: inline-flex;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+#containerperfil {
+  align-items: absolute;
+  margin: 0.8rem;
+  height: auto;
+
+  font-size: 0.8rem;
+}
+
+#containerperfil h4 {
+  margin: 0;
+}
+
+.profile_pic {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 22%;
+}
+
+.profile_pic img {
+  border-radius: 100%;
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+
+  object-fit: cover;
+}
+
+.btn-group > .btn {
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  width: 13vw;
+  padding: 5%;
+
+  border-radius: 10px;
+  background: #092565;
+  background: radial-gradient(circle, #0142bb 0%, #6f01ff 100%);
+  animation-duration: 2s;
+  background-size: 400% 400%;
+  animation: Gradient 5s ease infinite;
+  margin-bottom: 5%;
+  opacity: 0.4;
+
+  transition: 0.5s;
+}
+
+.btn-group > .btn:hover {
+  opacity: 1;
+  color: #fff;
+}

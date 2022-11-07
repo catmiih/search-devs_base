@@ -9,18 +9,23 @@
                 <p>Título do Perfil/ cargo</p>
             </div>
         </div>
-        <div class="nav">
-            <br>
-            <button class="btn">Ver perfil</button>
-            <button class="btn">Descobrir profissionais</button>
-            <button class="btn">Novas propostas</button>
-            <button class="btn">Projetos em andamento</button>
-        </div>
+
+        <form action="" method="post">
+            <div class="nav">
+                <br>
+                <button class="btn-menu" id="see" type="submit" name="1">Ver perfil</button>
+                <button class="btn-menu" id="search" type="submit" name="2">Descobrir profissionais</button>
+                <button class="btn-menu" id="new" type="submit" name="3">Novas propostas</button>
+                <button class="btn-menu" id="projects" type="submit" name="4">Projetos em andamento</button>
+            </div>
+        
+
         <div id="footerSidebar" class="position-absolute bottom-0 start-0 footer">
             <h1>Plano Atual: Comum</h1>
-            <a href="#" class="btn">Torne-se Vip</a>
+            <button type="submit" name="5" class="btn">Torne-se Vip</button>
             <br>
             <p>Copyright &copy; 2022 Search Devs. Todos os direitos reservados </p>
         </div>
+        </form>
     </center>
 </div>
