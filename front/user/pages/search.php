@@ -31,13 +31,13 @@
                         </div>
                         <p>Anbalista de muita coisa e tal e titulo longo</p>
                     </div>
-
-                    <form action="" method="post">
-                    <input type="hidden" name="user" value="null">
-                        <div class="btn-group">
+                    <div class="btn-group">
+                    <form action="" method="post" style="width: 100%;">
+                        
+                            <input type="hidden" name="user" value="null" style="display: none;">
                             <button type="submit" name="7" class="btn">Ver perfil</button>
-                        </div>
                     </form>
+                    </div>
                 </div>
             </div>
 

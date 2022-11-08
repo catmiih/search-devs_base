@@ -9,12 +9,13 @@
   min-height: 100vh;
   height: 100%;
 
-  padding: 5% 10%;
+  padding: 5% 12%;
 }
 
 .search {
-  align-items: center;
-  margin: 0 10%;
+  align-items: left;
+  text-align: left;
+  margin: 0 5%;
 }
 
 hr {
@@ -22,8 +23,8 @@ hr {
 }
 
 .propose-card {
-  background-color: rgba(0, 0, 0, 0.3);
-  width: 70vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 70rem;
   height: 8rem;
   margin: 2%;
   border-radius: 15px;
@@ -32,7 +33,7 @@ hr {
 .profile_pic {
   width: 6rem;
   height: 6rem;
-  margin: 2%;
+  margin: 1.3% 0;
 }
 
 .profile_pic img {
@@ -62,23 +63,17 @@ hr {
   margin: 0;
 }
 
-#containerperfil h4 > b::before {
+#containerperfil h4>b::before {
   content: "•";
   margin: 0 3%;
 }
 
-#containerperfil h4 > b {
+#containerperfil h4>b {
   opacity: 0.5;
   font-weight: 100;
 }
 
 #containerperfil p {
-  /* overflow: hidden;
-    white-space: nowrap;
-
-    display: block;
-    text-overflow: ellipsis; */
-
   width: 40vw !important;
   overflow: hidden;
   display: -webkit-box;
@@ -89,12 +84,11 @@ hr {
 }
 
 .btn-group {
-  display: flex;
-  flex-wrap: wrap;
 
+  flex-wrap: wrap;
   margin: 1% 0;
-  width: 50rem;
-  height: 10rem!important;
+  width: 13rem!important;
+  height: 10rem !important;
 }
 
 .btn-group .btn-see {
@@ -115,7 +109,7 @@ hr {
 
   transition: 0.5s;
 
-  padding: 0!important;
+  padding: 0 !important;
   height: 3rem;
 }
 
@@ -133,9 +127,9 @@ hr {
 
 .btn-yes {
   margin: 0 2%;
-  padding: 0!important;
-  background: #2ca736!important;
-  background: linear-gradient(#147508 0%, #64bd1b 100%)!important;
+  padding: 0 !important;
+  background: #2ca736 !important;
+  background: linear-gradient(#147508 0%, #64bd1b 100%) !important;
   animation-duration: 2s;
   background-size: 400% 400%;
   animation: Gradient 5s ease infinite;
@@ -143,8 +137,8 @@ hr {
 
 .btn-no {
   margin: 0 2%;
-  padding: 0!important;
-  background: linear-gradient(#750808 0%, #d30707 100%)!important;
+  padding: 0 !important;
+  background: linear-gradient(#750808 0%, #d30707 100%) !important;
   animation-duration: 2s;
   background-size: 400% 400%;
   animation: Gradient 5s ease infinite;

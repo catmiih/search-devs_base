@@ -1,7 +1,7 @@
 <div class="side-menu">
     <div id="sidebar" class="position-absolute top-0 start-0">
         <center>
-            <div class="container">
+            <div class="container prof">
                 <div class="user">
                     <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
                 </div>

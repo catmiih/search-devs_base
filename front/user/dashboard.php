@@ -34,7 +34,8 @@ exit;
 <body>
     <div class="position-relative" style="overflow-x: hidden;">
         <div class="d-flex">
-            <?php require_once 'left-menu.php' ?>
+            <!-- <?php require_once 'left-menu.php'; ?> -->
+            <?php require_once 'bottom-menu.php'; ?>
 
             <div class="page">
                 <?php
