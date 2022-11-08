@@ -45,6 +45,10 @@ exit;
                     require_once "pages/search.php";
                 }
 
+                if (isset($_POST['3'])) {
+                    require_once "pages/news.php";
+                }
+
                 ?>
             </div>
         </div>

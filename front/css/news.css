@@ -1,0 +1,113 @@
+.discover-propose {
+  max-width: 80vw !important;
+  width: 80vw;
+
+  min-height: 100vh;
+  height: 100%;
+
+  padding: 5% 10%;
+}
+
+.search {
+  align-items: center;
+  margin: 0 10%;
+}
+
+hr {
+  margin: 5% 0 !important;
+}
+
+.propose-card {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 70vw;
+  height: 8rem;
+  margin: 2%;
+  border-radius: 15px;
+}
+
+.profile_pic {
+  width: 6rem;
+  height: 6rem;
+  margin: 2%;
+}
+
+.profile_pic img {
+  border-radius: 20px;
+  width: 6rem;
+  height: 6rem;
+
+  object-fit: cover;
+}
+
+#profile {
+  display: inline-flex;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+#containerperfil {
+  align-items: absolute;
+  margin: 0.8rem;
+  height: 10rem;
+
+  font-size: 0.8rem;
+  width: auto;
+}
+
+#containerperfil h4 {
+  margin: 0;
+}
+
+#containerperfil h4 > b::before {
+  content: "•";
+  margin: 0 3%;
+}
+
+#containerperfil h4 > b {
+  opacity: 0.5;
+  font-weight: 100;
+}
+
+#containerperfil p {
+  /* overflow: hidden;
+    white-space: nowrap;
+
+    display: block;
+    text-overflow: ellipsis; */
+
+  width: 40vw !important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  margin: 1% 0;
+}
+
+.col-8 {
+    max-width: 5rem;
+}
+
+.btn-group > .btn-see {
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  width: 100%;
+  padding: 5%;
+
+  border-radius: 10px;
+  background: #092565;
+  background: radial-gradient(circle, #0142bb 0%, #6f01ff 100%);
+  animation-duration: 2s;
+  background-size: 400% 400%;
+  animation: Gradient 5s ease infinite;
+  margin-bottom: 5%;
+  opacity: 0.4;
+
+  transition: 0.5s;
+}
+
+.btn-group > .btn-see:hover {
+  opacity: 1;
+  color: #fff;
+}
