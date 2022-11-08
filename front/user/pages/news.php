@@ -9,7 +9,7 @@
 
     <div class="row">
 
-        <!-- Usuário ⬇️ -->
+        <!-- Proposta ⬇️ -->
 
         <div class="propose-card">
             <div id="profile" class="row">
@@ -23,10 +23,19 @@
                     </div>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </div>
-                
-                <div class="btn-group col-8">
-                    <button href="" class="btn-see">Ver perfil</button>
+
+                <div class="btn-group col">
+                    <div class="confirm">
+                        <button href="" class="btn-see btn-yes col"><i class="fa-solid fa-check"></i></button>
+                        <button href="" class="btn-see btn-no col"><i class="fa-solid fa-x"></i></button>
+                    </div>
+
+                    <form action="" method="post" style="width: 100%;">
+                        <input type="hidden" name="details" value="x" style="display: none;">
+                        <button type="submit" name="6" class="btn-see">Detalhes</button>
+                    </form>
                 </div>
+
             </div>
 
         </div>

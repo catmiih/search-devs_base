@@ -1,20 +1,28 @@
 <link rel="stylesheet" type="text/css" href="../css/perfil.css" />
 <link rel="stylesheet" type="text/css" href="../css/level.css" />
-
+<link rel="stylesheet" type="text/css" href="../css/details.css" />
 
 <div class="perfil">
     <div id="feedperfil">
         <div id="profile_banner">
             <img class="banner" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
-            <div id="profile">
-                <div class="profile_pic">
-                    <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
-                </div>
-                <div id="containerperfil">
-                    <div id="align">
-                        <h4>Fulano de Tal </h4>
+            <div class="row">
+                <div id="profile" class="col">
+                    <div class="profile_pic">
+                        <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
                     </div>
-                    <p>Título do Perfil/cargo</p>
+                    <div id="containerperfil">
+                        <div id="align">
+                            <h4>Projeto X </h4>
+                        </div>
+                        <p>Google Company</p>
+                    </div>
+                </div>
+                <div class="btn-group col">
+                    <div class="confirm">
+                        <button href="" class="btn-see btn-yes col"><i class="fa-solid fa-check"></i></button>
+                        <button href="" class="btn-see btn-no col"><i class="fa-solid fa-x"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,7 +88,7 @@
 
         </div>
         <div class="col description">
-            <h2>Descrição do perfil:</h2>
+            <h2>Descrição do projeto:</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since
                 the 1500s, when an unknown printer took a galley of type and scrambled
                 it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially

@@ -40,7 +40,7 @@ i {
 }
 
 .btn-search {
-  margin-left: -10%;
+  margin-left: -15%;
 
   opacity: 0.5;
   transition: 0.5s;
@@ -125,6 +125,7 @@ i {
 
   object-fit: cover;
 }
+
 
 .btn-group > .btn {
   color: #fff;

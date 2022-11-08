@@ -38,8 +38,9 @@ exit;
 
             <div class="page">
                 <?php
+
                 if (isset($_POST['1'])) {
-                    require_once "pages/profile.php";
+                    require_once "pages/myprofile.php";
                 }
                 if (isset($_POST['2'])) {
                     require_once "pages/search.php";
@@ -47,6 +48,25 @@ exit;
 
                 if (isset($_POST['3'])) {
                     require_once "pages/news.php";
+                }
+
+                if (isset($_POST['4'])) {
+                    /* Projeto em andamento */
+                }
+
+                if (isset($_POST['5'])) {
+                    /* Vip */
+                }
+
+                if (isset($_POST['6'])) {
+                    require_once "pages/details.php";
+                }
+                if (isset($_POST['7'])) {
+                    require_once "pages/profile.php";
+                }
+
+                if (isset($_POST['exit'])) {
+                    /* Sair da conta */
                 }
 
                 ?>

@@ -13,6 +13,7 @@
                 <div id="containerperfil">
                     <div id="align">
                         <h4>Fulano de Tal </h4>
+                        <a href="#" class="btn"><i class="fa-solid fa-gear"></i></a>
                     </div>
                     <p>Título do Perfil/cargo</p>
                 </div>

@@ -1,0 +1,60 @@
+.btn-group {
+    display: flex;
+    flex-wrap: nowrap;
+  
+    margin: 1% 0;
+    max-width: 10rem!important;
+    right: 10%;
+  }
+  
+  .btn-group .btn-see {
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    width: 100%;
+    padding: 5%;
+  
+    border-radius: 10px;
+    background: #092565;
+    background: radial-gradient(circle, #0142bb 0%, #6f01ff 100%);
+    animation-duration: 2s;
+    background-size: 400% 400%;
+    animation: Gradient 5s ease infinite;
+    margin-bottom: 5%;
+    opacity: 0.4;
+  
+    transition: 0.5s;
+  
+    padding: 0!important;
+    height: 3rem;
+  }
+  
+  .btn-group .btn-see:hover {
+    opacity: 1;
+    color: #fff;
+  }
+  
+  .confirm {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  
+  .btn-yes {
+    margin: 0 2%;
+    padding: 0!important;
+    background: #2ca736!important;
+    background: linear-gradient(#147508 0%, #64bd1b 100%)!important;
+    animation-duration: 2s;
+    background-size: 400% 400%;
+    animation: Gradient 5s ease infinite;
+  }
+  
+  .btn-no {
+    margin: 0 2%;
+    padding: 0!important;
+    background: linear-gradient(#750808 0%, #d30707 100%)!important;
+    animation-duration: 2s;
+    background-size: 400% 400%;
+    animation: Gradient 5s ease infinite;
+  }

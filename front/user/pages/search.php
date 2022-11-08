@@ -16,7 +16,7 @@
 
     <div class="row">
 
-         <!-- Usuário ⬇️ -->
+        <!-- Usuário ⬇️ -->
 
         <div class="user-card">
             <div id="profile_banner">
@@ -32,134 +32,18 @@
                         <p>Anbalista de muita coisa e tal e titulo longo</p>
                     </div>
 
-                    <div class="btn-group">
-                        <a href="" class="btn">Ver perfil</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-         <!-- Usuário ⬇️ -->
-
-         <div class="user-card">
-            <div id="profile_banner">
-                <img class="banner" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
-                <div id="profile">
-                    <div class="profile_pic">
-                        <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
-                    </div>
-                    <div id="containerperfil">
-                        <div id="align">
-                            <h4>Fulano de Tal </h4>
+                    <form action="" method="post">
+                    <input type="hidden" name="user" value="null">
+                        <div class="btn-group">
+                            <button type="submit" name="7" class="btn">Ver perfil</button>
                         </div>
-                        <p>Anbalista de muita coisa e tal e titulo longo</p>
-                    </div>
-
-                    <div class="btn-group">
-                        <a href="" class="btn">Ver perfil</a>
-                    </div>
+                    </form>
                 </div>
             </div>
 
         </div>
 
-         <!-- Usuário ⬇️ -->
 
-         <div class="user-card">
-            <div id="profile_banner">
-                <img class="banner" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
-                <div id="profile">
-                    <div class="profile_pic">
-                        <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
-                    </div>
-                    <div id="containerperfil">
-                        <div id="align">
-                            <h4>Fulano de Tal </h4>
-                        </div>
-                        <p>Anbalista de muita coisa e tal e titulo longo</p>
-                    </div>
 
-                    <div class="btn-group">
-                        <a href="" class="btn">Ver perfil</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-         <!-- Usuário ⬇️ -->
-
-         <div class="user-card">
-            <div id="profile_banner">
-                <img class="banner" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
-                <div id="profile">
-                    <div class="profile_pic">
-                        <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
-                    </div>
-                    <div id="containerperfil">
-                        <div id="align">
-                            <h4>Fulano de Tal </h4>
-                        </div>
-                        <p>Anbalista de muita coisa e tal e titulo longo</p>
-                    </div>
-
-                    <div class="btn-group">
-                        <a href="" class="btn">Ver perfil</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-         <!-- Usuário ⬇️ -->
-
-         <div class="user-card">
-            <div id="profile_banner">
-                <img class="banner" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
-                <div id="profile">
-                    <div class="profile_pic">
-                        <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
-                    </div>
-                    <div id="containerperfil">
-                        <div id="align">
-                            <h4>Fulano de Tal </h4>
-                        </div>
-                        <p>Anbalista de muita coisa e tal e titulo longo</p>
-                    </div>
-
-                    <div class="btn-group">
-                        <a href="" class="btn">Ver perfil</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-         <!-- Usuário ⬇️ -->
-
-         <div class="user-card">
-            <div id="profile_banner">
-                <img class="banner" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
-                <div id="profile">
-                    <div class="profile_pic">
-                        <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
-                    </div>
-                    <div id="containerperfil">
-                        <div id="align">
-                            <h4>Fulano de Tal </h4>
-                        </div>
-                        <p>Anbalista de muita coisa e tal e titulo longo</p>
-                    </div>
-
-                    <div class="btn-group">
-                        <a href="" class="btn">Ver perfil</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        
     </div>
 </div>
