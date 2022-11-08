@@ -1,3 +1,27 @@
+@media (min-width: 1000px) {
+  .side-menu-cell {
+    display: none !important;
+  }
+
+  .side-menu {
+    display: inline;
+  }
+}
+
+@media (max-width: 900px) {
+  .side-menu {
+    display: none !important;
+  }
+
+  .side-menu-cell {
+    display: flex;
+  }
+
+  .page {
+    margin-left: 20vw !important;
+  }
+}
+
 * {
   color: #fff;
 }
@@ -8,15 +32,15 @@
 }
 
 body {
-  background: #000;
 }
 
 .page {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(90deg,
-      rgba(111, 1, 96, 0.3) 0%,
-      rgba(9, 9, 121, 0.3) 57%,
-      rgba(160, 0, 255, 0.3) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(111, 1, 96, 0.3) 0%,
+    rgba(9, 9, 121, 0.3) 57%,
+    rgba(160, 0, 255, 0.3) 100%
+  );
 
   animation-duration: 5s;
   background-size: 400% 400%;
@@ -115,8 +139,6 @@ body {
   margin-left: 20vw;
 }
 
-
-
 .footer {
   margin: 0 10%;
   text-align: left;
@@ -131,7 +153,8 @@ body {
   font-size: 1.2rem;
 }
 
-.footer .btn {
+.footer .btn,
+.vip-cell {
   color: #fff;
   font-weight: bold;
   border: none;
@@ -165,7 +188,7 @@ body {
 }
 
 .logout {
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding: 0 2% !important;
   width: auto !important;
   height: 3rem !important;
@@ -181,4 +204,30 @@ body {
   animation-duration: 2s;
   background-size: 400% 400%;
   animation: Gradient 5s ease infinite;
+}
+
+.nav-cell {
+  bottom: 5%;
+  width: 100vw;
+  height: 10rem;
+}
+
+.nav-cell {
+  flex-wrap: nowrap !important;
+}
+
+.menu-cell {
+  height: 10rem;
+  bottom: 0;
+}
+
+.vip-cell {
+  width: 15% !important;
+  height: 15% !important;
+  margin-bottom: 10% !important;
+}
+
+.cell {
+  width: 20% !important;
+  height: 20% !important;
 }

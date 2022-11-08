@@ -69,7 +69,7 @@ class User
 
             if ($id->rowCount() <= 0) {
                 $id_u = $id->fetch();
-                header('Location: ../user/select-fields.php?id=' . $id_u);
+                header('Location: ../user/select-fields.php?id=' . $data[0]);
             } else
                 header('Location: ../user/dashboard.php?u=' . $username);
 
