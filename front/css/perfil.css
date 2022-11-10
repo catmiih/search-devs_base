@@ -1,4 +1,4 @@
-@media screen and (max-device-width: 399px) {
+@media screen and (max-device-width: 800px) {
   #see {
     scale: 1.1;
     transform: translateY(-2rem);

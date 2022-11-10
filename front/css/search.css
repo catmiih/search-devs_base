@@ -1,5 +1,5 @@
 
-@media screen and (max-device-width: 399px) {
+@media screen and (max-device-width: 800px) {
   #search {
     scale: 1.1;
     transform: translateY(-2rem);

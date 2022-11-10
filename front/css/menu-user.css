@@ -1,4 +1,4 @@
-@media (min-width: 400px) {
+@media (min-width: 800px) {
   .side-menu-cell {
     display: none !important;
   }
@@ -8,7 +8,7 @@
   }
 }
 
-@media screen and (max-device-width: 399px) {
+@media screen and (max-device-width: 800px) {
 
   .side-menu {
     display: none !important;
