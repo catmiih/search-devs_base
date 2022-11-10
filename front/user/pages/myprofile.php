@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="../css/perfil.css" />
 <link rel="stylesheet" type="text/css" href="../css/level.css" />
+<link rel="stylesheet" type="text/css" href="../css/perfil.css" />
 
 
 <div class="perfil">
@@ -31,24 +31,21 @@
             <div class="level-options col">
                 <p style="margin: 1%;">Nível:</p>
                 <label>
-                    <button class="btn-select btn-level level-1 selected" id="level-1" type="button">1</button>
+                    <button class="btn-select btn-level level-1 selected show" id="level-1" type="button">1</button>
                 </label>
                 <label>
-                    <button class="btn-select btn-level level-2 selected" id="level-2" type="button">2</button>
-                </label>
-
-                <label>
-                    <input type="radio" name="lvl" id="3" value="3" />
-                    <button class="btn-select btn-level level-3 selected" id="level-3" type="button">3</button>
+                    <button class="show btn-select btn-level level-2 selected" id="level-2" type="button">2</button>
                 </label>
 
                 <label>
-                    <input type="radio" name="lvl" id="4" value="4" />
-                    <button class="btn-select btn-level level-4 selected" id="level-4" type="button">4</button>
+                    <button class="show btn-select btn-level level-3 selected" id="level-3" type="button">3</button>
+                </label>
+
+                <label>
+                    <button class="show btn-select btn-level level-4 selected" id="level-4" type="button">4</button>
                 </label>
                 <label>
-                    <input type="radio" name="lvl" id="5" value="5" />
-                    <button class="btn-select btn-level level-5 selected" id="level-5" type="button">5</button>
+                    <button class="show btn-select btn-level level-5 selected" id="level-5" type="button">5</button>
                 </label>
             </div>
             <br>

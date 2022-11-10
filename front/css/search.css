@@ -1,7 +1,16 @@
-#search {
-  opacity: .8!important;
+
+@media screen and (max-device-width: 399px) {
+  #search {
+    scale: 1.1;
+    transform: translateY(-2rem);
+    box-shadow: 0px 0px 30px rgba(196, 150, 235, 0.8);
+  }
 }
- 
+
+#search {
+  opacity: 0.8 !important;
+}
+
 .discover-pro {
   max-width: 80vw !important;
   width: 80vw;
@@ -22,7 +31,7 @@
 }
 
 hr {
-  margin: 5% 0!important;
+  margin: 5% 0 !important;
 }
 
 .page {
@@ -129,7 +138,6 @@ i {
 .btn-group {
   width: 100%;
 }
-
 
 .btn-group .btn {
   color: #fff;

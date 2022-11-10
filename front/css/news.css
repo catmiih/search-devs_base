@@ -1,3 +1,12 @@
+
+@media screen and (max-device-width: 399px) {
+  #new {
+    scale: 1.1;
+    transform: translateY(-2rem);
+    box-shadow: 0px 0px 30px rgba(196, 150, 235, 0.8);
+  }
+}
+
 #new {
   opacity: .8;
 }

@@ -1,0 +1,76 @@
+@media (min-width: 400px) {
+  .side-menu-cell {
+    display: none !important;
+  }
+
+  .side-menu {
+    display: inline !important;
+  }
+}
+
+@media screen and (max-device-width: 399px) {
+
+  .side-menu {
+    display: none !important;
+  }
+
+  .side-menu-cell {
+    display: flex !important;
+  }
+
+  .page {
+    margin-left: 0vw !important;
+    min-height: 95vh;
+  }
+
+  .logout {
+    top: 0vh!important;
+    font-size: 1.5rem!important;
+    padding: 0 5%!important;
+    border-radius: 25px!important;
+    width: auto!important;
+    height: 5rem!important;
+  }
+
+  div.content {
+    min-height: 90vh;
+    max-height: 90vh;
+  }
+}
+
+/* Menu Mobile */
+
+
+.menu-cell {
+  background-color: #000;
+  height: 10vh;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  position: fixed !important;
+}
+
+.nav-cell {
+    margin-top: -5rem;
+}
+
+.cell {
+  font-size: 2rem;
+  border-radius: 100%;
+  width: 8rem;
+  height: 8rem;
+
+  padding: 0;
+  margin: 2%;
+
+  opacity: 1!important;
+}
+
+.vip-cell {
+  width: 10rem !important;
+  height: 10rem !important;
+  margin-bottom: 10% !important;
+}

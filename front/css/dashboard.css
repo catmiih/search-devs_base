@@ -1,37 +1,16 @@
-@media (min-width: 1000px) {
-  .side-menu-cell {
-    display: none !important;
-  }
-
-  .side-menu {
-    display: inline;
-  }
-}
-
-@media (max-width: 900px) {
-  .side-menu {
-    display: none !important;
-  }
-
-  .side-menu-cell {
-    display: flex;
-  }
-
-  .page {
-    margin-left: 20vw !important;
-  }
-}
 
 * {
   color: #fff;
 }
 
+body {
+  background-color: #000;
+}
+
+
 .prof {
   margin-top: 10% !important;
   margin: 0 5%;
-}
-
-body {
 }
 
 .page {
@@ -214,20 +193,4 @@ body {
 
 .nav-cell {
   flex-wrap: nowrap !important;
-}
-
-.menu-cell {
-  height: 10rem;
-  bottom: 0;
-}
-
-.vip-cell {
-  width: 15% !important;
-  height: 15% !important;
-  margin-bottom: 10% !important;
-}
-
-.cell {
-  width: 20% !important;
-  height: 20% !important;
 }

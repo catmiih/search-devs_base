@@ -19,7 +19,9 @@ exit;
 
 <link rel="stylesheet" href="../../assets/extend/fontawesome/css/all.min.css" />
 <link rel="stylesheet" type="text/css" href="../../assets/extend/css/bootstrap.css" />
+
 <link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
+<link rel="stylesheet" type="text/css" href="../css/menu-user.css" />
 
 <script src="../../assets/extend/js/bootstrap.js"></script>
 <script src="../../assets/extend/js/jquery.js"></script>
@@ -27,50 +29,52 @@ exit;
 
 <style>
     .selected {
-        opacity: .8!important;
+        opacity: .8 !important;
     }
 </style>
 
 <body>
     <div class="position-relative" style="overflow-x: hidden;">
         <div class="d-flex">
-            <!-- <?php require_once 'left-menu.php'; ?> -->
-            
+            <?php require_once 'left-menu.php'; ?>
+
 
             <div class="page">
-                <?php
+                <div class="content">
+                    <?php
 
-                if (isset($_POST['1'])) {
-                    require_once "pages/myprofile.php";
-                }
-                if (isset($_POST['2'])) {
-                    require_once "pages/search.php";
-                }
+                    if (isset($_POST['1'])) {
+                        require_once "pages/myprofile.php";
+                    }
+                    if (isset($_POST['2'])) {
+                        require_once "pages/search.php";
+                    }
 
-                if (isset($_POST['3'])) {
-                    require_once "pages/news.php";
-                }
+                    if (isset($_POST['3'])) {
+                        require_once "pages/news.php";
+                    }
 
-                if (isset($_POST['4'])) {
-                    /* Projeto em andamento */
-                }
+                    if (isset($_POST['4'])) {
+                        /* Projeto em andamento */
+                    }
 
-                if (isset($_POST['5'])) {
-                    /* Vip */
-                }
+                    if (isset($_POST['5'])) {
+                        /* Vip */
+                    }
 
-                if (isset($_POST['6'])) {
-                    require_once "pages/details.php";
-                }
-                if (isset($_POST['7'])) {
-                    require_once "pages/profile.php";
-                }
+                    if (isset($_POST['6'])) {
+                        require_once "pages/details.php";
+                    }
+                    if (isset($_POST['7'])) {
+                        require_once "pages/profile.php";
+                    }
 
-                if (isset($_POST['exit'])) {
-                    /* Sair da conta */
-                }
+                    if (isset($_POST['exit'])) {
+                        /* Sair da conta */
+                    }
 
-                ?>
+                    ?>
+                </div>
                 <?php require_once 'bottom-menu.php'; ?>
             </div>
         </div>

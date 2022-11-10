@@ -1,13 +1,91 @@
+@media screen and (max-device-width: 399px) {
+  #see {
+    scale: 1.1;
+    transform: translateY(-2rem);
+    box-shadow: 0px 0px 30px rgba(196, 150, 235, 0.8);
+  }
+
+  .perfil,
+  .perfil > * {
+    max-width: 100vw !important;
+    width: 100vw !important;
+  }
+
+  #profile_banner {
+    width: 100vw !important;
+  }
+
+  #profile_banner .banner {
+    width: 100vw !important;
+  }
+
+  #profile {
+    margin-top: -3vh !important;
+  }
+
+  .profile_pic {
+    width: 15rem !important;
+    height: 15rem !important;
+  }
+
+  .profile_pic img {
+    width: 15rem !important;
+    height: 15rem !important;
+  }
+
+  #containerperfil {
+    margin-top: 4vh !important;
+    margin-left: 5vw !important;
+  }
+
+  #align {
+    top: 0;
+    width: 100vw;
+  }
+
+  #align h4 {
+    font-size: 3rem !important;
+  }
+
+  #align a {
+    font-size: 1.5rem !important;
+    padding: 1% 5%;
+    margin: 0 5% !important;
+  }
+
+  #containerperfil p {
+    font-size: 2rem !important;
+  }
+
+  .row.evaluation,
+  .row.evaluation h2 {
+    width: auto !important;
+    font-size: 2.3rem !important;
+  }
+
+  .level-options label {
+    display: table;
+    margin: 1%!important;
+  }
+
+  .btn-level {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    font-size: 1.7rem!important;
+
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
 
 #see {
-  opacity: .8!important;
+  opacity: 0.8 !important;
 }
 
 .perfil {
-  max-width: 80vw !important;
+  max-width: 80vw;
   width: 80vw;
   height: auto;
-
 }
 
 #feedperfil {
@@ -17,15 +95,14 @@
 }
 
 #profile_banner {
-  width: 80vw!important;
+  width: 80vw;
   margin: 0;
   padding: 0;
-
 }
 
 #profile_banner .banner {
   position: relative;
-  width: 80vw!important;
+  width: 80vw;
   height: 25vh;
 
   margin: 0;
@@ -56,8 +133,7 @@ hr {
   height: 0.3%;
   border-radius: 25px;
   background-color: #fff;
-  opacity: .3;
-
+  opacity: 0.3;
 }
 
 #align > .btn {
@@ -103,7 +179,7 @@ hr {
   display: flex;
 }
 
-.row.evaluation{
+.row.evaluation {
   background-color: rgba(0, 0, 0, 0.4);
   margin: 0.2% 2%;
   border-radius: 25px;
@@ -115,7 +191,7 @@ hr {
   width: 70vw;
 }
 
-.info  {
+.info {
   margin: 0.2% 5%;
   border-radius: 25px;
   padding: 3%;
@@ -137,13 +213,14 @@ hr {
 
 .description {
   background-color: rgba(0, 0, 0, 0.4);
-  
+
   margin: 0.2% 3%;
   border-radius: 25px;
   padding: 3%;
 }
 
-.info h2, .description h2 {
+.info h2,
+.description h2 {
   margin-bottom: 10%;
 }
 
@@ -154,9 +231,10 @@ hr {
 .btn-level {
   color: #fff;
   border: none;
-  width: auto;
+  width: 3rem;
+  height: 3rem;
+
   padding: 1% 5%;
-  height: 3% !important;
   border-radius: 20px;
   background-size: 400% 400%;
   font-weight: 600;
@@ -184,10 +262,10 @@ hr {
 .form-control {
   margin-left: 0% !important;
   border: none;
-  width: 20rem!important;
+  width: 20rem !important;
   padding: 2%;
 
-  background-color: transparent!important;
+  background-color: transparent !important;
 }
 
 .label {
@@ -196,4 +274,3 @@ hr {
   padding: 0 !important;
   width: auto !important;
 }
-
