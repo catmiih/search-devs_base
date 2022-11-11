@@ -35,9 +35,9 @@ exit;
 
 <body>
     <div class="position-relative" style="overflow-x: hidden;">
+    <?php require_once 'bottom-menu.php'; ?>
         <div class="d-flex">
             <?php require_once 'left-menu.php'; ?>
-
 
             <div class="page">
                 <div class="content">
@@ -55,7 +55,7 @@ exit;
                     }
 
                     if (isset($_POST['4'])) {
-                        /* Projeto em andamento */
+                        require_once "pages/projects.php";
                     }
 
                     if (isset($_POST['5'])) {
@@ -75,7 +75,6 @@ exit;
 
                     ?>
                 </div>
-                <?php require_once 'bottom-menu.php'; ?>
             </div>
         </div>
     </div>

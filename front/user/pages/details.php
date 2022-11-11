@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="../css/perfil.css" />
 <link rel="stylesheet" type="text/css" href="../css/level.css" />
 <link rel="stylesheet" type="text/css" href="../css/details.css" />
 
@@ -14,15 +13,15 @@
                     </div>
                     <div id="containerperfil">
                         <div id="align">
-                            <h4>Projeto X </h4>
+                            <h4>Projeto X aaaaaaaaaaaaaaaaaaaaaa</h4>
                         </div>
-                        <p>Google Company</p>
+                        <p>Google Company aaaaaaaaaaaaaaaa</p>
                     </div>
                 </div>
                 <div class="btn-group col">
                     <div class="confirm">
-                        <button href="" class="btn-see btn-yes col"><i class="fa-solid fa-check"></i></button>
-                        <button href="" class="btn-see btn-no col"><i class="fa-solid fa-x"></i></button>
+                        <button href="" class="btn-see btn-yes"><i class="fa-solid fa-check"></i></button>
+                        <button href="" class="btn-see btn-no"><i class="fa-solid fa-x"></i></button>
                     </div>
                 </div>
             </div>
@@ -70,15 +69,15 @@
 
     <div class="row feed">
         <div class="col info">
-            <h2>Informações:</h2>
+            <h2>Informações do projeto:</h2>
 
             <div class="row input">
-                <p class="col label">Nome:</p>
-                <input type="text" placeholder="Fulano de Tal Junior" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                <p class="col label">Prazo:</p>
+                <input type="text" placeholder="12/12/2012" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
             </div>
 
             <div class="row input">
-                <p class="col label"> Telefone:</p>
+                <p class="col label"> Contato:</p>
                 <input type="text" placeholder="(11) 99999-9999" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
 
             </div>

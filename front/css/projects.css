@@ -1,22 +1,21 @@
-
 @media screen and (max-device-width: 800px) {
-  #new {
+  #projects {
     scale: 1.1;
     transform: translateY(-2rem);
     box-shadow: 0px 0px 30px rgba(196, 150, 235, 0.8);
   }
 
   .discover-propose {
-    max-width: 100vw!important;
-    width: 100vw!important;
+    max-width: 100vw !important;
+    width: 100vw !important;
   }
 
   .search {
-    margin: 0 5%!important;
+    margin: 0 5% !important;
   }
-  
+
   .search h2 {
-    font-size: 3rem!important;
+    font-size: 3rem !important;
     width: 100%;
     text-align: center;
 
@@ -27,42 +26,43 @@
   }
 
   .propose-card {
-    height: 40rem!important;
-    margin: 10% 0!important;
+    height: 35rem !important;
+    margin: 10% 0 !important;
 
-    padding: 3%!important;
+    padding: 3% !important;
   }
 
   .profile_pic {
-    width: 12rem!important;
-    height: 12rem!important;
+    width: 12rem !important;
+    height: 12rem !important;
   }
-  
+
   .profile_pic img {
     border-radius: 20px;
-    width: 12rem!important;
-    height: 12rem!important;
-  
+    width: 12rem !important;
+    height: 12rem !important;
+
     object-fit: cover;
   }
 
   #align {
     margin-left: 10%;
-    width: 35vw!important;
+    width: 35vw !important;
   }
 
-  #align h4, b {
+  #align h4,
+  b {
     font-size: 2.5rem;
     font-weight: 700;
-    margin: 10% 0!important;
+    margin: 10% 0 !important;
   }
 
-  #align b::before{
-    content: none!important;
+  #align b::before {
+    content: none !important;
   }
 
-  br{
-    display: inline!important;
+  br {
+    display: inline !important;
   }
 
   #containerperfil {
@@ -70,70 +70,56 @@
   }
 
   #containerperfil > p {
-    display: none!important;
+    display: none !important;
   }
 
   .description {
-    display: inline!important;
+    display: inline !important;
 
-    font-size: 1.8rem!important;
+    font-size: 1.8rem !important;
   }
 
-  .description p{
-    width: 70vw!important;
-    margin: 2%!important;
+  .description p {
+    width: 70vw !important;
+    margin: 2% !important;
   }
 
   .btn-group {
-    display: inline!important;
-    width: 100%!important;
-    margin: 0!important;
+    display: inline !important;
+    width: 100% !important;
+    margin: 0 !important;
   }
 
   .btn-group .col {
-    width: 70vw!important;
+    width: 70vw !important;
     margin: 0;
   }
 
-  .confirm, .btn-see {
-    width: 73vw!important;
+  .btn-see {
+    width: 73vw !important;
     margin: 3% 0;
 
     font-size: 1.7rem;
     font-weight: 700;
-  }
 
-  .btn-see {
-    margin: 10% 0;
-    padding: 3% 0!important;
+    margin: 5% 0;
+    padding: 3% 0 !important;
 
     align-items: flex-start;
     justify-content: flex-start;
 
-    height: auto!important;
+    height: auto !important;
 
-    border-radius: 25px!important;
-  }
-
-  .btn-yes {
-    padding: 3% 0!important;
-    height: 5rem!important;
-    margin-right: 5%!important;
-  }
-
-  .btn-no {
-    padding: 3% 0!important;
-    height: 5rem!important;
-    margin-left: 5%!important;
+    border-radius: 25px !important;
   }
 }
 
-br{
+br {
   display: none;
 }
 
-#new {
-  opacity: .8;
+#projects {
+  opacity: 0.8;
 }
 
 .discover-propose {
@@ -197,17 +183,18 @@ hr {
   margin: 0;
 }
 
-#containerperfil h4>b::before {
+#containerperfil h4 > b::before {
   content: "•";
   margin: 0 3%;
 }
 
-#containerperfil h4>b {
+#containerperfil h4 > b {
   opacity: 0.5;
   font-weight: 100;
 }
 
-#containerperfil p, .description p {
+#containerperfil p,
+.description p {
   width: 40vw;
   overflow: hidden;
   display: -webkit-box;
@@ -222,11 +209,13 @@ hr {
 }
 
 .btn-group {
-
   flex-wrap: wrap;
   margin: 1% 0;
   width: 13rem;
-  height: 10rem ;
+  height: 7rem;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-group .btn-see {
@@ -253,30 +242,4 @@ hr {
 .btn-group .btn-see:hover {
   opacity: 1;
   color: #fff;
-}
-
-.confirm {
-  display: flex;
-  flex-wrap: nowrap;
-  width: 100%;
-  height: 10%;
-}
-
-.btn-yes {
-  margin: 0 2%;
-  padding: 0 !important;
-  background: #2ca736 !important;
-  background: linear-gradient(#147508 0%, #64bd1b 100%) !important;
-  animation-duration: 2s;
-  background-size: 400% 400%;
-  animation: Gradient 5s ease infinite;
-}
-
-.btn-no {
-  margin: 0 2%;
-  padding: 0 !important;
-  background: linear-gradient(#750808 0%, #d30707 100%) !important;
-  animation-duration: 2s;
-  background-size: 400% 400%;
-  animation: Gradient 5s ease infinite;
 }
