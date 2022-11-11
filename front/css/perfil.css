@@ -78,7 +78,7 @@
   }
 
   .feed h2 {
-    font-size: 3rem !important;
+    font-size: 4rem !important;
     text-align: center;
   }
 
@@ -185,7 +185,7 @@ hr {
   opacity: 0.3;
 }
 
-#align > .btn {
+#align .btn {
   color: #fff;
   font-weight: bold;
   border: none;

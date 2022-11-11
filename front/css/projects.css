@@ -15,16 +15,12 @@
   }
 
   .search h2 {
-    font-size: 3rem !important;
+    font-size: 6rem !important;
     width: 100%;
     text-align: center;
 
     margin: 10% auto;
   }
-  hr {
-    display: none;
-  }
-
   .propose-card {
     height: 35rem !important;
     margin: 10% 0 !important;

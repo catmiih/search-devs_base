@@ -1,0 +1,194 @@
+@media screen and (max-device-width: 800px) {
+  #vip {
+    scale: 1.1;
+    transform: translateY(-2rem);
+    box-shadow: 0px 0px 30px rgba(196, 150, 235, 0.8);
+  }
+
+  .discover-pro {
+    max-width: 100vw !important;
+    width: 100vw !important;
+  }
+
+  .show-result {
+    width: 100vw;
+  }
+
+  .search {
+    margin: 0 5% !important;
+  }
+
+  .search h2 {
+    font-size: 6rem !important;
+    width: 100%;
+    text-align: center;
+
+    margin: 10% auto;
+  }
+
+  .plans h3,h5{
+    font-size: 5rem;
+  }
+
+  .plans {
+    display: inline!important;
+    flex-wrap: wrap!important;
+
+    font-size: 3rem;
+  }
+
+  .plans > .col {
+    width: 100vw!important;
+    margin: 0 0 20%!important;
+  }
+
+  .plans li {
+    margin-left: 10%!important;
+  }
+
+  .btn{
+    font-size: 3rem;
+  }
+}
+
+#vip {
+  opacity: 0.8 !important;
+}
+
+.discover-pro {
+  max-width: 80vw;
+  width: 80vw;
+  height: 100%;
+
+  padding: 5%;
+}
+
+.search {
+  align-items: center;
+  margin: 0 10%;
+}
+
+.search h2 {
+  font-weight: 700;
+  font-size: 1.85rem;
+  margin-right: 1%;
+}
+
+hr {
+  margin: 5% 0 !important;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.plans {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.plans > .col {
+  margin: 0 3%;
+  padding: 5%;
+
+  border-radius: 25px;
+}
+
+.plans h3 {
+  font-weight: 700;
+}
+
+.col ul {
+  margin: 15% 0;
+}
+
+.col li {
+  margin: 10% 0;
+  font-weight: 300;
+}
+
+.basic {
+  top: 50%;
+  bottom: auto;
+
+  background-color: #ffffff25;
+  border: 1px solid #fff;
+}
+
+.basic .btn {
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+
+  padding: 5%;
+  width: 100%;
+  margin: 5% 0;
+
+  background: radial-gradient(circle, #ffffff 0%, #8d8d8d 50%, #535353 100%);
+  animation-duration: 2s;
+  background-size: 400% 400%;
+  animation: Gradient 5s ease infinite;
+  opacity: 0.5;
+
+  transition: 0.5s;
+}
+
+.medium {
+  top: 50%;
+  bottom: auto;
+
+  background-color: #495aa571;
+  border: 1px solid rgb(10, 162, 233);
+}
+
+.medium .btn {
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+
+  padding: 5%;
+  width: 100%;
+  margin: 5% 0;
+
+  background: radial-gradient(circle, #0085f1 0%, #006ea1 50%, #282e64 100%);
+  animation-duration: 2s;
+  background-size: 400% 400%;
+  animation: Gradient 5s ease infinite;
+  opacity: 0.8;
+
+  transition: 0.5s;
+}
+
+.vip {
+  top: 50%;
+  bottom: auto;
+
+  background-color: #ffd00044;
+  border: 1px solid #f0cc01;
+}
+
+.vip .btn {
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+
+  padding: 5%;
+  width: 100%;
+  margin: 5% 0;
+
+  background: radial-gradient(circle, #ffaf01 0%, #eb7201 50%, #e9be00 100%);
+  animation-duration: 2s;
+  background-size: 400% 400%;
+  animation: Gradient 5s ease infinite;
+  opacity: 0.8;
+
+  transition: .5s;
+}
+
+.btn:hover {
+  opacity: 1;
+  scale: 1.05;
+}

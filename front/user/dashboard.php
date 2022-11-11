@@ -59,14 +59,19 @@ exit;
                     }
 
                     if (isset($_POST['5'])) {
-                        /* Vip */
+                        require_once "pages/vip.php";
                     }
 
                     if (isset($_POST['6'])) {
                         require_once "pages/details.php";
                     }
+
                     if (isset($_POST['7'])) {
                         require_once "pages/profile.php";
+                    }
+
+                    if (isset($_POST['edit'])) {
+                        require_once "pages/edit-profile.php";
                     }
 
                     if (isset($_POST['exit'])) {

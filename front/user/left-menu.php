@@ -23,7 +23,7 @@
 
                 <div id="footerSidebar" class="position-absolute bottom-0 start-0 footer">
                     <h1>Plano Atual: Comum</h1>
-                    <button type="submit" name="5" class="btn">Torne-se Vip</button>
+                    <button type="submit" id="vip" name="5" class="btn">Torne-se Vip</button>
                     <br>
                     <p>Copyright &copy; 2022 Search Devs. Todos os direitos reservados </p>
                 </div>
