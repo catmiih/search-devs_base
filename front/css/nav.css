@@ -59,4 +59,8 @@ ul{
     padding-left: 1.1rem;
 }
 
-
+button[name="exit"] {
+    background: transparent;
+    border: 0 none;
+    cursor: pointer;
+  }

@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION["id_user"])) {
+  // Usuário não logado! Redireciona para a página de login
+  header("Location: ../login.php");
+  exit;
+}
+
+?>
+
 <div class="side-menu">
     <div id="sidebar" class="position-absolute top-0 start-0">
         <center>

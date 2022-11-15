@@ -27,7 +27,7 @@
 
                             <div class="col-xs-6">
                                 <div class="input-group">
-                                <input type="password" placeholder="Senha" class="form-control" name="password" id="pass" minlength="8" required="">
+                                <input type="password" placeholder="Senha" class="form-control" name="password" id="pass" required="">
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-eye btn-default" id="Epass">
                                             <i class="fa-solid fa-eye" id="icon"></i>

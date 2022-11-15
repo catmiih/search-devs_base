@@ -1,15 +1,3 @@
-<?php
-
-/* session_start();
-
-if(!isset($_SESSION["id_user"]) || !isset($_SESSION["username"]))
-{
-// Usuário não logado! Redireciona para a página de login
-header("Location: ../login.php");
-exit;
-} */
-
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -43,39 +31,41 @@ exit;
                 <div class="content">
                     <?php
 
-                    if (isset($_POST['1'])) {
-                        require_once "pages/myprofile.php";
-                    }
                     if (isset($_POST['2'])) {
                         require_once "pages/search.php";
                     }
 
-                    if (isset($_POST['3'])) {
+                    else if (isset($_POST['3'])) {
                         require_once "pages/news.php";
                     }
 
-                    if (isset($_POST['4'])) {
+                    else if (isset($_POST['4'])) {
                         require_once "pages/projects.php";
                     }
 
-                    if (isset($_POST['5'])) {
+                    else if (isset($_POST['5'])) {
                         require_once "pages/vip.php";
                     }
 
-                    if (isset($_POST['6'])) {
+                    else if (isset($_POST['6'])) {
                         require_once "pages/details.php";
                     }
 
-                    if (isset($_POST['7'])) {
+                    else if (isset($_POST['7'])) {
                         require_once "pages/profile.php";
                     }
 
-                    if (isset($_POST['edit'])) {
+                    else if (isset($_POST['edit'])) {
                         require_once "pages/edit-profile.php";
                     }
 
-                    if (isset($_POST['exit'])) {
-                        /* Sair da conta */
+                    else if (isset($_POST['exit'])) {
+                        session_destroy();
+                        header('Location: ../login.php');
+                    }
+
+                    else {
+                        require_once "pages/myprofile.php";
                     }
 
                     ?>

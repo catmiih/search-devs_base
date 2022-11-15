@@ -2,11 +2,10 @@
 
 session_start();
 
-if(!isset($_SESSION["id_user"]))
-{
-// Usuário não logado! Redireciona para a página de login
-header("Location: ../login.php");
-exit;
+if (!isset($_SESSION["id_user"])) {
+  // Usuário não logado! Redireciona para a página de login
+  header("Location: ../login.php");
+  exit;
 }
 
 ?>
@@ -42,24 +41,20 @@ exit;
   <div class="collapse navbar-collapse menu" id="navbarTogglerDemo01">
     <ul class="nav jnavbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" onclick="logout()">
-          <i class="fa-sharp fa-solid fa-user"></i> &nbsp; Sair
-        </a>
+        <form action="" id="exit" method="post">
+          <button class="nav-link" name="exit" type="submit">
+            <i class="fa-sharp fa-solid fa-user"></i> &nbsp; Sair
+          </button>
+        </form>
       </li>
   </div>
 </nav>
 
-<script>
-  function logout() {
-    <?php
-    /* function logout()
-    {
-      unset($_SESSION['id_user']);
-      unset($_SESSION['username']);
-      session_destroy();
-      header('Location: ../login.php');
-    } */
+<?php
 
-    ?>
-  }
-</script>
+if (isset($_POST["exit"])) {
+  session_destroy();
+  header('Location: ../login.php');
+}
+
+?>

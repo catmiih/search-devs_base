@@ -56,19 +56,19 @@ class User
         if ($sql->rowCount() > 0) {
             /* Register == True */
             $data = $sql->fetch();
-            
-            $id_u = $_SESSION["id_user"]=$data[0];
-            $name = $_SESSION["username"]=$username;
 
-            if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
+            if (!isset($_SESSION)) { //Verificar se a sessão não já está aberta.
                 session_start();
+
+
+                $_SESSION["id_user"] = $data[0];
+                $_SESSION["username"] = $username;
             }
 
             $id = $pdo->prepare("SELECT Dev_ID FROM skills_dev where Dev_ID = '$data[0]'");
             $id->execute();
 
             if ($id->rowCount() <= 0) {
-                $id_u = $id->fetch();
                 header('Location: ../user/select-fields.php?id=' . $data[0]);
             } else
                 header('Location: ../user/dashboard.php?u=' . $username);
@@ -80,5 +80,32 @@ class User
             header('Location: ../login.php');
             return false;
         }
+    }
+
+    function registerArea($id, $area)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT Dev_name FROM developers WHERE Dev_ID = '$id'");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+
+            $verify = $pdo->prepare("SELECT Area_ID FROM area_dev WHERE Dev_ID = '$id' AND Area_ID = '$area'");
+            $verify->execute();
+
+            if ($verify->rowCount() == 0) {
+                $newArea = $pdo->prepare("INSERT INTO `area_dev`(`Area_ID`, `Dev_ID`) VALUES ('$area','$id')");
+                $newArea->execute();
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function registerSkill() {
+        
     }
 }

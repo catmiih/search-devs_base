@@ -12,6 +12,37 @@
     }
 </style>
 
+<?php
+
+$id = $_GET['id'];
+
+if(isset($_POST['area'])) {
+
+    $area = $_POST["area"];
+
+    for($i = 0; $i < count($area); $i++){
+
+        require_once '../../back/class/user.php';
+        $user = new User();
+
+        if (!empty('area')) {
+
+            $user->conectar('search-devs_base', 'localhost', 'root', '');
+            //echo "$msg";
+    
+            if ($user->msg == "") {
+                if($user->registerArea($id,$area[$i]))
+                    header('Location: skills.php?id='.$id);
+            } else {
+                echo "Erro: " . $user->msg;
+            }
+        } else {
+        }
+    }
+}
+
+?>
+
 <body>
 
     <div class="jumbvideo jumbvideo-fluid tag">
@@ -25,76 +56,76 @@
                     <h1>Finalizar Cadastro</h1>
                     <h2>Bem vindo, desenvolvedor.</h2>
                     <p>Por favor, selecione sua(s) área(s) de atuação:</p>
-                    <form action="skills.php">
+                    <form action="" method="post">
                         <div id="check" class="row row-cols-4">
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Artificial Intelligence" value="1">
+                                <input class="form-check-input" type="checkbox" name="area[]" id="Artificial Intelligence" value="1">
                                 <label class="form-check-label" for="Artificial Intelligence">
                                     Artificial Intelligence
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Blockchain" value="5">
+                                <input class="form-check-input" type="checkbox" name="area[]" id="Blockchain" value="5">
                                 <label class="form-check-label" for="Blockchain">
                                     Blockchain
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="cybersecurity" value="9">
+                                <input class="form-check-input" type="checkbox" name="area[]" id="cybersecurity" value="9">
                                 <label class="form-check-label" for="cybersecurity">
                                     Cybersecurity
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Database Analytics" value="2">
+                                <input class="form-check-input" type="checkbox" name="area[]" id="Database Analytics" value="2">
                                 <label class="form-check-label" for="Database Analytics">
                                     Database Analytics
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Data Science" value="6">
+                                <input class="form-check-input" type="checkbox" name="area[]" id="Data Science" value="6">
                                 <label class="form-check-label" for="Data Science">
                                     Data Science
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Design" value="10">
+                                <input class="form-check-input" type="checkbox" name="area[]" id="Design" value="10">
                                 <label class="form-check-label" for="Design">
                                     Design
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Desktop Development" value="3">
+                                <input class="form-check-input" type="checkbox" name="area[]" id="Desktop Development" value="3">
                                 <label class="form-check-label" for="Desktop Development">
                                     Desktop Development
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="DevOps" value="7">
+                                <input class="form-check-input" type="checkbox" name="area[]" id="DevOps" value="7">
                                 <label class="form-check-label" for="DevOps">
                                     DevOps
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id=" Mobile Development" value="11">
+                                <input class="form-check-input" type="checkbox" name="area[]" id=" Mobile Development" value="11">
                                 <label class="form-check-label" for=" Mobile Development">
                                     Mobile Development
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Web - Back End" value="4">
+                                <input class="form-check-input" type="checkbox" name="area[]" id="Web - Back End" value="4">
                                 <label class="form-check-label" for="Web - Back End">
                                     Web - Back End
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Web - Front End" value="8">
+                                <input class="form-check-input" type="checkbox" name="area[]" id="Web - Front End" value="8">
                                 <label class="form-check-label" for="Web - Front End">
                                     Web - Front End
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="Skills" id="Outros" value="12">
+                                <input class="form-check-input" type="checkbox" name="area[]" id="Outros" value="12">
                                 <label class="form-check-label" for="Outros">
                                     Outros
                                 </label>
