@@ -3,7 +3,7 @@
 
 <title>Search Devs - Registre-se como Desenvolvedor</title>
 
-<?php include_once 'menu-user.php'; ?>
+<?php include_once 'menu-user.php';?>
 
 <link rel="stylesheet" href="../css/form.css">
 <link rel="stylesheet" href="../css/level.css">
@@ -19,6 +19,17 @@
     }
 </style>
 
+<?php
+
+$userid = $_SESSION['id_user'];
+
+if(isset($_POST['start'])) {
+    $level = $_POST['level'];
+
+    echo "<script>alert(".$level.")</script>";
+}
+
+?>
 
 <body>
     <div class="jumbvideo jumbvideo-fluid tag">
@@ -38,11 +49,6 @@
                     <div id="form">
                         <input class="col form-control skill" type="text" name="name_skill" placeholder="Ex: HTML5" style="margin-right: 2%;" require>
                         <input class="col form-control skill" list="datalistOptions" name="area_skill" id="exampleDataList" placeholder="Área de Atuação" require>
-
-                        <datalist id="datalistOptions">
-                            <option value="Artificial Intelligence">
-                            <option value="IMPLEMENTAR AS AREAS COM O BACKEND <3">
-                        </datalist>
 
                         <p style="margin: 1%;">Nível:</p>
 
@@ -73,7 +79,9 @@
                         </div>
                     </div>
 
-                    
+                    <datalist id="datalistOptions">
+                        <?php require_once '../functions/read-area.php'; ?>
+                    </datalist>
 
                     <form method="POST" action="">
                         <center>
@@ -81,7 +89,7 @@
 
                             </div>
                             <br>
-                            <button type="submit" class="btn" style="padding: 2% 10%;">Começar agora</button>
+                            <button type="submit" name="start" class="btn" style="padding: 2% 10%;">Começar agora</button>
                         </center>
                     </form>
                 </form>

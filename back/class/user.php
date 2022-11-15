@@ -57,9 +57,8 @@ class User
             /* Register == True */
             $data = $sql->fetch();
 
-            if (!isset($_SESSION)) { //Verificar se a sessão não já está aberta.
+            if (!isset($_SESSION)) {
                 session_start();
-
 
                 $_SESSION["id_user"] = $data[0];
                 $_SESSION["username"] = $username;

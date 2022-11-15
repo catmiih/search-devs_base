@@ -1,5 +1,15 @@
 <link rel="stylesheet" href="css/register-login.css">
 
+<style>
+    .error {
+        box-shadow: #FF0000 0px 0px 10px !important;
+    }
+
+    .error:focus {
+        box-shadow: #FF0000 1px 1px 10px !important;
+    }
+</style>
+
 <div id="campo1" class="form2">
     <h1>Cadastre-se</h1>
     <p>Informações de login.</p>
@@ -27,7 +37,7 @@
 
             <div class="col-xs-6">
                 <div class="input-group">
-                    <input type="password" placeholder="Confirmar senha" class="form-control" name="" id="confirmPass" minlength="8" required>
+                    <input type="password" placeholder="Confirmar senha" class="form-control" name="confirmPass" id="confirmPass" minlength="8" required>
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-eye btn-default" id="Cpass">
                             <i class="fa-solid fa-eye iconC" id="icon"></i>
@@ -41,7 +51,7 @@
             </div>
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="termos">
+                <input class="form-check-input" type="checkbox" value="" name="term" id="termos">
                 <label class="form-check-label" for="termos" style="margin: 0 1% 0 0;">
                     Eu concordo com os
                 </label>
@@ -49,7 +59,7 @@
             </div>
             <br>
 
-            <button type="submit" class="btn submit">Finalizar cadastro</button>
+            <button type="button" onclick="submitForm()" class="btn submit">Finalizar cadastro</button>
             <br>
             <button type="button" class="btn" onclick="back()" style="padding: 1% 3%;"><i class="fa-solid fa-arrow-left"></i></button>
         </form>
@@ -58,7 +68,6 @@
 
 <!-- Import JS Functions -->
 <script src="js/validate.js"></script>
-
 
 <script>
     let pass = document.querySelector('#Epass');

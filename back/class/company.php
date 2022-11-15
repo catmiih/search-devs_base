@@ -56,11 +56,20 @@ class Company
         if ($sql->rowCount() > 0) {
             /* Register == True */
             $data = $sql->fetch();
-            session_start();
-            $_SESSION['ID'] = $data[MD5($email)];
+
+            if (!isset($_SESSION)) {
+                session_start();
+
+                $_SESSION["id_user"] = $data[0];
+                $_SESSION["username"] = $username;
+            }
+
+            header('Location: ../company/dashboard.php?name=' . $username);
+
             return true;
         } else {
             /* Not Register */
+            header('Location: ../login.php');
             return false;
         }
     }

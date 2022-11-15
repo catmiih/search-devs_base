@@ -35,6 +35,7 @@ function validateCPF(cpf_n) {
 
     sum = 0;
 
+
     for (i = 1; i <= 11; i++) {
 
         var numb = cpf_n.substring(i - 1, i)
@@ -154,7 +155,7 @@ function validateDate(date) {
 
     if (parseInt(date.toString().substring(1, 2)) <= 31) {
         if (parseInt(date.toString().substring(3, 5)) <= 12) {
-            if (parseInt(date.toString().substring(6)) <= year - 16) {
+            if (parseInt(date.toString().substring(6)) <= year - 16 && (parseInt(date.toString().substring(6)) >= year - 99)) {
                 return true
             } else
                 return false

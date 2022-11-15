@@ -30,6 +30,7 @@ function newSkill() {
 
         $("input[name='name_skill']").val("");
         $("input[name='area_skill']").val("");
+
     }else {
         if(!!name_skill) {
             $("input[name='name_skill']").removeClass("error")

@@ -33,7 +33,7 @@
                     <p>Seja bem vindo empreendedor. Preencha os campos abaixo:</p>
 
                     <div class="form">
-                        <form action="complete-login.php" class="needs-validation" method="POST">
+                        <form action="complete-login.php" class="needs-validation" id="subform" method="POST">
                         <input type="hidden" value="1" name="type_user">
 
                         <div class="row">

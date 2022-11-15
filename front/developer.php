@@ -33,7 +33,7 @@
                     <p>Seja bem vindo desenvolvedor. Preencha os campos abaixo:</p>
 
                     <div class="form">
-                        <form action="functions/complete-login.php" class="needs-validation" novalidate method="POST">
+                        <form action="functions/complete-login.php" class="needs-validation" id="subform" method="POST">
 
                             <input type="hidden" value="0" name="type_user">
 

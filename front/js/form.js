@@ -10,7 +10,7 @@ function nextDev() {
 
     if (!!name) {
         $("input[name='name']").removeClass("error")
-    }else {
+    } else {
         $("input[name='name']").addClass("error")
     }
 
@@ -23,7 +23,7 @@ function nextDev() {
 
     if (!!cell) {
         $("input[name='cell']").removeClass("error")
-    }else {
+    } else {
         $("input[name='cell']").addClass("error")
     }
 
@@ -42,14 +42,14 @@ function nextDev() {
 
     /* If not empty */
 
-    if (validateDate(data.value) && validateCPF(cpf.value) && validateCEP(cep.value) && !!cell && !!name) {
+    if (validateDate(data.value) && validateCPF(cpf.value) && validateCEP(cep.value) == 200 && !!cell && !!name) {
         $('#campo1').fadeOut(1000).css('display', 'none');
         $('.form2').fadeIn(1000).css('display', 'inline');
     }
 }
 
 function nextComp() {
-    
+
     var name = $("input[name='name']").val();
     var responsible = $("input[name='responsible']").val();
     const data = document.querySelector('#data');
@@ -59,13 +59,13 @@ function nextComp() {
 
     if (!!name) {
         $("input[name='name']").removeClass("error")
-    }else {
+    } else {
         $("input[name='name']").addClass("error")
     }
 
     if (!!responsible) {
         $("input[name='responsible']").removeClass("error")
-    }else {
+    } else {
         $("input[name='responsible']").addClass("error")
     }
 
@@ -78,7 +78,7 @@ function nextComp() {
 
     if (!!cell) {
         $("input[name='cell']").removeClass("error")
-    }else {
+    } else {
         $("input[name='cell']").addClass("error")
     }
 
@@ -102,6 +102,49 @@ function nextComp() {
         $('.form2').fadeIn(1000).css('display', 'inline');
     }
 
+}
+
+function submitForm() {
+    var username = $("input[name='username']").val();
+    var email = $("input[name='email']").val();
+    var password = $("input[name='password']").val();
+    var confirmPass = $("input[name='confirmPass']").val();
+    var term = $("input[name='term']");
+
+    if (!!username) {
+        $("input[name='username']").removeClass("error")
+    } else {
+        $("input[name='username']").addClass("error")
+    }
+
+    if (!!email) {
+        $("input[name='email']").removeClass("error")
+    } else {
+        $("input[name='email']").addClass("error")
+    }
+
+    if (!!password) {
+        $("input[name='password']").removeClass("error")
+    } else {
+        $("input[name='password']").addClass("error")
+    }
+
+    if (!!confirmPass && confirmPass == password) {
+        $("input[name='confirmPass']").removeClass("error")
+    } else {
+        $("input[name='confirmPass']").addClass("error")
+    }
+
+    if (term.is(':checked')) {
+        $("input[name='term']").removeClass("error")
+    } else {
+        $("input[name='term']").addClass("error")
+    }
+
+
+    if (!!username && !!email && !!password && !!confirmPass && confirmPass == password && !!term.is(':checked')) {
+        document.getElementById("subform").submit();
+    }
 }
 
 function back() {
