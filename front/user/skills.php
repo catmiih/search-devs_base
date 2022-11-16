@@ -3,7 +3,7 @@
 
 <title>Search Devs - Registre-se como Desenvolvedor</title>
 
-<?php include_once 'menu-user.php';?>
+<?php include_once 'menu-user.php'; ?>
 
 <link rel="stylesheet" href="../css/form.css">
 <link rel="stylesheet" href="../css/level.css">
@@ -23,13 +23,9 @@
 
 $userid = $_SESSION['id_user'];
 
-if(isset($_POST['start'])) {
-    $level = $_POST['level'];
-
-    echo "<script>alert(".$level.")</script>";
-}
-
 ?>
+
+<?php require_once '../functions/register-skill.php'; ?>
 
 <body>
     <div class="jumbvideo jumbvideo-fluid tag">
@@ -82,16 +78,17 @@ if(isset($_POST['start'])) {
                     <datalist id="datalistOptions">
                         <?php require_once '../functions/read-area.php'; ?>
                     </datalist>
+                </form>
+                <form method="post" name="skills-form" action="../functions/register-skill.php">
+                    <center>
+                        <div class="row" id="skill_list">
+                            
+                        </div>
+                        <br>
 
-                    <form method="POST" action="">
-                        <center>
-                            <div class="row" id="skill_list">
-
-                            </div>
-                            <br>
-                            <button type="submit" name="start" class="btn" style="padding: 2% 10%;">Começar agora</button>
-                        </center>
-                    </form>
+                        <button type="submit" name="start" class="btn" style="padding: 2% 10%;">Começar agora</button>
+                    </center>
+                </form>
                 </form>
 
             </center>

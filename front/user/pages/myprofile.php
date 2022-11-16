@@ -13,13 +13,13 @@
                 </div>
                 <div id="containerperfil">
                     <div id="align">
-                        <h4>Fulano de Tal </h4>
+                        <h4><?php echo $user->getUser($username)[2];?></h4>
 
                         <form action="" method="post">
                             <button href="#" class="btn" name="edit"><i class="fa-solid fa-gear"></i></button>
                         </form>
                     </div>
-                    <p>Título do Perfil/cargo</p>
+                    <p><?php if(empty($user->getUser($username)[11])){echo "Nenhum cargo";}else{echo $user->getUser($username)[11];}?></p>
                 </div>
             </div>
         </div>
@@ -67,27 +67,23 @@
 
             <div class="row input">
                 <p class="col label">Nome:</p>
-                <input type="text" placeholder="Fulano de Tal Junior" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                <input type="text" placeholder="<?php echo $user->getUser($username)[1]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
             </div>
 
             <div class="row input">
                 <p class="col label"> Telefone:</p>
-                <input type="text" placeholder="(11) 99999-9999" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                <input type="text" placeholder="<?php echo $user->getUser($username)[5]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
 
             </div>
             <div class="row input">
                 <p class="col label">Email:</p>
-                <input type="text" placeholder="usuario@exemplo.com.br" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                <input type="text" placeholder="<?php echo $user->getUser($username)[3]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
             </div>
 
         </div>
         <div class="col description">
             <h2>Descrição do perfil:</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since
-                the 1500s, when an unknown printer took a galley of type and scrambled
-                it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-                unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop</p>
+            <p><?php if(empty($user->getUser($username)[11])){echo "Olá! Sou novo no SEARCH DEVS&#8482;!";}else{echo $user->getUser($username)[11];}?></p>
         </div>
     </div>
 </div>

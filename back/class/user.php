@@ -68,7 +68,7 @@ class User
             $id->execute();
 
             if ($id->rowCount() <= 0) {
-                header('Location: ../user/select-fields.php?id=' . $data[0]);
+                header('Location: ../user/select-fields.php?id=' . MD5($data[0]));
             } else
                 header('Location: ../user/dashboard.php?u=' . $username);
 
@@ -104,7 +104,46 @@ class User
         }
     }
 
-    function registerSkill() {
-        
+    function registerSkill($skill, $area)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT Area_ID FROM `area` where Area_name like '$area'");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $areaID = $sql->fetch();
+
+            $reg = $pdo->prepare("INSERT INTO `skills`(`Skill_name`, `Skill_area`) VALUES ('$skill','$areaID[0]')");
+            $reg->execute();
+        }
+    }
+
+    function skillDev($devID, $skillID, $level)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT Skill_ID FROM `skills_dev` where Dev_ID = '$devID'");
+        $sql->execute();
+
+        if ($sql->rowCount() == 0) {
+            $reg = $pdo->prepare("INSERT INTO `skills_dev`(`Dev_ID`, `Skill_ID`, `Skill_level`) VALUES ('$devID','$skillID[0]','$level')");
+            $reg->execute();
+
+            header('Location: ../user/dashboard.php');
+        } else {}
+    }
+
+    function getUser($username) {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM `developers` where Dev_username like '$username'");
+        $sql->execute();
+
+        if($sql->rowCount() > 0) {
+            $all = $sql->fetch();
+
+            return $all;
+        }
     }
 }

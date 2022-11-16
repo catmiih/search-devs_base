@@ -8,6 +8,14 @@ if (!isset($_SESSION["id_user"])) {
   exit;
 }
 
+$username = $_SESSION["username"];
+
+require_once '../../back/class/user.php';
+
+$user = new User();
+$user->conectar('search-devs_base', 'localhost', 'root', '');
+
+
 ?>
 
 <div class="side-menu">
@@ -18,8 +26,8 @@ if (!isset($_SESSION["id_user"])) {
                     <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
                 </div>
                 <div id="info">
-                    <h1>Fulano de Tal</h1>
-                    <p>Título do Perfil/ cargo</p>
+                    <h1><?php echo $user->getUser($username)[2];?></h1>
+                    <p><?php if(empty($user->getUser($username)[11])){echo "Nenhum cargo";}else{echo $user->getUser($username)[11];}?></p>
                 </div>
             </div>
 

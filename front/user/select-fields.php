@@ -14,7 +14,7 @@
 
 <?php
 
-$id = $_GET['id'];
+$id = $_SESSION['id_user'];
 
 if(isset($_POST['area'])) {
 

@@ -1,7 +1,11 @@
 .perfil {
   max-width: 80vw;
   width: 80vw;
+
+  min-height: 100vh;
   height: 100%;
+
+  padding: 5% 12%;
 }
 
 .search {

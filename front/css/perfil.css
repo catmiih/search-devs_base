@@ -83,7 +83,9 @@
   }
 
   .feed {
-    margin: 5%;
+    margin: 5% 0;
+    justify-content: center;
+    align-items: center;
   }
 
   .feed .col {
@@ -104,11 +106,24 @@
     width: 100% !important;
 
     border-radius: 50px!important;
+
+    justify-content: center!important;
+    align-items: center!important;
+  }
+
+  .input > * {
+    justify-content: center!important;
+    align-items: center!important;
+    height: 4rem;
+  }
+
+  .label {
+    margin: auto 3% !important;
   }
 
   .form-control {
     font-size: 2.5rem;
-    width: 75%!important;
+    width: 60%!important;
     padding: 0;
   }
 
@@ -118,6 +133,7 @@
   }
 
   .description {
+    top: 0;
     padding: 5%!important;
   }
 
@@ -274,7 +290,7 @@ hr {
 }
 
 .row {
-  align-items: center;
+  margin: 5% 0;
 }
 
 .btn-level {
@@ -319,7 +335,7 @@ hr {
 
 .label {
   background-color: transparent !important;
-  margin: 1% 0 !important;
+  margin: 1% 0;
   padding: 0 !important;
   width: auto !important;
 }
