@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Out-2022 às 00:57
+-- Tempo de geração: 16-Nov-2022 às 23:29
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -53,6 +53,17 @@ INSERT INTO `area` (`Area_ID`, `Area_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `area_dev`
+--
+
+CREATE TABLE `area_dev` (
+  `Area_ID` int(11) DEFAULT NULL,
+  `Dev_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `company`
 --
 
@@ -85,7 +96,9 @@ CREATE TABLE `developers` (
   `Dev_cep` varchar(8) DEFAULT NULL,
   `Dev_cpf` varchar(14) DEFAULT NULL,
   `Dev_born` varchar(10) DEFAULT NULL,
-  `Dev_sex` char(1) DEFAULT NULL
+  `Dev_sex` char(1) DEFAULT NULL,
+  `dev_description` text DEFAULT NULL,
+  `dev_office` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -100,6 +113,18 @@ CREATE TABLE `dev_ideal` (
   `Ideal_pay` float DEFAULT NULL,
   `Ideal_dev` int(11) DEFAULT NULL,
   `Ideal_skill` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `files`
+--
+
+CREATE TABLE `files` (
+  `file_id` int(11) NOT NULL,
+  `path` varchar(100) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -166,6 +191,13 @@ ALTER TABLE `area`
   ADD PRIMARY KEY (`Area_ID`);
 
 --
+-- Índices para tabela `area_dev`
+--
+ALTER TABLE `area_dev`
+  ADD KEY `fk_area-dev` (`Area_ID`),
+  ADD KEY `fk_area-dev2` (`Dev_ID`);
+
+--
 -- Índices para tabela `company`
 --
 ALTER TABLE `company`
@@ -184,6 +216,12 @@ ALTER TABLE `dev_ideal`
   ADD KEY `fk_ideal_area` (`Ideal_area`),
   ADD KEY `fk_ideal_dev` (`Ideal_dev`),
   ADD KEY `fk_ideal_skill` (`Ideal_skill`);
+
+--
+-- Índices para tabela `files`
+--
+ALTER TABLE `files`
+  ADD PRIMARY KEY (`file_id`);
 
 --
 -- Índices para tabela `project`
@@ -234,7 +272,13 @@ ALTER TABLE `company`
 -- AUTO_INCREMENT de tabela `developers`
 --
 ALTER TABLE `developers`
-  MODIFY `Dev_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Dev_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `files`
+--
+ALTER TABLE `files`
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `project`
@@ -251,6 +295,13 @@ ALTER TABLE `skills`
 --
 -- Restrições para despejos de tabelas
 --
+
+--
+-- Limitadores para a tabela `area_dev`
+--
+ALTER TABLE `area_dev`
+  ADD CONSTRAINT `fk_area-dev` FOREIGN KEY (`Area_ID`) REFERENCES `area` (`Area_ID`),
+  ADD CONSTRAINT `fk_area-dev2` FOREIGN KEY (`Dev_ID`) REFERENCES `developers` (`Dev_ID`);
 
 --
 -- Limitadores para a tabela `dev_ideal`
