@@ -123,7 +123,7 @@ function submitForm() {
         $("input[name='email']").addClass("error")
     }
 
-    if (!!password) {
+    if (!!password && password.length  >= 8) {
         $("input[name='password']").removeClass("error")
     } else {
         $("input[name='password']").addClass("error")

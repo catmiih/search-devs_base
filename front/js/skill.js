@@ -5,9 +5,9 @@ function check(level) {
 
     for (i = 0; i <= 5; i++) {
         if ($("#" + i).is(":checked")) {
-            $('.level-' + i).addClass('selected');
+            $('.btn-select.level-' + i).addClass('selected');
         } else {
-            $('.level-' + i).removeClass('selected');
+            $('.btn-select.level-' + i).removeClass('selected');
         }
     }
 };

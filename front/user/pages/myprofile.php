@@ -1,6 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../css/level.css" />
 <link rel="stylesheet" type="text/css" href="../css/perfil.css" />
-<link rel="stylesheet" type="text/css" href="../css/edit-profile.css" />
 
 
 <div class="perfil">

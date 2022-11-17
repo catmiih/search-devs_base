@@ -129,9 +129,7 @@ class User
         if ($sql->rowCount() == 0) {
             $reg = $pdo->prepare("INSERT INTO `skills_dev`(`Dev_ID`, `Skill_ID`, `Skill_level`) VALUES ('$devID','$skillID[0]','$level')");
             $reg->execute();
-
-            header('Location: ../user/dashboard.php');
-        } else {}
+        } 
     }
 
     function getUser($username) {

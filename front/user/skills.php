@@ -21,7 +21,7 @@
 
 <?php
 
-$userid = $_SESSION['id_user'];
+$id = $_SESSION['id_user'];
 
 ?>
 

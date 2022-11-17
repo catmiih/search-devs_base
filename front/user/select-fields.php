@@ -13,7 +13,6 @@
 </style>
 
 <?php
-
 $id = $_SESSION['id_user'];
 
 if(isset($_POST['area'])) {

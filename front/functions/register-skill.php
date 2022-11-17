@@ -1,21 +1,16 @@
 <?php
 
-session_start();
-
 require_once '../../back/class/user.php';
 
 $user = new User();
 $user->conectar('search-devs_base', 'localhost', 'root', '');
+session_start();
 
 if (isset($_POST['start'])) {
 
-    /* echo '<script>alert("nada aqui.")</script>'; */
     if ($user->msg == "") {
-
         for ($i = 0; $i <= 50; $i++) {
             if (!empty($_POST['level-' . $i])) {
-                echo 'Level aqui. Cod:' . $i . '<br>';
-
                 $level = $_POST['level-' . $i];
                 $skill = $_POST['skill-' . $i];
                 $area = $_POST['area-' . $i];
@@ -32,12 +27,14 @@ if (isset($_POST['start'])) {
                     $id = $_SESSION['id_user'];
                     $skillID = $sql->fetch();
 
-                    echo '<script>alert("Registrando skill. Cod:' . $i . '")</script>';
-
                     $user->registerSkill($skill, $area);
                     $user->skillDev($id, $skillID, $level);
                 }
-            } else {}
+            }else {
+                echo 'Nada de skill aqui: '.$i.'<br>';
+            }
         }
     }
+
+    //header('Location: ../user/dashboard.php');
 }
