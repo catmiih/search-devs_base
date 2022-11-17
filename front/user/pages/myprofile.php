@@ -12,13 +12,17 @@
                 </div>
                 <div id="containerperfil">
                     <div id="align">
-                        <h4><?php echo $user->getUser($username)[2];?></h4>
+                        <h4><?php echo $user->getUser($username)[2]; ?></h4>
 
                         <form action="" method="post">
                             <button href="#" class="btn" name="edit"><i class="fa-solid fa-gear"></i></button>
                         </form>
                     </div>
-                    <p><?php if(empty($user->getUser($username)[11])){echo "Nenhum cargo";}else{echo $user->getUser($username)[11];}?></p>
+                    <p><?php if (empty($user->getUser($username)[11])) {
+                            echo "Nenhum cargo";
+                        } else {
+                            echo $user->getUser($username)[11];
+                        } ?></p>
                 </div>
             </div>
         </div>
@@ -53,7 +57,18 @@
             </div>
             <br>
             <div class="show-skills">
+                <?php
 
+                $skills = $user->getUserSkills($id)[0];
+
+                foreach ($skills as $skill) {
+
+                    $skillCard = "<span id='".$skill['Skill_ID']."' class='btn-level level-".$skill['Skill_level']." skill-tag'><input type='hidden' name='level-".$skill['Skill_level']."' value='".$user->getNameSkills($skill['Skill_ID'])[0]."'><input type='hidden' name='skill-".$skill['Skill_level']."' value='".$user->getNameSkills($skill['Skill_ID'])[0]."'><input type='hidden' name='area' value='Web-Front End'> ".$user->getNameSkills($skill['Skill_ID'])[0]."</span>";
+
+                    echo $skillCard, "\n";
+                }
+                
+                ?>
             </div>
         </div>
     </div>
@@ -82,7 +97,11 @@
         </div>
         <div class="col description">
             <h2>Descrição do perfil:</h2>
-            <p><?php if(empty($user->getUser($username)[11])){echo "Olá! Sou novo no SEARCH DEVS&#8482;!";}else{echo $user->getUser($username)[11];}?></p>
+            <p><?php if (empty($user->getUser($username)[11])) {
+                    echo "Olá! Sou novo no SEARCH DEVS&#8482;!";
+                } else {
+                    echo $user->getUser($username)[11];
+                } ?></p>
         </div>
     </div>
 </div>

@@ -21,6 +21,18 @@
 
 <?php
 
+session_start();
+
+if (!isset($_SESSION["id_user"])) {
+  // Usuário não logado! Redireciona para a página de login
+  header("Location: ../login.php");
+  exit;
+}
+
+?>
+
+<?php
+
 $id = $_SESSION['id_user'];
 
 ?>

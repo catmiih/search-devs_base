@@ -4,9 +4,10 @@ require_once '../../back/class/user.php';
 
 $user = new User();
 $user->conectar('search-devs_base', 'localhost', 'root', '');
-session_start();
 
 if (isset($_POST['start'])) {
+
+    session_start();
 
     if ($user->msg == "") {
         for ($i = 0; $i <= 50; $i++) {
@@ -36,5 +37,5 @@ if (isset($_POST['start'])) {
         }
     }
 
-    //header('Location: ../user/dashboard.php');
+    header('Location: ../user/dashboard.php');
 }

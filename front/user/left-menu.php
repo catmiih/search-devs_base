@@ -9,6 +9,7 @@ if (!isset($_SESSION["id_user"])) {
 }
 
 $username = $_SESSION["username"];
+$id = $_SESSION["id_user"];
 
 require_once '../../back/class/user.php';
 

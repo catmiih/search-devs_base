@@ -244,12 +244,24 @@ hr {
   display: flex;
 }
 
+.skills {
+  justify-content: center;
+  align-items: center;
+
+  margin: 3% 5%;
+}
+
 .row.evaluation {
   background-color: rgba(0, 0, 0, 0.4);
   margin: 0.2% 2%;
   border-radius: 25px;
-  width: 70vw;
+  width: 63vw;
   padding: 3%;
+  
+}
+
+.show-skills {
+  margin: 2% auto;
 }
 
 .feed {
@@ -260,6 +272,7 @@ hr {
   margin: 0.2% 5%;
   border-radius: 25px;
   padding: 3%;
+  
 }
 
 .description {

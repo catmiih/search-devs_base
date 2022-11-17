@@ -123,7 +123,7 @@ class User
     {
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT Skill_ID FROM `skills_dev` where Dev_ID = '$devID'");
+        $sql = $pdo->prepare("SELECT Skill_ID FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID'");
         $sql->execute();
 
         if ($sql->rowCount() == 0) {
@@ -142,6 +142,34 @@ class User
             $all = $sql->fetch();
 
             return $all;
+        }
+    }
+
+    function getUserSkills($userId) {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * from skills_dev where Dev_ID = '$userId'");
+        $sql->execute();
+
+        if($sql->rowCount() > 0) {
+            $skills[] = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+            return $skills;
+        }
+    }
+
+    function getNameSkills($skillId) {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT Skill_name from skills where Skill_ID = '$skillId'");
+        $sql->execute();
+
+        if($sql->rowCount() > 0) {
+            $skills = $sql->fetch();
+
+            return $skills;
         }
     }
 }

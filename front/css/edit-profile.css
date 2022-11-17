@@ -17,8 +17,106 @@
   font-weight: 700;
   font-size: 1.85rem;
   margin-right: 1%;
+  text-align: left;
+}
+
+.search b{
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .feed, .row.evaluation {
-  width: auto;
+  width: 60vw;
+}
+
+.row.evaluation {
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0.2% 2%;
+  border-radius: 25px;
+  padding: 3%;
+
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+}
+
+.show-skills {
+  margin: 3% auto;
+}
+
+.general-info > * {
+  width: 50vw;
+  text-align: left;
+}
+
+.general-info > .input {
+  padding: 2% !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.col.input {
+  margin: 0 1%!important;
+}
+
+.input {
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.btn.col-3 {
+  width: 2.3rem!important;
+
+  right: 0;
+}
+
+.form-control {
+  width: 10rem;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: rgba(255, 255, 255, 0.562);
+}
+
+.info > .input > .col.label {
+  max-width: 4rem!important;
+  text-align: left;
+}
+
+.btn {
+  margin: 5% auto;
+  width: 100%;
+
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: #092565;
+  background: radial-gradient(circle, #092565 0%, #6e05f5 100%);
+  animation-duration: 2s;
+  background-size: 400% 400%;
+  animation: Gradient 5s ease infinite;
+  transition: transform 0.5s;
+  transform: translateX(0);
+
+  font-size: 1rem;
+}
+
+.btn:hover {
+  transform: translateX(1px) scale(1.05);
+  color: #fff;
+}
+
+.btn-edit {
+  margin: auto;
+  width: 7%!important;
+}
+
+#image, #image2 {
+  margin: 2% 0;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
