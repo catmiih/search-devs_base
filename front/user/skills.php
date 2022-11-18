@@ -24,9 +24,9 @@
 session_start();
 
 if (!isset($_SESSION["id_user"])) {
-  // Usuário não logado! Redireciona para a página de login
-  header("Location: ../login.php");
-  exit;
+    // Usuário não logado! Redireciona para a página de login
+    header("Location: ../login.php");
+    exit;
 }
 
 ?>
@@ -94,7 +94,21 @@ $id = $_SESSION['id_user'];
                 <form method="post" name="skills-form" action="../functions/register-skill.php">
                     <center>
                         <div class="row" id="skill_list">
-                            
+                            <script>
+                                <?php
+
+                                $skills = $user->getUserSkills($id)[0];
+
+                                foreach ($skills as $skill) {
+
+                                ?>
+                                    window.addEventListener('DOMContentLoaded', function() {
+                                        showSkills('<?php echo $user->getNameSkills($skill['Skill_ID'])[0]; ?>', '<?php echo $user->getAreaSkills($skill['Skill_ID'])[0]; ?>', '<?php echo $skill['Skill_level']; ?>');
+                                    });
+                                <?php
+                                }
+                                ?>
+                            </script>
                         </div>
                         <br>
 

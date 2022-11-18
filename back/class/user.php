@@ -123,53 +123,91 @@ class User
     {
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT Skill_ID FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID'");
-        $sql->execute();
+        $verify = $pdo->prepare("SELECT Dev_ID FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID'");
 
-        if ($sql->rowCount() == 0) {
-            $reg = $pdo->prepare("INSERT INTO `skills_dev`(`Dev_ID`, `Skill_ID`, `Skill_level`) VALUES ('$devID','$skillID[0]','$level')");
-            $reg->execute();
-        } 
+        $verify->execute();
+
+        if ($verify->rowCount() == 0) {
+
+            echo "<script>alert('".$verify->rowCount()."')</script>";
+            $sql = $pdo->prepare("SELECT Skill_ID FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID'");
+            $sql->execute();
+
+            if ($sql->rowCount() <= 0) {
+                $reg = $pdo->prepare("INSERT INTO `skills_dev`(`Dev_ID`, `Skill_ID`, `Skill_level`) VALUES ('$devID','$skillID[0]','$level')");
+                $reg->execute();
+            }
+        } else {
+            echo "<script>alert('".$verify->rowCount()."')</script>";
+            $deleteRow = "WITH cte as (select Skill_ID, Dev_ID, row_number() over (partition by Skill_ID, Dev_ID order by Dev_ID asc) linha from skills_dev ) delete from cte where linha > 1";
+
+            $delete = $pdo->prepare($deleteRow);
+            $delete->execute();
+        }
     }
 
-    function getUser($username) {
+    function getUser($username)
+    {
         global $pdo;
 
         $sql = $pdo->prepare("SELECT * FROM `developers` where Dev_username like '$username'");
         $sql->execute();
 
-        if($sql->rowCount() > 0) {
+        if ($sql->rowCount() > 0) {
             $all = $sql->fetch();
 
             return $all;
         }
     }
 
-    function getUserSkills($userId) {
+    function getUserSkills($userId)
+    {
 
         global $pdo;
 
         $sql = $pdo->prepare("SELECT * from skills_dev where Dev_ID = '$userId'");
         $sql->execute();
 
-        if($sql->rowCount() > 0) {
+        if ($sql->rowCount() > 0) {
             $skills[] = $sql->fetchAll(PDO::FETCH_ASSOC);
 
             return $skills;
         }
     }
 
-    function getNameSkills($skillId) {
+    function getNameSkills($skillId)
+    {
 
         global $pdo;
 
         $sql = $pdo->prepare("SELECT Skill_name from skills where Skill_ID = '$skillId'");
         $sql->execute();
 
-        if($sql->rowCount() > 0) {
+        if ($sql->rowCount() > 0) {
             $skills = $sql->fetch();
 
             return $skills;
+        }
+    }
+
+    function getAreaSkills($skillId)
+    {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT Skill_area from skills where Skill_ID = '$skillId'");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $area = $sql->fetch();
+
+            $exec = $pdo->prepare("SELECT Area_name from area where Area_ID = '$area[0]'");
+            $exec->execute();
+
+            if ($exec->rowCount() > 0) {
+                $area = $exec->fetch();
+                return $area;
+            }
         }
     }
 }

@@ -118,6 +118,11 @@ body {
   margin-left: 20vw;
 }
 
+
+.content{
+  z-index: 2;
+}
+
 .footer {
   margin: 0 10%;
   text-align: left;
@@ -165,9 +170,11 @@ body {
 #logout {
   width: 100%;
 
-  position: fixed !important;
+  position: fixed;
   right: 2%;
   bottom: 2%;
+
+  z-index: 1;
 }
 
 .logout {
@@ -187,6 +194,7 @@ body {
   animation-duration: 2s;
   background-size: 400% 400%;
   animation: Gradient 5s ease infinite;
+  
 }
 
 .nav-cell {

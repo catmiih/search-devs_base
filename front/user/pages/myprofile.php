@@ -63,7 +63,7 @@
 
                 foreach ($skills as $skill) {
 
-                    $skillCard = "<span id='".$skill['Skill_ID']."' class='btn-level level-".$skill['Skill_level']." skill-tag'><input type='hidden' name='level-".$skill['Skill_level']."' value='".$user->getNameSkills($skill['Skill_ID'])[0]."'><input type='hidden' name='skill-".$skill['Skill_level']."' value='".$user->getNameSkills($skill['Skill_ID'])[0]."'><input type='hidden' name='area' value='Web-Front End'> ".$user->getNameSkills($skill['Skill_ID'])[0]."</span>";
+                    $skillCard = "<span id='" . $skill['Skill_ID']. "' class='btn-level level-" . $skill['Skill_level'] . " skill-tag'><input type='hidden' name='level-" . $skill['Skill_level'] . "' value='" . $user->getNameSkills($skill['Skill_ID'])[0] . "'><input type='hidden' name='skill-" . $skill['Skill_level'] . "' value='" . $user->getNameSkills($skill['Skill_ID'])[0] . "'><input type='hidden' name='area' value='".$user->getAreaSkills($skill['Skill_ID'])[0]."'> " . $user->getNameSkills($skill['Skill_ID'])[0] . "</span>";
 
                     echo $skillCard, "\n";
                 }

@@ -22,7 +22,7 @@
                         <form action="functions/connect.php" method="POST">
 
                             <div class="input-group">
-                                <input type="text" placeholder="Usuário ou Email" class="col form-control" name="usermail" id="" maxlength="25" minlength="5" required>
+                                <input type="text" placeholder="Usuário ou Email" class="col form-control" name="usermail" id="" required>
                             </div>
 
                             <div class="col-xs-6">
