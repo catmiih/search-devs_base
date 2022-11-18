@@ -55,8 +55,8 @@ $id = $_SESSION['id_user'];
 
                 <form action="">
                     <div id="form">
-                        <input class="col form-control skill" type="text" name="name_skill" placeholder="Ex: HTML5" style="margin-right: 2%;" require>
-                        <input class="col form-control skill" list="datalistOptions" name="area_skill" id="exampleDataList" placeholder="Área de Atuação" require>
+                        <input class="col form-control skill" type="text" name="name_skill" placeholder="Ex: HTML5" maxlength="10" style="margin-right: 2%;" required>
+                        <input class="col form-control skill" list="datalistOptions" name="area_skill" id="exampleDataList" placeholder="Área de Atuação" required>
 
                         <p style="margin: 1%;">Nível:</p>
 

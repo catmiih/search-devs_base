@@ -123,26 +123,26 @@ class User
     {
         global $pdo;
 
-        $verify = $pdo->prepare("SELECT Dev_ID FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID'");
-
+        $verify = $pdo->prepare("SELECT * FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID[0]'");
         $verify->execute();
 
-        if ($verify->rowCount() == 0) {
+        echo "<script>alert('".$devID ." - ". $verify->rowCount() ." - ".$skillID[0]. "')</script>";
 
-            echo "<script>alert('".$verify->rowCount()."')</script>";
-            $sql = $pdo->prepare("SELECT Skill_ID FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID'");
+        if ($verify->rowCount() > 0) {
+            $deleteRow = "DELETE FROM skills_dev WHERE Skill_ID in (select Skill_ID from (SELECT *,ROW_NUMBER() OVER (PARTITION BY Dev_ID ORDER BY (Skill_ID) ) as posicao FROM skills_dev) skills_dev where posicao > 1)";
+
+            $delete = $pdo->prepare($deleteRow);
+            $delete->execute();
+        } else {
+
+            echo "<script>alert('" . $verify->rowCount() . "')</script>";
+            $sql = $pdo->prepare("SELECT Skill_ID FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID[0]'");
             $sql->execute();
 
             if ($sql->rowCount() <= 0) {
                 $reg = $pdo->prepare("INSERT INTO `skills_dev`(`Dev_ID`, `Skill_ID`, `Skill_level`) VALUES ('$devID','$skillID[0]','$level')");
                 $reg->execute();
             }
-        } else {
-            echo "<script>alert('".$verify->rowCount()."')</script>";
-            $deleteRow = "WITH cte as (select Skill_ID, Dev_ID, row_number() over (partition by Skill_ID, Dev_ID order by Dev_ID asc) linha from skills_dev ) delete from cte where linha > 1";
-
-            $delete = $pdo->prepare($deleteRow);
-            $delete->execute();
         }
     }
 
