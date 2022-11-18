@@ -123,10 +123,8 @@ class User
     {
         global $pdo;
 
-        $verify = $pdo->prepare("SELECT * FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID'");
+        $verify = $pdo->prepare("SELECT * FROM `skills_dev` where Dev_ID = '$devID[0]' and Skill_ID = '$skillID[0]'");
         $verify->execute();
-
-        echo "<script>alert('".$devID ." - ". $verify->rowCount() ." - ".$skillID[0]. "')</script>";
 
         if ($verify->rowCount() > 1) {
             $deleteRow = "DELETE FROM skills_dev WHERE Skill_ID in (select Skill_ID from (SELECT *,ROW_NUMBER() OVER (PARTITION BY Dev_ID ORDER BY (Skill_ID) ) as posicao FROM skills_dev) skills_dev where Dev_ID = '$devID' and Skill_ID = '$skillID[0]' and posicao > 2)";

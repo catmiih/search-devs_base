@@ -1,6 +1,6 @@
 .perfil {
-  max-width: 80vw;
-  width: 80vw;
+  max-width: 75vw;
+  width: 75vw;
 
   min-height: 100vh;
   height: 100%;
@@ -26,7 +26,7 @@
 }
 
 .feed, .row.evaluation {
-  width: 60vw;
+  width: 55vw;
 }
 
 .row.evaluation {
@@ -40,12 +40,16 @@
   text-align: left;
 }
 
+hr{
+  margin: 5% auto!important;
+}
+
 .show-skills {
   margin: 3% auto;
 }
 
 .general-info > * {
-  width: 50vw;
+  width: auto;
   text-align: left;
 }
 
@@ -62,6 +66,12 @@
 .input {
   align-items: center;
   flex-wrap: nowrap;
+
+  width: auto!important;
+}
+
+.input.file{
+  padding: 3%;
 }
 
 .btn.col-3 {
@@ -79,14 +89,27 @@
   color: rgba(255, 255, 255, 0.562);
 }
 
+.form-control:focus{
+  color: rgba(255, 255, 255, 1);
+}
+
 .info > .input > .col.label {
   max-width: 4rem!important;
   text-align: left;
 }
 
+.description, .info{
+  text-align: left;
+}
+
+.info{
+  margin: 0;
+}
+
 .btn {
   margin: 5% auto;
   width: 100%;
+  padding-top: 5%;
 
   text-align: center;
   color: #fff;
@@ -110,8 +133,13 @@
 }
 
 .btn-edit {
-  margin: auto;
-  width: 7%!important;
+  margin: 3% auto;
+  width: 60%!important;
+
+  justify-content: right;
+  align-items: flex-start!important;
+
+  padding: 2%;
 }
 
 #image, #image2 {
