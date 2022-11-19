@@ -44,7 +44,7 @@ if(isset($_POST['area'])) {
     
             if ($user->msg == "") {
                 if($user->registerArea($id,$area[$i]))
-                    header('Location: skills.php?id='.$id);
+                    header('Location: skills.php');
             } else {
                 echo "Erro: " . $user->msg;
             }

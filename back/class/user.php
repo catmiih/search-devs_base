@@ -68,7 +68,7 @@ class User
             $id->execute();
 
             if ($id->rowCount() <= 0) {
-                header('Location: ../user/select-fields.php?id=' . MD5($data[0]));
+                header('Location: ../user/select-fields.php');
             } else
                 header('Location: ../user/dashboard.php?u=' . $username);
 
@@ -144,7 +144,8 @@ class User
         }
     }
 
-    function deleteskill($skillID, $devID) {
+    function deleteskill($skillID, $devID)
+    {
         global $pdo;
 
         $sql = $pdo->prepare("DELETE FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID[0]'");
@@ -172,8 +173,13 @@ class User
 
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT * from skills_dev where Dev_ID = '$userId' and Skill_ID != (SELECT Skill_ID from skills where Skill_name like '')");
-        $sql->execute();
+        if ($pdo->prepare("SELECT Skill_ID from skills where Skill_name like ''")) {
+            $sql = $pdo->prepare("SELECT * from skills_dev where Dev_ID = '$userId' and Skill_ID != (SELECT Skill_ID from skills where Skill_name like '')");
+            $sql->execute();
+        } else {
+            $sql = $pdo->prepare("SELECT * from skills_dev where Dev_ID = '$userId'");
+            $sql->execute();
+        }
 
         if ($sql->rowCount() > 0) {
             $skills[] = $sql->fetchAll(PDO::FETCH_ASSOC);
