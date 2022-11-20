@@ -63,13 +63,96 @@
 
                 foreach ($skills as $skill) {
 
-                    $skillCard = "<span id='" . $skill['Skill_ID']. "' class='btn-level level-" . $skill['Skill_level'] . " skill-tag'><input type='hidden' name='level-" . $skill['Skill_level'] . "' value='" . $user->getNameSkills($skill['Skill_ID'])[0] . "'><input type='hidden' name='skill-" . $skill['Skill_level'] . "' value='" . $user->getNameSkills($skill['Skill_ID'])[0] . "'><input type='hidden' name='area' value='".$user->getAreaSkills($skill['Skill_ID'])[0]."'> " . $user->getNameSkills($skill['Skill_ID'])[0] . "</span>";
+                    $skillCard = "<span id='" . $skill['Skill_ID'] . "' class='btn-level level-" . $skill['Skill_level'] . " skill-tag'><input type='hidden' name='level-" . $skill['Skill_level'] . "' value='" . $skill['Skill_level'] . "'><input type='hidden' name='skill-" . $skill['Skill_level'] . "' value='" . $skill['Skill_ID'] . "'><input type='hidden' name='area' value='" . $user->getAreaSkills($skill['Skill_ID'])[0] . "'> " . $user->getNameSkills($skill['Skill_ID'])[0] . "</span>";
 
                     echo $skillCard, "\n";
-                } 
-                
+                }
+
                 ?>
             </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row feed">
+        <h2 style="text-align: center;">Áreas de atuação de <?php echo $user->getUser($username)[2]; ?></h2>
+        <div class="area">
+            <div id="check" class="row row-cols-4 justify-content-center" style="text-align: left;">
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Artificial Intelligence" value="1" <?php echo ($user->getAreaID($id, 1) == "1") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Artificial Intelligence">
+                        Artificial Intelligence
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Blockchain" value="5" <?php echo ($user->getAreaID($id, 5)[0] == "5") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Blockchain">
+                        Blockchain
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="cybersecurity" value="9" <?php echo ($user->getAreaID($id, 9)[0] == "9") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="cybersecurity">
+                        Cybersecurity
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Database Analytics" value="2" <?php echo ($user->getAreaID($id, 2)[0] == "2") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Database Analytics">
+                        Database Analytics
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Data Science" value="6" <?php echo ($user->getAreaID($id, 6)[0] == "6") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Data Science">
+                        Data Science
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Design" value="10" <?php echo ($user->getAreaID($id, 10)[0] == "10") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Design">
+                        Design
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Desktop Development" value="3" <?php echo ($user->getAreaID($id, 3)[0] == "3") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Desktop Development">
+                        Desktop Development
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="DevOps" value="7" <?php echo ($user->getAreaID($id, 7)[0] == "7") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="DevOps">
+                        DevOps
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id=" Mobile Development" value="11" <?php echo ($user->getAreaID($id, 11)[0] == "11") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for=" Mobile Development">
+                        Mobile Development
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Web - Back End" value="4" <?php echo ($user->getAreaID($id, 4)[0] == "4") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Web - Back End">
+                        Web - Back End
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Web - Front End" value="8" <?php echo ($user->getAreaID($id, 8)[0] == "8") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Web - Front End">
+                        Web - Front End
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Outros" value="12" <?php echo ($user->getAreaID($id, 12)[0] == "12") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Outros">
+                        Outros
+                    </label>
+                </div>
+            </div>
+            <br>
         </div>
     </div>
 

@@ -148,3 +148,21 @@ hr{
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.desc{
+  margin: 0!important;
+  width: 20rem!important;
+
+  height: 70%;
+  resize: none;
+  overflow-y: auto;
+}
+
+.area{
+  width: 60vw;
+}
+
+#check > *{
+  width: 15rem;
+  margin: 1%;
+}

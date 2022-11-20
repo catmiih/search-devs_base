@@ -100,7 +100,6 @@ $id = $_SESSION['id_user'];
                                 $skills = $user->getUserSkills($id)[0];
 
                                 foreach ($skills as $skill) {
-
                                 ?>
                                     window.addEventListener('DOMContentLoaded', function() {
                                         showSkills('<?php echo $user->getNameSkills($skill['Skill_ID'])[0]; ?>', '<?php echo $user->getAreaSkills($skill['Skill_ID'])[0]; ?>', '<?php echo $skill['Skill_level']; ?>');

@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="../css/createproj.css" />
+<link rel="stylesheet" type="text/css" href="../../css/createproj.css" />
 
 
 <div class="discover-propose">

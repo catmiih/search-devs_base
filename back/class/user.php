@@ -123,7 +123,7 @@ class User
     {
         global $pdo;
 
-        $verify = $pdo->prepare("SELECT * FROM `skills_dev` where Dev_ID = '$devID[0]' and Skill_ID = '$skillID[0]'");
+        $verify = $pdo->prepare("SELECT * FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID[0]'");
         $verify->execute();
 
         if ($verify->rowCount() > 1) {
@@ -190,7 +190,6 @@ class User
 
     function getNameSkills($skillId)
     {
-
         global $pdo;
 
         $sql = $pdo->prepare("SELECT Skill_name from skills where Skill_ID = '$skillId'");
@@ -205,7 +204,6 @@ class User
 
     function getAreaSkills($skillId)
     {
-
         global $pdo;
 
         $sql = $pdo->prepare("SELECT Skill_area from skills where Skill_ID = '$skillId'");
@@ -218,9 +216,25 @@ class User
             $exec->execute();
 
             if ($exec->rowCount() > 0) {
-                $area = $exec->fetch();
+                $area[] = $exec->fetch();
                 return $area;
             }
         }
+    }
+
+    function getAreaID($userID, $areaID)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT Area_ID from area_dev where Dev_ID = '$userID' and Area_ID = '$areaID'");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $area = $sql->fetch();
+            return $area;
+        }
+        else
+            $area = [null];
+            return $area;
     }
 }

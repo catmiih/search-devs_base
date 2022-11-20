@@ -53,6 +53,19 @@
             <br>
             <div class="show-skills">
 
+            <?php
+
+                $skills = $user->getUserSkills($id)[0];
+
+                foreach ($skills as $skill) {
+
+                    $skillCard = "<span id='" . $skill['Skill_ID'] . "' class='btn-level level-" . $skill['Skill_level'] . " skill-tag'><input type='hidden' name='level-" . $skill['Skill_level'] . "' value='" . $skill['Skill_level'] . "'><input type='hidden' name='skill-" . $skill['Skill_level'] . "' value='" . $skill['Skill_ID'] . "'><input type='hidden' name='area' value='" . $user->getAreaSkills($skill['Skill_ID'])[0] . "'> " . $user->getNameSkills($skill['Skill_ID'])[0] . "</span>";
+
+                    echo $skillCard, "\n";
+                } 
+                
+                ?>
+
             </div>
         </div>
     </div>

@@ -353,3 +353,15 @@ hr {
   padding: 0 !important;
   width: auto !important;
 }
+
+.area{
+  width: 70vw;
+  justify-content: center;
+  align-items: center;
+  margin: 0% 7%;
+}
+
+#check > *{
+  width: 15rem;
+  margin: 1%;
+}
