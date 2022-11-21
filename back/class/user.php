@@ -96,6 +96,8 @@ class User
             if ($verify->rowCount() == 0) {
                 $newArea = $pdo->prepare("INSERT INTO `area_dev`(`Area_ID`, `Dev_ID`) VALUES ('$area','$id')");
                 $newArea->execute();
+
+                echo 'Adicionado <br>';
             }
 
             return true;
@@ -232,9 +234,8 @@ class User
         if ($sql->rowCount() > 0) {
             $area = $sql->fetch();
             return $area;
-        }
-        else
+        } else
             $area = [null];
-            return $area;
+        return $area;
     }
 }

@@ -80,7 +80,7 @@
         <div class="area">
             <div id="check" class="row row-cols-4 justify-content-center" style="text-align: left;">
                 <div class="col-4">
-                    <input class="form-check-input" type="checkbox" name="area[]" id="Artificial Intelligence" value="1" <?php echo ($user->getAreaID($id, 1) == "1") ? "checked" : null; ?> disabled>
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Artificial Intelligence" value="1" <?php echo ($user->getAreaID($id, 1)[0] == "1") ? "checked" : null; ?> disabled>
                     <label class="form-check-label" for="Artificial Intelligence">
                         Artificial Intelligence
                     </label>

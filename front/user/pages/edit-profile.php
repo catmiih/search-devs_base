@@ -3,35 +3,6 @@
 <link rel="stylesheet" type="text/css" href="../css/edit-profile.css" />
 
 
-<?php
-
-if(isset($_POST['area'])) {
-
-    $area = $_POST["area"];
-
-    for($i = 0; $i < count($area); $i++){
-
-        require_once '../../back/class/user.php';
-        $user = new User();
-
-        if (!empty('area')) {
-
-            $user->conectar('search-devs_base', 'localhost', 'root', '');
-            //echo "$msg";
-    
-            if ($user->msg == "") {
-                if($user->registerArea($id,$area[$i]))
-                    header('Location: skills.php');
-            } else {
-                echo "Erro: " . $user->msg;
-            }
-        } else {
-        }
-    }
-}
-
-?>
-
 <div class="perfil">
     <center>
 
@@ -170,13 +141,14 @@ if(isset($_POST['area'])) {
         </div>
 
         <hr>
-        <form action="" method="post">
+
+        <form action="../functions/edit-profile.php" method="post">
 
             <h2>Áreas de atuação</h2>
             <div class="area">
                 <div id="check" class="row row-cols-4 justify-content-center" style="text-align: left;">
                     <div class="col-4">
-                        <input class="form-check-input" type="checkbox" name="area[]" id="Artificial Intelligence" value="1" <?php echo ($user->getAreaID($id, 1) == "1") ? "checked" : null; ?>>
+                        <input class="form-check-input" type="checkbox" name="area[]" id="Artificial Intelligence" value="1" <?php echo ($user->getAreaID($id, 1)[0] == "1") ? "checked" : null; ?>>
                         <label class="form-check-label" for="Artificial Intelligence">
                             Artificial Intelligence
                         </label>
