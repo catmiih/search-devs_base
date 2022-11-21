@@ -89,15 +89,34 @@ class User
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
-
             $verify = $pdo->prepare("SELECT Area_ID FROM area_dev WHERE Dev_ID = '$id' AND Area_ID = '$area'");
             $verify->execute();
 
             if ($verify->rowCount() == 0) {
                 $newArea = $pdo->prepare("INSERT INTO `area_dev`(`Area_ID`, `Dev_ID`) VALUES ('$area','$id')");
                 $newArea->execute();
+            }
 
-                echo 'Adicionado <br>';
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function excludeArea($id, $area)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT Dev_name FROM developers WHERE Dev_ID = '$id'");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $verify = $pdo->prepare("SELECT Area_ID FROM area_dev WHERE Dev_ID = '$id' AND Area_ID = '$area'");
+            $verify->execute();
+
+            if ($verify->rowCount() > 0) {
+                $newArea = $pdo->prepare("DELETE FROM `area_dev` WHERE Dev_ID = '$id' AND Area_ID = '$area'");
+                $newArea->execute();
             }
 
             return true;

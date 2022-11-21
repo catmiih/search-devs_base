@@ -3,11 +3,10 @@
 session_start();
 $id = $_SESSION["id_user"];
 
-if (isset($_POST['area'])) {
+for ($i = 0; $i < 12; $i++) {
+    if (isset($_POST['area'])) {
 
-    $area = $_POST["area"];
-
-    for ($i = 0; $i < count($area); $i++) {
+        $area = $_POST["area"];
 
         require_once '../../back/class/user.php';
         $user = new User();
@@ -16,16 +15,24 @@ if (isset($_POST['area'])) {
         //echo "$msg";
 
         if ($user->msg == "") {
-            if ($user->registerArea($id, $area[$i])) {
+
+            if($area[$i] ?? null){
+                $user->registerArea($id, $area[$i]);
+                echo 'Sucesso! no ' . $area[$i] . ' <br>';
+            }else {
+                $user->excludeArea($id, $i+1);
+                echo 'Excuido o '.$i+1,'<br>';
+            }
+
+            /* if ($user->registerArea($id, $i)) {
                 //header('Location: skills.php');
-                echo 'Sucesso! no '.$area[$i].' <br>';
+                echo 'Sucesso! no ' . $area[$i] . ' <br>';
             } else {
                 echo "Erro: " . $user->msg;
-            }
+            } */
         }
-    }
-}else 
-    echo ' to desmarcado: <br>'.$_POST['area'];
-
+    } else
+        echo ' to desmarcado: '.$i.'<br>';
+}
 
 ?>
