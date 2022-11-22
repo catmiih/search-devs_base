@@ -24,11 +24,11 @@ $user->conectar('search-devs_base', 'localhost', 'root', '');
         <center>
             <div class="container prof">
                 <div class="user">
-                    <img src="../../assets/uploads/<?php echo $username;?>/<?php echo $username;?>_profile.jpg" />
+                    <img src="../../assets/<?php echo $user->findImage($id, $username, 'profile')[0]; ?>" />
                 </div>
                 <div id="info">
-                    <h1><?php echo $user->getUser($username)[2];?></h1>
-                    <p><?php if(empty($user->getUser($username)[11])){echo "Nenhum cargo";}else{echo $user->getUser($username)[11];}?></p>
+                    <h1><?php echo $user->getUser($id)[2];?></h1>
+                    <p><?php if(empty($user->getUser($id)[11])){echo "Nenhum cargo";}else{echo $user->getUser($id)[11];}?></p>
                 </div>
             </div>
 

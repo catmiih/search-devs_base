@@ -175,11 +175,11 @@ class User
         header('Location: ../../front/user/skills.php');
     }
 
-    function getUser($username)
+    function getUser($id)
     {
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT * FROM `developers` where Dev_username like '$username'");
+        $sql = $pdo->prepare("SELECT * FROM `developers` where Dev_ID = '$id'");
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
@@ -261,13 +261,34 @@ class User
     function saveFile($userID, $username, $type) {
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT file_id from files where user_id = '$userID' and path like *$username*$type*");
+        $path = 'uploads/'.$username.'/'.$username.'_'.$type.'.jpg';
+
+        $sql = $pdo->prepare("SELECT file_id from files where user_id = '$userID' and `path` like '$path'");
         $sql->execute();
 
         if($sql->rowCount() == 0){
-            $file = '/uploads/'.$username.'/'.$username.'_'.$type.'.jpg';
+            $file = 'uploads/'.$username.'/'.$username.'_'.$type.'.jpg';
 
             $insert = $pdo->prepare("INSERT INTO `files`(`path`, `user_id`) VALUES ('$file','$userID')");
+            $insert->execute();
+        }
+    }
+
+    function findImage($userID, $username, $type){
+        global $pdo;
+        $path = 'uploads/'.$username.'/'.$username.'_'.$type.'.jpg';
+
+        $sql = $pdo->prepare("SELECT path from files where user_id = '$userID' and `path` like '$path'");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $img = $sql->fetch();
+
+            return $img;
+        }
+        else {
+            $img[] = 'uploads/default_'.$type.'.jpg';
+            return $img;
         }
     }
 }

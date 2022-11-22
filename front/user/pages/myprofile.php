@@ -5,23 +5,23 @@
 <div class="perfil">
     <div id="feedperfil">
         <div id="profile_banner">
-            <img class="banner" src="../../assets/uploads/<?php echo $username;?>/<?php echo $username;?>_banner.jpg" alt="">
+            <img class="banner" src="../../assets/<?php echo $user->findImage($id, $username, 'banner')[0]; ?>" alt="">
             <div id="profile">
                 <div class="profile_pic">
-                    <img src="../../assets/uploads/<?php echo $username;?>/<?php echo $username;?>_profile.jpg" />
+                    <img src="../../assets/<?php echo $user->findImage($id, $username, 'profile')[0]; ?>" />
                 </div>
                 <div id="containerperfil">
                     <div id="align">
-                        <h4><?php echo $user->getUser($username)[2]; ?></h4>
+                        <h4><?php echo $user->getUser($id)[2]; ?></h4>
 
                         <form action="" method="post">
                             <button href="#" class="btn" name="edit"><i class="fa-solid fa-gear"></i></button>
                         </form>
                     </div>
-                    <p><?php if (empty($user->getUser($username)[11])) {
+                    <p><?php if (empty($user->getUser($id)[11])) {
                             echo "Nenhum cargo";
                         } else {
-                            echo $user->getUser($username)[11];
+                            echo $user->getUser($id)[11];
                         } ?></p>
                 </div>
             </div>
@@ -76,7 +76,7 @@
     <hr>
 
     <div class="row feed">
-        <h2 style="text-align: center;">Áreas de atuação de <?php echo $user->getUser($username)[2]; ?></h2>
+        <h2 style="text-align: center;">Áreas de atuação de <?php echo $user->getUser($id)[2]; ?></h2>
         <div class="area">
             <div id="check" class="row row-cols-4 justify-content-center" style="text-align: left;">
                 <div class="col-4">
@@ -164,27 +164,27 @@
 
             <div class="row input">
                 <p class="col label">Nome:</p>
-                <input type="text" placeholder="<?php echo $user->getUser($username)[1]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                <input type="text" placeholder="<?php echo $user->getUser($id)[1]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
             </div>
 
             <div class="row input">
                 <p class="col label"> Telefone:</p>
-                <input type="text" placeholder="<?php echo $user->getUser($username)[5]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                <input type="text" placeholder="<?php echo $user->getUser($id)[5]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
 
             </div>
             <div class="row input">
                 <p class="col label">Email:</p>
-                <input type="text" placeholder="<?php echo $user->getUser($username)[3]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                <input type="text" placeholder="<?php echo $user->getUser($id)[3]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
             </div>
 
         </div>
         <div class="col description">
             <h2>Descrição do perfil:</h2>
-            <p><?php if (empty($user->getUser($username)[10])) {
-                    echo "Olá! Sou novo no SEARCH DEVS&#8482;!";
-                } else {
-                    echo $user->getUser($username)[10];
-                } ?></p>
+            <textarea class="form-control desc" name="desc" disabled><?php if (empty($user->getUser($id)[10])) {
+                                                                echo "Olá! Sou novo no SEARCH DEVS&#8482;!";
+                                                            } else {
+                                                                echo $user->getUser($id)[10];
+                                                            } ?></textarea>
         </div>
     </div>
 </div>

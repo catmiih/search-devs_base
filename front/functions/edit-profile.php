@@ -13,12 +13,12 @@ $user->conectar('search-devs_base', 'localhost', 'root', '');
 if ($user->msg == "") {
 
     if (isset($_POST['public']) && isset($_POST['username']) && isset($_POST['office']) && isset($_POST['name']) && isset($_POST['cell'])) {
-        $user = $_POST['username'];
+        $username = $_POST['username'];
         $office = $_POST['office'];
         $name = $_POST['name'];
         $cell = $_POST['cell'];
 
-        $sql = $pdo->prepare("UPDATE `developers` SET `Dev_name`='$name',`Dev_username`='$user',`Dev_Num`='$cell',`dev_office`='$office' WHERE Dev_ID = $id");
+        $sql = $pdo->prepare("UPDATE `developers` SET `Dev_name`='$name',`Dev_username`='$username',`Dev_Num`='$cell',`dev_office`='$office' WHERE Dev_ID = $id");
         $sql->execute();
 
         /* Image Update */
@@ -31,7 +31,7 @@ if ($user->msg == "") {
             $filename = explode('.', $banner['full_path']);
 
             if ($filename[sizeof($filename) - 1] != 'jpg' && $filename[sizeof($filename) - 1] != 'png') {
-                die('Você não pode fazer isso.');
+                die('Você não pode fazer isso. Banner');
             } else {
                 $newName = $username . '_banner.' . 'jpg';
 
@@ -43,6 +43,7 @@ if ($user->msg == "") {
 
                 if ($upload) {
                     echo 'Dei upload <br>';
+                    $user->saveFile($id, $username, 'banner');
                 }
             }
         }
@@ -51,7 +52,7 @@ if ($user->msg == "") {
             $filename = explode('.', $profile['full_path']);
 
             if ($filename[sizeof($filename) - 1] != 'jpg' && $filename[sizeof($filename) - 1] != 'png') {
-                die('Você não pode fazer isso.');
+                die('Você não pode fazer isso. Perfil');
             } else {
                 $newName = $username . '_profile.' . 'jpg';
                 echo $newName;
@@ -63,6 +64,7 @@ if ($user->msg == "") {
 
                 if ($upload) {
                     echo 'Dei upload';
+                    $user->saveFile($id, $username, 'profile');
                 }
             }
         }

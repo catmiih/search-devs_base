@@ -18,18 +18,20 @@
 
         <!-- Usuário ⬇️ -->
 
+        <?php $findID= 2; ?>
+
         <div class="user-card">
             <div id="profile_banner">
-                <img class="banner" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
+                <img class="banner" src="../../assets/<?php echo $user->findImage($findID, $username, 'banner')[0]; ?>" alt="">
                 <div id="profile">
                     <div class="profile_pic">
-                        <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
+                        <img src="../../assets/<?php echo $user->findImage($findID, $username, 'profile')[0]; ?>" />
                     </div>
                     <div id="containerperfil">
                         <div id="align">
-                            <h4>Fulano de Tal </h4>
+                            <h4><?php echo  $user->getUser($findID)[2]; ?></h4>
                         </div>
-                        <p>Anbalista de muita coisa e tal e titulo longo</p>
+                        <p><?php echo  $user->getUser($findID)[11]; ?></p>
                     </div>
                     <div class="btn-group">
                     <form action="" method="post" style="width: 100%;">
@@ -42,67 +44,6 @@
             </div>
 
         </div>
-
-
-
-        <!-- Usuário ⬇️ -->
-
-        <div class="user-card">
-            <div id="profile_banner">
-                <img class="banner" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
-                <div id="profile">
-                    <div class="profile_pic">
-                        <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
-                    </div>
-                    <div id="containerperfil">
-                        <div id="align">
-                            <h4>Fulano de Tal </h4>
-                        </div>
-                        <p>Anbalista de muita coisa e tal e titulo longo</p>
-                    </div>
-                    <div class="btn-group">
-                    <form action="" method="post" style="width: 100%;">
-                        
-                            <input type="hidden" name="user" value="null" style="display: none;">
-                            <button type="submit" name="7" class="btn">Ver perfil</button>
-                    </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-
-
-
-        <!-- Usuário ⬇️ -->
-
-        <div class="user-card">
-            <div id="profile_banner">
-                <img class="banner" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
-                <div id="profile">
-                    <div class="profile_pic">
-                        <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
-                    </div>
-                    <div id="containerperfil">
-                        <div id="align">
-                            <h4>Fulano de Tal </h4>
-                        </div>
-                        <p>Anbalista de muita coisa e tal e titulo longo</p>
-                    </div>
-                    <div class="btn-group">
-                    <form action="" method="post" style="width: 100%;">
-                        
-                            <input type="hidden" name="user" value="null" style="display: none;">
-                            <button type="submit" name="7" class="btn">Ver perfil</button>
-                    </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
 
 
     </div>
