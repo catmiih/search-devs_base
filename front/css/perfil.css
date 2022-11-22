@@ -135,6 +135,7 @@
   .description {
     top: 0;
     padding: 5% !important;
+   
   }
 
   .description p {
@@ -149,36 +150,54 @@
   }
 
   .row.evaluation {
-
     width: 93vw !important;
   }
-  
+
   .skill-tag {
     text-align: center !important;
     width: 10rem !important;
     margin-left: 100% !important;
   }
-  
-  .form-check-label {
 
+  .form-check-label {
     width: 20rem;
     font-size: 2.5rem;
-
   }
 
   .area {
-     width: 110vw !important;
+    width: 110vw !important;
   }
 
   .col-4 {
-
-    width: 40vw !important;
-    height: 4vh;
+    width: 45vw !important;
+    height: 5vh;
+    text-align: center;
   }
 
   .form-check-input {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10px !important;
+  }
+
+  .edit {
+    width: 4rem !important;
+    height: 4rem !important;
+    font-size: 1.5rem !important;
+    margin:2% !important;
+  }
+  
+  .description{
+    height: 90rem;
+  }
+
+  .feed {
+    max-height: 100% !important;
+  }
+
+  .desc {
+    width: 50rem !important; 
+    height: 70rem !important;
   }
 }
 
@@ -411,4 +430,3 @@ hr {
   width: 15rem;
   margin: 1%;
 }
-

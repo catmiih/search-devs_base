@@ -20,12 +20,13 @@
   text-align: left;
 }
 
-.search b{
+.search b {
   font-weight: 300;
   text-transform: uppercase;
 }
 
-.feed, .row.evaluation {
+.feed,
+.row.evaluation {
   width: 55vw;
 }
 
@@ -40,8 +41,8 @@
   text-align: left;
 }
 
-hr{
-  margin: 5% auto!important;
+hr {
+  margin: 5% auto !important;
 }
 
 .show-skills {
@@ -60,22 +61,22 @@ hr{
 }
 
 .col.input {
-  margin: 0 1%!important;
+  margin: 0 1% !important;
 }
 
 .input {
   align-items: center;
   flex-wrap: nowrap;
 
-  width: auto!important;
+  width: auto !important;
 }
 
-.input.file{
+.input.file {
   padding: 3%;
 }
 
 .btn.col-3 {
-  width: 2.3rem!important;
+  width: 2.3rem !important;
 
   right: 0;
 }
@@ -89,24 +90,25 @@ hr{
   color: rgba(255, 255, 255, 0.562);
 }
 
-.form-control:focus{
+.form-control:focus {
   color: rgba(255, 255, 255, 1);
 }
 
 .info > .input > .col.label {
-  max-width: 4rem!important;
+  max-width: 4rem !important;
   text-align: left;
 }
 
-.description, .info{
+.description,
+.info {
   text-align: left;
 }
 
-.info{
+.info {
   margin: 0;
 }
 
-.btn {
+.btn-select1 {
   margin: 5% auto;
   width: 100%;
   padding-top: 5%;
@@ -134,35 +136,79 @@ hr{
 
 .btn-edit {
   margin: 3% auto;
-  width: 60%!important;
+  width: 60% !important;
 
   justify-content: right;
-  align-items: flex-start!important;
+  align-items: flex-start !important;
 
   padding: 2%;
 }
 
-#image, #image2 {
+#image,
+#image2 {
   margin: 2% 0;
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.desc{
-  margin: 0!important;
-  width: 20rem!important;
+.desc {
+  margin: 0 !important;
+  width: 20rem !important;
 
   height: 70%;
   resize: none;
   overflow-y: auto;
 }
 
-.area{
+.area {
   width: 60vw;
 }
 
-#check > *{
+#check > * {
   width: 15rem;
   margin: 1%;
+}
+
+@media screen and (max-device-width: 800px) {
+  .perfil {
+    padding: 0 !important;
+  }
+  .high {
+    display: inline !important;
+  }
+
+  .form-check-label {
+    text-align: left;
+    width: 20rem;
+    font-size: 2.5rem;
+    margin-bottom: 3% !important;
+  }
+
+  .area {
+    width: 110vw !important;
+    margin-left: -5%!important ;
+  }
+
+  .col-4 {
+    width: 45vw !important;
+    height: 5vh;
+    text-align: center;
+    align-items: flex-start !important;
+  }
+
+  .form-check-input {
+    margin-right: 2% !important;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10px !important;
+  }
+
+  .general-info {
+    padding: 0 5% !important;
+  }
+
+  .search {
+    margin-top: 5% !important;
+  }
 }

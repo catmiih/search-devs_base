@@ -15,7 +15,7 @@
                         <h4><?php echo $user->getUser($id)[2]; ?></h4>
 
                         <form action="" method="post">
-                            <button href="#" class="btn" name="edit"><i class="fa-solid fa-gear"></i></button>
+                            <button href="#" class="btn edit" name="edit"><i class="fa-solid fa-gear"></i></button>
                         </form>
                     </div>
                     <p><?php if (empty($user->getUser($id)[11])) {

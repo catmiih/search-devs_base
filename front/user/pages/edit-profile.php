@@ -17,7 +17,7 @@
         <form action="../functions/edit-profile.php" method="post" enctype="multipart/form-data">
             <div class="general-info">
                 <h2 style="text-align: center;">Informações públicas:</h2>
-                <div class="row">
+                <div class="row high">
                     <div class="col">
                         <div class="row input">
                             <p class="col-1 label">Nome de usuário:</p>
@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="col input file">
                         <p class="col label">Foto de perfil:</p>
-                        <label for="profile-pic" class="btn">Selecionar imagem:<p id="image"></p></label>
+                        <label for="profile-pic" class="btn-select1">Selecionar imagem:<p id="image"></p></label>
                         <input type="file" name="profile" class="d-none" id="profile-pic">
 
                         <script>
@@ -70,7 +70,7 @@
 
                     <div class="col input file">
                         <p class="col label">Foto de banner:</p>
-                        <label for="banner-pic" class="btn">Selecionar imagem:<p id="imagee"></p></label>
+                        <label for="banner-pic" class="btn-select1">Selecionar imagem:<p id="imagee"></p></label>
                         <input type="file" name="banner" class="d-none" id="banner-pic">
 
                         <script>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-edit" type="submit" name="public"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
+                <button class="btn-select1 btn-edit" type="submit" name="public"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
             </div>
         </form>
 
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="col">
-                    <a class="btn" href="skills.php" style="padding: 5%;">Editar skills</a>
+                    <a class="btn-select1 btn" href="skills.php" style="padding: 5%;">Editar skills</a>
                 </div>
                 <br>
                 <div class="show-skills">
@@ -141,7 +141,7 @@
 
         <hr>
 
-        <form action="../functions/edit-profile.php" method="post">
+        <form class="select-skill" action="../functions/edit-profile.php" method="post">
 
             <h2>Áreas de atuação</h2>
             <div class="area">
@@ -221,7 +221,7 @@
                 </div>
                 <br>
             </div>
-            <button class="btn btn-edit" type="submit"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
+            <button class="btn-select1 btn-edit" type="submit"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
         </form>
 
         <hr>
@@ -262,7 +262,7 @@
                 </div>
 
             </div>
-            <button class="btn btn-edit" type="submit" name="general"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
+            <button class="btn-select1 btn-edit" type="submit" name="general"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
         </form>
         <hr>
 
@@ -317,7 +317,7 @@
                 </div>
         </div>
 
-        <button class="btn btn-edit" type="submit" name="personal"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
+        <button class="btn-select1 btn-edit" type="submit" name="personal"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
         </form>
     </center>
 </div>
