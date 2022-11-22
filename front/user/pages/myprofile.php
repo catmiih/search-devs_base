@@ -180,10 +180,10 @@
         </div>
         <div class="col description">
             <h2>Descrição do perfil:</h2>
-            <p><?php if (empty($user->getUser($username)[11])) {
+            <p><?php if (empty($user->getUser($username)[10])) {
                     echo "Olá! Sou novo no SEARCH DEVS&#8482;!";
                 } else {
-                    echo $user->getUser($username)[11];
+                    echo $user->getUser($username)[10];
                 } ?></p>
         </div>
     </div>

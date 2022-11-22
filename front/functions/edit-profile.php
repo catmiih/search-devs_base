@@ -3,36 +3,82 @@
 session_start();
 $id = $_SESSION["id_user"];
 
-for ($i = 0; $i < 12; $i++) {
+require_once '../../back/class/user.php';
+$user = new User();
+
+$user->conectar('search-devs_base', 'localhost', 'root', '');
+//echo "$msg";
+
+if ($user->msg == "") {
+
     if (isset($_POST['area'])) {
 
-        $area = $_POST["area"];
+        for ($i = 0; $i < 12; $i++) {
+            $user->excludeArea($id, $i + 1);
+        }
 
-        require_once '../../back/class/user.php';
-        $user = new User();
+        for ($i = 0; $i < 12; $i++) {
 
-        $user->conectar('search-devs_base', 'localhost', 'root', '');
-        //echo "$msg";
+            $area = $_POST["area"];
 
-        if ($user->msg == "") {
-
-            if($area[$i] ?? null){
+            if ($area[$i] ?? null) {
                 $user->registerArea($id, $area[$i]);
                 echo 'Sucesso! no ' . $area[$i] . ' <br>';
-            }else {
-                $user->excludeArea($id, $i+1);
-                echo 'Excuido o '.$i+1,'<br>';
-            }
-
-            /* if ($user->registerArea($id, $i)) {
-                //header('Location: skills.php');
-                echo 'Sucesso! no ' . $area[$i] . ' <br>';
             } else {
-                echo "Erro: " . $user->msg;
-            } */
+                echo 'Excuido o ' . $i + 1, '<br>';
+            }
         }
-    } else
-        echo ' to desmarcado: '.$i.'<br>';
+
+        header('Location: ../user/dashboard.php');
+    }
+
+    if(isset($_POST['public']) && isset($_POST['username']) && isset($_POST['office']) && isset($_POST['name']) && isset($_POST['cell'])){
+        $user = $_POST['username'];
+        $office = $_POST['office'];
+        $name = $_POST['name'];
+        $cell = $_POST['cell'];
+
+        $sql = $pdo->prepare("UPDATE `developers` SET `Dev_name`='$name',`Dev_username`='$user',`Dev_Num`='$cell',`dev_office`='$office' WHERE Dev_ID = $id");
+        $sql->execute();
+
+        header('Location: ../user/dashboard.php');
+    }
+
+    if(isset($_POST['general']) && isset($_POST['email'])){
+        $email = $_POST['email'];
+        $desc = $_POST['desc'];
+
+        if(isset($_POST['password'])){
+            $passMD5 = md5($_POST['password']);
+            $newpass = $_POST['newpass'];
+
+            $sql = $pdo->prepare("SELECT `Dev_pass` FROM `developers` WHERE $passMD5 = `Dev_pass`");
+            $sql->execute();
+
+            if($sql->rowCount() > 0){
+                $sql = $pdo->prepare("UPDATE `developers` SET `Dev_pass`='".md5($newpass)."' WHERE Dev_ID = $id");
+                $sql->execute();
+            }
+        }
+
+        $sql = $pdo->prepare("UPDATE `developers` SET `Dev_email`='$email', `dev_description` = '$desc' WHERE Dev_ID = $id");
+        $sql->execute();
+
+        header('Location: ../user/dashboard.php');
+    }
+
+    if(isset($_POST['personal'])){
+        $cep = $_POST['CEP'];
+        $cpf = $_POST['CPF'];
+        $born = $_POST['born'];
+
+        $sex = $_POST['Sex-Select'];
+
+        $sql = $pdo->prepare("UPDATE `developers` SET `Dev_cep`='$cep',`Dev_cpf`='$cpf',`Dev_born`='$born',`Dev_sex`='$sex' WHERE Dev_ID = $id;");
+        $sql->execute();
+
+        header('Location: ../user/dashboard.php');
+    }
 }
 
 ?>

@@ -15,14 +15,14 @@
             <hr>
         </div>
 
-        <form action="" name="personal" method="post">
+        <form action="../functions/edit-profile.php" method="post">
             <div class="general-info">
                 <h2 style="text-align: center;">Informações públicas:</h2>
                 <div class="row">
                     <div class="col">
                         <div class="row input">
                             <p class="col-1 label">Nome de usuário:</p>
-                            <input type="text" value="<?php echo $user->getUser($username)[2]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5">
+                            <input type="text" value="<?php echo $user->getUser($username)[2]; ?>" class="col form-control" name="username" id="" maxlength="25" minlength="5">
 
                         </div>
 
@@ -32,20 +32,20 @@
                                                             echo "Nenhum cargo";
                                                         } else {
                                                             echo $user->getUser($username)[11];
-                                                        } ?>" class="col form-control" name="" id="" maxlength="25" minlength="5">
+                                                        } ?>" class="col form-control" name="office" id="" maxlength="25" minlength="5">
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="row input">
                             <p class="col-1 label">Nome:</p>
-                            <input type="text" value="<?php echo $user->getUser($username)[1]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5">
+                            <input type="text" value="<?php echo $user->getUser($username)[1]; ?>" class="col form-control" name="name" id="" minlength="5">
 
                         </div>
 
                         <div class="row input">
                             <p class="col-1 label"> Telefone:</p>
-                            <input type="text" value="<?php echo $user->getUser($username)[5]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5">
+                            <input type="text" value="<?php echo $user->getUser($username)[5]; ?>" class="col form-control" name="cell" id="" maxlength="25" minlength="5">
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-edit" type="button"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
+                <button class="btn btn-edit" type="submit" name="public"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
             </div>
         </form>
 
@@ -227,27 +227,27 @@
 
         <hr>
 
-        <form action="" name="public" method="post">
+        <form action="../functions/edit-profile.php" method="post">
             <h2>Informações gerais:</h2>
             <div class="row feed" style="margin-bottom: 0;">
                 <div class="col info">
 
                     <div class="row input">
                         <p class="col label">Email:</p>
-                        <input type="text" class="col form-control" name="" id="" value="<?php echo $user->getUser($username)[3]; ?>">
+                        <input type="text" class="col form-control" name="email" id="" value="<?php echo $user->getUser($username)[3]; ?>">
 
                     </div>
                     <br>
                     <h4>Editar senha</h4>
                     <div class="row input">
                         <p class="col-4 label">Senha atual:</p>
-                        <input type="password" placeholder="•••" class="col form-control" name="" id="">
+                        <input type="password" placeholder="•••" class="col form-control" name="pass" id="">
 
 
                     </div>
                     <div class="row input">
                         <p class="col-4 label">Nova senha:</p>
-                        <input type="password" placeholder="•••" class="col form-control" name="" id="">
+                        <input type="password" placeholder="•••" class="col form-control" name="newpass" id="">
 
 
                     </div>
@@ -255,70 +255,70 @@
                 </div>
                 <div class="col description">
                     <h2>Descrição do perfil:</h2>
-                    <textarea class="form-control desc"><?php if (empty($user->getUser($username)[11])) {
-                                                            echo "Olá! Sou novo no SEARCH DEVS&#8482;!";
-                                                        } else {
-                                                            echo $user->getUser($username)[11];
-                                                        } ?></textarea>
+                    <textarea class="form-control desc" name="desc"><?php if (empty($user->getUser($username)[10])) {
+                                                                        echo "Olá! Sou novo no SEARCH DEVS&#8482;!";
+                                                                    } else {
+                                                                        echo $user->getUser($username)[10];
+                                                                    } ?></textarea>
                 </div>
 
             </div>
-            <button class="btn btn-edit" type="button"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
+            <button class="btn btn-edit" type="submit" name="general"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
         </form>
         <hr>
 
         <div class="info2">
+            <form action="../functions/edit-profile.php" method="post">
+                <h2 style="text-align: center;">Informações pessoais:</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="row input">
+                            <p class="col-1 label">CEP:</p>
+                            <input type="text" value="<?php echo $user->getUser($username)[6]; ?>" class="col form-control" name="CEP" id="" maxlength="25" minlength="5">
 
-            <h2 style="text-align: center;">Informações pessoais:</h2>
-            <div class="row">
-                <div class="col">
-                    <div class="row input">
-                        <p class="col-1 label">CEP:</p>
-                        <input type="text" value="<?php echo $user->getUser($username)[6]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5">
+                        </div>
 
+                        <div class="row input">
+                            <p class="col-1 label"> CPF:</p>
+                            <input type="text" value="<?php echo $user->getUser($username)[7]; ?>" class="col form-control" name="CPF" id="" maxlength="25" minlength="5">
+                        </div>
                     </div>
 
-                    <div class="row input">
-                        <p class="col-1 label"> CPF:</p>
-                        <input type="text" value="<?php echo $user->getUser($username)[7]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5">
-                    </div>
-                </div>
+                    <div class="col">
+                        <div class="row input">
+                            <p class="col-1 label">Data de nascimento:</p>
+                            <input type="text" value="<?php echo $user->getUser($username)[8]; ?>" class="col form-control" name="born" id="" maxlength="25" minlength="5">
 
-                <div class="col">
-                    <div class="row input">
-                        <p class="col-1 label">Data de nascimento:</p>
-                        <input type="text" value="<?php echo $user->getUser($username)[8]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5">
+                        </div>
 
-                    </div>
-
-                    <div class="row input">
-                        <p class="col-1 label">Sexo:</p>
-                        <div class="row radio" style="margin: 2% 5%;">
-                            <div class="form-check col-3">
-                                <input class="form-check-input" type="radio" name="Sex-Select" id="Female" value="F" <?php echo ($user->getUser($username)[9] == "F") ? "checked" : null; ?>>
-                                <label class="form-check-label" for="Female">
-                                    Fem.
-                                </label>
-                            </div>
-                            <div class="form-check col-3">
-                                <input class="form-check-input" type="radio" name="Sex-Select" id="Male" value="M" <?php echo ($user->getUser($username)[9] == "M") ? "checked" : null; ?>>
-                                <label class="form-check-label" for="Male">
-                                    Masc.
-                                </label>
-                            </div>
-                            <div class="form-check col-3">
-                                <input class="form-check-input" type="radio" name="Sex-Select" id="Other" value="O" <?php echo ($user->getUser($username)[9] == "O") ? "checked" : null; ?>>
-                                <label class="form-check-label" for="Other">
-                                    Outro
-                                </label>
+                        <div class="row input">
+                            <p class="col-1 label">Sexo:</p>
+                            <div class="row radio" style="margin: 2% 5%;">
+                                <div class="form-check col-3">
+                                    <input class="form-check-input" type="radio" name="Sex-Select" id="Female" value="F" <?php echo ($user->getUser($username)[9] == "F") ? "checked" : null; ?>>
+                                    <label class="form-check-label" for="Female">
+                                        Fem.
+                                    </label>
+                                </div>
+                                <div class="form-check col-3">
+                                    <input class="form-check-input" type="radio" name="Sex-Select" id="Male" value="M" <?php echo ($user->getUser($username)[9] == "M") ? "checked" : null; ?>>
+                                    <label class="form-check-label" for="Male">
+                                        Masc.
+                                    </label>
+                                </div>
+                                <div class="form-check col-3">
+                                    <input class="form-check-input" type="radio" name="Sex-Select" id="Other" value="O" <?php echo ($user->getUser($username)[9] == "O") ? "checked" : null; ?>>
+                                    <label class="form-check-label" for="Other">
+                                        Outro
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
 
-        <button class="btn btn-edit" type="button"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
-
+        <button class="btn btn-edit" type="submit" name="personal"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
+        </form>
     </center>
 </div>
