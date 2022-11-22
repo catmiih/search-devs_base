@@ -153,8 +153,6 @@ class User
             $delete = $pdo->prepare($deleteRow);
             $delete->execute();
         } else {
-
-            echo "<script>alert('" . $verify->rowCount() . "')</script>";
             $sql = $pdo->prepare("SELECT Skill_ID FROM `skills_dev` where Dev_ID = '$devID' and Skill_ID = '$skillID[0]'");
             $sql->execute();
 
@@ -258,25 +256,26 @@ class User
         return $area;
     }
 
-    function saveFile($userID, $username, $type) {
+    function saveFile($userID, $type) {
         global $pdo;
 
-        $path = 'uploads/'.$username.'/'.$username.'_'.$type.'.jpg';
+        $path = 'uploads/'.$userID.'/'.$userID.'_'.$type.'.jpg';
 
         $sql = $pdo->prepare("SELECT file_id from files where user_id = '$userID' and `path` like '$path'");
         $sql->execute();
 
         if($sql->rowCount() == 0){
-            $file = 'uploads/'.$username.'/'.$username.'_'.$type.'.jpg';
+            $file = 'uploads/'.$userID.'/'.$userID.'_'.$type.'.jpg';
 
             $insert = $pdo->prepare("INSERT INTO `files`(`path`, `user_id`) VALUES ('$file','$userID')");
             $insert->execute();
         }
     }
 
-    function findImage($userID, $username, $type){
+    function findImage($userID, $type){
+        
         global $pdo;
-        $path = 'uploads/'.$username.'/'.$username.'_'.$type.'.jpg';
+        $path = 'uploads/'.$userID.'/'.$userID.'_'.$type.'.jpg';
 
         $sql = $pdo->prepare("SELECT path from files where user_id = '$userID' and `path` like '$path'");
         $sql->execute();

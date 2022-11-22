@@ -33,17 +33,17 @@ if ($user->msg == "") {
             if ($filename[sizeof($filename) - 1] != 'jpg' && $filename[sizeof($filename) - 1] != 'png') {
                 die('Você não pode fazer isso. Banner');
             } else {
-                $newName = $username . '_banner.' . 'jpg';
+                $newName = $id . '_banner.' . 'jpg';
 
-                if (!file_exists($path . $username)) {
-                    mkdir($path . $username);
+                if (!file_exists($path . $id)) {                                
+                    mkdir($path . $id);
                 }
 
-                $upload = move_uploaded_file($banner['tmp_name'], $path . $username .'/'. $newName);
+                $upload = move_uploaded_file($banner['tmp_name'], $path . $id .'/'. $newName);
 
                 if ($upload) {
                     echo 'Dei upload <br>';
-                    $user->saveFile($id, $username, 'banner');
+                    $user->saveFile($id, 'banner');
                 }
             }
         }
@@ -54,17 +54,17 @@ if ($user->msg == "") {
             if ($filename[sizeof($filename) - 1] != 'jpg' && $filename[sizeof($filename) - 1] != 'png') {
                 die('Você não pode fazer isso. Perfil');
             } else {
-                $newName = $username . '_profile.' . 'jpg';
+                $newName = $id . '_profile.' . 'jpg';
                 echo $newName;
 
-                if (!file_exists($path . $username)) {
-                    mkdir($path . $username);
+                if (!file_exists($path . $id)) {
+                    mkdir($path . $id);
                 }
-                $upload = move_uploaded_file($profile['tmp_name'], $path . $username .'/'. $newName);
+                $upload = move_uploaded_file($profile['tmp_name'], $path . $id .'/'. $newName);
 
                 if ($upload) {
                     echo 'Dei upload';
-                    $user->saveFile($id, $username, 'profile');
+                    $user->saveFile($id, 'profile');
                 }
             }
         }

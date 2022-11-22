@@ -53,6 +53,7 @@
                     }
 
                     else if (isset($_POST['7'])) {
+                        $search = $_POST['user'];
                         require_once "pages/profile.php";
                     }
 

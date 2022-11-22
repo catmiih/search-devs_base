@@ -24,7 +24,7 @@ $user->conectar('search-devs_base', 'localhost', 'root', '');
         <center>
             <div class="container prof">
                 <div class="user">
-                    <img src="../../assets/<?php echo $user->findImage($id, $username, 'profile')[0]; ?>" />
+                    <img src="../../assets/<?php echo $user->findImage($id, 'profile')[0]; ?>" />
                 </div>
                 <div id="info">
                     <h1><?php echo $user->getUser($id)[2];?></h1>

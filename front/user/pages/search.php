@@ -20,31 +20,33 @@
 
         <?php $findID= 2; ?>
 
+    <?php $user_card = '
+
         <div class="user-card">
             <div id="profile_banner">
-                <img class="banner" src="../../assets/<?php echo $user->findImage($findID, $username, 'banner')[0]; ?>" alt="">
+                <img class="banner" src="../../assets/'.$user->findImage($findID, "banner")[0].'" alt="">
                 <div id="profile">
                     <div class="profile_pic">
-                        <img src="../../assets/<?php echo $user->findImage($findID, $username, 'profile')[0]; ?>" />
+                        <img src="../../assets/'.$user->findImage($findID, "profile")[0].'" />
                     </div>
                     <div id="containerperfil">
                         <div id="align">
-                            <h4><?php echo  $user->getUser($findID)[2]; ?></h4>
+                            <h4>'.$user->getUser($findID)[2].'</h4>
                         </div>
-                        <p><?php echo  $user->getUser($findID)[11]; ?></p>
+                        <p>'.$user->getUser($findID)[11].'</p>
                     </div>
                     <div class="btn-group">
                     <form action="" method="post" style="width: 100%;">
-                        
-                            <input type="hidden" name="user" value="null" style="display: none;">
+                            <input type="hidden" name="user" value="'.$findID.'" style="display: none;">
                             <button type="submit" name="7" class="btn">Ver perfil</button>
                     </form>
                     </div>
                 </div>
             </div>
-
         </div>
-
+        ';
+        
+        echo $user_card;?>
 
     </div>
 </div>

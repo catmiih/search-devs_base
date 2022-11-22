@@ -5,10 +5,10 @@
 <div class="perfil">
     <div id="feedperfil">
         <div id="profile_banner">
-            <img class="banner" src="../../assets/<?php echo $user->findImage($id, $username, 'banner')[0]; ?>" alt="">
+            <img class="banner" src="../../assets/<?php echo $user->findImage($id, 'banner')[0]; ?>" alt="">
             <div id="profile">
                 <div class="profile_pic">
-                    <img src="../../assets/<?php echo $user->findImage($id, $username, 'profile')[0]; ?>" />
+                    <img src="../../assets/<?php echo $user->findImage($id, 'profile')[0]; ?>" />
                 </div>
                 <div id="containerperfil">
                     <div id="align">
@@ -33,7 +33,7 @@
     <div class="skills">
         <div class="row evaluation justify-content-between">
 
-            <h2 style="font-weight:700" class="col">Habilidades:</h2>
+            <h2 style="font-weight:700" class="col h2hab">Habilidades:</h2>
 
             <div class="level-options col">
                 <p style="margin: 1%;">Nível:</p>

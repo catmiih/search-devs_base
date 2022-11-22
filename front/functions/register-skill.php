@@ -21,6 +21,8 @@ if (isset($_GET['id'])) {
 
         $user->deleteskill($skillID, $id);
     }
+
+    header('Location: ../user/dashboard.php');
 }
 
 if (isset($_POST['start'])) {

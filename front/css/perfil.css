@@ -59,8 +59,8 @@
 
   .row.evaluation,
   .row.evaluation h2 {
-    width: auto !important;
     font-size: 2.3rem !important;
+    width: 25rem;
   }
 
   .level-options label {
@@ -105,15 +105,15 @@
     font-weight: 500;
     width: 100% !important;
 
-    border-radius: 50px!important;
+    border-radius: 50px !important;
 
-    justify-content: center!important;
-    align-items: center!important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 
   .input > * {
-    justify-content: center!important;
-    align-items: center!important;
+    justify-content: center !important;
+    align-items: center !important;
     height: 4rem;
   }
 
@@ -123,22 +123,62 @@
 
   .form-control {
     font-size: 2.5rem;
-    width: 60%!important;
+    width: 60% !important;
     padding: 0;
   }
 
-  hr{
-    width: 70vw!important;
-    margin: 10% 12.5%!important;
+  hr {
+    width: 70vw !important;
+    margin: 10% 12.5% !important;
   }
 
   .description {
     top: 0;
-    padding: 5%!important;
+    padding: 5% !important;
   }
 
-  .description p{
+  .description p {
     font-size: 2rem;
+  }
+
+  .evaluation {
+    margin: 0.2% -2% !important;
+    border-radius: 25px;
+    width: 63vw;
+    padding: 3%;
+  }
+
+  .row.evaluation {
+
+    width: 93vw !important;
+  }
+  
+  .skill-tag {
+    text-align: center !important;
+    width: 10rem !important;
+    margin-left: 100% !important;
+  }
+  
+  .form-check-label {
+
+    width: 20rem;
+    font-size: 2.5rem;
+
+  }
+
+  .area {
+     width: 110vw !important;
+  }
+
+  .col-4 {
+
+    width: 40vw !important;
+    height: 4vh;
+  }
+
+  .form-check-input {
+    width: 2rem;
+    height: 2rem;
   }
 }
 
@@ -257,7 +297,6 @@ hr {
   border-radius: 25px;
   width: 63vw;
   padding: 3%;
-  
 }
 
 .show-skills {
@@ -272,7 +311,6 @@ hr {
   margin: 0.2% 5%;
   border-radius: 25px;
   padding: 3%;
-  
 }
 
 .description {
@@ -287,7 +325,6 @@ hr {
   border-radius: 15px;
 
   width: auto;
-  
 }
 
 .description {
@@ -363,14 +400,15 @@ hr {
   width: auto !important;
 }
 
-.area{
+.area {
   width: 70vw;
   justify-content: center;
   align-items: center;
   margin: 0% 7%;
 }
 
-#check > *{
+#check > * {
   width: 15rem;
   margin: 1%;
 }
+
