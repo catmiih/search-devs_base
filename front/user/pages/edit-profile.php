@@ -5,7 +5,6 @@
 
 <div class="perfil">
     <center>
-
         <div class="row search">
             <h2 class="col">Editando perfil de <b><?php echo $user->getUser($username)[2]; ?></b></h2>
         </div>
@@ -15,7 +14,7 @@
             <hr>
         </div>
 
-        <form action="../functions/edit-profile.php" method="post">
+        <form action="../functions/edit-profile.php" method="post" enctype="multipart/form-data">
             <div class="general-info">
                 <h2 style="text-align: center;">Informações públicas:</h2>
                 <div class="row">
@@ -55,14 +54,14 @@
                     <div class="col input file">
                         <p class="col label">Foto de perfil:</p>
                         <label for="profile-pic" class="btn">Selecionar imagem:<p id="image"></p></label>
-                        <input type="file" name="" class="d-none" id="profile-pic">
+                        <input type="file" name="profile" class="d-none" id="profile-pic">
 
                         <script>
                             let input = document.getElementById("profile-pic");
                             let imageName = document.getElementById("image")
 
                             input.addEventListener("change", () => {
-                                let inputImage = document.querySelector("input[type=file]").files[0];
+                                let inputImage = document.querySelector("input[name='profile']").files[0];
 
                                 imageName.innerText = inputImage.name;
                             })
@@ -70,18 +69,18 @@
                     </div>
 
                     <div class="col input file">
-                        <p class="col label">Foto de capa:</p>
-                        <label for="banner-pic" class="btn">Selecionar imagem:<p id="image2"></p></label>
-                        <input type="file" name="" class="d-none" id="banner-pic">
+                        <p class="col label">Foto de banner:</p>
+                        <label for="banner-pic" class="btn">Selecionar imagem:<p id="imagee"></p></label>
+                        <input type="file" name="banner" class="d-none" id="banner-pic">
 
                         <script>
-                            let input = document.getElementById("banner-pic");
-                            let imageName = document.getElementById("image2")
+                            let input2 = document.getElementById("banner-pic");
+                            let imageName2 = document.getElementById("imagee")
 
-                            input.addEventListener("change", () => {
-                                let inputImage = document.querySelector("input[type=file]").files[0];
+                            input2.addEventListener("change", () => {
+                                let inputImage2 = document.querySelector("input[id='banner-pic']").files[0];
 
-                                imageName.innerText = inputImage.name;
+                                imageName2.innerText = inputImage2.name;
                             })
                         </script>
                     </div>

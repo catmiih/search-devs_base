@@ -24,7 +24,7 @@ $user->conectar('search-devs_base', 'localhost', 'root', '');
         <center>
             <div class="container prof">
                 <div class="user">
-                    <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
+                    <img src="../../assets/uploads/<?php echo $username;?>/<?php echo $username;?>_profile.jpg" />
                 </div>
                 <div id="info">
                     <h1><?php echo $user->getUser($username)[2];?></h1>

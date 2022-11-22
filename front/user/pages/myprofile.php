@@ -5,10 +5,10 @@
 <div class="perfil">
     <div id="feedperfil">
         <div id="profile_banner">
-            <img class="banner" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
+            <img class="banner" src="../../assets/uploads/<?php echo $username;?>/<?php echo $username;?>_banner.jpg" alt="">
             <div id="profile">
                 <div class="profile_pic">
-                    <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
+                    <img src="../../assets/uploads/<?php echo $username;?>/<?php echo $username;?>_profile.jpg" />
                 </div>
                 <div id="containerperfil">
                     <div id="align">

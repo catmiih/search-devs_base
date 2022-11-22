@@ -257,4 +257,17 @@ class User
             $area = [null];
         return $area;
     }
+
+    function saveFile($userID, $username, $type) {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT file_id from files where user_id = '$userID' and path like *$username*$type*");
+        $sql->execute();
+
+        if($sql->rowCount() == 0){
+            $file = '/uploads/'.$username.'/'.$username.'_'.$type.'.jpg';
+
+            $insert = $pdo->prepare("INSERT INTO `files`(`path`, `user_id`) VALUES ('$file','$userID')");
+        }
+    }
 }
