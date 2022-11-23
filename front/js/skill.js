@@ -87,7 +87,6 @@ function showSkills(name_skill, area_skill, level_skill) {
 }
 
 function deleteSkill(id) {
-
     formid = "form-"+id;
     $("#form-"+id).attr('action', "../functions/register-skill.php?id="+id);
     document.getElementById(formid).submit();

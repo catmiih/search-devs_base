@@ -294,11 +294,11 @@ class User
     function searchUser($search) {
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT `Dev_ID` FROM `developers` WHERE Dev_name like '%$search%';");
+        $sql = $pdo->prepare("SELECT `Dev_ID` FROM `developers` WHERE Dev_name like '%$search%' || Dev_username like '%$search%'");
         $sql->execute();
 
         if($sql->rowCount() > 0){
-            $result[] = $sql->fetchAll(PDO::FETCH_ASSOC);
+            $result = $sql->fetchAll();
 
             return $result;
         }

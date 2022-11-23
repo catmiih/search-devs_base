@@ -1,15 +1,18 @@
 <?php
 
-require ("../../assets/extend/PHPMailer/src/PHPMailer.php");
-require ("../../assets/extend/PHPMailer/src/SMTP.php");
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-define('GUSER', '**');	// <-- Insira aqui o seu GMail
-define('GPWD', '**');		// <-- Insira aqui a senha do seu GMail
+require '../../assets/extend/PHPMailer/src/Exception.php';
+require '../../assets/extend/PHPMailer/src/PHPMailer.php';
+require '../../assets/extend/PHPMailer/src/SMTP.php';
+
+
 
 function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
     global $error;
 
-	$mail = new PHPMailer\PHPMailer\PHPMailer();
+	$mail = new PHPMailer();
 	$mail->IsSMTP();		// Ativar SMTP
 	$mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
 	$mail->SMTPAuth = true;		// Autenticação ativada
