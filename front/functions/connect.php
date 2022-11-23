@@ -39,12 +39,13 @@ if (!empty($usermail) && !empty($pass)) {
                 require_once '../../back/class/company.php';
                 $comp = new Company();
 
-                $id = $pdo->prepare("SELECT Comp_ID FROM company WHERE Comp_email like '$usermail' || Comp_use like '$usermail'");
+                $id = $pdo->prepare("SELECT * FROM company WHERE Comp_email like '$usermail' || Comp_user like '$usermail'");
+                $idComp = $id->fetch();
 
-                $email = $pdo->prepare("SELECT Comp_email FROM company WHERE Comp_ID like '$id'");
-                $user = $pdo->prepare("SELECT Comp_user FROM company WHERE Comp_ID like '$id'");
+                $user = $pdo->prepare("SELECT Comp_user FROM company WHERE Comp_ID like '$idComp[0]'");
+                $username = $user->fetch();
 
-                $comp->login($email, $user, $pass);
+                $comp->login($username[0], $pass);
             } else {
                 echo "dei erro";
             }

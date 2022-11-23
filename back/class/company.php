@@ -46,12 +46,12 @@ class Company
         }
     }
 
-    function login($email, $username, $pass)
+    function login($username, $pass)
     {
         global $pdo;
         $passMD5 = MD5($pass);
         /* Verify Register */
-        $sql = $pdo->prepare("SELECT Comp_ID FROM company WHERE Comp_email like '$email' || Comp_name like '$username' AND Comp_pass like '$passMD5'");
+        $sql = $pdo->prepare("SELECT Comp_ID FROM company WHERE Comp_user = '$username' AND Comp_pass like '$passMD5'");
         $sql->execute();
         if ($sql->rowCount() > 0) {
             /* Register == True */
@@ -64,12 +64,13 @@ class Company
                 $_SESSION["username"] = $username;
             }
 
-            header('Location: ../company/dashboard.php?name=' . $username);
-
+            //header('Location: ../company/dashboard.php');
             return true;
         } else {
             /* Not Register */
-            header('Location: ../login.php');
+            //header('Location: ../login.php');
+
+            echo 'sem login';
             return false;
         }
     }

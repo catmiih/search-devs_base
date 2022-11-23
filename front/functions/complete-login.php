@@ -21,7 +21,7 @@ if ($typeUser == 0) {
 else {
     $name = $_POST['name'];
     $responsible = $_POST['responsible'];
-    $date = $_POST['date'];
+    $date = $_POST['data'];
     $cell = $_POST['cell'];
     $cnpj = $_POST['cnpj'];
     $cpf = $_POST['cpf'];

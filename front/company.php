@@ -33,7 +33,7 @@
                     <p>Seja bem vindo empreendedor. Preencha os campos abaixo:</p>
 
                     <div class="form">
-                        <form action="complete-login.php" class="needs-validation" id="subform" method="POST">
+                        <form action="functions/complete-login.php" class="needs-validation" id="subform" method="POST">
                         <input type="hidden" value="1" name="type_user">
 
                         <div class="row">
@@ -50,7 +50,7 @@
                             </div>
 
                             <div class="row">
-                                <input type="text" placeholder="CNPJ" class="col form-control" name="CNPJ" id="CNPJ" maxlength="18" minlength="18" onkeypress="cnpj(this)" required>
+                                <input type="text" placeholder="CNPJ" class="col form-control" name="cnpj" id="CNPJ" maxlength="18" minlength="18" onkeypress="cnpj(this)" required>
                                 <input type="text" placeholder="CPF" class="col form-control" name="cpf" id="cpf" maxlength="14" minlength="14" onkeypress="ReadCpf(this)" required>
                             </div>
 
