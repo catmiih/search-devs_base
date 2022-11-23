@@ -16,6 +16,10 @@ require_once '../../back/class/user.php';
 $user = new User();
 $user->conectar('search-devs_base', 'localhost', 'root', '');
 
+require_once '../../back/class/company.php';
+
+$comp = new Company();
+$comp->conectar('search-devs_base', 'localhost', 'root', '');
 
 ?>
 
@@ -24,11 +28,11 @@ $user->conectar('search-devs_base', 'localhost', 'root', '');
         <center>
             <div class="container prof">
                 <div class="user">
-                    <img src="../../assets/<?php echo $user->findImage($id, 'profile')[0]; ?>" />
+                    <img src="../../assets/<?php echo $comp->findImage($id, 'profile')[0]; ?>" />
                 </div>
                 <div id="info">
-                    <h1><?php echo $user->getUser($id)[2];?></h1>
-                    <p><?php if(empty($user->getUser($id)[11])){echo "Nenhum cargo";}else{echo $user->getUser($id)[11];}?></p>
+                    <h1><?php echo $comp->getUser($id)[1];?></h1>
+                    <p><?php echo $comp->getUser($id)[7];?></p>
                 </div>
             </div>
 

@@ -35,7 +35,7 @@ exit;
 
 <body>
     <div class="position-relative" style="overflow-x: hidden;">
-    <?php require_once 'bottom-menu.php'; ?>
+        <?php require_once 'bottom-menu.php'; ?>
         <div class="d-flex">
             <?php require_once 'left-menu.php'; ?>
 
@@ -43,39 +43,26 @@ exit;
                 <div class="content">
                     <?php
 
-                    if (isset($_POST['1'])) {
-                        require_once "pages/profilecomp.php";
-                    }
                     if (isset($_POST['2'])) {
                         require_once "pages/search.php";
-                    }
-
-                    if (isset($_POST['3'])) {
-                        require_once "pages/createproj.php";
-                    }
-
-                    if (isset($_POST['4'])) {
+                    } else if (isset($_POST['3'])) {
+                        require_once "pages/news.php";
+                    } else if (isset($_POST['4'])) {
                         require_once "pages/projects.php";
-                    }
-
-                    if (isset($_POST['5'])) {
+                    } else if (isset($_POST['5'])) {
                         require_once "pages/vip.php";
-                    }
-
-                    if (isset($_POST['6'])) {
+                    } else if (isset($_POST['6'])) {
                         require_once "pages/details.php";
-                    }
-
-                    if (isset($_POST['7'])) {
+                    } else if (isset($_POST['7'])) {
+                        $search = $_POST['user'];
                         require_once "pages/profile.php";
-                    }
-
-                    if (isset($_POST['edit'])) {
+                    } else if (isset($_POST['edit'])) {
                         require_once "pages/edit-profile.php";
-                    }
-
-                    if (isset($_POST['exit'])) {
-                        /* Sair da conta */
+                    } else if (isset($_POST['exit'])) {
+                        session_destroy();
+                        header('Location: ../login.php');
+                    } else {
+                        require_once "pages/profilecomp.php";
                     }
 
                     ?>

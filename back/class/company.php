@@ -64,14 +64,74 @@ class Company
                 $_SESSION["username"] = $username;
             }
 
-            //header('Location: ../company/dashboard.php');
+            header('Location: ../company/dashboard.php');
             return true;
         } else {
             /* Not Register */
-            //header('Location: ../login.php');
-
-            echo 'sem login';
+            header('Location: ../login.php');
             return false;
+        }
+    }
+
+    function getUser($id)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM `company` where Comp_ID = '$id'");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $all = $sql->fetch();
+
+            return $all;
+        }
+    }
+
+    function saveFile($userID, $type) {
+        global $pdo;
+
+        $path = 'uploads/'.$userID.'/'.$userID.'_'.$type.'.jpg';
+
+        $sql = $pdo->prepare("SELECT file_id from files where user_id = '$userID' and `path` like '$path'");
+        $sql->execute();
+
+        if($sql->rowCount() == 0){
+            $file = 'uploads/'.$userID.'/'.$userID.'_'.$type.'.jpg';
+
+            $insert = $pdo->prepare("INSERT INTO `files`(`path`, `user_id`) VALUES ('$file','$userID')");
+            $insert->execute();
+        }
+    }
+
+    function findImage($userID, $type){
+        
+        global $pdo;
+        $path = 'uploads/'.$userID.'/'.$userID.'_'.$type.'.jpg';
+
+        $sql = $pdo->prepare("SELECT path from files where user_id = '$userID' and `path` like '$path'");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $img = $sql->fetch();
+
+            return $img;
+        }
+        else {
+            $img[] = 'uploads/default_'.$type.'.jpg';
+            return $img;
+        }
+    }
+
+    function searchUser($search) {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT `Dev_ID` FROM `developers` WHERE Dev_name like '%$search%' || Dev_username like '%$search%'");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $result = $sql->fetchAll();
+
+            return $result;
         }
     }
 }

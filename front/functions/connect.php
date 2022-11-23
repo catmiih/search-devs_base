@@ -39,10 +39,10 @@ if (!empty($usermail) && !empty($pass)) {
                 require_once '../../back/class/company.php';
                 $comp = new Company();
 
-                $id = $pdo->prepare("SELECT * FROM company WHERE Comp_email like '$usermail' || Comp_user like '$usermail'");
+                $id = $pdo->query("SELECT * FROM company WHERE Comp_email like '$usermail' || Comp_user like '$usermail'");
                 $idComp = $id->fetch();
 
-                $user = $pdo->prepare("SELECT Comp_user FROM company WHERE Comp_ID like '$idComp[0]'");
+                $user = $pdo->query("SELECT Comp_user FROM company WHERE Comp_ID like '$idComp[0]'");
                 $username = $user->fetch();
 
                 $comp->login($username[0], $pass);
