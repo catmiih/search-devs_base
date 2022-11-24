@@ -90,7 +90,7 @@ class Company
     function saveFile($userID, $type) {
         global $pdo;
 
-        $path = 'uploads/'.$userID.'/'.$userID.'_'.$type.'.jpg';
+        $path = 'uploads/company/'.$userID.'/'.$userID.'_'.$type.'.jpg';
 
         $sql = $pdo->prepare("SELECT file_id from files where user_id = '$userID' and `path` like '$path'");
         $sql->execute();
@@ -106,7 +106,7 @@ class Company
     function findImage($userID, $type){
         
         global $pdo;
-        $path = 'uploads/'.$userID.'/'.$userID.'_'.$type.'.jpg';
+        $path = 'uploads/company/'.$userID.'/'.$userID.'_'.$type.'.jpg';
 
         $sql = $pdo->prepare("SELECT path from files where user_id = '$userID' and `path` like '$path'");
         $sql->execute();

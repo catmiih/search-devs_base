@@ -96,7 +96,7 @@
 
                         <div class="row input">
                             <p class="col label">Email:</p>
-                            <input type="text" class="col form-control" name="email" id="" value="<?php echo $user->getUser($id)[3]; ?>">
+                            <input type="text" class="col form-control" name="email" id="" value="<?php echo $comp->getUser($id)[2]; ?>">
 
                         </div>
                         <br>
@@ -117,10 +117,10 @@
                     </div>
                     <div class="col description">
                         <h2>Descrição do perfil:</h2>
-                        <textarea class="form-control desc" name="desc"><?php if (empty($user->getUser($id)[10])) {
+                        <textarea class="form-control desc" name="desc"><?php if (empty($comp->getUser($id)[10])) {
                                                                             echo "Olá! Sou novo no SEARCH DEVS&#8482;!";
                                                                         } else {
-                                                                            echo $user->getUser($id)[10];
+                                                                            echo $comp->getUser($id)[10];
                                                                         } ?></textarea>
                     </div>
 
@@ -135,48 +135,22 @@
                     <div class="row">
                         <div class="col">
                             <div class="row input">
-                                <p class="col-1 label">CEP:</p>
-                                <input type="text" value="<?php echo $user->getUser($id)[6]; ?>" class="col form-control" name="CEP" id="" maxlength="25" minlength="5">
-
-                            </div>
-
-                            <div class="row input">
                                 <p class="col-1 label"> CPF:</p>
-                                <input type="text" value="<?php echo $user->getUser($id)[7]; ?>" class="col form-control" name="CPF" id="" maxlength="25" minlength="5">
+                                <input type="text" value="<?php echo $comp->getUser($id)[8]; ?>" class="col form-control" name="CPF" id="" maxlength="25" minlength="5">
                             </div>
                         </div>
 
                         <div class="col">
                             <div class="row input">
                                 <p class="col-1 label">Data de nascimento:</p>
-                                <input type="text" value="<?php echo $user->getUser($id)[8]; ?>" class="col form-control" name="born" id="" maxlength="25" minlength="5">
+                                <input type="text" value="<?php echo $comp->getUser($id)[9]; ?>" class="col form-control" name="born" id="" maxlength="25" minlength="5">
 
-                            </div>
-
-                            <div class="row input">
-                                <p class="col-1 label">Sexo:</p>
-                                <div class="row radio" style="margin: 2% 5%;">
-                                    <div class="form-check col-3">
-                                        <input class="form-check-input" type="radio" name="Sex-Select" id="Female" value="F" <?php echo ($user->getUser($id)[9] == "F") ? "checked" : null; ?>>
-                                        <label class="form-check-label" for="Female">
-                                            Fem.
-                                        </label>
-                                    </div>
-                                    <div class="form-check col-3">
-                                        <input class="form-check-input" type="radio" name="Sex-Select" id="Male" value="M" <?php echo ($user->getUser($id)[9] == "M") ? "checked" : null; ?>>
-                                        <label class="form-check-label" for="Male">
-                                            Masc.
-                                        </label>
-                                    </div>
-                                    <div class="form-check col-3">
-                                        <input class="form-check-input" type="radio" name="Sex-Select" id="Other" value="O" <?php echo ($user->getUser($id)[9] == "O") ? "checked" : null; ?>>
-                                        <label class="form-check-label" for="Other">
-                                            Outro
-                                        </label>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row input" style="padding: 2% 3%; margin: auto 2%;">
+                        <p class="col-1 label"> CNPJ:</p>
+                        <input type="text" value="<?php echo $comp->getUser($id)[4]; ?>" class="col form-control" name="CPF" id="" maxlength="25" minlength="5">
                     </div>
             </div>
 

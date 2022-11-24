@@ -41,8 +41,8 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
                     <br>
                     <button class="btn-menu" id="see" type="submit" name="1">Ver perfil</button>
                     <button class="btn-menu" id="search" type="submit" name="2">Descobrir profissionais</button>
-                    <button class="btn-menu" id="new" type="submit" name="3">Novas propostas</button>
-                    <button class="btn-menu" id="projects" type="submit" name="4">Projetos em andamento</button>
+                    <button class="btn-menu" id="projects" type="submit" name="3">Projetos em andamento</button>
+                    <button class="btn-menu" id="noewProj" type="submit" name="4">Novo projeto</button>
                 </div>
 
 

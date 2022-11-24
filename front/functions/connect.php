@@ -47,7 +47,7 @@ if (!empty($usermail) && !empty($pass)) {
 
                 $comp->login($username[0], $pass);
             } else {
-                echo "dei erro";
+                header('Location: ../login.php');
             }
         }
     } else {

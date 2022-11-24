@@ -46,9 +46,9 @@ exit;
                     if (isset($_POST['2'])) {
                         require_once "pages/search.php";
                     } else if (isset($_POST['3'])) {
-                        require_once "pages/news.php";
-                    } else if (isset($_POST['4'])) {
                         require_once "pages/projects.php";
+                    } else if (isset($_POST['4'])) {
+                        require_once "pages/createproj.php";
                     } else if (isset($_POST['5'])) {
                         require_once "pages/vip.php";
                     } else if (isset($_POST['6'])) {
