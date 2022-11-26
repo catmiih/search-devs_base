@@ -93,13 +93,34 @@ h2 {
   justify-content: left;
   align-items: center;
 
-  margin: 3% 5%;
+  margin: 1% 0%;
   text-align: left;
+}
+
+.level-options {
+  display: flex;
+  flex-wrap: nowrap!important;
+
+  align-items: center;
+  text-align: left;
+}
+
+.level-options > * {
+  margin: 1%;
+}
+
+.level-options p {
+  margin: 5%;
+}
+
+.skills h2 {
+  width: 10px!important;
+  margin: 1%!important;
 }
 
 .feed,
 .row.evaluation {
-  width: 55vw;
+  width: 60vw;
 }
 
 .row.evaluation {
@@ -109,10 +130,6 @@ h2 {
   padding: 3%;
 
   justify-content: left;
-  align-items: center;
+  align-items: center!important;
   text-align: left;
-}
-
-.show-skills {
-  margin: 3% auto;
 }
