@@ -3,6 +3,17 @@
 <link rel="stylesheet" type="text/css" href="../css/level.css" />
 
 
+<?php
+
+require_once '../../back/class/project.php';
+
+$comp = new Project();
+$comp->conectar('search-devs_base', 'localhost', 'root', '');
+
+$id = $comp->getProjID($_SESSION["id_user"]);
+
+?>
+
 <div class="create-project">
     <center>
         <div class="row search">
@@ -163,13 +174,19 @@
                 <div class="show-skills">
                     <?php
 
-                    $skills = $user->getUserSkills($id)[0];
+                    $skills = $comp->getProjSkills($id)[0];
+
+                    if($skills != null){
 
                     foreach ($skills as $skill) {
 
                         $skillCard = "<span id='" . $skill['Skill_ID'] . "' class='btn-level level-" . $skill['Skill_level'] . " skill-tag'><input type='hidden' name='level-" . $skill['Skill_level'] . "' value='" . $skill['Skill_level'] . "'><input type='hidden' name='skill-" . $skill['Skill_level'] . "' value='" . $skill['Skill_ID'] . "'><input type='hidden' name='area' value='" . $user->getAreaSkills($skill['Skill_ID'])[0] . "'> " . $user->getNameSkills($skill['Skill_ID'])[0] . "</span>";
-
                         echo $skillCard, "\n";
+
+                        
+                    }}
+                    else {
+                        echo '<p style="text-align:center;">Nenhuma skill cadastrada</p>';
                     }
 
                     ?>
