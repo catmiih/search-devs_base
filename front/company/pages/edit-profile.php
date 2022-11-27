@@ -150,7 +150,7 @@
                     </div>
                     <div class="row input" style="padding: 2% 3%; margin: auto 2%;">
                         <p class="col-1 label"> CNPJ:</p>
-                        <input type="text" value="<?php echo $comp->getUser($id)[4]; ?>" class="col form-control" name="CPF" id="" maxlength="25" minlength="5">
+                        <input type="text" value="<?php echo $comp->getUser($id)[4]; ?>" class="col form-control" name="CNPJ" id="" maxlength="25" minlength="5">
                     </div>
             </div>
 

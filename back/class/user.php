@@ -61,6 +61,7 @@ class User
                 session_start();
 
                 $_SESSION["id_user"] = $data[0];
+                $_SESSION["type"] = 'user';
                 $_SESSION["username"] = $username;
             }
 

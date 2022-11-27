@@ -88,6 +88,10 @@ hr {
   text-align: left;
 }
 
+.description{
+  margin-right: 10%;
+}
+
 .info {
   margin: 0;
 }
@@ -137,8 +141,7 @@ hr {
 }
 
 .desc {
-  margin: 0 !important;
-  width: 20rem !important;
+  width: 100% !important;
 
   height: 70%;
   resize: none;

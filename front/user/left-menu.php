@@ -8,6 +8,11 @@ if (!isset($_SESSION["id_user"])) {
   exit;
 }
 
+if($_SESSION["type"] != 'user'){
+    header("Location: ../company/dashboard.php");
+  exit;
+}
+
 $username = $_SESSION["username"];
 $id = $_SESSION["id_user"];
 

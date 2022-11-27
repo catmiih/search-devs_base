@@ -13,7 +13,7 @@
                 </div>
                 <div id="containerperfil">
                     <div id="align">
-                        <h4>@<?php echo $comp->getUser($id)[6]; ?></h4>
+                        <h4><?php echo $comp->getUser($id)[6]; ?></h4>
 
                         <form action="" method="post">
                             <button href="#" class="btn edit" name="edit"><i class="fa-solid fa-gear"></i></button>

@@ -61,6 +61,7 @@ class Company
                 session_start();
 
                 $_SESSION["id_user"] = $data[0];
+                $_SESSION["type"] = 'company';
                 $_SESSION["username"] = $username;
             }
 

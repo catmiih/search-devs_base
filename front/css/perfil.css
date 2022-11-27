@@ -344,6 +344,7 @@ hr {
   border-radius: 15px;
 
   width: auto;
+  align-items: center;
 }
 
 .description {
