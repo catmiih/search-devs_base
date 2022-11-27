@@ -144,7 +144,7 @@ $id = $comp->getProjID($_SESSION["id_user"]);
         <div class="skills">
             <div class="row evaluation justify-content-between">
 
-                <h2 style="font-weight:700" class="col">Habilidades:</h2>
+                <h2 style="font-weight:700" class="col">Habilidadess:</h2>
 
                 <div class="level-options col-5">
                     <p>Nível:</p>
