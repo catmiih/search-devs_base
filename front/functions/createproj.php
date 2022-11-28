@@ -1,9 +1,41 @@
 <?php
+session_start();
 
 require_once '../../back/class/project.php';
 
-$comp = new Project();
-$comp->conectar('search-devs_base', 'localhost', 'root', '');
+$proj = new Project();
+$proj->conectar('search-devs_base', 'localhost', 'root', '');
+
+$id = $proj->getProjID($_SESSION["id_user"]);
+
+/* Register Project */
+
+if (isset($_POST['area'])) {
+
+    echo "id do projeto: $id <br><br>";
+
+    for ($i = 0; $i < 12; $i++) {
+        $proj->excludeArea($id, $i + 1);
+    }
+
+    for ($i = 0; $i < 12; $i++) {
+
+        $area = $_POST["area"];
+
+        if ($area[$i] ?? null) {
+            if ($proj->registerArea($id, $area[$i])) {
+                echo 'Sucesso! no ' . $area[$i] . ' <br>';
+            }else {
+                echo 'Excuido o ' . $i + 1, '<br>';
+            }
+        } else {
+            echo 'Excuido o ' . $i + 1, '<br>';
+        }
+    }
+}
+
+
+/* Register Skills */
 
 if (isset($_GET['id'])) {
     session_start();
@@ -19,7 +51,7 @@ if (isset($_GET['id'])) {
         $id = $_SESSION['id_user'];
         $skillID = $sql->fetch();
 
-        $comp->deleteskill($skillID, $id);
+        $proj->deleteskill($skillID, $id);
     }
 
     header('Location: ../company/dashboard.php');
@@ -29,8 +61,8 @@ if (isset($_POST['start'])) {
 
     session_start();
 
-    if ($comp->msg == "") {
-        $time=0;
+    if ($proj->msg == "") {
+        $time = 0;
 
         for ($i = 0; $i <= 50; $i++) {
             if (!empty($_POST['level-' . $i])) {
@@ -45,13 +77,13 @@ if (isset($_POST['start'])) {
                     $id = $_SESSION['id_user'];
                     $skillID = $sql->fetch();
 
-                    $comp->skillProj($id, $skillID, $level);
+                    $proj->skillProj($id, $skillID, $level);
                 } else {
                     $id = $_SESSION['id_user'];
                     $skillID = $sql->fetch();
 
-                    $comp->registerSkill($skill, $area);
-                    $comp->skillProj($id, $skillID, $level);
+                    $proj->registerSkill($skill, $area);
+                    $proj->skillProj($id, $skillID, $level);
                 }
 
                 $time++;
@@ -60,9 +92,9 @@ if (isset($_POST['start'])) {
             }
         }
 
-        if($time == 0){
+        if ($time == 0) {
             header('Location: ../company/skills.php');
-        }else {
+        } else {
             header('Location: ../company/dashboard.php');
         }
     }

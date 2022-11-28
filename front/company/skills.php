@@ -31,7 +31,7 @@ if (!isset($_SESSION["id_user"])) {
 
 ?>
 
-<?php require_once '../functions/proj-skill.php'; ?>
+<?php require_once '../functions/createproj.php'; ?>
 
 <?php
 $id = $comp->getProjID($_SESSION["id_user"]);
@@ -88,7 +88,7 @@ $id = $comp->getProjID($_SESSION["id_user"]);
                         <?php require_once '../functions/read-area.php'; ?>
                     </datalist>
                 </form>
-                <form method="post" name="skills-form" action="../functions/proj-skill.php">
+                <form method="post" name="skills-form" action="../functions/createproj.php">
                     <center>
                         <div class="row" id="skill_list">
                             <script>
@@ -108,11 +108,9 @@ $id = $comp->getProjID($_SESSION["id_user"]);
                         </div>
                         <br>
 
-                        <button type="submit" name="start" class="btn" style="padding: 2% 10%;">Começar agora</button>
+                        <button type="submit" name="start" class="btn" style="padding: 2% 10%;"><i class="fa-solid fa-plus"></i> &nbsp; Criar projeto</button>
                     </center>
                 </form>
-                </form>
-
             </center>
         </div>
 

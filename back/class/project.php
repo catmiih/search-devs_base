@@ -84,7 +84,15 @@ class Project
             return 1;
         }else {
             $projId = $sql->fetch();
-            return $projId[0]+1;
+
+            $verify = $pdo->prepare("SELECT * from skills_proj where Proj_ID = '$projId[0]'");
+            $verify->execute();
+
+            if($verify->rowCount() > 0) {
+                return $projId[0]+1;
+            }else {
+                return $projId[0];
+            }
         }
     }
 
@@ -124,11 +132,55 @@ class Project
         }
     }
 
-    function Create($name, $type, $start, $end, $pay, $comp)
+    function registerArea($id, $area)
     {
         global $pdo;
 
-        $sql = $pdo->prepare("INSERT INTO project (`Proj_name`, `Proj_type`, `Proj_start`, `Proj_end`, `Proj_pay`, `Proj_dev`, `Proj_comp`) VALUES ($name,$type,$start,$end,$pay,$comp");
+        $sql = $pdo->prepare("SELECT Proj_name FROM project WHERE Proj_ID = '$id'");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $verify = $pdo->prepare("SELECT Area_ID FROM area_project WHERE Proj_ID = '$id' AND Area_ID = '$area'");
+            $verify->execute();
+
+            if ($verify->rowCount() == 0) {
+                $newArea = $pdo->prepare("INSERT INTO `area_project`(`Area_ID`, `Proj_ID`) VALUES ('$area','$id')");
+                $newArea->execute();
+            }
+            return true;
+        } else {
+            echo "Não encontrei o $id e a area $area<br>";
+            return false;
+        }
+    }
+
+    function excludeArea($id, $area)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT Proj_name FROM project WHERE Proj_ID = '$id'");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $verify = $pdo->prepare("SELECT Area_ID FROM area_project WHERE Proj_ID = '$id' AND Area_ID = '$area'");
+            $verify->execute();
+
+            if ($verify->rowCount() > 0) {
+                $newArea = $pdo->prepare("DELETE FROM `area_project` WHERE Proj_ID = '$id' AND Area_ID = '$area'");
+                $newArea->execute();
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function Create($name, $hours, $start, $end, $hPay, $pay, $comp)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("INSERT INTO `project`(`Proj_name`, `Proj_time`, `Proj_start`, `Proj_end`, `Proj_hourPay`, `Proj_pay`, `Proj_comp`) VALUES ('$name','$hours','$start','$end','$hPay','$pay','$comp');");
 
         $sql->execute();
         return true;
