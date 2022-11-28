@@ -41,6 +41,13 @@ $project = $proj->readProj($projectID)[0][0];
     <br>
 
     <div class="skills">
+        <div class="col description">
+            <h2>Detalhes do projeto:</h2>
+            <p><?php echo $project["Proj_desc"]; ?></p>
+        </div>
+
+        <hr>
+
         <div class="row evaluation justify-content-between">
 
             <h2 style="font-weight:700" class="col">Habilidades:</h2>
@@ -172,32 +179,49 @@ $project = $proj->readProj($projectID)[0][0];
     <hr>
 
     <div class="row feed">
+        <h2 style="text-align: center;">Informações gerais do projeto:</h2>
         <div class="col info">
-            <h2>Informações do projeto:</h2>
 
             <div class="row input">
-                <p class="col label">Prazo:</p>
-                <input type="text" placeholder="12/12/2012" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                <p class="col label">Nome:</p>
+                <input type="text" class="col form-control" placeholder="<?php echo $project["Proj_name"]; ?>" name="" id="" maxlength="25" minlength="5" disabled>
             </div>
 
             <div class="row input">
-                <p class="col label"> Contato:</p>
-                <input type="text" placeholder="(11) 99999-9999" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
-
+                <p class="col label">Início:</p>
+                <input type="text" placeholder="<?php echo $project["Proj_start"]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
             </div>
+
             <div class="row input">
-                <p class="col label">Email:</p>
-                <input type="text" placeholder="usuario@exemplo.com.br" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                <p class="col label">Pag. p/ Hora:</p>
+                <input type="text" placeholder="R$<?php echo  number_format($project["Proj_hourPay"], 2, '.', ''); ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
             </div>
 
         </div>
-        <div class="col description">
-            <h2>Descrição do projeto:</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since
-                the 1500s, when an unknown printer took a galley of type and scrambled
-                it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-                unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop</p>
+
+        <div class="col info">
+
+            
+            <div class="row input">
+                <p class="col label">Empresa:</p>
+                <input type="text" placeholder="<?php echo $comp->getUser($id)[1]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                
+                <form action="" method="post" class="col-1 toComp">
+                    <input type="hidden" name="findComp" value="<?php echo $comp->getUser($id)[0]; ?>">
+                    <button href="#" class="btn edit col" name="gotoComp"><i class="fa-solid fa-info"></i></button>
+                </form>
+            </div>
+
+            <div class="row input">
+                <p class="col label"> Fim:</p>
+                <input type="text" placeholder="<?php echo$project["Proj_end"]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+
+            </div>
+            <div class="row input">
+                <p class="col label">Horas p/ dia:</p>
+                <input type="text" placeholder="<?php echo$project["Proj_time"]; ?> hora(s)" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+            </div>
+
         </div>
     </div>
 </div>

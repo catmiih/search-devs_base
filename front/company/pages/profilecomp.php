@@ -2,7 +2,6 @@
 <link rel="stylesheet" type="text/css" href="../css/perfil.css" />
 <link rel="stylesheet" type="text/css" href="../css/profilecomp.css" />
 
-
 <div class="perfil">
     <div id="feedperfil">
         <div id="profile_banner">
@@ -15,9 +14,11 @@
                     <div id="align">
                         <h4><?php echo $comp->getUser($id)[6]; ?></h4>
 
-                        <form action="" method="post">
-                            <button href="#" class="btn edit" name="edit"><i class="fa-solid fa-gear"></i></button>
-                        </form>
+                        <?php if ($id == $_SESSION["id_user"]) { ?>
+                            <form action="" method="post">
+                                <button href="#" class="btn edit" name="edit"><i class="fa-solid fa-gear"></i></button>
+                            </form>
+                        <?php } ?>
                     </div>
                     <p><?php echo $comp->getUser($id)[1]; ?></p>
                 </div>
@@ -25,7 +26,7 @@
         </div>
     </div>
 
-    <div class="row feed">
+    <div class="row feed container">
         <div class="col info">
             <h2>Informações:</h2>
 
@@ -61,7 +62,66 @@
         <h2>Projetos em andamento:</h2>
 
         <div class="showProj">
-            
+            <div class="container row justify-content-center">
+
+                <?php
+                require_once '../../back/class/project.php';
+
+                $proj = new Project();
+                $proj->conectar('search-devs_base', 'localhost', 'root', '');
+
+                $project = $proj->readProj($id)[0];
+                $time = 0;
+
+                foreach ($project as $projects) {
+                    $time++;
+
+                    $proj_ID = $projects['Proj_ID'];
+                    $proj_name = $projects['Proj_name'];
+                    $proj_desc = $projects['Proj_desc'];
+                    $proj_time = $projects['Proj_time'];
+                    $proj_start = $projects['Proj_start'];
+                    $proj_end = $projects['Proj_end'];
+                    $proj_hourPay = $projects['Proj_hourPay'];
+                    $proj_pay = $projects['Proj_ID'];
+                    $proj_comp = $projects['Proj_comp'];
+
+                    $projectCard = '<div class="propose-card">
+                                        <div id="profile" class="row crd">
+                                            <div class="profile_pic col-2 crd">
+                                                <img src="../../assets/' . $comp->findImage('.$id.', "profile")[0] . '" />
+                                            </div>
+                                            <div id="containerperfil" class="col-2 crd">
+                                                <div id="align">
+                                                    <h4>' . $proj_name . ' <br> <b>' . $comp->getUser($id)[1] . '</b> </h4>
+                                                </div>
+                                                <p>' . $proj_desc . '</p>
+                                                <br>
+                                            </div>
+
+                                            <div class="description crd">
+                                                <p>' . $proj_desc . '</p>
+                                            </div>
+
+                                            <div class="btn-group col crd">
+
+                                                <form action="" method="post" style="width: 100%;">
+                                                    <input type="hidden" name="details" value="' . $proj_ID . '" style="display: none;">
+                                                    <input type="hidden" name="compid" value="' . $proj_comp . '" style="display: none;">
+                                                    <button type="submit" name="6" class="btn-see">Detalhes</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>';
+
+                    echo $projectCard;
+                }
+
+                if ($time == 0) {
+                    echo 'Nenhum projeto encontrado';
+                }
+                ?>
+            </div>
         </div>
     </div>
 </div>

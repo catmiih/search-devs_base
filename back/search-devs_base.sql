@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Nov-2022 às 23:26
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 28-Nov-2022 às 20:58
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `area` (
   `Area_ID` int(11) NOT NULL,
   `Area_name` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `area`
@@ -59,18 +59,7 @@ INSERT INTO `area` (`Area_ID`, `Area_name`) VALUES
 CREATE TABLE `area_dev` (
   `Area_ID` int(11) DEFAULT NULL,
   `Dev_ID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `area_dev`
---
-
-INSERT INTO `area_dev` (`Area_ID`, `Dev_ID`) VALUES
-(1, 2),
-(2, 2),
-(6, 2),
-(2, 1),
-(11, 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -81,7 +70,7 @@ INSERT INTO `area_dev` (`Area_ID`, `Dev_ID`) VALUES
 CREATE TABLE `area_project` (
   `Area_ID` int(11) DEFAULT NULL,
   `Proj_ID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -101,14 +90,7 @@ CREATE TABLE `company` (
   `Comp_cpf` varchar(400) NOT NULL,
   `Comp_date` varchar(10) NOT NULL,
   `Comp_description` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `company`
---
-
-INSERT INTO `company` (`Comp_ID`, `Comp_name`, `Comp_email`, `Comp_pass`, `Comp_cnpj`, `Comp_num`, `Comp_user`, `Comp_responsible`, `Comp_cpf`, `Comp_date`, `Comp_description`) VALUES
-(1, 'SearchDevs', 'searchdevs@gmail.com', '25d55ad283aa400af464c76d713c07ad', '16.554.666/0001-21', '(99) 99999-9999', 'searchdevs', 'Emily Leme', '123.456.789-09', '07/03/2005', 'Super empresa foda');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -129,15 +111,7 @@ CREATE TABLE `developers` (
   `Dev_sex` char(1) DEFAULT NULL,
   `dev_description` text DEFAULT NULL,
   `dev_office` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `developers`
---
-
-INSERT INTO `developers` (`Dev_ID`, `Dev_name`, `Dev_username`, `Dev_email`, `Dev_pass`, `Dev_Num`, `Dev_cep`, `Dev_cpf`, `Dev_born`, `Dev_sex`, `dev_description`, `dev_office`) VALUES
-(1, 'Emily Leme Silva', 'catmiih', 'emilyleme.dev@gmail.com', '5ffbcf53a6c3433752586d6aea67e7e1', '(11) 96289-1250', '', 'Emily Leme', '123.456.78', '', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.', 'Analista'),
-(2, 'Gustavo Cardoso Barros', 'GusCardoso', 'gustavocardoso@gmail.com', '25d55ad283aa400af464c76d713c07ad', '(99) 99999-9999', '08062-670', '123.456.789-09', '29/11/2005', 'M', NULL, 'Nenhum cargo');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -151,7 +125,7 @@ CREATE TABLE `dev_ideal` (
   `Ideal_pay` float DEFAULT NULL,
   `Ideal_dev` int(11) DEFAULT NULL,
   `Ideal_skill` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -163,7 +137,7 @@ CREATE TABLE `files` (
   `file_id` int(11) NOT NULL,
   `path` varchar(100) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -174,14 +148,15 @@ CREATE TABLE `files` (
 CREATE TABLE `project` (
   `Proj_ID` int(11) NOT NULL,
   `Proj_name` varchar(100) DEFAULT NULL,
-  `Proj_type` int(11) DEFAULT NULL,
-  `Proj_start` varchar(10) DEFAULT NULL,
-  `Proj_end` varchar(10) DEFAULT NULL,
+  `Proj_time` int(2) DEFAULT NULL,
+  `Proj_start` varchar(10) NOT NULL,
+  `Proj_end` varchar(10) NOT NULL,
+  `Proj_hourPay` float NOT NULL,
   `Proj_pay` float DEFAULT NULL,
   `Proj_dev` int(11) DEFAULT NULL,
   `Proj_comp` int(11) DEFAULT NULL,
-  `Proj_level` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Proj_desc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -193,21 +168,7 @@ CREATE TABLE `skills` (
   `Skill_ID` int(11) NOT NULL,
   `Skill_name` varchar(50) DEFAULT NULL,
   `Skill_area` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `skills`
---
-
-INSERT INTO `skills` (`Skill_ID`, `Skill_name`, `Skill_area`) VALUES
-(1, 'HTML5', 8),
-(2, 'CSS3', 8),
-(3, 'PHP', 4),
-(4, 'SQL', 2),
-(5, '', 4),
-(6, 'CSS', 8),
-(7, 'Linux', 9),
-(8, 'JavaScript', 8);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -219,31 +180,19 @@ CREATE TABLE `skills_dev` (
   `Dev_ID` int(11) DEFAULT NULL,
   `Skill_ID` int(11) DEFAULT NULL,
   `Skill_level` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `skills_dev`
---
-
-INSERT INTO `skills_dev` (`Dev_ID`, `Skill_ID`, `Skill_level`) VALUES
-(1, 5, 5),
-(1, 1, 5),
-(2, 7, 5),
-(2, 4, 1),
-(2, 3, 3),
-(1, 8, 3),
-(2, 5, 3);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `skill_proj`
+-- Estrutura da tabela `skills_proj`
 --
 
-CREATE TABLE `skill_proj` (
+CREATE TABLE `skills_proj` (
   `Proj_ID` int(11) DEFAULT NULL,
-  `Skill_ID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Skill_ID` int(11) DEFAULT NULL,
+  `Skill_level` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tabelas despejadas
@@ -318,9 +267,9 @@ ALTER TABLE `skills_dev`
   ADD KEY `fk_skills` (`Skill_ID`);
 
 --
--- Índices para tabela `skill_proj`
+-- Índices para tabela `skills_proj`
 --
-ALTER TABLE `skill_proj`
+ALTER TABLE `skills_proj`
   ADD KEY `fk_project` (`Proj_ID`),
   ADD KEY `fk_skill_proj` (`Skill_ID`);
 
@@ -338,13 +287,13 @@ ALTER TABLE `area`
 -- AUTO_INCREMENT de tabela `company`
 --
 ALTER TABLE `company`
-  MODIFY `Comp_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Comp_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `developers`
 --
 ALTER TABLE `developers`
-  MODIFY `Dev_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Dev_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `files`
@@ -362,7 +311,7 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT de tabela `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `Skill_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Skill_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para despejos de tabelas
@@ -411,9 +360,9 @@ ALTER TABLE `skills_dev`
   ADD CONSTRAINT `fk_skills` FOREIGN KEY (`Skill_ID`) REFERENCES `skills` (`Skill_ID`);
 
 --
--- Limitadores para a tabela `skill_proj`
+-- Limitadores para a tabela `skills_proj`
 --
-ALTER TABLE `skill_proj`
+ALTER TABLE `skills_proj`
   ADD CONSTRAINT `fk_project` FOREIGN KEY (`Proj_ID`) REFERENCES `project` (`Proj_ID`),
   ADD CONSTRAINT `fk_skill_proj` FOREIGN KEY (`Skill_ID`) REFERENCES `skills` (`Skill_ID`);
 COMMIT;

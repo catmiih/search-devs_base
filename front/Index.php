@@ -45,26 +45,32 @@
         <div class="col tag">
           <div class="card h-100">
             <div class="card-body">
+              <h1><i class="fa-solid fa-globe"></i></h1>
               <h5 class="card-title">Crie sua conta</h5>
+              <p>E torne-se um desenvolvedor parceiro do Search Devs</p>
             </div>
           </div>
         </div>
         <div class="col tag">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">Adicione suas informações</h5>
+              <h1><i class="fa-solid fa-clock"></i></h1>
+              <h5 class="card-title">Aguarde</h5>
+              <p>Nossa inteligência logo irá enviar projetos para você.</p>
             </div>
           </div>
         </div>
         <div class="col tag">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">Pronto!</h5>
+              <h1><i class="fa-solid fa-star"></i></h1>
+              <h5 class="card-title">Comece!</h5>
+              <p>Encontre seu projeto ideal e comece a sua trajetória!</p>
             </div>
           </div>
         </div>
       </div>
-      <p class="tag">Agora é só iniciar sua trajetória como um desenvolvedor do Search Devs&trade;</p>
+      <p class="tag" style="font-size: .8rem;">Sujeito a termos e regras pré-definidos por Search Devs&trade;</p>
     </div>
 
     <div id="why" class="tag">
@@ -92,7 +98,7 @@
       <p>
         Agora que já você nos conhece, está na hora de se juntar ao Search Devs! Não é mesmo?
         <br>
-        <p>
+      <p>
         Seja um profissional ou usuário em busca de nossos devs, vamos auxiliá-los de forma rápida e intuitiva.
       </p>
       <center>

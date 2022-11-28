@@ -132,7 +132,11 @@ hr {
 }
 
 .description {
-  width: 50rem;
+  width: 70vw;
+}
+
+.description h2 {
+  margin-bottom: 2%!important;
 }
 
 .input {
@@ -248,9 +252,14 @@ hr {
 .confirm {
   display: flex;
   flex-wrap: nowrap;
+  
   width: 50rem;
 
   justify-content: flex-end;
+}
+
+.btn-group {
+  position: absolute;
 }
 
 .btn-yes {
@@ -271,3 +280,16 @@ hr {
   background-size: 400% 400%;
   animation: Gradient 5s ease infinite;
 }
+
+.toComp{
+  opacity: 0.5;
+  position: relative;
+  right: 15%;
+  transition: .3s;
+}
+
+.toComp:hover{
+  scale: 1.005;
+  opacity: 1;
+}
+

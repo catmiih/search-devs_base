@@ -69,8 +69,6 @@
                 echo 'Nenhum projeto encontrado';
             }
             ?>
-
-            <!-- Proposta ⬇️ -->
-
+        </div>
     </center>
 </div>

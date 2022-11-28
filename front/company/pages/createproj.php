@@ -308,7 +308,7 @@ $id = $proj->getProjID($_SESSION["id_user"]);
             }
 
             if (!!pHour && !!hDay && !!d1 && !!d2) {
-                $('#eValue').val('R$ ' + endValue.toFixed(2));
+                $('#eValue').val('R$' + endValue.toFixed(2));
             }
         });
     });
