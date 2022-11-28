@@ -34,7 +34,7 @@ if (!isset($_SESSION["id_user"])) {
 <?php require_once '../functions/createproj.php'; ?>
 
 <?php
-$id = $comp->getProjID($_SESSION["id_user"]);
+$id = $proj->getProjID($_SESSION["id_user"]);
 ?>
 
 <body>
@@ -94,12 +94,12 @@ $id = $comp->getProjID($_SESSION["id_user"]);
                             <script>
                                 <?php
 
-                                $skills = $comp->getProjSkills($id)[0];
+                                $skills = $proj->getProjSkills($id)[0];
 
                                 foreach ($skills as $skill) {
                                 ?>
                                     window.addEventListener('DOMContentLoaded', function() {
-                                        showSkills('<?php echo $comp->getNameSkills($skill['Skill_ID'])[0]; ?>', '<?php echo $user->getAreaSkills($skill['Skill_ID'])[0]; ?>', '<?php echo $skill['Skill_level']; ?>');
+                                        showSkills('<?php echo $proj->getNameSkills($skill['Skill_ID'])[0]; ?>', '<?php echo $user->getAreaSkills($skill['Skill_ID'])[0]; ?>', '<?php echo $skill['Skill_level']; ?>');
                                     });
                                 <?php
                                 }

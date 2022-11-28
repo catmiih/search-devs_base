@@ -36,9 +36,8 @@ button:disabled{
   width: auto !important;
 }
 
-input[type='text'], input[type='date'] {
+input[type='text'], input[type='date'], textarea {
   background-color: transparent!important;
-  color: #fff!important;
   border: none!important;
 }
 
@@ -121,6 +120,26 @@ h2 {
 .feed,
 .row.evaluation {
   width: 60vw;
+}
+
+.form-control {
+  width: 10rem;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: rgba(255, 255, 255, 0.562);
+}
+
+textarea .desc {
+  width: 100% !important;
+
+  resize: none;
+  overflow-y: auto;
+}
+
+.description {
+  height: 20rem;
 }
 
 .row.evaluation {

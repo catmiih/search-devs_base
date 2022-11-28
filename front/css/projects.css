@@ -101,12 +101,13 @@
     margin: 5% 0;
     padding: 3% 0 !important;
 
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: flex-start;
 
     height: auto !important;
 
     border-radius: 25px !important;
+    bottom: 0;
   }
 }
 

@@ -176,14 +176,44 @@ class Project
         }
     }
 
-    function Create($name, $hours, $start, $end, $hPay, $pay, $comp)
+    function getAreaID($projID, $areaID)
     {
         global $pdo;
 
-        $sql = $pdo->prepare("INSERT INTO `project`(`Proj_name`, `Proj_time`, `Proj_start`, `Proj_end`, `Proj_hourPay`, `Proj_pay`, `Proj_comp`) VALUES ('$name','$hours','$start','$end','$hPay','$pay','$comp');");
+        $sql = $pdo->prepare("SELECT Area_ID from area_project where Proj_ID = '$projID' and Area_ID = '$areaID'");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $area = $sql->fetch();
+            return $area;
+        } else
+            $area = [null];
+        return $area;
+    }
+
+    function Create($name, $hours, $start, $end, $hPay, $pay, $comp, $desc)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("INSERT INTO `project`(`Proj_name`, `Proj_time`, `Proj_start`, `Proj_end`, `Proj_hourPay`, `Proj_pay`, `Proj_comp`, `Proj_desc`) VALUES ('$name','$hours','$start','$end','$hPay','$pay','$comp','$desc');");
 
         $sql->execute();
         return true;
+    }
+
+    function readProj($comp) {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM project where Proj_comp = '$comp'");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $project[] = $sql->fetchAll(PDO::FETCH_ASSOC);
+        }else {
+            $project[] = [];
+        }
+
+        return $project;
     }
 
 }

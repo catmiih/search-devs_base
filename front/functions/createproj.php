@@ -1,35 +1,50 @@
 <?php
-session_start();
+
 
 require_once '../../back/class/project.php';
 
 $proj = new Project();
 $proj->conectar('search-devs_base', 'localhost', 'root', '');
 
-$id = $proj->getProjID($_SESSION["id_user"]);
 
 /* Register Project */
 
-if (isset($_POST['area'])) {
+if (isset($_POST["newProject"])) {
 
-    echo "id do projeto: $id <br><br>";
+    session_start();
+    $id = $proj->getProjID($_SESSION["id_user"]);
 
-    for ($i = 0; $i < 12; $i++) {
-        $proj->excludeArea($id, $i + 1);
-    }
+    $nameProj = $_POST["nameProj"];
+    $descProj = $_POST["descProj"];
+    $dateStart = $_POST["start"];
+    $vHour = $_POST["vHour"];
+    $dateEnd = $_POST["end"];
+    $dHour = $_POST["dHour"];
+    $eValue = $_POST["eValue"];
 
-    for ($i = 0; $i < 12; $i++) {
+    if ($proj->Create($nameProj, $dHour, $dateStart, $dateEnd, $vHour, $eValue, $id, $descProj)) {
 
-        $area = $_POST["area"];
+        if (isset($_POST['area'])) {
+            echo "id do projeto: $id <br><br>";
 
-        if ($area[$i] ?? null) {
-            if ($proj->registerArea($id, $area[$i])) {
-                echo 'Sucesso! no ' . $area[$i] . ' <br>';
-            }else {
-                echo 'Excuido o ' . $i + 1, '<br>';
+            for ($i = 0; $i < 12; $i++) {
+                $proj->excludeArea($id, $i + 1);
             }
-        } else {
-            echo 'Excuido o ' . $i + 1, '<br>';
+
+            for ($i = 0; $i < 12; $i++) {
+
+                $area = $_POST["area"];
+
+                if ($area[$i] ?? null) {
+                    if ($proj->registerArea($id, $area[$i])) {
+                        echo 'Sucesso! no ' . $area[$i] . ' <br>';
+                    } else {
+                        echo 'Erro no ' . $i + 1, '<br>';
+                    }
+                } else {
+                    echo 'Excuido o ' . $i + 1, '<br>';
+                }
+            }
         }
     }
 }

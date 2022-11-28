@@ -52,6 +52,9 @@ exit;
                     } else if (isset($_POST['5'])) {
                         require_once "pages/vip.php";
                     } else if (isset($_POST['6'])) {
+                        $projectID = $_POST['details'];
+                        $id = $_POST['compid'];
+                        
                         require_once "pages/details.php";
                     } else if (isset($_POST['7'])) {
                         $search = $_POST['user'];

@@ -7,16 +7,12 @@
 
 require_once '../../back/class/project.php';
 
-$comp = new Project();
-$comp->conectar('search-devs_base', 'localhost', 'root', '');
+$proj = new Project();
+$proj->conectar('search-devs_base', 'localhost', 'root', '');
 
-$id = $comp->getProjID($_SESSION["id_user"]);
+$id = $proj->getProjID($_SESSION["id_user"]);
 
 ?>
-
-<script>
-    alert('<?php echo $id ?>');
-</script>
 
 <div class="create-project">
     <center>
@@ -30,18 +26,18 @@ $id = $comp->getProjID($_SESSION["id_user"]);
             <div class="general-info">
                 <div class="input row" style="margin: 0!important;">
                     <p class="col-1 label">Nome do projeto:</p>
-                    <input type="text" class="col form-control" name="username" placeholder="Site de vendas" id="username" maxlength="25" minlength="5">
+                    <input type="text" class="col form-control" name="nameProj" placeholder="Site de vendas" id="username" maxlength="25" minlength="5">
                 </div>
                 <div class="row high">
                     <div class="col">
                         <div class="row input">
                             <p class="col-1 label"> Data de início:</p>
-                            <input type="date" class="col form-control" name="office" id="start">
+                            <input type="date" class="col form-control" name="start" id="start">
                         </div>
 
                         <div class="row input">
                             <p class="col-1 label"> Valor por hora:</p>
-                            <input type="text" class="col form-control" name="cell" id="vHour" placeholder="15">
+                            <input type="text" class="col form-control" name="vHour" id="vHour" placeholder="15">
                         </div>
                     </div>
 
@@ -49,16 +45,24 @@ $id = $comp->getProjID($_SESSION["id_user"]);
 
                         <div class="row input">
                             <p class="col-1 label"> Data final:</p>
-                            <input type="date" class="col form-control" name="cell" id="end">
+                            <input type="date" class="col form-control" name="end" id="end">
                         </div>
 
                         <div class="row input">
                             <p class="col-1 label">Horas por dia:</p>
-                            <input type="text" class="col form-control" placeholder="2" name="name" id="hour" minlength="1" maxlength="2">
+                            <input type="text" class="col form-control" placeholder="2" name="dHour" id="hour" minlength="1" maxlength="2">
                         </div>
 
                     </div>
+                </div>
 
+                <div class="col description input">
+                    <h2>Descrição do perfil:</h2>
+                    <textarea class="form-control desc" name="descProj"><?php if (empty($proj->readProj($id)[0]['Proj_desc'])) {
+                                                                        echo "Esse é meu novo projeto!";
+                                                                    } else {
+                                                                        echo$proj->readProj($id)[0]['Proj_desc'];
+                                                                    } ?></textarea>
                 </div>
             </div>
 
@@ -152,7 +156,7 @@ $id = $comp->getProjID($_SESSION["id_user"]);
             <div class="col-6">
                 <div class="row input">
                     <p class="col-1 label"> Valor final:</p>
-                    <input type="text" class="col form-control" value="R$ 00 • Preencha todos os campos" name="cell" id="eValue" disabled>
+                    <input type="text" class="col form-control" value="R$ 00 • Preencha todos os campos" name="eValue" id="eValue" disabled>
                 </div>
             </div>
 

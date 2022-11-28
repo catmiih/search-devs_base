@@ -1,29 +1,39 @@
 <link rel="stylesheet" type="text/css" href="../css/level.css" />
+<link rel="stylesheet" type="text/css" href="../css/perfil.css" />
 <link rel="stylesheet" type="text/css" href="../css/details.css" />
 
+<?php
+
+require_once '../../back/class/project.php';
+
+$proj = new Project();
+$proj->conectar('search-devs_base', 'localhost', 'root', '');
+
+$project = $proj->readProj($projectID)[0][0];
+?>
 
 <div class="perfil">
     <div id="feedperfil">
         <div id="profile_banner">
-            <img class="banner" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
-            <div class="row">
-                <div id="profile" class="col">
-                    <div class="profile_pic">
-                        <img src="https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg" />
-                    </div>
-                    <div id="containerperfil">
-                        <div id="align">
-                            <h4>Projeto X aaaaaaaaaaaaaaaaaaaaaa</h4>
+            <img class="banner" src="../../assets/<?php echo $comp->findImage($id, 'banner')[0]; ?>" alt="">
+            <div id="profile" class="col">
+                <div class="profile_pic">
+                    <img src="../../assets/<?php echo $comp->findImage($id, 'profile')[0]; ?>" />
+                </div>
+                <div id="containerperfil">
+                    <div id="align">
+                        <h4><?php echo $project["Proj_name"]; ?></h4>
+
+                        <div class="btn-group row">
+                            <div class="confirm">
+                                <button href="" class="btn-see btn-yes"><i class="fa-solid fa-check"></i></button>
+                                <button href="" class="btn-see btn-no"><i class="fa-solid fa-x"></i></button>
+                            </div>
                         </div>
-                        <p>Google Company aaaaaaaaaaaaaaaa</p>
                     </div>
+                    <p><?php echo $comp->getUser($id)[1]; ?></p>
                 </div>
-                <div class="btn-group col">
-                    <div class="confirm">
-                        <button href="" class="btn-see btn-yes"><i class="fa-solid fa-check"></i></button>
-                        <button href="" class="btn-see btn-no"><i class="fa-solid fa-x"></i></button>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -60,8 +70,102 @@
             </div>
             <br>
             <div class="show-skills">
+                <?php
 
+                $skills = $proj->getProjSkills($id)[0];
+
+                foreach ($skills as $skill) {
+
+                    $skillCard = "<span id='" . $skill['Skill_ID'] . "' class='btn-level level-" . $skill['Skill_level'] . " skill-tag'><input type='hidden' name='level-" . $skill['Skill_level'] . "' value='" . $skill['Skill_level'] . "'><input type='hidden' name='skill-" . $skill['Skill_level'] . "' value='" . $skill['Skill_ID'] . "'><input type='hidden' name='area' value='" . $user->getAreaSkills($skill['Skill_ID'])[0] . "'> " . $user->getNameSkills($skill['Skill_ID'])[0] . "</span>";
+
+                    echo $skillCard, "\n";
+                }
+
+                ?>
             </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row feed">
+        <h2 style="text-align: center;">Áreas de atuação do projeto</h2>
+        <div class="area">
+            <div id="check" class="row row-cols-4 justify-content-center" style="text-align: left;">
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Artificial Intelligence" value="1" <?php echo ($proj->getAreaID($projectID, 1)[0] == "1") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Artificial Intelligence">
+                        Artificial Intelligence
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Blockchain" value="5" <?php echo ($proj->getAreaID($projectID, 5)[0] == "5") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Blockchain">
+                        Blockchain
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="cybersecurity" value="9" <?php echo ($proj->getAreaID($projectID, 9)[0] == "9") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="cybersecurity">
+                        Cybersecurity
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Database Analytics" value="2" <?php echo ($proj->getAreaID($projectID, 2)[0] == "2") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Database Analytics">
+                        Database Analytics
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Data Science" value="6" <?php echo ($proj->getAreaID($projectID, 6)[0] == "6") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Data Science">
+                        Data Science
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Design" value="10" <?php echo ($proj->getAreaID($projectID, 10)[0] == "10") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Design">
+                        Design
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Desktop Development" value="3" <?php echo ($proj->getAreaID($projectID, 3)[0] == "3") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Desktop Development">
+                        Desktop Development
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="DevOps" value="7" <?php echo ($proj->getAreaID($projectID, 7)[0] == "7") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="DevOps">
+                        DevOps
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id=" Mobile Development" value="11" <?php echo ($proj->getAreaID($projectID, 11)[0] == "11") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for=" Mobile Development">
+                        Mobile Development
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Web - Back End" value="4" <?php echo ($proj->getAreaID($projectID, 4)[0] == "4") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Web - Back End">
+                        Web - Back End
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Web - Front End" value="8" <?php echo ($proj->getAreaID($projectID, 8)[0] == "8") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Web - Front End">
+                        Web - Front End
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input class="form-check-input" type="checkbox" name="area[]" id="Outros" value="12" <?php echo ($proj->getAreaID($projectID, 12)[0] == "12") ? "checked" : null; ?> disabled>
+                    <label class="form-check-label" for="Outros">
+                        Outros
+                    </label>
+                </div>
+            </div>
+            <br>
         </div>
     </div>
 
