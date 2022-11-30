@@ -74,23 +74,24 @@ class Project
         }
     }
 
-    function getProjID($compID) {
+    function getProjID($compID)
+    {
         global $pdo;
 
         $sql = $pdo->prepare("SELECT Proj_ID from project where Proj_comp = $compID");
         $sql->execute();
 
-        if($sql->rowCount() == 0){
+        if ($sql->rowCount() == 0) {
             return 1;
-        }else {
+        } else {
             $projId = $sql->fetch();
 
             $verify = $pdo->prepare("SELECT * from skills_proj where Proj_ID = '$projId[0]'");
             $verify->execute();
 
-            if($verify->rowCount() > 0) {
-                return $projId[0]+1;
-            }else {
+            if ($verify->rowCount() > 0) {
+                return $projId[0] + 1;
+            } else {
                 return $projId[0];
             }
         }
@@ -103,16 +104,16 @@ class Project
         if ($pdo->prepare("SELECT Skill_ID from skills where Skill_name like ''")) {
             $sql = $pdo->prepare("SELECT * from skills_proj where Proj_ID = '$projID' and Skill_ID != (SELECT Skill_ID from skills where Skill_name like '')");
             $sql->execute();
-        } else {
-            $sql = $pdo->prepare("SELECT * from skills_proj where Proj_ID = '$projID'");
-            $sql->execute();
         }
+        $sql = $pdo->prepare("SELECT * from skills_proj where Proj_ID = '$projID'");
+        $sql->execute();
+
 
         if ($sql->rowCount() > 0) {
             $skills[] = $sql->fetchAll(PDO::FETCH_ASSOC);
 
             return $skills;
-        }else {
+        } else {
             $skills[] = [];
             return $skills;
         }
@@ -201,19 +202,19 @@ class Project
         return true;
     }
 
-    function readProj($comp) {
+    function readProj($comp)
+    {
         global $pdo;
 
         $sql = $pdo->prepare("SELECT * FROM project where Proj_comp = '$comp'");
         $sql->execute();
 
-        if($sql->rowCount() > 0){
+        if ($sql->rowCount() > 0) {
             $project[] = $sql->fetchAll(PDO::FETCH_ASSOC);
-        }else {
+        } else {
             $project[] = [];
         }
 
         return $project;
     }
-
 }
