@@ -64,6 +64,10 @@ exit;
                         $search = $_POST['user'];
                         require_once "pages/profile.php";
 
+                    } else if (isset($_POST['8'])) {
+                        $projID = $_POST['projID'];
+                        require_once "pages/news.php";
+
                     } else if (isset($_POST['edit'])) {
                         require_once "pages/edit-profile.php";
 

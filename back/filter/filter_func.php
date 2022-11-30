@@ -5,7 +5,7 @@
     Developed by SearchDevs™ for SearchDevs™ Plataform.
 
     All rights reserved ©️. All materials are protected by copyright and other rights.
-    Version : 1.0.1.8 - Aug, 2022.
+    
 */
 
 function approved($approved, $list_approve, $type, $type_user, $skills, $user_skills, $proj_level, $skill_level)

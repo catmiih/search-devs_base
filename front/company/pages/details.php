@@ -24,12 +24,23 @@ $project = $proj->readProj($projectID)[0][0];
                     <div id="align">
                         <h4><?php echo $project["Proj_name"]; ?></h4>
 
-                        <div class="btn-group row">
-                            <div class="confirm">
-                                <button href="" class="btn-see btn-yes"><i class="fa-solid fa-check"></i></button>
-                                <button href="" class="btn-see btn-no"><i class="fa-solid fa-x"></i></button>
+                        <?php if ($id != $project["Proj_comp"]) { ?>
+                            <div class="btn-group row">
+                                <div class="confirm">
+                                    <button href="" class="btn-see btn-yes"><i class="fa-solid fa-check"></i></button>
+                                    <button href="" class="btn-see btn-no"><i class="fa-solid fa-x"></i></button>
+                                </div>
                             </div>
-                        </div>
+                        <?php } else { ?>
+                            <div class="btn-group row">
+                                <div class="confirm">
+                                    <form action="" method="post">
+                                        <input type="hidden" name="projID" value="<?php echo $project["Proj_ID"] ?>">
+                                        <button class="btn-see btn-dev" name="8" type="submit"><i class="fa-solid fa-user"></i> &nbsp; Verificar desenvolvedores </button>
+                                    </form>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div>
                     <p><?php echo $comp->getUser($id)[1]; ?></p>
                 </div>
@@ -201,11 +212,11 @@ $project = $proj->readProj($projectID)[0][0];
 
         <div class="col info">
 
-            
+
             <div class="row input">
                 <p class="col label">Empresa:</p>
                 <input type="text" placeholder="<?php echo $comp->getUser($id)[1]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
-                
+
                 <form action="" method="post" class="col-1 toComp">
                     <input type="hidden" name="findComp" value="<?php echo $comp->getUser($id)[0]; ?>">
                     <button href="#" class="btn edit col" name="gotoComp"><i class="fa-solid fa-info"></i></button>
@@ -214,12 +225,12 @@ $project = $proj->readProj($projectID)[0][0];
 
             <div class="row input">
                 <p class="col label"> Fim:</p>
-                <input type="text" placeholder="<?php echo$project["Proj_end"]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                <input type="text" placeholder="<?php echo $project["Proj_end"]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
 
             </div>
             <div class="row input">
                 <p class="col label">Horas p/ dia:</p>
-                <input type="text" placeholder="<?php echo$project["Proj_time"]; ?> hora(s)" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
+                <input type="text" placeholder="<?php echo $project["Proj_time"]; ?> hora(s)" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
             </div>
 
         </div>

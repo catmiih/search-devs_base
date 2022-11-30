@@ -3,14 +3,14 @@
 session_start();
 
 if (!isset($_SESSION["id_user"])) {
-  // Usuário não logado! Redireciona para a página de login
-  header("Location: ../login.php");
-  exit;
+    // Usuário não logado! Redireciona para a página de login
+    header("Location: ../login.php");
+    exit;
 }
 
-if($_SESSION["type"] != 'company'){
+if ($_SESSION["type"] != 'company') {
     header("Location: ../company/dashboard.php");
-  exit;
+    exit;
 }
 
 $username = $_SESSION["username"];
@@ -32,12 +32,16 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
     <div id="sidebar" class="position-absolute top-0 start-0">
         <center>
             <div class="container prof">
-                <div class="user">
-                    <img src="../../assets/<?php echo $comp->findImage($id, 'profile')[0]; ?>" />
-                </div>
+                <form action="" method="post">
+                    <button class="btn-img" type="submit" name="1">
+                        <div class="user">
+                            <img src="../../assets/<?php echo $comp->findImage($id, 'profile')[0]; ?>" />
+                        </div>
+                    </button>
+                </form>
                 <div id="info">
-                    <h1><?php echo $comp->getUser($id)[1];?></h1>
-                    <p><?php echo $comp->getUser($id)[7];?></p>
+                    <h1><?php echo $comp->getUser($id)[1]; ?></h1>
+                    <p><?php echo $comp->getUser($id)[7]; ?></p>
                 </div>
             </div>
 

@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="col">
-                    <a class="btn-select1 btn" href="skills.php" style="padding: 5%;">Editar skills</a>
+                    <a class="btn-select1 btn btn-edit1" href="skills.php" style="padding: 5%;">Editar skills</a>
                 </div>
                 <br>
                 <div class="show-skills">
@@ -139,7 +139,7 @@
             </div>
         </div>
 
-        <hr>
+        <hr class="hr1">
 
         <form class="select-skill" action="../functions/edit-profile.php" method="post">
 
@@ -231,20 +231,20 @@
             <div class="row feed" style="margin-bottom: 0;">
                 <div class="col info">
 
-                    <div class="row input">
+                    <div class="row input input1">
                         <p class="col label">Email:</p>
                         <input type="text" class="col form-control" name="email" id="" value="<?php echo $user->getUser($id)[3]; ?>">
 
                     </div>
                     <br>
                     <h4>Editar senha</h4>
-                    <div class="row input">
+                    <div class="row input input1">
                         <p class="col-4 label">Senha atual:</p>
                         <input type="password" placeholder="•••" class="col form-control" name="pass" id="">
 
 
                     </div>
-                    <div class="row input">
+                    <div class="row input input1">
                         <p class="col-4 label">Nova senha:</p>
                         <input type="password" placeholder="•••" class="col form-control" name="newpass" id="">
 

@@ -217,4 +217,10 @@ class Project
 
         return $project;
     }
+
+    function idealDev($projID) {
+        require_once '../filter/project_add.php';
+
+        //getProject($projId);
+    }
 }

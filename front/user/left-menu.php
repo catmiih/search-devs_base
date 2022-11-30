@@ -3,14 +3,14 @@
 session_start();
 
 if (!isset($_SESSION["id_user"])) {
-  // Usuário não logado! Redireciona para a página de login
-  header("Location: ../login.php");
-  exit;
+    // Usuário não logado! Redireciona para a página de login
+    header("Location: ../login.php");
+    exit;
 }
 
-if($_SESSION["type"] != 'user'){
+if ($_SESSION["type"] != 'user') {
     header("Location: ../company/dashboard.php");
-  exit;
+    exit;
 }
 
 $username = $_SESSION["username"];
@@ -27,13 +27,23 @@ $user->conectar('search-devs_base', 'localhost', 'root', '');
 <div class="side-menu">
     <div id="sidebar" class="position-absolute top-0 start-0">
         <center>
+
             <div class="container prof">
-                <div class="user">
-                    <img src="../../assets/<?php echo $user->findImage($id, 'profile')[0]; ?>" />
-                </div>
+                <form action="" method="post">
+                    <button class="btn-img" type="submit" name="1">
+                        <div class="user">
+                            <img src="../../assets/<?php echo $user->findImage($id, 'profile')[0]; ?>" />
+                        </div>
+                    </button>
+                </form>
+
                 <div id="info">
-                    <h1><?php echo $user->getUser($id)[2];?></h1>
-                    <p><?php if(empty($user->getUser($id)[11])){echo "Nenhum cargo";}else{echo $user->getUser($id)[11];}?></p>
+                    <h1><?php echo $user->getUser($id)[2]; ?></h1>
+                    <p><?php if (empty($user->getUser($id)[11])) {
+                            echo "Nenhum cargo";
+                        } else {
+                            echo $user->getUser($id)[11];
+                        } ?></p>
                 </div>
             </div>
 

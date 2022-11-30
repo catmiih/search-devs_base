@@ -100,6 +100,10 @@ body {
   color: #fff;
 }
 
+.btn-img {
+   background-color: transparent;
+}
+
 @keyframes Gradient {
   0% {
     background-position: 0% 50%;

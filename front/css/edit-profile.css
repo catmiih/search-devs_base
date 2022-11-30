@@ -198,4 +198,42 @@ hr {
   .search {
     margin-top: 5% !important;
   }
+
+  .btn-edit1 {
+    position: absolute;
+    margin: 25% -65% !important;
+    width: 60% !important;
+    height: 1% !important;
+    font-size: 25px;
+
+    justify-content: right;
+    align-items: center !important;
+  
+    padding-top: auto !important;
+    padding: 1rem !important;
+  }
+
+  .input1 {
+    padding: none !important;
+    width: 55rem !important;
+    margin-left: -15% !important;
+    align-items: center !important;
+    padding-top: 5 !important;
+    padding: 2% !important;
+  }
+  .form-control {
+    margin-left: 5% !important ;
+  }
+
+  .description {
+    width: 150rem !important;
+  }
+
+  .feed {
+    margin: none !important;
+  }
+
+  .hr1{
+    margin-top: 10rem !important;
+  }
 }
