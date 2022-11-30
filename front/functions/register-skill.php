@@ -55,8 +55,6 @@ if (isset($_POST['start'])) {
                 }
 
                 $time++;
-            } else {
-                echo 'Nada de skill aqui: ' . $i . '<br>';
             }
         }
 
