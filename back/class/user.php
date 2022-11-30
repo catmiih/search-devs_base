@@ -190,16 +190,15 @@ class User
 
     function getUserSkills($userId)
     {
-
         global $pdo;
 
         if ($pdo->prepare("SELECT Skill_ID from skills where Skill_name like ''")) {
             $sql = $pdo->prepare("SELECT * from skills_dev where Dev_ID = '$userId' and Skill_ID != (SELECT Skill_ID from skills where Skill_name like '')");
             $sql->execute();
-        } else {
-            $sql = $pdo->prepare("SELECT * from skills_dev where Dev_ID = '$userId'");
-            $sql->execute();
         }
+        $sql = $pdo->prepare("SELECT * from skills_dev where Dev_ID = '$userId'");
+        $sql->execute();
+
 
         if ($sql->rowCount() > 0) {
             $skills[] = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -257,48 +256,50 @@ class User
         return $area;
     }
 
-    function saveFile($userID, $type) {
+    function saveFile($userID, $type)
+    {
         global $pdo;
 
-        $path = 'uploads/user/'.$userID.'/'.$userID.'_'.$type.'.jpg';
+        $path = 'uploads/user/' . $userID . '/' . $userID . '_' . $type . '.jpg';
 
         $sql = $pdo->prepare("SELECT file_id from files where user_id = '$userID' and `path` like '$path'");
         $sql->execute();
 
-        if($sql->rowCount() == 0){
-            $file = 'uploads/'.$userID.'/'.$userID.'_'.$type.'.jpg';
+        if ($sql->rowCount() == 0) {
+            $file = 'uploads/' . $userID . '/' . $userID . '_' . $type . '.jpg';
 
             $insert = $pdo->prepare("INSERT INTO `files`(`path`, `user_id`) VALUES ('$file','$userID')");
             $insert->execute();
         }
     }
 
-    function findImage($userID, $type){
-        
+    function findImage($userID, $type)
+    {
+
         global $pdo;
-        $path = 'uploads/user/'.$userID.'/'.$userID.'_'.$type.'.jpg';
+        $path = 'uploads/user/' . $userID . '/' . $userID . '_' . $type . '.jpg';
 
         $sql = $pdo->prepare("SELECT path from files where user_id = '$userID' and `path` like '$path'");
         $sql->execute();
 
-        if($sql->rowCount() > 0){
+        if ($sql->rowCount() > 0) {
             $img = $sql->fetch();
 
             return $img;
-        }
-        else {
-            $img[] = 'uploads/default_'.$type.'.jpg';
+        } else {
+            $img[] = 'uploads/default_' . $type . '.jpg';
             return $img;
         }
     }
 
-    function searchUser($search) {
+    function searchUser($search)
+    {
         global $pdo;
 
         $sql = $pdo->prepare("SELECT `Dev_ID` FROM `developers` WHERE Dev_name like '%$search%' || Dev_username like '%$search%'");
         $sql->execute();
 
-        if($sql->rowCount() > 0){
+        if ($sql->rowCount() > 0) {
             $result = $sql->fetchAll();
 
             return $result;

@@ -18,6 +18,12 @@ if ($user->msg == "") {
             for ($i = 0; $i < count($searchID); $i++) {
                 $findID = $searchID[$i][0];
 
+                if (empty($user->getUser($findID)[11])) {
+                    $office = "Nenhum cargo";
+                } else {
+                    $office = $user->getUser($findID)[11];
+                }
+
                 $user_card = '
             <div class="user-card">
                 <div id="profile_banner">
@@ -30,7 +36,7 @@ if ($user->msg == "") {
                             <div id="align">
                                 <h4>' . $user->getUser($findID)[2] . '</h4>
                             </div>
-                            <p>' . $user->getUser($findID)[11] . '</p>
+                            <p>' . $office . '</p>
                         </div>
                         <div class="btn-group">
                         <form action="" method="post" style="width: 100%;">
