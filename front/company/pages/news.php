@@ -13,7 +13,7 @@
             <hr>
 
             <?php require_once '../functions/ideal-user.php'; ?>
-
+    
             
         </div>
     </center>

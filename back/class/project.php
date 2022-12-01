@@ -219,8 +219,8 @@ class Project
     }
 
     function idealDev($projID) {
-        require_once '../filter/project_add.php';
+    require "../filter/project_add.php";
 
-        //getProject($projId);
+        getProject($projId);
     }
 }

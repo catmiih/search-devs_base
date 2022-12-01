@@ -5,23 +5,10 @@ $proj = new Project();
 $proj->conectar('search-devs_base', 'localhost', 'root', '');
 //echo "$msg";
 
-$type = $pdo->prepare("SELECT Area_ID from area_project WHERE Proj_ID = $projID");
-$type->execute();
-
-$types = $type->fetch();
-
-
-/* EXECUTAR E DAR FETCH NA I.A */
-
-
-/* foreach ($type as $types) {
-    //$d = $pdo->prepare("SELECT Dev_ID FROM dev_area where Area_ID = $types");
-} */
-
-echo "<script>alert('" . $types[0] . "')</script>";
+$proj->idealDev($projID);
 
 /* SE O DEV FOR IDEAL, APARECE AQUI */
-if (1 == 1) {
+if (1 != 1) {
     require_once '../../back/class/user.php';
     $user = new User();
 
