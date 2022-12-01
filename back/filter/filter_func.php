@@ -13,8 +13,7 @@ function approved($approved, $list_approve, $type, $type_user, $skills, $user_sk
     if ($approved <= $list_approve) {
         $result = filterFunction($type, $type_user, $skills, $user_skills, $proj_level, $skill_level);
         return $result;
-    }
-    else
+    } else
         return 0;
 }
 
@@ -22,9 +21,8 @@ function filterFunction($type, $type_user, $skills, $user_skills, $proj_level, $
 {
 
     /* Start Filter */
+    $user_type = count(array_diff($type, $type_user));    
 
-
-    $user_type = count(array_diff($type, $type_user));
     /* ---------------------- */
 
     if ($user_type <= (count($type) / 100) * 20) {
@@ -34,7 +32,7 @@ function filterFunction($type, $type_user, $skills, $user_skills, $proj_level, $
         /* ---------------------- */
 
         if ($diff <= (count($skills) / 100) * 20) { /* ⬅ Skill difference + Error Margin */
-            $result = startFilter($skills, $proj_level, $skill_level);
+            $result = startFilter($skills, $proj_level, $skill_level, $user_skills);
             return $result;
         } else
             return 0;
@@ -44,17 +42,17 @@ function filterFunction($type, $type_user, $skills, $user_skills, $proj_level, $
     }
 }
 
-function startFilter($skills, $proj_level, $skill_level)
+function startFilter($skills, $proj_level, $skill_level, $user_skills)
 {
-
     /* Total Skills with Match */
     global $total_skills;
 
-
     /* Loop for scan all skills Level*/
-    for ($y = 0; $y <= count($skills) - 1; $y++) {
-        if ($proj_level <= ($skill_level[$y])) {
-            $total_skills++;
+    for ($y = 0; $y < count($skills); $y++) {
+        if(!array_diff($skills, $user_skills)){
+            if($proj_level[$y] <= $skill_level[$y] + 1){
+                $total_skills++;
+            }
         }
     }
 
@@ -65,13 +63,10 @@ function startFilter($skills, $proj_level, $skill_level)
         if ($total_skills >= count($skills)) {
             /* If has a perfect professional: */
             $points = 1000;
-        }
-        else {
+        } else {
             $points = 500;
         }
 
         return $points;
-    } 
+    }
 }
-
-?>

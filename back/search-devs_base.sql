@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Nov-2022 às 20:58
+-- Tempo de geração: 01-Dez-2022 às 14:33
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.1.12
 
@@ -120,11 +120,8 @@ CREATE TABLE `developers` (
 --
 
 CREATE TABLE `dev_ideal` (
-  `Ideal_area` int(11) DEFAULT NULL,
-  `Ideal_hour` int(20) DEFAULT NULL,
-  `Ideal_pay` float DEFAULT NULL,
-  `Ideal_dev` int(11) DEFAULT NULL,
-  `Ideal_skill` int(11) DEFAULT NULL
+  `Dev_ID` int(11) DEFAULT NULL,
+  `Proj_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -234,9 +231,8 @@ ALTER TABLE `developers`
 -- Índices para tabela `dev_ideal`
 --
 ALTER TABLE `dev_ideal`
-  ADD KEY `fk_ideal_area` (`Ideal_area`),
-  ADD KEY `fk_ideal_dev` (`Ideal_dev`),
-  ADD KEY `fk_ideal_skill` (`Ideal_skill`);
+  ADD KEY `fk_devideal` (`Dev_ID`),
+  ADD KEY `fk_projideal` (`Proj_ID`);
 
 --
 -- Índices para tabela `files`
@@ -335,9 +331,8 @@ ALTER TABLE `area_project`
 -- Limitadores para a tabela `dev_ideal`
 --
 ALTER TABLE `dev_ideal`
-  ADD CONSTRAINT `fk_ideal_area` FOREIGN KEY (`Ideal_area`) REFERENCES `area` (`Area_ID`),
-  ADD CONSTRAINT `fk_ideal_dev` FOREIGN KEY (`Ideal_dev`) REFERENCES `developers` (`Dev_ID`),
-  ADD CONSTRAINT `fk_ideal_skill` FOREIGN KEY (`Ideal_skill`) REFERENCES `skills` (`Skill_ID`);
+  ADD CONSTRAINT `fk_devideal` FOREIGN KEY (`Dev_ID`) REFERENCES `developers` (`Dev_ID`),
+  ADD CONSTRAINT `fk_projideal` FOREIGN KEY (`Proj_ID`) REFERENCES `project` (`Proj_ID`);
 
 --
 -- Limitadores para a tabela `project`

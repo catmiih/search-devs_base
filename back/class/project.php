@@ -9,6 +9,7 @@
 
 
 /* All Project Methods */
+
 class Project
 {
 
@@ -219,8 +220,7 @@ class Project
     }
 
     function idealDev($projID) {
-    require "../filter/project_add.php";
-
-        getProject($projId);
+        require_once __DIR__."\\../filter/project_add.php";
+        getProject($projID);
     }
 }
