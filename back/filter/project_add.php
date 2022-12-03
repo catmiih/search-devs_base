@@ -33,7 +33,7 @@ function getProject($projId)
         $Plevel[] = $SkillsP["Skill_level"];
     }
 
-
+    
     /* Filter config */
     $list_approve = 20;
     $approved = 0;
@@ -42,7 +42,7 @@ function getProject($projId)
     for ($i = 0; $i <= $list_approve; $i++) {
         /* Pick informations from developers  */
 
-        $d = $pdo->prepare("SELECT Dev_ID FROM area_dev where Area_ID = $type[0] and Dev_ID not in (SELECT Dev_ID FROM dev_ideal where Proj_ID = $projID)");
+        $d = $pdo->prepare("SELECT Dev_ID FROM area_dev where Area_ID = $type[] and Dev_ID not in (SELECT Dev_ID FROM dev_ideal where Proj_ID = $projID)");
         $d->execute();
 
         if ($d->rowCount() > 0) {

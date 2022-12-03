@@ -22,7 +22,7 @@ if (isset($_GET['id'])) {
         $user->deleteskill($skillID, $id);
     }
 
-    header('Location: ../user/dashboard.php');
+    header('Location: ../user/skills.php');
 }
 
 if (isset($_POST['start'])) {
@@ -30,37 +30,38 @@ if (isset($_POST['start'])) {
     session_start();
 
     if ($user->msg == "") {
-        $time=0;
+        $time = 0;
 
         for ($i = 0; $i <= 50; $i++) {
             if (!empty($_POST['level-' . $i])) {
                 $level = $_POST['level-' . $i];
-                $skill = $_POST['skill-' . $i];
                 $area = $_POST['area-' . $i];
 
-                $sql = $pdo->prepare("SELECT Skill_ID FROM `skills` where Skill_name like '$skill'");
-                $sql->execute();
+                if (!empty($_POST['skill-' . $i])) {
+                    $skill = $_POST['skill-' . $i];
 
-                if ($sql->rowCount() > 0) {
-                    $id = $_SESSION['id_user'];
-                    $skillID = $sql->fetch();
+                    $sql = $pdo->prepare("SELECT Skill_ID FROM `skills` where Skill_name like '$skill'");
+                    $sql->execute();
 
-                    $user->skillDev($id, $skillID, $level);
-                } else {
-                    $id = $_SESSION['id_user'];
-                    $skillID = $sql->fetch();
+                    do {
+                        $user->registerSkill($skill, $area);
+                    } while ($sql->rowCount() < 0);
 
-                    $user->registerSkill($skill, $area);
-                    $user->skillDev($id, $skillID, $level);
+                    if ($sql->rowCount() > 0) {
+                        $id = $_SESSION['id_user'];
+                        $skillID = $sql->fetch();
+
+                        $user->skillDev($id, $skillID, $level);
+                    }
                 }
 
                 $time++;
             }
         }
 
-        if($time == 0){
+        if ($time == 0) {
             header('Location: ../user/skills.php');
-        }else {
+        } else {
             header('Location: ../user/dashboard.php');
         }
     }

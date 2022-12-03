@@ -221,6 +221,13 @@ class Project
 
     function idealDev($projID) {
         require_once __DIR__."\\../filter/project_add.php";
-        getProject($projID);
+
+        try {
+            echo getProject($projID);
+        }catch(Exception $error) {
+            echo $error;
+        }
+
+        return ;
     }
 }

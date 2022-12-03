@@ -114,7 +114,6 @@ $id = $_SESSION['id_user'];
                         <button type="submit" name="start" class="btn" style="padding: 2% 10%;">Começar agora</button>
                     </center>
                 </form>
-                </form>
 
             </center>
         </div>

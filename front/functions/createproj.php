@@ -82,29 +82,29 @@ if (isset($_POST['start'])) {
         for ($i = 0; $i <= 50; $i++) {
             if (!empty($_POST['level-' . $i])) {
                 $level = $_POST['level-' . $i];
-                $skill = $_POST['skill-' . $i];
                 $area = $_POST['area-' . $i];
 
-                $sql = $pdo->prepare("SELECT Skill_ID FROM `skills` where Skill_name like '$skill'");
-                $sql->execute();
+                if (!empty($_POST['skill-' . $i])) {
+                    $skill = $_POST['skill-' . $i];
 
-                if ($sql->rowCount() > 0) {
-                    $id = $_SESSION['id_user'];
-                    $skillID = $sql->fetch();
+                    $sql = $pdo->prepare("SELECT Skill_ID FROM `skills` where Skill_name like '$skill'");
+                    $sql->execute();
 
-                    $proj->skillProj($id, $skillID, $level);
-                } else {
-                    $id = $_SESSION['id_user'];
-                    $skillID = $sql->fetch();
+                    do {
+                        $proj->registerSkill($skill, $area);
+                    } while ($sql->rowCount() < 0);
 
-                    $proj->registerSkill($skill, $area);
-                    $proj->skillProj($id, $skillID, $level);
+                    if ($sql->rowCount() > 0) {
+                        $id = $_SESSION['id_user'];
+                        $skillID = $sql->fetch();
+
+                        $proj->skillProj($id, $skillID, $level);
+                    }
                 }
 
                 $time++;
-            } else {
-                echo 'Nada de skill aqui: ' . $i . '<br>';
             }
+            
         }
 
         if ($time == 0) {
