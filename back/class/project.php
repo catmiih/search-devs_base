@@ -219,15 +219,58 @@ class Project
         return $project;
     }
 
-    function idealDev($projID) {
-        require_once __DIR__."\\../filter/project_add.php";
+    function idealDev($projID, $me)
+    {
+        global $pdo;
+
+        require_once __DIR__ . "\\../filter/project_add.php";
 
         try {
-            echo getProject($projID);
-        }catch(Exception $error) {
+            getProject($projID);
+        } catch (Exception $error) {
             echo $error;
         }
 
-        return ;
+        if (getProject($projID)) {
+            $sql = $pdo->prepare("SELECT Dev_ID from dev_ideal where Proj_ID = '$projID' and " . $me . "_accept = 0 ORDER BY points");
+            $sql->execute();
+
+
+            if ($sql->rowCount() > 0) {
+                $result = $sql->fetch();
+                return $result;
+            }
+        }
+    }
+
+    function idealProj($devID, $me) {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT Proj_ID from dev_ideal where Dev_ID = '$devID' and " . $me . "_accept = 0 ORDER BY points");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $result = $sql->fetch();
+            return $result;
+        }
+    }
+
+    function changeProj($projID, $devID, $type, $me)
+    {
+
+        global $pdo;
+
+        if ($type == 0) {
+            $sql = $pdo->prepare("DELETE from dev_ideal where Proj_ID = '$projID' and Dev_ID = '$devID'");
+            $sql->execute();
+        } else {
+            if ($me == 0) {
+                $sql = $pdo->prepare("UPDATE `dev_ideal` SET `comp_accept`='1' WHERE Proj_ID = '$projID' and Dev_ID = '$devID'");
+                $sql->execute();
+            } else {
+                $sql = $pdo->prepare("UPDATE `dev_ideal` SET `dev_accept`='1' WHERE Proj_ID = '$projID' and Dev_ID = '$devID'");
+                $sql->execute();
+            }
+        }
     }
 }

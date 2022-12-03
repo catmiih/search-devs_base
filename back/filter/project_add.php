@@ -33,7 +33,7 @@ function getProject($projId)
         $Plevel[] = $SkillsP["Skill_level"];
     }
 
-    
+
     /* Filter config */
     $list_approve = 20;
     $approved = 0;
@@ -42,50 +42,58 @@ function getProject($projId)
     for ($i = 0; $i <= $list_approve; $i++) {
         /* Pick informations from developers  */
 
-        $d = $pdo->prepare("SELECT Dev_ID FROM area_dev where Area_ID = $type[] and Dev_ID not in (SELECT Dev_ID FROM dev_ideal where Proj_ID = $projID)");
+        $d = $pdo->prepare("SELECT Dev_ID FROM area_dev where Area_ID = $type[1]");
         $d->execute();
 
         if ($d->rowCount() > 0) {
 
-            $devID = $d->fetch();
+            $devIdeal = $pdo->prepare("SELECT Dev_ID FROM dev_ideal where Proj_ID = $projID");
+            $devIdeal->execute();
+            if ($devIdeal->rowCount() <= 0) {
 
-            /* Get developers skill */
-            $s = $pdo->prepare("SELECT * FROM skills_dev WHERE Dev_ID = $devID[0]");
-            $s->execute();
+                $devID = $d->fetch();
 
-            /* Get Dev Area */
-            $a = $pdo->prepare("SELECT Area_ID FROM area_dev where Dev_ID = $devID[0]");
-            $a->execute();
+                /* Get developers skill */
+                $s = $pdo->prepare("SELECT * FROM skills_dev WHERE Dev_ID = $devID[0]");
+                $s->execute();
 
-            /*Pick all skills and transform in array.*/
-            $userS = $s->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($userS as $userSS) {
-                $user_skills[] = $userSS["Skill_ID"];
-                $skill_level[] = $userSS["Skill_level"];
-            }
+                /* Get Dev Area */
+                $a = $pdo->prepare("SELECT Area_ID FROM area_dev where Dev_ID = $devID[0]");
+                $a->execute();
 
-            $typeU = $a->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($typeU as $typesx) {
-                $type_user[] = $typesx["Area_ID"];
-            }
+                /*Pick all skills and transform in array.*/
+                $userS = $s->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($userS as $userSS) {
+                    $user_skills[] = $userSS["Skill_ID"];
+                    $skill_level[] = $userSS["Skill_level"];
+                }
 
-            require_once('filter_func.php');
+                $typeU = $a->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($typeU as $typesx) {
+                    $type_user[] = $typesx["Area_ID"];
+                }
 
-            $response = approved($i, $list_approve, $type, $type_user, $Pskill, $user_skills, $Plevel, $skill_level);
-            if ($response > 0) {
-                $sql = $pdo->prepare("INSERT INTO `dev_ideal`(`Dev_ID`, `Proj_ID`) VALUES ('$devID[0]','$projID')");
-                $sql->execute();
+                require_once('filter_func.php');
 
-                echo "dev " . $devID[0] . " aprovado <br>";
-                $approved++;
-                if ($response == 1000) {
-                    $list_approve = 5;
+                $response = approved($i, $list_approve, $type, $type_user, $Pskill, $user_skills, $Plevel, $skill_level);
+                if ($response > 0) {
+                    $sql = $pdo->prepare("INSERT INTO `dev_ideal`(`Dev_ID`, `Proj_ID`, `points`) VALUES ('$devID[0]','$projID', $response)");
+                    $sql->execute();
+
+                    $approved++;
+                    if ($response == 1000) {
+                        echo "dev perfeito";
+                        $list_approve = 5;
+                    }
+                } else {
                 }
             } else {
-                echo ".";
+                $list_approve = 0;
             }
         }else {
-            $list_approve = 0;
+            $approved++;
         }
+        
+        return true;
     }
 }

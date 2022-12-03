@@ -37,6 +37,7 @@
                     }
 
                     else if (isset($_POST['3'])) {
+                        $devID = $_SESSION["id_user"];
                         require_once "pages/news.php";
                     }
 
@@ -49,12 +50,17 @@
                     }
 
                     else if (isset($_POST['6'])) {
+                        $projectID = $_POST['details'];
+                        $id = $_POST['compid'];
                         require_once "pages/details.php";
-                    }
-
-                    else if (isset($_POST['7'])) {
+                        
+                    } else if (isset($_POST['7'])) {
                         $search = $_POST['user'];
                         require_once "pages/profile.php";
+                        
+                    } else if (isset($_POST['gotoComp'])) {
+                        $id = $_POST['findComp'];
+                        require_once "pages/profilecomp.php";
                     }
 
                     else if (isset($_POST['edit'])) {

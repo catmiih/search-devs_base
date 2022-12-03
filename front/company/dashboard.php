@@ -45,40 +45,51 @@ exit;
 
                     if (isset($_POST['2'])) {
                         require_once "pages/search.php";
-
                     } else if (isset($_POST['3'])) {
                         require_once "pages/projects.php";
-
                     } else if (isset($_POST['4'])) {
                         require_once "pages/createproj.php";
-
                     } else if (isset($_POST['5'])) {
                         require_once "pages/vip.php";
-
                     } else if (isset($_POST['6'])) {
                         $projectID = $_POST['details'];
                         $id = $_POST['compid'];
                         require_once "pages/details.php";
-
                     } else if (isset($_POST['7'])) {
                         $search = $_POST['user'];
                         require_once "pages/profile.php";
-
                     } else if (isset($_POST['8'])) {
                         $projID = $_POST['projID'];
                         require_once "pages/news.php";
-
                     } else if (isset($_POST['edit'])) {
                         require_once "pages/edit-profile.php";
-
-                    }else if (isset($_POST['gotoComp'])){
+                    } else if (isset($_POST['gotoComp'])) {
                         $id = $_POST['findComp'];
                         require_once "pages/profilecomp.php";
+                    } else if (isset($_POST["yes"])) {
+                        $projID = $_POST["projID"];
+                        $devID = $_POST["devID"];
 
+                        require_once '../../back/class/project.php';
+                        $proj = new Project();
+                        $proj->conectar('search-devs_base', 'localhost', 'root', '');
+
+                        $proj->changeProj($projID, $devID, "1", "0");
+                        require_once "pages/profilecomp.php";
+
+                    } else if (isset($_POST["yes"])) {
+                        $projID = $_POST["projID"];
+                        $devID = $_POST["devID"];
+
+                        require_once '../../back/class/project.php';
+                        $proj = new Project();
+                        $proj->conectar('search-devs_base', 'localhost', 'root', '');
+
+                        $proj->changeProj($projID, $devID, "0", "0");
+                        require_once "pages/profilecomp.php";
                     } else if (isset($_POST['exit'])) {
                         session_destroy();
                         header('Location: ../login.php');
-
                     } else {
                         require_once "pages/profilecomp.php";
                     }

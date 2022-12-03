@@ -13,6 +13,9 @@
 
             <hr>
 
+            <?php require_once '../functions/ideal-proj.php'; ?>
+
+
             <!-- Proposta ⬇️ -->
 
             <div class="propose-card">
@@ -34,10 +37,15 @@
                     </div>
 
                     <div class="btn-group col">
-                        <div class="confirm">
-                            <button href="" class="btn-see btn-yes col"><i class="fa-solid fa-check"></i></button>
-                            <button href="" class="btn-see btn-no col"><i class="fa-solid fa-x"></i></button>
-                        </div>
+                        <form method="post">
+                            <div class="confirm">
+                                <input type="hidden" name="projID" value="x" style="display: none;" />
+                                <input type="hidden" name="devID" value="y" style="display: none;" />
+                                <button href="" class="btn-see btn-yes col" name="yes" type="submit"><i class="fa-solid fa-check"></i></button>
+                                <button href="" class="btn-see btn-no col" name="no" type="submit"><i class="fa-solid fa-x"></i></button>
+                            </div>
+                        </form>
+
 
                         <form action="" method="post" style="width: 100%;">
                             <input type="hidden" name="details" value="x" style="display: none;">
