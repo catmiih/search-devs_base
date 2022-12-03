@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Dez-2022 às 14:33
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.1.12
+-- Tempo de geração: 03-Dez-2022 às 23:14
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `area` (
   `Area_ID` int(11) NOT NULL,
   `Area_name` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `area`
@@ -59,7 +59,7 @@ INSERT INTO `area` (`Area_ID`, `Area_name`) VALUES
 CREATE TABLE `area_dev` (
   `Area_ID` int(11) DEFAULT NULL,
   `Dev_ID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -70,7 +70,7 @@ CREATE TABLE `area_dev` (
 CREATE TABLE `area_project` (
   `Area_ID` int(11) DEFAULT NULL,
   `Proj_ID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,7 @@ CREATE TABLE `company` (
   `Comp_cpf` varchar(400) NOT NULL,
   `Comp_date` varchar(10) NOT NULL,
   `Comp_description` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,7 @@ CREATE TABLE `developers` (
   `Dev_sex` char(1) DEFAULT NULL,
   `dev_description` text DEFAULT NULL,
   `dev_office` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -121,8 +121,11 @@ CREATE TABLE `developers` (
 
 CREATE TABLE `dev_ideal` (
   `Dev_ID` int(11) DEFAULT NULL,
-  `Proj_ID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `Proj_ID` int(11) DEFAULT NULL,
+  `points` int(5) NOT NULL,
+  `dev_accept` int(1) NOT NULL DEFAULT 0,
+  `comp_accept` int(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -134,7 +137,7 @@ CREATE TABLE `files` (
   `file_id` int(11) NOT NULL,
   `path` varchar(100) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -153,7 +156,7 @@ CREATE TABLE `project` (
   `Proj_dev` int(11) DEFAULT NULL,
   `Proj_comp` int(11) DEFAULT NULL,
   `Proj_desc` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -165,7 +168,7 @@ CREATE TABLE `skills` (
   `Skill_ID` int(11) NOT NULL,
   `Skill_name` varchar(50) DEFAULT NULL,
   `Skill_area` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -177,7 +180,7 @@ CREATE TABLE `skills_dev` (
   `Dev_ID` int(11) DEFAULT NULL,
   `Skill_ID` int(11) DEFAULT NULL,
   `Skill_level` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -189,7 +192,7 @@ CREATE TABLE `skills_proj` (
   `Proj_ID` int(11) DEFAULT NULL,
   `Skill_ID` int(11) DEFAULT NULL,
   `Skill_level` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tabelas despejadas
