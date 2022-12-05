@@ -16,7 +16,7 @@
 
         <form action="../functions/edit-profile.php" method="post" enctype="multipart/form-data">
             <div class="general-info">
-                <h2 style="text-align: center;">Informações públicas:</h2>
+                <h2 class="title" style="text-align: center;">Informações públicas:</h2>
                 <div class="row high">
                     <div class="col">
                         <div class="row input">
@@ -50,10 +50,10 @@
                 </div>
 
 
-                <div class="row">
+                <div class="row private-img">
                     <div class="col input file">
                         <p class="col label">Foto de perfil:</p>
-                        <label for="profile-pic" class="btn-select1">Selecionar imagem:<p id="image"></p></label>
+                        <label for="profile-pic" class="btn-select1 btn-cell">Selecionar imagem:<p id="image"></p></label>
                         <input type="file" name="profile" class="d-none" id="profile-pic">
 
                         <script>
@@ -70,7 +70,7 @@
 
                     <div class="col input file">
                         <p class="col label">Foto de banner:</p>
-                        <label for="banner-pic" class="btn-select1">Selecionar imagem:<p id="imagee"></p></label>
+                        <label for="banner-pic" class="btn-select1 btn-cell">Selecionar imagem:<p id="imagee"></p></label>
                         <input type="file" name="banner" class="d-none" id="banner-pic">
 
                         <script>
@@ -86,16 +86,16 @@
                     </div>
                 </div>
 
-                <button class="btn-select1 btn-edit" type="submit" name="public"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
+                <button class="btn-select1 btn-edit btn-cell" type="submit" name="public"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
             </div>
         </form>
 
         <hr>
 
         <div class="skills">
-            <div class="row evaluation justify-content-between">
-
-                <h2 style="font-weight:700" class="col">Habilidades:</h2>
+            <div class="row evaluation justify-content-between edit-evaluation">
+                
+                <h2 style="font-weight:700; margin-top: 2.45%;" class="col">Habilidades:</h2>
 
                 <div class="level-options col">
                     <p style="margin: 1%;">Nível:</p>
@@ -143,7 +143,7 @@
 
         <form class="select-skill" action="../functions/edit-profile.php" method="post">
 
-            <h2>Áreas de atuação</h2>
+            <h2 class="title">Áreas de atuação</h2>
             <div class="area">
                 <div id="check" class="row row-cols-4 justify-content-center" style="text-align: left;">
                     <div class="col-4">
@@ -221,19 +221,19 @@
                 </div>
                 <br>
             </div>
-            <button class="btn-select1 btn-edit" type="submit"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
+            <button class="btn-select1 btn-edit btn-cell" type="submit"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
         </form>
 
         <hr>
 
         <form action="../functions/edit-profile.php" method="post">
-            <h2>Informações gerais:</h2>
+            <h2 class="title">Informações gerais:</h2>
             <div class="row feed" style="margin-bottom: 0;">
                 <div class="col info">
 
                     <div class="row input input1">
-                        <p class="col label">Email:</p>
-                        <input type="text" class="col form-control" name="email" id="" value="<?php echo $user->getUser($id)[3]; ?>">
+                        <p class="col label text-email">Email:</p>
+                        <input type="text" class="col form-control form-email" name="email" id="" value="<?php echo $user->getUser($id)[3]; ?>">
 
                     </div>
                     <br>
@@ -262,37 +262,37 @@
                 </div>
 
             </div>
-            <button class="btn-select1 btn-edit" type="submit" name="general"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
+            <button class="btn-select1 btn-edit btn-cell" type="submit" name="general"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
         </form>
         <hr>
 
         <div class="info2">
             <form action="../functions/edit-profile.php" method="post">
-                <h2 style="text-align: center;">Informações pessoais:</h2>
+                <h2 class="title" style="text-align: center;">Informações pessoais:</h2>
                 <div class="row">
-                    <div class="col">
-                        <div class="row input">
+                    <div class="col private-quest">
+                        <div class="row input cell-private">
                             <p class="col-1 label">CEP:</p>
                             <input type="text" value="<?php echo $user->getUser($id)[6]; ?>" class="col form-control" name="CEP" id="" maxlength="25" minlength="5">
 
                         </div>
 
-                        <div class="row input">
+                        <div class="row input cell-private">
                             <p class="col-1 label"> CPF:</p>
                             <input type="text" value="<?php echo $user->getUser($id)[7]; ?>" class="col form-control" name="CPF" id="" maxlength="25" minlength="5">
                         </div>
                     </div>
 
-                    <div class="col">
-                        <div class="row input">
+                    <div class="col private-quest">
+                        <div class="row input cell-private">
                             <p class="col-1 label">Data de nascimento:</p>
                             <input type="text" value="<?php echo $user->getUser($id)[8]; ?>" class="col form-control" name="born" id="" maxlength="25" minlength="5">
 
                         </div>
 
-                        <div class="row input">
-                            <p class="col-1 label">Sexo:</p>
-                            <div class="row radio" style="margin: 2% 5%;">
+                        <div class="row input cell-private">
+                            <p class="col-1 label sex-text">Sexo:</p>
+                            <div class="row radio sex-cell" style="margin: 2% 5%;">
                                 <div class="form-check col-3">
                                     <input class="form-check-input" type="radio" name="Sex-Select" id="Female" value="F" <?php echo ($user->getUser($id)[9] == "F") ? "checked" : null; ?>>
                                     <label class="form-check-label" for="Female">
@@ -317,7 +317,7 @@
                 </div>
         </div>
 
-        <button class="btn-select1 btn-edit" type="submit" name="personal"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
+        <button class="btn-select1 btn-edit btn-edit-cell btn-cell" type="submit" name="personal"><i class="fa-solid fa-pen"></i> &nbsp; Editar informações</button>
         </form>
     </center>
 </div>

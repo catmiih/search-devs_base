@@ -6,7 +6,7 @@
   }
 
   .perfil,
-  .perfil > div {
+  .perfil>div {
     max-width: 100vw !important;
     width: 100vw !important;
   }
@@ -111,7 +111,7 @@
     align-items: center !important;
   }
 
-  .input > * {
+  .input>* {
     justify-content: center !important;
     align-items: center !important;
     height: 4rem;
@@ -135,7 +135,7 @@
   .description {
     top: 0;
     padding: 5% !important;
-   
+
   }
 
   .description p {
@@ -184,10 +184,10 @@
     width: 4rem !important;
     height: 4rem !important;
     font-size: 1.5rem !important;
-    margin:2% !important;
+    margin: 2% !important;
   }
-  
-  .description{
+
+  .description {
     height: 90rem;
   }
 
@@ -196,8 +196,51 @@
   }
 
   .desc {
-    width: 50rem !important; 
+    width: 50rem !important;
     height: 70rem !important;
+  }
+
+  .private-quest {
+    flex: none !important;
+  }
+
+  .cell-private {
+    margin: 2% 5% !important;
+  }
+
+  .sex-text{
+    margin: 0 -10% 0 20% !important;
+  }
+
+  .btn-edit-cell {
+    margin-bottom: 20% !important;
+  }
+
+  .title{
+    font-size: 70px !important;
+  }
+
+  .btn-cell{
+    height: 8rem !important;
+    font-size: 30px !important;
+    align-items: center !important;
+  }
+
+  .text-email{
+    margin-right: 20% !important;
+  }
+
+  .form-email{
+    margin-left: -40% !important;
+  }
+  
+  .private-img {
+    flex-direction: column;
+
+  }
+
+  .input {
+    padding: 60px !important;
   }
 }
 
@@ -236,6 +279,7 @@
 
   background-position: center;
 }
+
 #profile {
   position: inherit;
   margin-left: 5vw;
@@ -299,6 +343,7 @@ hr {
 
   object-fit: cover;
 }
+
 #align {
   display: flex;
 }
@@ -316,6 +361,11 @@ hr {
   border-radius: 25px;
   width: 63vw;
   padding: 3%;
+}
+
+.edit-evaluation {
+  margin: 0.2% -4% !important;
+  width: 59vw !important;
 }
 
 .show-skills {
@@ -427,7 +477,7 @@ hr {
   margin: 0% 7%;
 }
 
-#check > * {
+#check>* {
   width: 15rem;
   margin: 1%;
 }

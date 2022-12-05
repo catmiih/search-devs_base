@@ -32,7 +32,6 @@
 
     <div class="skills">
         <div class="row evaluation justify-content-between">
-
             <h2 style="font-weight:700" class="col h2hab">Habilidades:</h2>
 
             <div class="level-options col">
@@ -181,10 +180,10 @@
         <div class="col description">
             <h2>Descrição do perfil:</h2>
             <textarea class="form-control desc" name="desc" disabled><?php if (empty($user->getUser($id)[10])) {
-                                                                echo "Olá! Sou novo no SEARCH DEVS&#8482;!";
-                                                            } else {
-                                                                echo $user->getUser($id)[10];
-                                                            } ?></textarea>
+                                                                            echo "Olá! Sou novo no SEARCH DEVS&#8482;!";
+                                                                        } else {
+                                                                            echo $user->getUser($id)[10];
+                                                                        } ?></textarea>
         </div>
     </div>
 </div>
