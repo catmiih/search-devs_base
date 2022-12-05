@@ -5,7 +5,6 @@ require_once '../../back/class/project.php';
 $proj = new Project();
 $proj->conectar('search-devs_base', 'localhost', 'root', '');
 
-
 /* Register Project */
 
 if (isset($_POST["newProject"])) {
@@ -20,15 +19,13 @@ if (isset($_POST["newProject"])) {
     $dateEnd = $_POST["end"];
     $dHour = $_POST["dHour"];
 
-    $eValue = $_POST["endValue"];
+    $eValue = $_POST["eValue"];
 
+    echo $eValue."-";
     ?>
-    <script>
-        alert('<?php echo $eValue; ?>');
-    </script>
     <?php
 
-    if ($proj->Create($nameProj, $dHour, $dateStart, $dateEnd, $vHour, $eValue, $id, $descProj)) {
+    if ($proj->Create($nameProj, $dHour, $dateStart, $dateEnd, $vHour, $eValue, $_SESSION["id_user"], $descProj)) {
 
         if (isset($_POST['area'])) {
             echo "id do projeto: $id <br><br>";
@@ -45,7 +42,7 @@ if (isset($_POST["newProject"])) {
                     if ($proj->registerArea($id, $area[$i])) {
                         echo 'Sucesso! no ' . $area[$i] . ' <br>';
                     } else {
-                        echo 'Erro no ' . $i + 1, '<br>';
+                        echo 'Erro no ' . $area[$i] .'<br>';
                     }
                 } else {
                     echo 'Excuido o ' . $i + 1, '<br>';
@@ -69,13 +66,13 @@ if (isset($_GET['id'])) {
     $sql->execute();
 
     if ($sql->rowCount() > 0) {
-        $id = $_SESSION['id_user'];
+        $id = $proj->getProjID($_SESSION["id_user"]);
         $skillID = $sql->fetch();
 
         $proj->deleteskill($skillID, $id);
     }
 
-    header('Location: ../company/dashboard.php');
+    //header('Location: ../company/dashboard.php');
 }
 
 if (isset($_POST['start'])) {
@@ -101,7 +98,7 @@ if (isset($_POST['start'])) {
                     } while ($sql->rowCount() < 0);
 
                     if ($sql->rowCount() > 0) {
-                        $id = $_SESSION['id_user'];
+                        $id = $proj->getProjID($_SESSION["id_user"]);
                         $skillID = $sql->fetch();
 
                         $proj->skillProj($id, $skillID, $level);
@@ -114,7 +111,7 @@ if (isset($_POST['start'])) {
         }
 
         if ($time == 0) {
-            header('Location: ../company/skills.php');
+            //header('Location: ../company/skills.php');
         } else {
             header('Location: ../company/dashboard.php');
         }

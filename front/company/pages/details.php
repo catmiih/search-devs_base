@@ -9,7 +9,8 @@ require_once '../../back/class/project.php';
 $proj = new Project();
 $proj->conectar('search-devs_base', 'localhost', 'root', '');
 
-$project = $proj->readProj($projectID)[0][0];
+$project = $proj->readInfo($projectID)[0][0];
+
 ?>
 
 <div class="perfil">
@@ -47,7 +48,7 @@ $project = $proj->readProj($projectID)[0][0];
                                 <div class="confirm">
                                     <form action="" method="post">
                                         <input type="hidden" name="projID" value="<?php echo $project["Proj_ID"] ?>">
-                                        <button class="btn-see btn-yes" name="finish" type="submit">Finalizar projeto </button>
+                                        <button class="btn-see btn-yes" name="" type="submit">Finalizar projeto </button>
                                     </form>
                                 </div>
                             </div>
@@ -103,7 +104,7 @@ $project = $proj->readProj($projectID)[0][0];
             <div class="show-skills">
                 <?php
 
-                $skills = $proj->getProjSkills($id)[0];
+                $skills = $proj->getProjSkills($projectID)[0];
 
                 foreach ($skills as $skill) {
 

@@ -24,7 +24,7 @@ $id = $proj->getProjID($_SESSION["id_user"]);
         <div class="row justify-content-center">
             <hr>
         </div>
-        <form action="../functions/createproj.php" method="post">
+        <form action="../functions/createproj.php" method="POST">
             <div class="general-info">
                 <div class="input row" style="margin: 0!important;">
                     <p class="col-1 label">Nome do projeto:</p>
@@ -61,10 +61,10 @@ $id = $proj->getProjID($_SESSION["id_user"]);
                 <div class="col description input">
                     <h2>Descrição do perfil:</h2>
                     <textarea class="form-control desc" name="descProj"><?php if (empty($proj->readProj($id)[0]['Proj_desc'])) {
-                                                                        echo "Esse é meu novo projeto!";
-                                                                    } else {
-                                                                        echo$proj->readProj($id)[0]['Proj_desc'];
-                                                                    } ?></textarea>
+                                                                            echo "Esse é meu novo projeto!";
+                                                                        } else {
+                                                                            echo $proj->readProj($id)[0]['Proj_desc'];
+                                                                        } ?></textarea>
                 </div>
             </div>
 
@@ -158,13 +158,165 @@ $id = $proj->getProjID($_SESSION["id_user"]);
             <div class="col-6">
                 <div class="row input">
                     <p class="col-1 label"> Valor final:</p>
-                    <input type="text" class="col form-control" value="" placeholder="R$ 00 • Preencha todos os campos" name="endValue" id="eValue" disabled>
+                    <input type="text" class="col form-control eValue" placeholder="R$ 00 • Preencha todos os campos" name="evaluation" id="showValue" disabled>
                 </div>
+
+                <input type="hidden" id="eValue" class="eValue" name="eValue">
             </div>
 
             <br>
 
             <button class="btn-select1 btn-edit" type="submit" name="newProject"><i class="fa-solid fa-arrow-right"></i> &nbsp; Continuar</button>
         </form>
+
     </center>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#username,#start,#vHour,#hour,#end").on('keyup', function() {
+
+                var pHour = parseFloat($('#vHour').val()) || 0;
+                var hDay = parseFloat($('#hour').val()) || 0;
+
+                var d1 = $('#start').val();
+                var d2 = $('#end').val();
+
+                var calcDay = new Date(d2) - new Date(d1);
+                if (calcDay == null) {
+                    calcDay = 0
+                }
+                var days = calcDay / (1000 * 60 * 60 * 24);
+
+                var endValue = (pHour * hDay) * days;
+
+                /* Verify Checkbox */
+
+                if (document.getElementById('Artificial Intelligence').checked) {
+                    endValue += 59.99;
+                }
+
+                if (document.getElementById('Blockchain').checked) {
+                    endValue += 79.99;
+                }
+
+                if (document.getElementById('cybersecurity').checked) {
+                    endValue += 20;
+                }
+
+                if (document.getElementById('Database Analytics').checked) {
+                    endValue += 69.99;
+                }
+
+                if (document.getElementById('Data Science').checked) {
+                    endValue += 179.99;
+                }
+
+                if (document.getElementById('Design').checked) {
+                    endValue += 79.99;
+                }
+
+                if (document.getElementById('Desktop Development').checked) {
+                    endValue += 99.99;
+                }
+
+                if (document.getElementById('DevOps').checked) {
+                    endValue += 14.99;
+                }
+
+                if (document.getElementById('Mobile Development').checked) {
+                    endValue += 14.99;
+                }
+
+                if (document.getElementById('Web - Back End').checked) {
+                    endValue += 14.99;
+                }
+
+                if (document.getElementById('Web - Front End').checked) {
+                    endValue += 14.99;
+                }
+
+                if (document.getElementById('Outros').checked) {
+                    endValue += 14.99;
+                }
+
+                if (!!pHour && !!hDay && !!d1 && !!d2) {
+                    $('.eValue').val(endValue.toFixed(2));
+                    $('#showValue').val('R$ ' + endValue.toFixed(2));
+                }
+            });
+
+            $(".form-check-input, form-check-label").on('click', function() {
+
+                var pHour = parseFloat($('#vHour').val()) || 0;
+                var hDay = parseFloat($('#hour').val()) || 0;
+
+                var d1 = $('#start').val();
+                var d2 = $('#end').val();
+
+                var calcDay = new Date(d2) - new Date(d1);
+                if (calcDay == null) {
+                    calcDay = 0
+                }
+                var days = calcDay / (1000 * 60 * 60 * 24);
+
+                var endValue = (pHour * hDay) * days;
+
+                /* Verify Checkbox */
+
+                if (document.getElementById('Artificial Intelligence').checked) {
+                    endValue += 59.99;
+                }
+
+                if (document.getElementById('Blockchain').checked) {
+                    endValue += 79.99;
+                }
+
+                if (document.getElementById('cybersecurity').checked) {
+                    endValue += 20;
+                }
+
+                if (document.getElementById('Database Analytics').checked) {
+                    endValue += 69.99;
+                }
+
+                if (document.getElementById('Data Science').checked) {
+                    endValue += 179.99;
+                }
+
+                if (document.getElementById('Design').checked) {
+                    endValue += 79.99;
+                }
+
+                if (document.getElementById('Desktop Development').checked) {
+                    endValue += 99.99;
+                }
+
+                if (document.getElementById('DevOps').checked) {
+                    endValue += 14.99;
+                }
+
+                if (document.getElementById('Mobile Development').checked) {
+                    endValue += 14.99;
+                }
+
+                if (document.getElementById('Web - Back End').checked) {
+                    endValue += 14.99;
+                }
+
+                if (document.getElementById('Web - Front End').checked) {
+                    endValue += 14.99;
+                }
+
+                if (document.getElementById('Outros').checked) {
+                    endValue += 14.99;
+                }
+
+                if (!!pHour && !!hDay && !!d1 && !!d2) {
+                    $('.eValue').val(endValue.toFixed(2));
+                    $('#showValue').val('R$ ' + endValue.toFixed(2));
+                }
+            });
+        });
+    </script>
 </div>

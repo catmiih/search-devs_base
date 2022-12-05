@@ -42,7 +42,7 @@ function getProject($projId)
     for ($i = 0; $i <= $list_approve; $i++) {
         /* Pick informations from developers  */
 
-        $d = $pdo->prepare("SELECT Dev_ID FROM area_dev where Area_ID = $type[1]");
+        $d = $pdo->prepare("SELECT Dev_ID FROM skills_dev where Skill_ID = $Pskill[0]");
         $d->execute();
 
         if ($d->rowCount() > 0) {

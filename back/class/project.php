@@ -70,8 +70,13 @@ class Project
         if ($sql->rowCount() > 0) {
             $areaID = $sql->fetch();
 
-            $reg = $pdo->prepare("INSERT INTO `skills`(`Skill_name`, `Skill_area`) VALUES ('$skill','$areaID[0]')");
-            $reg->execute();
+            $sql = $pdo->prepare("SELECT Skill_ID from skills where Skill_name like $skill");
+            $sql->execute();
+
+            if ($sql->rowCount == 0) {
+                $reg = $pdo->prepare("INSERT INTO `skills`(`Skill_name`, `Skill_area`) VALUES ('$skill','$areaID[0]')");
+                $reg->execute();
+            }
         }
     }
 
@@ -219,6 +224,22 @@ class Project
         return $project;
     }
 
+    function readInfo($projID)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM project where Proj_ID= '$projID'");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $project[] = $sql->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            $project[] = [];
+        }
+
+        return $project;
+    }
+
     function idealDev($projID, $me)
     {
         global $pdo;
@@ -262,7 +283,7 @@ class Project
         global $pdo;
 
         if ($type == 0) {
-            
+
             if ($me == 0) {
                 $sql = $pdo->prepare("UPDATE `dev_ideal` SET `comp_accept`='2' WHERE Proj_ID = '$projID' and Dev_ID = '$devID'");
                 $sql->execute();
@@ -270,7 +291,6 @@ class Project
                 $sql = $pdo->prepare("UPDATE `dev_ideal` SET `dev_accept`='2' WHERE Proj_ID = '$projID' and Dev_ID = '$devID'");
                 $sql->execute();
             }
-
         } else {
             if ($me == 0) {
                 $sql = $pdo->prepare("UPDATE `dev_ideal` SET `comp_accept`='1' WHERE Proj_ID = '$projID' and Dev_ID = '$devID'");
