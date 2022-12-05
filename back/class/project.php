@@ -243,7 +243,8 @@ class Project
         }
     }
 
-    function idealProj($devID, $me) {
+    function idealProj($devID, $me)
+    {
         global $pdo;
 
         $sql = $pdo->prepare("SELECT Proj_ID from dev_ideal where Dev_ID = '$devID' and " . $me . "_accept = 0 ORDER BY points");
@@ -261,8 +262,15 @@ class Project
         global $pdo;
 
         if ($type == 0) {
-            $sql = $pdo->prepare("DELETE from dev_ideal where Proj_ID = '$projID' and Dev_ID = '$devID'");
-            $sql->execute();
+            
+            if ($me == 0) {
+                $sql = $pdo->prepare("UPDATE `dev_ideal` SET `comp_accept`='2' WHERE Proj_ID = '$projID' and Dev_ID = '$devID'");
+                $sql->execute();
+            } else {
+                $sql = $pdo->prepare("UPDATE `dev_ideal` SET `dev_accept`='2' WHERE Proj_ID = '$projID' and Dev_ID = '$devID'");
+                $sql->execute();
+            }
+
         } else {
             if ($me == 0) {
                 $sql = $pdo->prepare("UPDATE `dev_ideal` SET `comp_accept`='1' WHERE Proj_ID = '$projID' and Dev_ID = '$devID'");
@@ -270,6 +278,37 @@ class Project
             } else {
                 $sql = $pdo->prepare("UPDATE `dev_ideal` SET `dev_accept`='1' WHERE Proj_ID = '$projID' and Dev_ID = '$devID'");
                 $sql->execute();
+            }
+        }
+    }
+
+    function projStart($projID)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT Dev_ID from dev_ideal where Proj_ID = '$projID' and dev_accept = '1' and comp_accept = '1'");
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $devID = $sql->fetch()[0];
+            $devProj = $pdo->prepare("UPDATE `project` SET `Proj_dev`='$devID' WHERE Proj_ID = '$projID'");
+            $devProj->execute();
+
+            $sql = $pdo->prepare("SELECT Dev_ID from dev_ideal where proj_ID = $projID");
+            $sql->execute();
+
+            $devs = $sql->fetch();
+
+            foreach ($devs as $dev) {
+                $sql = $pdo->prepare("SELECT Dev_xp from developers where Dev_ID = $dev");
+                $sql->execute();
+
+                $xp = $sql->fetch()[0] + 100;
+                $exp = $pdo->prepare("UPDATE `developers` SET `dev_xp`='$xp' WHERE Dev_ID = '$dev'");
+                $exp->execute();
+
+                $rm = $pdo->prepare("DELETE FROM dev_ideal where Dev_ID = $dev");
+                $rm->execute();
             }
         }
     }

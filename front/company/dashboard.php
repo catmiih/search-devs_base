@@ -1,15 +1,3 @@
-<?php
-
-/* session_start();
-
-if(!isset($_SESSION["id_user"]) || !isset($_SESSION["username"]))
-{
-// Usuário não logado! Redireciona para a página de login
-header("Location: ../login.php");
-exit;
-} */
-
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -66,6 +54,7 @@ exit;
                     } else if (isset($_POST['gotoComp'])) {
                         $id = $_POST['findComp'];
                         require_once "pages/profilecomp.php";
+
                     } else if (isset($_POST["yes"])) {
                         $projID = $_POST["projID"];
                         $devID = $_POST["devID"];
@@ -75,9 +64,10 @@ exit;
                         $proj->conectar('search-devs_base', 'localhost', 'root', '');
 
                         $proj->changeProj($projID, $devID, "1", "0");
-                        require_once "pages/profilecomp.php";
+                        $proj->projStart($projID);
+                        require_once "pages/news.php";
 
-                    } else if (isset($_POST["yes"])) {
+                    } else if (isset($_POST["no"])) {
                         $projID = $_POST["projID"];
                         $devID = $_POST["devID"];
 
@@ -86,7 +76,9 @@ exit;
                         $proj->conectar('search-devs_base', 'localhost', 'root', '');
 
                         $proj->changeProj($projID, $devID, "0", "0");
-                        require_once "pages/profilecomp.php";
+                        $proj->projStart($projID);
+                        require_once "pages/news.php";
+                        
                     } else if (isset($_POST['exit'])) {
                         session_destroy();
                         header('Location: ../login.php');

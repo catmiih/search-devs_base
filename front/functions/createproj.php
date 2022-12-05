@@ -1,6 +1,5 @@
 <?php
 
-
 require_once '../../back/class/project.php';
 
 $proj = new Project();
@@ -20,7 +19,14 @@ if (isset($_POST["newProject"])) {
     $vHour = $_POST["vHour"];
     $dateEnd = $_POST["end"];
     $dHour = $_POST["dHour"];
-    $eValue = $_POST["eValue"];
+
+    $eValue = $_POST["endValue"];
+
+    ?>
+    <script>
+        alert('<?php echo $eValue; ?>');
+    </script>
+    <?php
 
     if ($proj->Create($nameProj, $dHour, $dateStart, $dateEnd, $vHour, $eValue, $id, $descProj)) {
 

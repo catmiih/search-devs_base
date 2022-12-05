@@ -5,6 +5,7 @@
 <?php
 
 $devType = $_SESSION["type"];
+$devID = $_SESSION["id_user"];
 
 require_once '../../back/class/project.php';
 
@@ -31,14 +32,14 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
                     <div id="align">
                         <h4><?php echo $project["Proj_name"]; ?></h4>
 
-                        <?php if ($devType == "user") { ?>
+                        <?php if ($id != $project["Proj_comp"]) { ?>
                             <div class="btn-group row">
                                 <div class="confirm">
                                     <button href="" class="btn-see btn-yes"><i class="fa-solid fa-check"></i></button>
                                     <button href="" class="btn-see btn-no"><i class="fa-solid fa-x"></i></button>
                                 </div>
                             </div>
-                        <?php } else { ?>
+                        <?php } else if ($project["Proj_dev"] == null){ ?>
                             <div class="btn-group row">
                                 <div class="confirm">
                                     <form action="" method="post">
@@ -47,7 +48,20 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
                                     </form>
                                 </div>
                             </div>
-                        <?php } ?>
+                        <?php }else {
+                            ?>
+                            
+                            <div class="btn-group row">
+                                <div class="confirm">
+                                    <form action="" method="post">
+                                        <input type="hidden" name="projID" value="<?php echo $project["Proj_ID"] ?>">
+                                        <button class="btn-see btn-yes" name="finish" type="submit">Finalizar projeto </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <?php
+                        } ?>
                     </div>
                     <p><?php echo $comp->getUser($id)[1]; ?></p>
                 </div>

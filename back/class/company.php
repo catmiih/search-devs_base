@@ -97,10 +97,15 @@ class Company
         $sql->execute();
 
         if($sql->rowCount() == 0){
-            $file = 'uploads/'.$userID.'/'.$userID.'_'.$type.'.jpg';
+            $file = $path.$userID.'/'.$userID.'_'.$type.'.jpg';
 
             $insert = $pdo->prepare("INSERT INTO `files`(`path`, `user_id`) VALUES ('$file','$userID')");
             $insert->execute();
+        }else {
+            $fileid = $sql->fetch();
+
+            $update = $pdo->prepare("UPDATE `files` SET `path`='$path',`user_id`='$userID' WHERE file_id = '$fileid'");
+            $update->execute();
         }
     }
 

@@ -21,7 +21,6 @@ require_once '../../back/class/user.php';
 $user = new User();
 $user->conectar('search-devs_base', 'localhost', 'root', '');
 
-
 ?>
 
 <div class="side-menu">

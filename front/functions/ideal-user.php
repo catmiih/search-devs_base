@@ -19,7 +19,7 @@ if (!!$ideal && count($ideal) > 0) {
         if (!empty($ideal)) {
             $searchID = $ideal;
 
-            if ($sarchID != $_SESSION["id_user"]) {
+            if ($searchID != $_SESSION["id_user"]) {
 
                 if (!empty($searchID)) {
                     for ($i = 0; $i < count($searchID) - 1; $i++) {

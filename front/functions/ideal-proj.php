@@ -58,6 +58,15 @@ if (!!$ideal && count($ideal) > 0) {
 
                                                 <div class="btn-group col">
 
+                                                <div class="confirm row">
+                                                    <form method="post" style="display:flex; justify-content:center;">
+                                                        <input type="hidden" name="projID" value="' . $proj_ID . '" style="display: none;" />
+                                                        <input type="hidden" name="devID" value="' . $devID . '" style="display: none;" />
+                                                        <button href="" class="btn-see btn-yes col" name="yes" type="submit"><i class="fa-solid fa-check"></i></button>
+                                                        <button href="" class="btn-see btn-no col" name="no" type="submit"><i class="fa-solid fa-x"></i></button>
+                                                    </form>
+                                                </div>
+
                                                     <form action="" method="post" style="width: 100%;">
                                                         <input type="hidden" name="details" value="' . $proj_ID . '" style="display: none;">
                                                         <input type="hidden" name="compid" value="' . $proj_comp . '" style="display: none;">
@@ -77,5 +86,5 @@ if (!!$ideal && count($ideal) > 0) {
             echo '0';
     }
 } else {
-    echo "<h5 style='text-align: center;'>Nenhum desenvolvedor encontrado</h5>";
+    echo "<h5 style='text-align: center;'>Nenhum projeto encontrado, volte mais tarde!</h5>";
 }

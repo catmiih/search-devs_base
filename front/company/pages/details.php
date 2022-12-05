@@ -31,7 +31,7 @@ $project = $proj->readProj($projectID)[0][0];
                                     <button href="" class="btn-see btn-no"><i class="fa-solid fa-x"></i></button>
                                 </div>
                             </div>
-                        <?php } else { ?>
+                        <?php } else if ($project["Proj_dev"] == null){ ?>
                             <div class="btn-group row">
                                 <div class="confirm">
                                     <form action="" method="post">
@@ -40,7 +40,20 @@ $project = $proj->readProj($projectID)[0][0];
                                     </form>
                                 </div>
                             </div>
-                        <?php } ?>
+                        <?php }else {
+                            ?>
+                            
+                            <div class="btn-group row">
+                                <div class="confirm">
+                                    <form action="" method="post">
+                                        <input type="hidden" name="projID" value="<?php echo $project["Proj_ID"] ?>">
+                                        <button class="btn-see btn-yes" name="finish" type="submit">Finalizar projeto </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <?php
+                        } ?>
                     </div>
                     <p><?php echo $comp->getUser($id)[1]; ?></p>
                 </div>
