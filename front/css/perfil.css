@@ -1,4 +1,8 @@
 @media screen and (max-device-width: 800px) {
+  #text-password {
+    font-size: 100rem !important;
+  }
+
   #see {
     scale: 1.1;
     transform: translateY(-2rem);
@@ -6,7 +10,7 @@
   }
 
   .perfil,
-  .perfil>div {
+  .perfil > div {
     max-width: 100vw !important;
     width: 100vw !important;
   }
@@ -111,7 +115,7 @@
     align-items: center !important;
   }
 
-  .input>* {
+  .input > * {
     justify-content: center !important;
     align-items: center !important;
     height: 4rem;
@@ -135,7 +139,7 @@
   .description {
     top: 0;
     padding: 5% !important;
-
+    height: 60rem !important;
   }
 
   .description p {
@@ -187,10 +191,6 @@
     margin: 2% !important;
   }
 
-  .description {
-    height: 90rem;
-  }
-
   .feed {
     max-height: 100% !important;
   }
@@ -198,49 +198,6 @@
   .desc {
     width: 50rem !important;
     height: 70rem !important;
-  }
-
-  .private-quest {
-    flex: none !important;
-  }
-
-  .cell-private {
-    margin: 2% 5% !important;
-  }
-
-  .sex-text{
-    margin: 0 -10% 0 20% !important;
-  }
-
-  .btn-edit-cell {
-    margin-bottom: 20% !important;
-  }
-
-  .title{
-    font-size: 70px !important;
-  }
-
-  .btn-cell{
-    height: 8rem !important;
-    font-size: 30px !important;
-    align-items: center !important;
-  }
-
-  .text-email{
-    margin-right: 20% !important;
-  }
-
-  .form-email{
-    margin-left: -40% !important;
-  }
-  
-  .private-img {
-    flex-direction: column;
-
-  }
-
-  .input {
-    padding: 60px !important;
   }
 }
 
@@ -477,7 +434,7 @@ hr {
   margin: 0% 7%;
 }
 
-#check>* {
+#check > * {
   width: 15rem;
   margin: 1%;
 }

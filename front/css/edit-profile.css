@@ -45,7 +45,7 @@ hr {
 }
 
 .col.input {
-  margin: 0 1% ;
+  margin: 0 1%;
 }
 
 .input {
@@ -88,7 +88,7 @@ hr {
   text-align: left;
 }
 
-.description{
+.description {
   margin-right: 10%;
 }
 
@@ -174,7 +174,7 @@ hr {
 
   .area {
     width: 110vw !important;
-    margin-left: -5%!important ;
+    margin-left: -5% !important ;
   }
 
   .col-4 {
@@ -208,7 +208,7 @@ hr {
 
     justify-content: right;
     align-items: center !important;
-  
+
     padding-top: auto !important;
     padding: 1rem !important;
   }
@@ -233,7 +233,55 @@ hr {
     margin: none !important;
   }
 
-  .hr1{
+  .hr1 {
     margin-top: 10rem !important;
+  }
+
+  .private-quest {
+    flex: none !important;
+  }
+
+  .cell-private {
+    margin: 2% 5% !important;
+  }
+
+  .sex-text {
+    margin: 0 -10% 0 20% !important;
+  }
+
+  .btn-edit-cell {
+    margin-bottom: 20% !important;
+  }
+
+  .title {
+    font-size: 70px !important;
+  }
+
+  .btn-cell {
+    height: 8rem !important;
+    font-size: 30px !important;
+    align-items: center !important;
+  }
+
+  .text-email {
+    margin-right: 20% !important;
+  }
+
+  .form-email {
+    margin-left: -40% !important;
+  }
+
+  .private-img {
+    flex-direction: column;
+  }
+
+  .input {
+    padding: 60px !important;
+  }
+
+  .edit-description {
+    position: absolute !important;
+    width: 100rem !important;
+    height: 20rem !important;
   }
 }

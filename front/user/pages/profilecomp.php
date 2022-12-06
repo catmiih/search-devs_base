@@ -44,17 +44,17 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
             <h2>Informações:</h2>
 
             <div class="row input">
-                <p class="col label">Responsável:</p>
+                <p class="col label text-comp">Responsável:</p>
                 <input type="text" placeholder="<?php echo $comp->getUser($id)[7]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
             </div>
 
             <div class="row input">
-                <p class="col label"> Telefone:</p>
+                <p class="col label text-comp"> Telefone:</p>
                 <input type="text" placeholder="<?php echo $comp->getUser($id)[5]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
 
             </div>
             <div class="row input">
-                <p class="col label">Email:</p>
+                <p class="col label text-comp">Email:</p>
                 <input type="text" placeholder="<?php echo $comp->getUser($id)[2]; ?>" class="col form-control" name="" id="" maxlength="25" minlength="5" disabled>
             </div>
 
@@ -72,7 +72,7 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
     <hr>
 
     <div class="row feed project">
-        <h2>Projetos em andamento:</h2>
+        <h2 class="text-comp">Projetos em andamento:</h2>
 
         <div class="showProj">
             <div class="container row justify-content-center">

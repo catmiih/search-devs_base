@@ -136,10 +136,10 @@ class User
         if ($sql->rowCount() > 0) {
             $areaID = $sql->fetch();
 
-            $sql = $pdo->prepare("SELECT Skill_ID from skills where Skill_name like $skill");
+            $sql = $pdo->prepare("SELECT Skill_ID from skills where Skill_name like '$skill'");
             $sql->execute();
 
-            if ($sql->rowCount == 0) {
+            if ($sql->rowCount() <= 0) {
                 $reg = $pdo->prepare("INSERT INTO `skills`(`Skill_name`, `Skill_area`) VALUES ('$skill','$areaID[0]')");
                 $reg->execute();
             }

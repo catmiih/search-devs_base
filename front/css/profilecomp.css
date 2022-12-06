@@ -123,4 +123,11 @@
   color: #fff;
 }
 
+@media screen and (max-device-width: 800px) {
+
+  .container {
+    font-size: none !important;
+  }
+}
+
 
