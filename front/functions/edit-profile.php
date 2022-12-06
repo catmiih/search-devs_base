@@ -29,7 +29,7 @@ if ($_SESSION["type"] == 'user') {
             $path = "../../assets/uploads/user/";
 
             if ($banner["size"] != '0') {
-                $filename = explode('.', $banner['full_path']);
+                $filename = explode('.', $banner["full_path"]);
 
                 if ($filename[sizeof($filename) - 1] != 'jpg' && $filename[sizeof($filename) - 1] != 'png') {
                     die('Você não pode fazer isso. Banner');
@@ -47,87 +47,87 @@ if ($_SESSION["type"] == 'user') {
                         $user->saveFile($id, 'banner');
                     }
                 }
-            }
 
-            if ($profile["size"] != '0') {
-                $filename = explode('.', $profile['full_path']);
+                if ($profile["size"] != '0') {
+                    $filename = explode('.', $profile["full_path"]);
 
-                if ($filename[sizeof($filename) - 1] != 'jpg' && $filename[sizeof($filename) - 1] != 'png') {
-                    die('Você não pode fazer isso. Perfil');
-                } else {
-                    $newName = $id . '_profile.' . 'jpg';
-                    echo $newName;
+                    if ($filename[sizeof($filename) - 1] != 'jpg' && $filename[sizeof($filename) - 1] != 'png') {
+                        die('Você não pode fazer isso. Perfil');
+                    } else {
+                        $newName = $id . '_profile.' . 'jpg';
+                        echo $newName;
 
-                    if (!file_exists($path . $id)) {
-                        mkdir($path . $id);
-                    }
-                    $upload = move_uploaded_file($profile['tmp_name'], $path . $id . '/' . $newName);
+                        if (!file_exists($path . $id)) {
+                            mkdir($path . $id);
+                        }
+                        $upload = move_uploaded_file($profile['tmp_name'], $path . $id . '/' . $newName);
 
-                    if ($upload) {
-                        echo 'Dei upload';
-                        $user->saveFile($id, 'profile');
+                        if ($upload) {
+                            echo 'Dei upload';
+                            $user->saveFile($id, 'profile');
+                        }
                     }
                 }
+
+                header('Location: ../user/dashboard.php');
             }
 
-            header('Location: ../user/dashboard.php');
-        }
+            if (isset($_POST['area'])) {
 
-        if (isset($_POST['area'])) {
-
-            for ($i = 0; $i < 12; $i++) {
-                $user->excludeArea($id, $i + 1);
-            }
-
-            for ($i = 0; $i < 12; $i++) {
-
-                $area = $_POST["area"];
-
-                if ($area[$i] ?? null) {
-                    $user->registerArea($id, $area[$i]);
-                    echo 'Sucesso! no ' . $area[$i] . ' <br>';
-                } else {
-                    echo 'Excuido o ' . $i + 1, '<br>';
+                for ($i = 0; $i < 12; $i++) {
+                    $user->excludeArea($id, $i + 1);
                 }
+
+                for ($i = 0; $i < 12; $i++) {
+
+                    $area = $_POST["area"];
+
+                    if ($area[$i] ?? null) {
+                        $user->registerArea($id, $area[$i]);
+                        echo 'Sucesso! no ' . $area[$i] . ' <br>';
+                    } else {
+                        echo 'Excuido o ' . $i + 1, '<br>';
+                    }
+                }
+
+                header('Location: ../user/dashboard.php');
             }
 
-            header('Location: ../user/dashboard.php');
-        }
+            if (isset($_POST['general']) && isset($_POST['email'])) {
+                $email = $_POST['email'];
+                $desc = $_POST['desc'];
 
-        if (isset($_POST['general']) && isset($_POST['email'])) {
-            $email = $_POST['email'];
-            $desc = $_POST['desc'];
+                if (isset($_POST['password'])) {
+                    $passMD5 = md5($_POST['password']);
+                    $newpass = $_POST['newpass'];
 
-            if (isset($_POST['password'])) {
-                $passMD5 = md5($_POST['password']);
-                $newpass = $_POST['newpass'];
+                    $sql = $pdo->prepare("SELECT `Dev_pass` FROM `developers` WHERE $passMD5 = `Dev_pass`");
+                    $sql->execute();
 
-                $sql = $pdo->prepare("SELECT `Dev_pass` FROM `developers` WHERE $passMD5 = `Dev_pass`");
+                    if ($sql->rowCount() > 0) {
+                        $sql = $pdo->prepare("UPDATE `developers` SET `Dev_pass`='" . md5($newpass) . "' WHERE Dev_ID = $id");
+                        $sql->execute();
+                    }
+                }
+
+                $sql = $pdo->prepare("UPDATE `developers` SET `Dev_email`='$email', `dev_description` = '$desc' WHERE Dev_ID = $id");
                 $sql->execute();
 
-                if ($sql->rowCount() > 0) {
-                    $sql = $pdo->prepare("UPDATE `developers` SET `Dev_pass`='" . md5($newpass) . "' WHERE Dev_ID = $id");
-                    $sql->execute();
-                }
+                header('Location: ../user/dashboard.php');
             }
 
-            $sql = $pdo->prepare("UPDATE `developers` SET `Dev_email`='$email', `dev_description` = '$desc' WHERE Dev_ID = $id");
-            $sql->execute();
+            if (isset($_POST['personal'])) {
+                $cep = $_POST['CEP'];
+                $cpf = $_POST['CPF'];
+                $born = $_POST['born'];
 
-            header('Location: ../user/dashboard.php');
-        }
+                $sex = $_POST['Sex-Select'];
 
-        if (isset($_POST['personal'])) {
-            $cep = $_POST['CEP'];
-            $cpf = $_POST['CPF'];
-            $born = $_POST['born'];
+                $sql = $pdo->prepare("UPDATE `developers` SET `Dev_cep`='$cep',`Dev_cpf`='$cpf',`Dev_born`='$born',`Dev_sex`='$sex' WHERE Dev_ID = $id;");
+                $sql->execute();
 
-            $sex = $_POST['Sex-Select'];
-
-            $sql = $pdo->prepare("UPDATE `developers` SET `Dev_cep`='$cep',`Dev_cpf`='$cpf',`Dev_born`='$born',`Dev_sex`='$sex' WHERE Dev_ID = $id;");
-            $sql->execute();
-
-            header('Location: ../user/dashboard.php');
+                header('Location: ../user/dashboard.php');
+            }
         }
     }
 } else {
@@ -144,7 +144,7 @@ if ($_SESSION["type"] == 'user') {
             $name = $_POST['name'];
             $cell = $_POST['cell'];
 
-            $sql = $pdo->prepare("UPDATE `company` SET `Comp_name`='$office',`Comp_username`='$username',`Comp_Num`='$cell',`Comp_responsible`='$name' WHERE Comp_ID = $id");
+            $sql = $pdo->prepare("UPDATE `company` SET `Comp_name`='$office', `Comp_user`='$username', `Comp_num`='$cell', `Comp_responsible`='$name' WHERE Comp_ID = '$id'");
             $sql->execute();
 
             /* Image Update */
@@ -175,7 +175,7 @@ if ($_SESSION["type"] == 'user') {
             }
 
             if ($profile["size"] != '0') {
-                $filename = explode('.', $profile['full_path']);
+                $filename = explode('.', $profile["full_path"]);
 
                 if ($filename[sizeof($filename) - 1] != 'jpg' && $filename[sizeof($filename) - 1] != 'png') {
                     die('Você não pode fazer isso. Perfil');

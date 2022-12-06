@@ -89,7 +89,7 @@
 
   .btn-group .col {
     width: 70vw!important;
-    margin: 0;
+    margin: 25% -2% 0 -2%;
   }
 
   .confirm, .btn-see {
@@ -101,27 +101,27 @@
   }
 
   .btn-see {
-    margin: 10% 0;
-    padding: 3% 0!important;
+    margin: 4% 0;
+    /* padding: 3% 0!important; */
 
     align-items: flex-start;
     justify-content: flex-start;
 
-    height: auto!important;
+    height: 8rem!important;
 
     border-radius: 25px!important;
   }
 
   .btn-yes {
     padding: 3% 0!important;
-    height: 5rem!important;
+    height: 7rem!important;
     margin-right: 5%!important;
   }
 
   .btn-no {
     padding: 3% 0!important;
-    height: 5rem!important;
-    margin-left: 5%!important;
+    height: 7rem!important;
+    /* margin-left: 5%!important; */
   }
 }
 

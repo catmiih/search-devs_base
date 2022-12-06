@@ -97,7 +97,7 @@ class Company
         $sql->execute();
 
         if($sql->rowCount() == 0){
-            $file = $path.$userID.'/'.$userID.'_'.$type.'.jpg';
+            $file = 'uploads/company/'.$userID.'/'.$userID.'_'.$type.'.jpg';
 
             $insert = $pdo->prepare("INSERT INTO `files`(`path`, `user_id`) VALUES ('$file','$userID')");
             $insert->execute();
