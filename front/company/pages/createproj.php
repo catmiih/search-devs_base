@@ -72,7 +72,7 @@ $id = $proj->getProjID($_SESSION["id_user"]);
             <hr>
 
             <div class="area">
-                <h2>Áreas de atuação</h2>
+                <h2 class="title">Áreas de atuação</h2>
                 <div class="area">
                     <div id="check" class="row row-cols-4 justify-content-center" style="text-align: left;">
                         <div class="col-4">
