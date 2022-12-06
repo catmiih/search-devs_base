@@ -218,10 +218,9 @@ hr {
 }
 
 .btn-group {
-
   flex-wrap: wrap;
   margin: 1% 0;
-  width: 13rem;
+  max-width: 10rem;
   height: 10rem ;
 }
 
@@ -251,10 +250,10 @@ hr {
   color: #fff;
 }
 
-.confirm {
+.confirm.row{
   display: flex;
   flex-wrap: nowrap;
-  width: 100%;
+  width: 13rem;
   height: 10%;
 }
 

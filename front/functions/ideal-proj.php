@@ -5,6 +5,8 @@ $proj = new Project();
 $proj->conectar('search-devs_base', 'localhost', 'root', '');
 //echo "$msg";
 
+$devID = $_SESSION["id_user"];
+
 $ideal = $proj->idealProj($devID, "dev");
 /* SE O DEV FOR IDEAL, APARECE AQUI */
 if (!!$ideal && count($ideal) > 0) {
@@ -19,11 +21,13 @@ if (!!$ideal && count($ideal) > 0) {
         if (!empty($ideal)) {
             $searchID = $ideal;
 
+            echo $ideal[1];
+
             if (!empty($searchID)) {
-                for ($i = 0; $i < count($searchID) - 1; $i++) {
+                for ($i = 0; $i < count($searchID); $i++) {
                     $findID = $searchID[$i];
 
-                    $project = $proj->readProj($findID)[0];
+                    $project = $proj->readInfo($findID)[$i];
                     $time = 0;
 
                     foreach ($project as $projects) {

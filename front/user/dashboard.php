@@ -102,7 +102,7 @@
                         @media screen and (min-device-width: 800px) {
                             #new::after {
                                 position: absolute;
-                                content: "<?php echo (count($ideal) - 1) ?>";
+                                content: "<?php echo (count($ideal)) ?>";
                                 color: #fff;
                                 background-color: #ff0000;
                                 padding: 3% 6%;

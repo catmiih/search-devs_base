@@ -12,7 +12,7 @@ require_once '../../back/class/project.php';
 $proj = new Project();
 $proj->conectar('search-devs_base', 'localhost', 'root', '');
 
-$project = $proj->readProj($projectID)[0][0];
+$project = $proj->readInfo($projectID)[0][0];
 
 require_once '../../back/class/company.php';
 $comp = new Company();
@@ -32,7 +32,7 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
                     <div id="align">
                         <h4><?php echo $project["Proj_name"]; ?></h4>
 
-                        <?php if ($id != $project["Proj_comp"]) { ?>
+                        <?php if ($devType == "user") { ?>
                             <div class="btn-group row">
                                 <div class="confirm">
                                     <button href="" class="btn-see btn-yes"><i class="fa-solid fa-check"></i></button>
@@ -55,7 +55,7 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
                                 <div class="confirm">
                                     <form action="" method="post">
                                         <input type="hidden" name="projID" value="<?php echo $project["Proj_ID"] ?>">
-                                        <button class="btn-see btn-yes" name="finish" type="submit">Finalizar projeto </button>
+                                        <button class="btn-see btn-yes" name="" type="submit">Finalizar projeto </button>
                                     </form>
                                 </div>
                             </div>

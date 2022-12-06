@@ -5,12 +5,11 @@ require_once '../../back/class/project.php';
 $proj = new Project();
 $proj->conectar('search-devs_base', 'localhost', 'root', '');
 
+session_start();
+$id = $proj->getProjID($_SESSION["id_user"]);
 /* Register Project */
 
 if (isset($_POST["newProject"])) {
-
-    session_start();
-    $id = $proj->getProjID($_SESSION["id_user"]);
 
     $nameProj = $_POST["nameProj"];
     $descProj = $_POST["descProj"];
@@ -66,13 +65,12 @@ if (isset($_GET['id'])) {
     $sql->execute();
 
     if ($sql->rowCount() > 0) {
-        $id = $proj->getProjID($_SESSION["id_user"]);
         $skillID = $sql->fetch();
 
         $proj->deleteskill($skillID, $id);
     }
 
-    //header('Location: ../company/dashboard.php');
+    header('Location: ../company/dashboard.php');
 }
 
 if (isset($_POST['start'])) {
@@ -98,10 +96,9 @@ if (isset($_POST['start'])) {
                     } while ($sql->rowCount() < 0);
 
                     if ($sql->rowCount() > 0) {
-                        $id = $proj->getProjID($_SESSION["id_user"]);
                         $skillID = $sql->fetch();
 
-                        $proj->skillProj($id, $skillID, $level);
+                        $proj->skillProj($id, $skillID[0], $level);
                     }
                 }
 
@@ -111,7 +108,7 @@ if (isset($_POST['start'])) {
         }
 
         if ($time == 0) {
-            //header('Location: ../company/skills.php');
+            header('Location: ../company/skills.php');
         } else {
             header('Location: ../company/dashboard.php');
         }

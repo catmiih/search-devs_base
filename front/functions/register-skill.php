@@ -43,19 +43,23 @@ if (isset($_POST['start'])) {
                     $sql = $pdo->prepare("SELECT Skill_ID FROM `skills` where Skill_name like '$skill'");
                     $sql->execute();
 
-                    do {
+
+                    while ($sql->rowCount() <= 0) {
                         $user->registerSkill($skill, $area);
-                    } while ($sql->rowCount() < 0);
+                    }
+
+                    $sql->execute();
 
                     if ($sql->rowCount() > 0) {
                         $id = $_SESSION['id_user'];
                         $skillID = $sql->fetch();
 
                         $user->skillDev($id, $skillID, $level);
+                        $time++;
                     }
-                }
 
-                $time++;
+                    $time++;
+                }
             }
         }
 

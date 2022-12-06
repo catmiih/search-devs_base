@@ -41,20 +41,20 @@ class Project
     {
         global $pdo;
 
-        $verify = $pdo->prepare("SELECT * FROM `skills_proj` where Proj_ID = '$projID' and Skill_ID = '$skillID[0]'");
+        $verify = $pdo->prepare("SELECT * FROM `skills_proj` where Proj_ID = '$projID' and Skill_ID = '$skillID'");
         $verify->execute();
 
         if ($verify->rowCount() > 1) {
-            $deleteRow = "DELETE FROM skills_proj WHERE Skill_ID in (select Skill_ID from (SELECT *,ROW_NUMBER() OVER (PARTITION BY Proj_ID ORDER BY (Skill_ID) ) as posicao FROM skills_proj) skills_proj where Proj_ID = '$projID' and Skill_ID = '$skillID[0]' and posicao > 2)";
+            $deleteRow = "DELETE FROM skills_proj WHERE Skill_ID in (select Skill_ID from (SELECT *,ROW_NUMBER() OVER (PARTITION BY Proj_ID ORDER BY (Skill_ID) ) as posicao FROM skills_proj) skills_proj where Proj_ID = '$projID' and Skill_ID = '$skillID' and posicao > 2)";
 
             $delete = $pdo->prepare($deleteRow);
             $delete->execute();
         } else {
-            $sql = $pdo->prepare("SELECT Skill_ID FROM `skills_proj` where Proj_ID = '$projID' and Skill_ID = '$skillID[0]'");
+            $sql = $pdo->prepare("SELECT Skill_ID FROM `skills_proj` where Proj_ID = '$projID' and Skill_ID = '$skillID'");
             $sql->execute();
 
             if ($sql->rowCount() <= 0) {
-                $reg = $pdo->prepare("INSERT INTO `skills_proj`(`Proj_ID`, `Skill_ID`, `Skill_level`) VALUES ('$projID','$skillID[0]','$level')");
+                $reg = $pdo->prepare("INSERT INTO `skills_proj` (`Proj_ID`, `Skill_ID`, `Skill_level`) VALUES ('$projID','$skillID','$level')");
                 $reg->execute();
             }
         }
@@ -70,10 +70,10 @@ class Project
         if ($sql->rowCount() > 0) {
             $areaID = $sql->fetch();
 
-            $sql = $pdo->prepare("SELECT Skill_ID from skills where Skill_name like $skill");
+            $sql = $pdo->prepare("SELECT Skill_ID from skills where Skill_name like '$skill'");
             $sql->execute();
 
-            if ($sql->rowCount == 0) {
+            if ($sql->rowCount() == 0) {
                 $reg = $pdo->prepare("INSERT INTO `skills`(`Skill_name`, `Skill_area`) VALUES ('$skill','$areaID[0]')");
                 $reg->execute();
             }
@@ -228,7 +228,7 @@ class Project
     {
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT * FROM project where Proj_ID= '$projID'");
+        $sql = $pdo->prepare("SELECT * FROM project where Proj_ID = '$projID'");
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
@@ -253,9 +253,8 @@ class Project
         }
 
         if (getProject($projID)) {
-            $sql = $pdo->prepare("SELECT Dev_ID from dev_ideal where Proj_ID = '$projID' and " . $me . "_accept = 0 ORDER BY points");
+            $sql = $pdo->prepare("SELECT Dev_ID from dev_ideal where Proj_ID = '$projID' and ".$me."_accept = 0 ORDER BY points");
             $sql->execute();
-
 
             if ($sql->rowCount() > 0) {
                 $result = $sql->fetch();
@@ -268,7 +267,7 @@ class Project
     {
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT Proj_ID from dev_ideal where Dev_ID = '$devID' and " . $me . "_accept = 0 ORDER BY points");
+        $sql = $pdo->prepare("SELECT Proj_ID from dev_ideal where Dev_ID = '$devID' and ".$me."_accept = 0 ORDER BY points");
         $sql->execute();
 
         if ($sql->rowCount() > 0) {

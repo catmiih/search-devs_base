@@ -82,7 +82,6 @@ function getProject($projId)
 
                     $approved++;
                     if ($response == 1000) {
-                        echo "dev perfeito";
                         $list_approve = 5;
                     }
                 } else {
