@@ -77,7 +77,7 @@
     height: 3.5rem !important;
     font-size: 1.7rem !important;
 
-    display: table-cell;
+   /* display: table-cell; */ 
     vertical-align: middle;
   }
 
@@ -160,7 +160,6 @@
   .skill-tag {
     text-align: center !important;
     width: 10rem !important;
-    margin-left: 100% !important;
   }
 
   .form-check-label {

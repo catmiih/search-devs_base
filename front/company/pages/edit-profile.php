@@ -100,7 +100,7 @@
 
                         </div>
                         <br>
-                        <h4>Editar senha</h4>
+                        <h4 class="edit-password">Editar senha:</h4>
                         <div class="row input input1">
                             <p class="col-4 label">Senha atual:</p>
                             <input type="password" placeholder="•••" class="col form-control" name="pass" id="">

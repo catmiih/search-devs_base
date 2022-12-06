@@ -33,12 +33,12 @@ hr {
   margin: 3% auto;
 }
 
-.general-info > * {
+.general-info>* {
   width: auto;
   text-align: left;
 }
 
-.general-info > .input {
+.general-info>.input {
   padding: 2% !important;
   justify-content: center;
   align-items: center;
@@ -78,7 +78,7 @@ hr {
   color: rgba(255, 255, 255, 1);
 }
 
-.info > .input > .col.label {
+.info>.input>.col.label {
   max-width: 4rem !important;
   text-align: left;
 }
@@ -152,7 +152,7 @@ hr {
   width: 60vw;
 }
 
-#check > * {
+#check>* {
   width: 15rem;
   margin: 1%;
 }
@@ -161,6 +161,7 @@ hr {
   .perfil {
     padding: 0 !important;
   }
+
   .high {
     display: inline !important;
   }
@@ -174,7 +175,7 @@ hr {
 
   .area {
     width: 110vw !important;
-    margin-left: -5% !important ;
+    margin-left: -5% !important;
   }
 
   .col-4 {
@@ -221,12 +222,9 @@ hr {
     padding-top: 5 !important;
     padding: 2% !important;
   }
-  .form-control {
-    margin-left: 5% !important ;
-  }
 
-  .description {
-    width: 150rem !important;
+  .form-control {
+    margin-left: 5% !important;
   }
 
   .feed {
@@ -264,7 +262,7 @@ hr {
   }
 
   .text-email {
-    margin-right: 20% !important;
+    margin-right: 70% !important;
   }
 
   .form-email {
@@ -283,5 +281,21 @@ hr {
     position: absolute !important;
     width: 100rem !important;
     height: 20rem !important;
+  }
+
+  .level-edit {
+    margin-left: 30% !important;
+  }
+
+  .margin-level {
+    margin-right: 10%!important;
+  }
+
+  .edit-password{
+    font-size: 2.5rem !important;
+  }
+
+  .container p {
+    font-size: none !important;
   }
 }

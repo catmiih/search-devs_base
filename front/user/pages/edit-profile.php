@@ -97,7 +97,7 @@
                 
                 <h2 style="font-weight:700; margin-top: 2.45%;" class="col">Habilidades:</h2>
 
-                <div class="level-options col">
+                <div class="level-options col level-edit">
                     <p style="margin: 1%;">Nível:</p>
                     <label>
                         <button class="btn-select btn-level level-1 selected show" id="level-1" type="button">1</button>
@@ -120,7 +120,7 @@
 
                 <div class="col">
                     <a class="btn-select1 btn btn-edit1" href="skills.php" style="padding: 5%;">Editar skills</a>
-                </div>
+                </div>                                                                                                  
                 <br>
                 <div class="show-skills">
                     <?php
@@ -237,7 +237,7 @@
 
                     </div>
                     <br>
-                    <h4>Editar senha</h4>
+                    <h4 class="edit-password">Editar senha:</h4>
                     <div class="row input input1">
                         <p class="col-4 label">Senha atual:</p>
                         <input type="password" placeholder="•••" class="col form-control" name="pass" id="">

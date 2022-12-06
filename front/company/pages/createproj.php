@@ -27,39 +27,39 @@ $id = $proj->getProjID($_SESSION["id_user"]);
         <form action="../functions/createproj.php" method="POST">
             <div class="general-info">
                 <div class="input row" style="margin: 0!important;">
-                    <p class="col-1 label">Nome do projeto:</p>
-                    <input type="text" class="col form-control" name="nameProj" placeholder="Site de vendas" id="username" maxlength="25" minlength="5">
+                    <p class="col-1 label text-create">Nome do projeto:</p>
+                    <input type="text" class="col form-control text-create" name="nameProj" placeholder="Site de vendas" id="username" maxlength="25" minlength="5">
                 </div>
                 <div class="row high">
                     <div class="col">
-                        <div class="row input">
-                            <p class="col-1 label"> Data de início:</p>
-                            <input type="date" class="col form-control" name="start" id="start">
+                        <div class="row input crate-text">
+                            <p class="col-1 label text-create"> Data de início:</p>
+                            <input type="date" class="col form-control text-create" name="start" id="start">
                         </div>
 
-                        <div class="row input">
-                            <p class="col-1 label"> Valor por hora:</p>
-                            <input type="text" class="col form-control" name="vHour" id="vHour" placeholder="15">
+                        <div class="row input crate-text">
+                            <p class="col-1 label text-create"> Valor por hora:</p>
+                            <input type="text" class="col form-control text-create" name="vHour" id="vHour" placeholder="15">
                         </div>
                     </div>
 
                     <div class="col">
 
-                        <div class="row input">
-                            <p class="col-1 label"> Data final:</p>
-                            <input type="date" class="col form-control" name="end" id="end">
+                        <div class="row input crate-text">
+                            <p class="col-1 label text-create"> Data final:</p>
+                            <input type="date" class="col form-control text-create" name="end" id="end">
                         </div>
 
-                        <div class="row input">
-                            <p class="col-1 label">Horas por dia:</p>
-                            <input type="text" class="col form-control" placeholder="2" name="dHour" id="hour" minlength="1" maxlength="2">
+                        <div class="row input crate-text">
+                            <p class="col-1 label text-create">Horas por dia:</p>
+                            <input type="text" class="col form-control text-create" placeholder="2" name="dHour" id="hour" minlength="1" maxlength="2">
                         </div>
 
                     </div>
                 </div>
 
-                <div class="col description input">
-                    <h2>Descrição do perfil:</h2>
+                <div class="col description input create-description">
+                    <h2 class="text-create">Descrição do perfil:</h2>
                     <textarea class="form-control desc" name="descProj"><?php if (empty($proj->readProj($id)[0]['Proj_desc'])) {
                                                                             echo "Esse é meu novo projeto!";
                                                                         } else {
@@ -156,9 +156,9 @@ $id = $proj->getProjID($_SESSION["id_user"]);
             <hr>
 
             <div class="col-6">
-                <div class="row input">
-                    <p class="col-1 label"> Valor final:</p>
-                    <input type="text" class="col form-control eValue" placeholder="R$ 00 • Preencha todos os campos" name="evaluation" id="showValue" disabled>
+                <div class="row input value-div">
+                    <p class="col-1 label text-create"> Valor final:</p>
+                    <input type="text" class="col form-control eValue text-create" placeholder="R$ 00 • Preencha todos os campos" name="evaluation" id="showValue" disabled>
                 </div>
 
                 <input type="hidden" id="eValue" class="eValue" name="eValue">

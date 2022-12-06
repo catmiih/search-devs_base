@@ -1,16 +1,33 @@
 @media screen and (max-device-width: 800px) {
- 
+  .create-project {
+    width: 60rem !important;
+    margin-left: 0 !important;
+  }
+
+  .text-create {
+    font-size: 2rem !important;
+  }
+
+  .value-div {
+    width: 40rem !important;
+  }
+
+  .create-description {
+    height: 40rem !important;
+    align-items: center !important;
+    font-size: 40rem !important;
+  }
 }
 
 #newProj {
   opacity: 1;
 }
 
-button:disabled{
+button:disabled {
   opacity: 0.3;
 }
 
-.create-project{
+.create-project {
   margin: 10%;
   min-height: 100%;
   width: 60vw;
@@ -36,14 +53,17 @@ button:disabled{
   width: auto !important;
 }
 
-input[type='text'], input[type='date'], textarea {
-  background-color: transparent!important;
-  border: none!important;
+input[type='text'],
+input[type='date'],
+textarea {
+  background-color: transparent !important;
+  border: none !important;
 }
 
-input[type='text']:focus, input[type='date']:focus{
-  border: none!important;
-  box-shadow: none!important;
+input[type='text']:focus,
+input[type='date']:focus {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .btn-select1 {
@@ -98,13 +118,13 @@ h2 {
 
 .level-options {
   display: flex;
-  flex-wrap: nowrap!important;
+  flex-wrap: nowrap !important;
 
   align-items: center;
   text-align: left;
 }
 
-.level-options > * {
+.level-options>* {
   margin: 1%;
 }
 
@@ -113,8 +133,8 @@ h2 {
 }
 
 .skills h2 {
-  width: 10px!important;
-  margin: 1%!important;
+  width: 10px !important;
+  margin: 1% !important;
 }
 
 .feed,
@@ -149,6 +169,6 @@ textarea .desc {
   padding: 3%;
 
   justify-content: left;
-  align-items: center!important;
+  align-items: center !important;
   text-align: left;
 }
