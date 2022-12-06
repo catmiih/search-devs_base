@@ -143,11 +143,10 @@ hr {
 .input {
   background-color: rgba(0, 0, 0, 0.4);
 
-  margin: 10% 0%;
-  padding: 5%;
+  margin: 10% 0;
+  padding: 7% 5%;
   border-radius: 15px;
 
-  width: 21rem;
 }
 
 .description {

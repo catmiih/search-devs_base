@@ -8,4 +8,19 @@
 
 .btn-group {
     height: 3rem!important;
+    flex-wrap: nowrap;
+}
+
+.btn-group .btn {
+    width: 10rem;
+}
+
+.confirm {
+    width: 10rem;
+    flex-wrap: nowrap!important;
+
+}
+
+.btn-group .btn-see{
+    width: 4.4rem!important;
 }

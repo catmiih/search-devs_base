@@ -19,15 +19,13 @@ if (!!$ideal && count($ideal) > 0) {
     if ($user->msg == "") {
 
         if (!empty($ideal)) {
-            $searchID = $ideal;
-
-            echo $ideal[1];
+            $searchID = $ideal[0];
 
             if (!empty($searchID)) {
                 for ($i = 0; $i < count($searchID); $i++) {
-                    $findID = $searchID[$i];
+                    $findID = $searchID[$i]["Proj_ID"];
 
-                    $project = $proj->readInfo($findID)[$i];
+                    $project = $proj->readInfo($findID)[0];
                     $time = 0;
 
                     foreach ($project as $projects) {
@@ -84,7 +82,7 @@ if (!!$ideal && count($ideal) > 0) {
                     }
                 }
             } else {
-                echo 'a';
+                echo "<h5 style='text-align: center;'>Nenhum projeto encontrado, volte mais tarde!</h5>";
             }
         } else
             echo '0';

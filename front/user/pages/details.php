@@ -35,11 +35,15 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
                         <?php if ($devType == "user") { ?>
                             <div class="btn-group row">
                                 <div class="confirm">
-                                    <button href="" class="btn-see btn-yes"><i class="fa-solid fa-check"></i></button>
-                                    <button href="" class="btn-see btn-no"><i class="fa-solid fa-x"></i></button>
+                                    <form method="post" style="display:flex; width: 50rem">
+                                        <input type="hidden" name="projID" value="<?php echo$project["Proj_ID"]; ?>" style="display: none;" />
+                                        <input type="hidden" name="devID" value="<?php echo $devID ?>" style="display: none;" />
+                                        <button class="btn-see btn-yes col" name="accept" type="submit"><i class="fa-solid fa-check"></i></button>
+                                        <button class="btn-see btn-no col" name="recuse" type="submit"><i class="fa-solid fa-x"></i></button>
+                                    </form>
                                 </div>
                             </div>
-                        <?php } else if ($project["Proj_dev"] == null){ ?>
+                        <?php } else if ($project["Proj_dev"] == null) { ?>
                             <div class="btn-group row">
                                 <div class="confirm">
                                     <form action="" method="post">
@@ -48,9 +52,9 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
                                     </form>
                                 </div>
                             </div>
-                        <?php }else {
-                            ?>
-                            
+                        <?php } else {
+                        ?>
+
                             <div class="btn-group row">
                                 <div class="confirm">
                                     <form action="" method="post">
@@ -60,7 +64,7 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
                                 </div>
                             </div>
 
-                            <?php
+                        <?php
                         } ?>
                     </div>
                     <p><?php echo $comp->getUser($id)[1]; ?></p>

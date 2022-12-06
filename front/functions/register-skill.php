@@ -46,6 +46,8 @@ if (isset($_POST['start'])) {
 
                     while ($sql->rowCount() <= 0) {
                         $user->registerSkill($skill, $area);
+
+                        $sql->execute();
                     }
 
                     $sql->execute();

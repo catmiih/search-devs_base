@@ -51,7 +51,8 @@
                         require_once "pages/profilecomp.php";
                     } else if (isset($_POST['edit'])) {
                         require_once "pages/edit-profile.php";
-                    } else if (isset($_POST["yes"])) {
+
+                    } else if (isset($_POST["yes"]) || isset($_POST["accept"])) {
                         $projID = $_POST["projID"];
                         $devID = $_POST["devID"];
 
@@ -63,7 +64,7 @@
                         $proj->projStart($projID);
                         require_once "pages/news.php";
 
-                    } else if (isset($_POST["no"])) {
+                    } else if (isset($_POST["no"]) || isset($_POST["recuse"])) {
                         $projID = $_POST["projID"];
                         $devID = $_POST["devID"];
 
@@ -92,7 +93,7 @@
                 $proj->conectar('search-devs_base', 'localhost', 'root', '');
                 //echo "$msg";
 
-                $ideal = $proj->idealProj($id, "dev");
+                $ideal = $proj->idealProj($id, "dev")[0];
                 /* SE O DEV FOR IDEAL, APARECE AQUI */
                 if (!!$ideal && count($ideal) > 0) {
 

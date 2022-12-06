@@ -267,13 +267,16 @@ class Project
     {
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT Proj_ID from dev_ideal where Dev_ID = '$devID' and ".$me."_accept = 0 ORDER BY points");
+        $sql = $pdo->prepare("SELECT Proj_ID from dev_ideal where Dev_ID = '$devID' and dev_accept = 0 ORDER BY points");
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
-            $result = $sql->fetch();
-            return $result;
+            $result[] = $sql->fetchAll(PDO::FETCH_ASSOC);
+        }else {
+            $result[] = [];
         }
+
+        return $result;
     }
 
     function changeProj($projID, $devID, $type, $me)

@@ -34,7 +34,7 @@
             $time = 0;
 
             foreach ($idProj as $id) {
-                $project = $proj->readProj($id)[0];
+                $project = $proj->readInfo($id["Proj_ID"])[0];
 
                 foreach ($project as $projects) {
                     $time++;
@@ -52,11 +52,11 @@
                     $projectCard = '<div class="propose-card">
                     <div id="profile" class="row">
                         <div class="profile_pic col-2">
-                            <img src="../../assets/' . $comp->findImage('.$id.', "profile")[0] . '" />
+                            <img src="../../assets/' . $comp->findImage($proj_comp, "profile")[0] . '" />
                         </div>
                         <div id="containerperfil" class="col-2">
                             <div id="align">
-                                <h4>' . $proj_name . ' <br> <b>' . $comp->getUser($id)[1] . '</b> </h4>
+                                <h4>' . $proj_name . ' <br> <b>' . $comp->getUser($proj_comp)[1] . '</b> </h4>
                             </div>
                             <p>' . $proj_desc . '</p>
                             <br>
