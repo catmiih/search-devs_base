@@ -42,7 +42,9 @@ function getProject($projId)
     for ($i = 0; $i <= $list_approve; $i++) {
         /* Pick informations from developers  */
 
-        $d = $pdo->prepare("SELECT Dev_ID FROM skills_dev where Skill_ID = $Pskill[0]");
+        echo $Pskill[0];
+        
+        $d = $pdo->prepare("SELECT Dev_ID from developers where Dev_ID = (SELECT Dev_ID FROM skills_dev where Skill_ID = '$Pskill[0]' and Dev_ID not in (SELECT Dev_ID from dev_ideal))");
         $d->execute();
 
         if ($d->rowCount() > 0) {
