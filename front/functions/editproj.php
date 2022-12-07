@@ -5,14 +5,15 @@ require_once '../../back/class/project.php';
 $proj = new Project();
 $proj->conectar('search-devs_base', 'localhost', 'root', '');
 
-if (!isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
 }
 
-$id = $proj->getProjID($_SESSION["id_user"]);
 /* Register Project */
 
 if (isset($_POST["newProject"])) {
+
+    $id = $_POST["projID"];
 
     $nameProj = $_POST["nameProj"];
     $descProj = $_POST["descProj"];
@@ -23,11 +24,15 @@ if (isset($_POST["newProject"])) {
 
     $eValue = $_POST["eValue"];
 
-    echo $eValue."-";
-    ?>
-    <?php
+    function update($name, $hours, $start, $end, $hPay, $pay, $desc, $projID) {
+        global $pdo;
 
-    if ($proj->Create($nameProj, $dHour, $dateStart, $dateEnd, $vHour, $eValue, $_SESSION["id_user"], $descProj)) {
+        $sql = $pdo->prepare("UPDATE `project` SET `Proj_name`='$name',`Proj_time`='$hours',`Proj_start`='$start',`Proj_end`='$end',`Proj_hourPay`='$hPay',`Proj_pay`='$pay',`Proj_desc`='$desc' WHERE Proj_ID = '$projID'");
+        $sql->execute();
+        return true;
+    }
+
+    if (update($nameProj, $dHour, $dateStart, $dateEnd, $vHour, $eValue, $descProj, $id)) {
 
         if (isset($_POST['area'])) {
             echo "id do projeto: $id <br><br>";
@@ -44,7 +49,7 @@ if (isset($_POST["newProject"])) {
                     if ($proj->registerArea($id, $area[$i])) {
                         echo 'Sucesso! no ' . $area[$i] . ' <br>';
                     } else {
-                        echo 'Erro no ' . $area[$i] .'<br>';
+                        echo 'Erro no ' . $area[$i] . '<br>';
                     }
                 } else {
                     echo 'Excuido o ' . $i + 1, '<br>';
@@ -80,6 +85,9 @@ if (isset($_POST['start'])) {
 
     session_start();
 
+    $id = $_POST["projID"];
+    echo $id;
+
     if ($proj->msg == "") {
         $time = 0;
 
@@ -107,13 +115,8 @@ if (isset($_POST['start'])) {
 
                 $time++;
             }
-            
         }
 
-        if ($time == 0) {
-            header('Location: ../company/skills.php');
-        } else {
-            header('Location: ../company/dashboard.php');
-        }
+        header('Location: ../company/dashboard.php');
     }
 }

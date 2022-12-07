@@ -79,6 +79,12 @@
                         $proj->projStart($projID);
                         require_once "pages/news.php";
                         
+                    }else if(isset($_POST['editProj'])) {
+                        $projID = $_POST["projID"];
+                        require_once "pages/edit-project.php";
+                        
+                    }else if(isset($_POST['finish'])) {
+
                     } else if (isset($_POST['exit'])) {
                         session_destroy();
                         header('Location: ../login.php');

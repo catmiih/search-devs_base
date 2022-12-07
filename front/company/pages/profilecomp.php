@@ -89,7 +89,7 @@
                     $projectCard = '<div class="propose-card">
                                         <div id="profile" class="row crd">
                                             <div class="profile_pic col-2 crd">
-                                                <img src="../../assets/' . $comp->findImage('.$id.', "profile")[0] . '" />
+                                                <img src="../../assets/' . $comp->findImage($proj_comp, "profile")[0] . '" />
                                             </div>
                                             <div id="containerperfil" class="col-2 crd">
                                                 <div id="align">

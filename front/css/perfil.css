@@ -360,6 +360,8 @@ hr {
   margin: 0.2% 3%;
   border-radius: 25px;
   padding: 3%;
+
+  height: 20rem;
 }
 
 .info h2,

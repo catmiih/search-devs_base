@@ -47,30 +47,32 @@ if ($_SESSION["type"] == 'user') {
                         $user->saveFile($id, 'banner');
                     }
                 }
+            }
+            echo $profile["full_path"];
 
-                if ($profile["size"] != '0') {
-                    $filename = explode('.', $profile["full_path"]);
+            if ($profile["size"] != '0') {
+                $filename = explode('.', $profile["full_path"]);
 
-                    if ($filename[sizeof($filename) - 1] != 'jpg' && $filename[sizeof($filename) - 1] != 'png') {
-                        die('Você não pode fazer isso. Perfil');
-                    } else {
-                        $newName = $id . '_profile.' . 'jpg';
-                        echo $newName;
+                if ($filename[sizeof($filename) - 1] != 'jpg' && $filename[sizeof($filename) - 1] != 'png') {
+                    die('Você não pode fazer isso. Perfil');
+                } else {
+                    $newName = $id . '_profile.' . 'jpg';
+                    echo $newName;
 
-                        if (!file_exists($path . $id)) {
-                            mkdir($path . $id);
-                        }
-                        $upload = move_uploaded_file($profile['tmp_name'], $path . $id . '/' . $newName);
+                    if (!file_exists($path . $id)) {
+                        mkdir($path . $id);
+                    }
+                    $upload = move_uploaded_file($profile['tmp_name'], $path . $id . '/' . $newName);
 
-                        if ($upload) {
-                            echo 'Dei upload';
-                            $user->saveFile($id, 'profile');
-                        }
+                    if ($upload) {
+                        echo 'Dei upload';
+                        $user->saveFile($id, 'profile');
                     }
                 }
-
-                header('Location: ../user/dashboard.php');
             }
+
+            header('Location: ../user/dashboard.php');
+
 
             if (isset($_POST['area'])) {
 
