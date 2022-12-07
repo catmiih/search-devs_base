@@ -60,7 +60,7 @@ $id = $proj->getProjID($_SESSION["id_user"]);
 
                 <div class="col description input create-description">
                     <h2 class="text-create">Descrição do perfil:</h2>
-                    <textarea class="form-control desc" name="descProj"><?php if (empty($proj->readProj($id)[0]['Proj_desc'])) {
+                    <textarea class="form-control desc text-create" name="descProj"><?php if (empty($proj->readProj($id)[0]['Proj_desc'])) {
                                                                             echo "Esse é meu novo projeto!";
                                                                         } else {
                                                                             echo $proj->readProj($id)[0]['Proj_desc'];

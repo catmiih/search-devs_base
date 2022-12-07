@@ -302,14 +302,15 @@ hr {
   .container p {
     font-size: none !important;
   }
-
-  .col.description{
+  
+ 
+  /* .col.description{
     margin-left: -20%!important;
     width: 100rem!important;
-  }
+  } */
 
-  .desc, .description{
+  /* .desc, .description{
     width: 100vw!important;
     margin: 0;
-  }
+  } */
 }

@@ -12,7 +12,7 @@
                 </div>
                 <div id="containerperfil">
                     <div id="align">
-                        <h4><?php echo $comp->getUser($id)[6]; ?></h4>
+                        <h4 class="title-profile"><?php echo $comp->getUser($id)[6]; ?></h4>
 
                         <?php if ($id == $_SESSION["id_user"]) { ?>
                             <form action="" method="post">
@@ -99,11 +99,11 @@
                                                 <br>
                                             </div>
 
-                                            <div class="description crd">
+                                            <div class="description crd btn-view">
                                                 <p>' . $proj_desc . '</p>
                                             </div>
 
-                                            <div class="btn-group col crd">
+                                            <div class="btn-group col crd btn-view">
 
                                                 <form action="" method="post" style="width: 100%;">
                                                     <input type="hidden" name="details" value="' . $proj_ID . '" style="display: none;">
