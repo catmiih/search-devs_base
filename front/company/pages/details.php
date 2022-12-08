@@ -37,10 +37,15 @@ $project = $proj->readInfo($projectID)[0][0];
                                 <div class="confirm">
                                     <form action="" method="post">
                                         <input type="hidden" name="projID" value="<?php echo $project["Proj_ID"] ?>">
-                                        <button class="btn-see btn-dev" name="8" type="submit"><i class="fa-solid fa-user"></i> &nbsp; Verificar desenvolvedores </button>
+                                        <button class="btn-see btn-dev" name="8" type="submit"><i class="fa-solid fa-user"></i></button>
                                     </form>
                                 </div>
                             </div>
+
+                            <form action="" method="post">
+                                <input type="hidden" name="projID" value="<?php echo $project["Proj_ID"]; ?>">
+                                <button href="#" class="btn edit" name="editProj"><i class="fa-solid fa-gear"></i></button>
+                            </form>
                         <?php } else {
                         ?>
                             <div class="btn-group row">
@@ -53,11 +58,6 @@ $project = $proj->readInfo($projectID)[0][0];
                             </div>
                         <?php
                         } ?>
-
-                        <form action="" method="post">
-                            <input type="hidden" name="projID" value="<?php echo $project["Proj_ID"]; ?>">
-                            <button href="#" class="btn edit" name="editProj"><i class="fa-solid fa-gear"></i></button>
-                        </form>
                     </div>
                     <p><?php echo $comp->getUser($id)[1]; ?></p>
                 </div>

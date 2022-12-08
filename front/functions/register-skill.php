@@ -59,9 +59,9 @@ if (isset($_POST['start'])) {
                         $user->skillDev($id, $skillID, $level);
                         $time++;
                     }
-
-                    $time++;
                 }
+
+                $time++;
             }
         }
 

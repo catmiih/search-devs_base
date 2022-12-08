@@ -112,7 +112,6 @@ if (isset($_POST['start'])) {
                         $proj->skillProj($id, $skillID[0], $level);
                     }
                 }
-
                 $time++;
             }
         }

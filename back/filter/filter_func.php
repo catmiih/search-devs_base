@@ -10,6 +10,8 @@
 
 function approved($approved, $list_approve, $type, $type_user, $skills, $user_skills, $proj_level, $skill_level)
 {
+
+    
     if ($approved <= $list_approve) {
         $result = filterFunction($type, $type_user, $skills, $user_skills, $proj_level, $skill_level);
         return $result;

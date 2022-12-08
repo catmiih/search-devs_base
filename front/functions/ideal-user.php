@@ -5,33 +5,42 @@ $proj = new Project();
 $proj->conectar('search-devs_base', 'localhost', 'root', '');
 //echo "$msg";
 
-$ideal = $proj->idealDev($projID, "comp");
-/* SE O DEV FOR IDEAL, APARECE AQUI */
-if (!!$ideal && count($ideal) > 0) {
-    require_once '../../back/class/user.php';
-    $user = new User();
+$ideals = $proj->idealDev($projID, "comp");
 
-    $user->conectar('search-devs_base', 'localhost', 'root', '');
-    //echo "$msg";
+if (!!$ideals && count($ideals) > 0) {
 
-    if ($user->msg == "") {
+    /* Read All Ideal Devs*/
 
-        if (!empty($ideal)) {
-            $searchID = $ideal;
+    $sql = $pdo->prepare("SELECT Dev_ID from dev_ideal where Proj_ID = $projID");
+    $sql->execute();
 
-            if ($searchID != $_SESSION["id_user"]) {
+    $idealDevs = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($idealDevs as $ideal) {
+
+
+        require_once '../../back/class/user.php';
+        $user = new User();
+
+        $user->conectar('search-devs_base', 'localhost', 'root', '');
+        //echo "$msg";
+
+        if ($user->msg == "") {
+
+            if (!empty($ideal)) {
+                $searchID = $ideal["Dev_ID"];
+
 
                 if (!empty($searchID)) {
-                    for ($i = 0; $i < count($searchID) - 1; $i++) {
-                        $findID = $searchID[$i];
+                    $findID = $searchID;
 
-                        if (empty($user->getUser($findID)[11])) {
-                            $office = "Nenhum cargo";
-                        } else {
-                            $office = $user->getUser($findID)[11];
-                        }
+                    if (empty($user->getUser($findID)[11])) {
+                        $office = "Nenhum cargo";
+                    } else {
+                        $office = $user->getUser($findID)[11];
+                    }
 
-                        $user_card = '
+                    $user_card = '
                         <div class="user-card">
                             <div id="profile_banner">
                                 <img class="banner" src="../../assets/' . $user->findImage($findID, "banner")[0] . '" alt="">
@@ -67,16 +76,10 @@ if (!!$ideal && count($ideal) > 0) {
                         </div>
                         ';
 
-                        echo $user_card;
-                    }
-                } else {
-                    echo 'a';
+                    echo $user_card;
                 }
-            }else {
-                
             }
-        } else
-            echo '0';
+        }
     }
 } else {
     echo "<h5 style='text-align: center;'>Nenhum desenvolvedor encontrado</h5>";

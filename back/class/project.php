@@ -31,7 +31,7 @@ class Project
     {
         global $pdo;
 
-        $sql = $pdo->prepare("DELETE FROM `skills_proj` where Proj_ID = '$projID' and Skill_ID = '$skillID[0]'");
+        $sql = $pdo->prepare("DELETE FROM `skills_proj` where Proj_ID = '$projID' and Skill_ID = '$skillID'");
         $sql->execute();
 
         header('Location: ../../front/company/skills.php');

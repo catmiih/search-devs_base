@@ -14,6 +14,15 @@ $proj->conectar('search-devs_base', 'localhost', 'root', '');
 
 $project = $proj->readInfo($projectID)[0][0];
 
+$sql = $pdo->prepare("SELECT Dev_ID from dev_ideal where Proj_ID = '" . $project["Proj_ID"] . "' and Dev_ID = '$devID'");
+$sql->execute();
+
+if ($sql->rowCount() > 0) {
+    $ideal = $sql->fetch()[0];
+}else {
+    $ideal = 0;
+}
+
 require_once '../../back/class/company.php';
 $comp = new Company();
 
@@ -32,18 +41,18 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
                     <div id="align">
                         <h4><?php echo $project["Proj_name"]; ?></h4>
 
-                        <?php if ($devType == "user") { ?>
+                        <?php if ($devType == "user" && $ideal == $devID) { ?>
                             <div class="btn-group row">
                                 <div class="confirm">
                                     <form method="post" style="display:flex; width: 50rem">
-                                        <input type="hidden" name="projID" value="<?php echo$project["Proj_ID"]; ?>" style="display: none;" />
+                                        <input type="hidden" name="projID" value="<?php echo $project["Proj_ID"]; ?>" style="display: none;" />
                                         <input type="hidden" name="devID" value="<?php echo $devID ?>" style="display: none;" />
                                         <button class="btn-see btn-yes col" name="accept" type="submit"><i class="fa-solid fa-check"></i></button>
                                         <button class="btn-see btn-no col" name="recuse" type="submit"><i class="fa-solid fa-x"></i></button>
                                     </form>
                                 </div>
                             </div>
-                        <?php } else if ($project["Proj_dev"] == null) { ?>
+                        <?php } else if ($project["Proj_dev"] == null && $devType == "comp") { ?>
                             <div class="btn-group row">
                                 <div class="confirm">
                                     <form action="" method="post">
@@ -52,8 +61,7 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
                                     </form>
                                 </div>
                             </div>
-                        <?php } else {
-                        ?>
+                        <?php } else if ($project["Proj_dev"] != null) {                       ?>
 
                             <div class="btn-group row">
                                 <div class="confirm">

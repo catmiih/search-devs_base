@@ -293,3 +293,6 @@ hr {
   opacity: 1;
 }
 
+.btn-dev {
+  width: 5rem!important;
+}

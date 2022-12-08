@@ -35,23 +35,20 @@ function getProject($projId)
 
 
     /* Filter config */
-    $list_approve = 20;
+    $list_approve = 10;
     $approved = 0;
 
 
     for ($i = 0; $i <= $list_approve; $i++) {
-        /* Pick informations from developers  */
-
-        echo $Pskill[0];
-        
-        $d = $pdo->prepare("SELECT Dev_ID from developers where Dev_ID = (SELECT Dev_ID FROM skills_dev where Skill_ID = '$Pskill[0]' and Dev_ID not in (SELECT Dev_ID from dev_ideal))");
+        /* Pick informations from developers  */ 
+        $d = $pdo->prepare("SELECT Dev_ID from developers where Dev_ID = (SELECT Dev_ID FROM skills_dev where Skill_ID = '$projID[0]' and Dev_ID not in (SELECT Dev_ID from dev_ideal ) LIMIT 1 )");
         $d->execute();
 
         if ($d->rowCount() > 0) {
 
             $devIdeal = $pdo->prepare("SELECT Dev_ID FROM dev_ideal where Proj_ID = $projID");
             $devIdeal->execute();
-            if ($devIdeal->rowCount() <= 0) {
+            if ($devIdeal->rowCount() <= 10) {
 
                 $devID = $d->fetch();
 
@@ -87,6 +84,7 @@ function getProject($projId)
                         $list_approve = 5;
                     }
                 } else {
+                    echo $devID[0];
                 }
             } else {
                 $list_approve = 0;
