@@ -44,7 +44,7 @@ if (!!$ideal && count($ideal) > 0) {
                         $projectCard = '<div class="propose-card">
                                             <div id="profile" class="row">
                                                 <div class="profile_pic col-2">
-                                                    <img src="../../assets/' . $comp->findImage('.$id.', "profile")[0] . '" />
+                                                    <img src="../../assets/' . $comp->findImage($proj_comp, "profile")[0] . '" />
                                                 </div>
                                                 <div id="containerperfil" class="col-2">
                                                     <div id="align">

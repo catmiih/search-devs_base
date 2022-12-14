@@ -52,7 +52,7 @@ $project = $proj->readInfo($projectID)[0][0];
                                 <div class="confirm">
                                     <form action="" method="post">
                                         <input type="hidden" name="projID" value="<?php echo $project["Proj_ID"] ?>">
-                                        <button class="btn-see btn-yes" name="" type="submit">Finalizar projeto </button>
+                                        <button class="btn-see btn-yes" name="finish" type="submit">Finalizar projeto </button>
                                     </form>
                                 </div>
                             </div>

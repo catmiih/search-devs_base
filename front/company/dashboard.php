@@ -65,6 +65,7 @@
 
                         $proj->changeProj($projID, $devID, "1", "0");
                         $proj->projStart($projID);
+
                         require_once "pages/news.php";
 
                     } else if (isset($_POST["no"])) {
@@ -84,6 +85,19 @@
                         require_once "pages/edit-project.php";
                         
                     }else if(isset($_POST['finish'])) {
+                        global $pdo;
+                        $projID = $_POST["projID"];
+
+                        $sql = $pdo->prepare("DELETE FROM area_project where Proj_ID = '$projID'");
+                        $sql->execute();
+
+                        $sql = $pdo->prepare("DELETE FROM skills_proj where Proj_ID = '$projID'");
+                        $sql->execute();
+
+                        $sql = $pdo->prepare("DELETE FROM project where Proj_ID = '$projID'");
+                        $sql->execute();
+
+                        require_once "pages/projects.php";
 
                     } else if (isset($_POST['exit'])) {
                         session_destroy();

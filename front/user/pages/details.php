@@ -41,7 +41,7 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
                     <div id="align">
                         <h4><?php echo $project["Proj_name"]; ?></h4>
 
-                        <?php if ($devType == "user" && $ideal == $devID) { ?>
+                        <?php if ($devType == "user" && $ideal == $devID && $project["Proj_dev"] != null) { ?>
                             <div class="btn-group row">
                                 <div class="confirm">
                                     <form method="post" style="display:flex; width: 50rem">
@@ -65,10 +65,7 @@ $comp->conectar('search-devs_base', 'localhost', 'root', '');
 
                             <div class="btn-group row">
                                 <div class="confirm">
-                                    <form action="" method="post">
-                                        <input type="hidden" name="projID" value="<?php echo $project["Proj_ID"] ?>">
-                                        <button class="btn-see btn-yes" name="" type="submit">Finalizar projeto </button>
-                                    </form>
+                                    <h6>Solicite as orientações a empresa</h6>
                                 </div>
                             </div>
 

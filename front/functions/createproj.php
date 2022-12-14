@@ -5,7 +5,7 @@ require_once '../../back/class/project.php';
 $proj = new Project();
 $proj->conectar('search-devs_base', 'localhost', 'root', '');
 
-if (!isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
 }
 
@@ -23,9 +23,7 @@ if (isset($_POST["newProject"])) {
 
     $eValue = $_POST["eValue"];
 
-    echo $eValue."-";
-    ?>
-    <?php
+    echo $eValue . "-";
 
     if ($proj->Create($nameProj, $dHour, $dateStart, $dateEnd, $vHour, $eValue, $_SESSION["id_user"], $descProj)) {
 
@@ -44,13 +42,15 @@ if (isset($_POST["newProject"])) {
                     if ($proj->registerArea($id, $area[$i])) {
                         echo 'Sucesso! no ' . $area[$i] . ' <br>';
                     } else {
-                        echo 'Erro no ' . $area[$i] .'<br>';
+                        echo 'Erro no ' . $area[$i] . '<br>';
                     }
                 } else {
                     echo 'Excuido o ' . $i + 1, '<br>';
                 }
             }
         }
+
+        header('Location: ../company/skills.php');
     }
 }
 
@@ -73,7 +73,7 @@ if (isset($_GET['id'])) {
         $proj->deleteskill($skillID, $id);
     }
 
-    header('Location: ../company/dashboard.php');
+    header('Location: ../company/skills.php');
 }
 
 if (isset($_POST['start'])) {
